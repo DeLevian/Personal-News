@@ -1,23 +1,28 @@
-# Personal News — stato operativo
+# Personal News v2 — stato di implementazione
 
-Aggiornato: 2026-09-27.
+Aggiornato: 2026-09-27. Questo file descrive fatti di sviluppo; l'esito live è nei workflow del commit distribuito.
 
-## Stato corrente
-L’utente ha reso pubblico il repository e attivato Pages. Il link è https://delevian.github.io/Personal-News/ e viene usato nelle notifiche tramite config/pipeline.json.
+## Architettura
+Profilo nel Second Brain privato; SOURCES.json per fonti/query; pipeline.json per limiti; DAILY_RUN.md/BRIEFING.md per processo e notifica; categories.json soltanto UI.
+Schema v1 conservato e v2 News/Radar; indice permanente eventi oltre alla cache recente. Ricevute hash congelate per conservare l'ammissione degli otto item v1 nella medesima giornata, non per riutilizzarli come news future.
 
-Prova manuale del flusso quotidiano: sei notizie verificate del 25–27 settembre, tre in evidenza. Due entro 24 ore, quattro recuperi motivati entro 72 ore. Nessun vecchio annuncio viene ripubblicato come nuovo.
+## Parametri
+Target 10–16 News, 0–8 Radar, 3 featured solo News; 24 ore Main, massimo72 con motivo; Radar7giorni. Discovery30–50 candidati, copertura sei categorie; fonti56 (41 primarie,11 discovery,4 community). Rotazione deterministica, no scansione quotidiana dell'intero Second Brain.
 
-La selezione iniziale del mattino (sei articoli del 16–22 settembre) è conservata separatamente con stessa data reale e ID `2026-09-27-initial`. Indici, ricerca, deduplicazione e vecchi link la includono. Le run ordinarie non la modificano.
+## Implementazione verificata su branch
+- 62 test Python e due suite HTTP Chromium superati nel primo bootstrap, run36325422199.
+- Main/Radar, filtri, contatori, ricerca, Radar→Main dedup, attenzione valida/scaduta, vecchi URL, temi, lightbox, XSS text safety e cinque larghezze verificati.
+- 56 fonti controllate:48 HTTP200,8 HTTP403 del runner ma contenuto/esistenza verificati via web. Blender, inizialmente bloccato via web, è HTTP200 sul runner ed è stato abilitato.
+- Collector:50 link candidati reali da30 controlli (27 recuperati), non50 fatti verificati. Gli output restano artifact, non vengono spacciati per news selezionate.
+- I test delle ricevute e i controlli finali vengono eseguiti nel workflow di finalizzazione; consultare l'esito reale del branch/commit.
 
-## Immagini
-Tutte le schede delle due edizioni hanno un URL di immagine proveniente dalla fonte. Screenshot/banner autentici quando disponibili; il logo OpenAI è esplicitamente dichiarato come logo della fonte. Credito/provenienza, proporzioni preservate, ingrandimento e fallback in caso di errori. Nessuna copia locale di immagini protette.
+## Dati
+Archivio initial e ID preservati. L'edizione del27settembre viene convertita conservando gli otto payload originali e integrando due Radar reali (prompt caching OpenAI, aggiornamento TOS TerraMaster) e l'avviso Champions già documentato. Nessun articolo sintetico viene pubblicato.
+I test generano esempi in copie temporanee e controllano che l'archivio reale non sia modificato.
 
-## Verifica
-- Validatore/rebuild e 18 test Python: superati localmente.
-- Controllo sintattico JavaScript e test DOM responsive: superati localmente.
-- Il browser locale della sandbox blocca le navigazioni HTTP: per i test end-to-end è stato aggiunto un workflow GitHub Actions in sola lettura, senza modificare la pianificazione delle news.
-- Prima esecuzione CI: individuato un errore nel selettore CSS del test dei link (ID iniziavano con cifre), corretto usando selettori per attributo.
-- Le prove HTTP/browser e le immagini effettive sono registrate dal workflow **Verify Personal News**; consultare l’esito del commit corrente e gli artifact `browser-evidence`, non presumere il successo da questa descrizione.
+## Pubblicazione / automazione
+Sito autorizzato e già attivo: https://delevian.github.io/Personal-News/ . L'ingresso root rimanda a docs/, senza variazioni di hosting.
+La promozione su main, la verifica live del commit finale e l'aggiornamento del task07:00 saranno registrati nelle verifiche di consegna, non presunti da questo stato intermedio.
 
-## Confini
-Le immagini esterne possono cambiare disponibilità. Non è promessa compatibilità universale con ogni browser/dispositivo. Letti e salvati sono locali, con esportazione/importazione, non sincronizzazione cloud.
+## Limiti permanenti
+Le fonti possono bloccare scraping; il flusso deve completare via web e dichiarare copertura incompleta. Immagini esterne possono diventare indisponibili. Letti/salvati sono locali con import/export. Il target quantitativo non garantisce un minimo quotidiano.

@@ -1,13 +1,10 @@
-name: Bootstrap v2 branch
+name: Finalize v2 branch
 on:
   push:
     branches: [chatgpt/personal-news-v2]
     paths: ['_migration/**', '.github/workflows/bootstrap-v2.yml']
 permissions:
   contents: write
-concurrency:
-  group: bootstrap-v2
-  cancel-in-progress: false
 jobs:
   migrate:
     if: github.ref == 'refs/heads/chatgpt/personal-news-v2'
@@ -17,40 +14,31 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: chatgpt/personal-news-v2
-      - name: Install test dependencies
-        run: |
+      - run: |
           python -m pip install -r requirements-test.txt
           python -m playwright install --with-deps chromium
-      - name: Apply checked migration and rebuild
+      - name: Finalize and validate
         run: |
-          python _migration/seed.py
-          python _migration/front_patch.py
+          python _migration/finish.py
           python tools/news.py rebuild
           python tools/news.py validate
           node --check docs/assets/app.js
-      - name: Unit and real HTTP browser tests
-        run: |
           python -m unittest discover -s tests -v
           python tests/browser_check.py
           python tests/browser_v2.py
-      - name: Read-only source health and metadata discovery
-        if: always()
-        run: |
-          python tools/collect.py --health --date 2026-09-27 --output artifacts/source-health.json
-          python tools/collect.py --date 2026-09-27 --output artifacts/discovery-sample.json
-      - name: Commit generated files on migration branch only
+      - name: Commit finalized files on migration branch only
         run: |
           test "$(git branch --show-current)" = "chatgpt/personal-news-v2"
           test "$(git rev-parse HEAD)" = "$(git ls-remote origin refs/heads/chatgpt/personal-news-v2 | cut -f1)"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add config docs state
+          git add config docs state tools tests
           if ! git diff --cached --quiet; then
-            git commit -m 'feat: generate v2 source registry, UI and compatible indexes'
+            git commit -m 'feat: finalize v2 catalogue, safe legacy inclusion and first Radar items'
             git push origin HEAD:refs/heads/chatgpt/personal-news-v2
           fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: v2-bootstrap-evidence
+          name: v2-finalize-evidence
           path: artifacts/

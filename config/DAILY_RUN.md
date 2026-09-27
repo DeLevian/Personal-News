@@ -1,52 +1,87 @@
-# Procedura editoriale giornaliera
+# Personal News v2 — run giornaliera canonica
 
-## Obiettivo
-Aggiornare `DeLevian/Personal-News` con un'edizione in italiano, normalmente 5-12 notizie realmente utili (anche zero, senza riempitivi). Il sito legge i dati: NON riscrivere HTML, CSS o JavaScript ogni giorno.
+## Scopo e fonti di verità
+Completare ricerca ampia, verifica, selezione News/Radar, persistenza, controlli e briefing. Non fermarsi a un elenco di link né a una ricerca generica. Non modificare il template ogni mattina.
+- Profilo personale: il percorso profile_path in DeLevian/Second-Brain.
+- Fonti e query tecniche: config/SOURCES.json.
+- Parametri numerici: config/pipeline.json. Non mantenere copie dei limiti nel task.
+- Schema effettivo: config/edition.schema.json, generato dai parametri; il contratto v1 resta congelato per lo storico.
+- UI: docs/data/categories.json, senza topics o discovery_sources duplicati.
 
-## Letture minime
-1. `AGENTS.md` di questo repository, questa procedura e `config/pipeline.json`.
-2. In `DeLevian/Second-Brain`: `AGENTS.md`, `INDEX.md`, poi soltanto il `profile_path` indicato nella configurazione. Gli indici servono per il routing, non autorizzano una scansione.
-3. `docs/data/categories.json`, `state/seen.json`, `docs/data/index.json`.
-4. Leggere una vecchia edizione solo per un confronto mirato. Per un possibile evento più vecchio della cache, cercare l'event_id nell'indice di ricerca/archivio prima di classificarlo NEW.
+## 1. Lettura mirata e preflight
+Leggere AGENTS.md, questa procedura e pipeline.json. Nel Second Brain leggere prima AGENTS.md e INDEX.md, poi solo NEWS_PROFILE.md per il contenuto personale. Nessuna scansione generale, nessuna copia del profilo nel repository pubblico.
+Leggere indice, seen.json e source map. Consultare vecchi JSON o state/event-index.json soltanto per confronti mirati; l'assenza dalla cache non prova che un evento sia nuovo.
+Controllare strumenti effettivi: web, lettura/scrittura GitHub, ambiente Python. Usare i connettori disponibili; non chiedere attività manuali evitabili. Se mancano capacità, non fingere ricerca, scrittura o test e non iniziare una pubblicazione parziale.
+Rilevare data/ora effettive Europe/Rome e HEAD di main. Se oggi esiste un'edizione, preservarne articoli validi, ID e orari di inclusione. Installare requirements.txt per i comandi Python; il sito resta statico.
 
-## Ricerca
-Usare data/ora effettive in Europe/Rome. Finestra ordinaria 24 ore; recupero eccezionale fino a 72 ore con `recency_reason`. Confrontare data dell'evento e data dell'articolo: un pezzo ripubblicato non rende nuovo l'evento.
-Usare le categorie come query iniziali e il profilo come criterio editoriale. Le fonti configurate sono punti di partenza, non una whitelist.
-Aprire le fonti primarie e riportare URL reali. Non trasformare snippet, rumor o benchmark del produttore in fatti indipendentemente verificati. Niente articoli inventati, date fittizie, immagini non pertinenti o edizioni pregresse simulate.
-Non copiare interi articoli. Scrivere sintesi originali brevi e una ragione di interesse; non includere dettagli personali sensibili o dati aziendali.
+## 2. Discovery ampia, prima della selezione
+Usare discovery_candidate_target_min/max: inizialmente 30–50 eventi candidati unici, non una quota da inventare. Esplorare tutte e sei le categorie, non soltanto quelle con più risultati.
+`python tools/discovery.py plan --date YYYY-MM-DD` prepara fonti giornaliere, rotazione e query. Il piano non è una ricerca effettuata.
+`python tools/collect.py --date YYYY-MM-DD --output artifacts/discovery.json`, quando disponibile, raccoglie titoli e link reali da indici selezionati. Sono metadati non verificati: possono essere vecchi o irrilevanti. Non pubblicarli automaticamente.
+Ordine di lavoro:
+1. Fonti daily e quota rotating proposta dal piano, privilegiando i produttori dei tool seguiti.
+2. Tier 2 specialistiche per ampliare candidati e coprire sottodomini mancanti.
+3. Ricerca web aperta guidata da query_matrix. Spezzare query troppo ampie per prodotto/sottodominio; cercare anche in inglese. La lista non è una whitelist.
+4. Tier 3 solo per scouting/testimonianze; ricondurre i fatti verificabili alle fonti primarie.
+Non servono tutte le fonti ogni giorno. La rotazione è deterministica per data; non richiede un grosso stato per-fonte. I report di salute possono restare negli artifact, distinti dalla memoria editoriale.
 
-## Immagini
-Cercare og:image/twitter:image nell'HTML dell'articolo, oppure un'immagine ufficiale effettivamente associata alla notizia. `tools/image_metadata.py` può estrarre l'URL da HTML già recuperato.
-Registrare URL HTTPS, alt, credito e source_url. Verificare accessibilità quando possibile e registrare i limiti nel campo `verification`.
-Le preview non dimostrano una licenza di ripubblicazione: non scaricare né redistribuire immagini protette senza permesso. Mantenerne il collegamento alla fonte, rispettare restrizioni e termini. Se nessuna immagine adatta è disponibile, `image: null`.
-Non salvare redirect temporanei con token, URL di tracking o endpoint privati. Il frontend ha un fallback e un comando per disattivare le immagini.
+### Copertura minima
+- AI: OpenAI/ChatGPT/API/Codex, Anthropic, modelli locali, Ollama, Qwen e modelli emergenti pertinenti.
+- Agenti: Pi/estensioni, MCP, terminale/IDE, coding agent, integrazioni.
+- Lavoro: Copilot Studio, M365 Copilot, SharePoint, Teams, Entra, RAG/enterprise search, KB e documenti.
+- GameDev: Unity/Web/mobile, authoring/Odin, asset AI 2D/3D, rigging/animazione, Blender/Krita/GIMP, workflow modulari.
+- Gaming: separatamente Champions, Dokkan, Pocket; poi generi, console/ecosistemi, retrogaming e macro-aree. Nessuna nuova watchlist permanente di singoli titoli; distinguere Global/JP, piattaforma e fuso.
+- Dispositivi: Windows, NVIDIA, Android/Samsung, Steam Deck/SteamOS, Switch 2, Xbox, TerraMaster. Non duplicare Gaming.
+I target per categoria sono in category_candidate_targets. Sotto target, ampliare query/fonti prima di concludere, senza inventare candidati.
 
-## Preparazione e deduplicazione
-Un'edizione ha `version`, `date`, `generated_at` con offset locale, `kind: daily`, `title`, `summary`, `items` ed eventuale `note`.
-Consultare `config/edition.schema.json` per il contratto completo. Ogni articolo ha id univoco prefissato dalla data ed event_id stabile.
-- NEW: non già segnalato nell'archivio.
-- UPDATE: evento già presente, ma sviluppo nuovo sostanziale. Aggiungere `delta` e `previous: {id,date}` dell'ultima scheda del medesimo evento.
-- Già noto senza novità: omettere.
-Massimo 3 `featured`. Non forzare tutte le categorie a comparire in ogni edizione.
-Una data fonte ignota non equivale a oggi: escludere dalla rassegna corrente o trattarla come approfondimento retrospettivo esplicito. `kind: bootstrap` è riservato all'avvio iniziale, non un modo di aggirare la freschezza quotidiana.
+### Traccia di copertura
+Prima delle sintesi mantenere un audit di run: version:2, checked_at, checks, candidates.
+Check: category, method source/web_search, source_id oppure query, outcome success/blocked/error/no_results, evidence breve e fattuale.
+Candidato: event_id dopo raggruppamento, title, URL canonico, category, published_date se verificata, decision main/radar/known/outdated/irrelevant/unverified, reason breve.
+`python tools/discovery.py audit --input artifacts/editorial-audit.json --output state/discovery-latest.json` verifica copertura/duplicati e produce un riepilogo compatto. Sotto il target serve shortfall_reason concreto. Un sito bloccato non significa nessuna notizia.
+Registrare evidenze e decisioni editoriali, non ragionamenti interni o dati privati. Report completo come artifact; discovery-latest.json è solo l'ultimo riepilogo, non un log crescente.
 
-## Persistenza
-1. Rileggere HEAD. Se l'edizione di oggi esiste già, non sostituirla alla cieca; rendere la ripetizione idempotente. Correggere solo con motivo esplicito, preservando gli articoli validi e gli ID.
-2. Scrivere `docs/data/daily/YYYY-MM-DD.json`.
-3. Eseguire `python tools/news.py rebuild`: ricostruisce indice cronologico, ricerca globale e cache eventi (30 giorni, massimo 200).
-4. Eseguire `python tools/news.py validate` e i test. La validazione è strutturale: NON sostituisce la verifica editoriale delle fonti.
-5. Commit atomico di edizione + `docs/data/index.json` + `docs/data/search.json` + `state/seen.json`. Non toccare il template. In caso di conflitto di HEAD, riconciliare senza force.
-6. Rileggere i file/commit dal repository. Non dichiarare riuscita una scrittura solo tentata.
+## 3. Verifica e deduplicazione
+Raggruppare fonti del medesimo evento prima di contarle. Togliere tracking dagli URL, ma non considerare una pagina release-notes condivisa come un singolo evento eterno.
+Aprire gli articoli selezionabili. Verificare date, versione, piattaforma, preview/GA e disponibilità; un commento recente o una ripubblicazione non è un annuncio nuovo. Attribuire benchmark e dichiarazioni del fornitore.
+Cercare l'event_id nella cache e, se necessario, nel ledger permanente con `python tools/discovery.py lookup --event-id ID`; aprire la scheda precedente per confrontare i fatti.
+- NEW: evento mai fornito nell'intero archivio.
+- UPDATE: sviluppo sostanziale, delta esplicito e previous dell'ultimo id/data del medesimo evento.
+- Già noto: omettere. Radar→News senza fatti nuovi non è un aggiornamento.
+Anche gli eventi initial restano nel ledger dopo l'espulsione da seen.json.
 
-Se l'agente dispone solo dei connettori, può ottenere i file necessari e validare nel proprio ambiente; costruire poi tree/commit/ref mediante GitHub. Se non può verificare dati o scrivere, segnalare il blocco e NON inventare successo. L'HTML nella chat non è un sostituto della persistenza richiesta.
+## 4. Selezione News e Radar
+Applicare pipeline.json: inizialmente target 10–16 News, 0–8 Radar, massimo 3 featured solo News. Sono obiettivi e massimi, non minimi obbligatori di pubblicazione.
+News: sviluppo significativo, 24 ore normalmente; massimo 72 con recency_reason.
+Radar: segnalazione minore ma verificata, massimo 7 giorni; mai già fornita senza sviluppo sostanziale. Non significa minore accuratezza né raccolta di rumor.
+Con poche notizie valide ampliare prima la discovery nei sottodomini scoperti; poi pubblicare meno, mai riempitivi o contenuti fuori finestra. Le immagini non sono requisito di ammissione.
 
-## Notifica
-Al massimo 2-3 righe: data, numero notizie, numero in evidenza, link al sito solo se `website_url` è configurato e realmente verificato. Altrimenti link all'edizione/commit su GitHub, dichiarando che il sito non è pubblicato.
-Non inviare tutto il testo della newsletter in chat.
+## 5. Dati e tempo
+Nuove edizioni version:2, kind:daily; item section:main|radar e included_at, oltre agli altri campi del contratto.
+included_at è l'ora reale di prima inclusione, non la pubblicazione della fonte. Non cambiarla per far sembrare fresca una news o a ogni rerun. verified_at <= included_at <= generated_at.
+Una fonte con sola data non autorizza un orario inventato. Conservare published_date e, se noto, published_timezone IANA. Il validatore usa un limite conservativo; se la finestra Main non è dimostrabile, valutare Radar o escludere.
+Le edizioni v1 restano leggibili come News. Per la sola migrazione sono state congelate ricevute con hash in config/LEGACY_V1.json: consentono di mantenere i contenuti identici nella stessa edizione, senza cambiarne pubblicazione o data. Non rigenerare ricevute né usarle per nuove giornate. `tools/legacy.py` espone promote per una conversione esatta, non un bypass di freschezza. L'edizione iniziale non va promossa/modificata nelle run ordinarie.
+
+### Da sapere oggi
+attention_today facoltativo: text, item_ids, source_url realmente presente negli item, valid_from ed expires_at con offset. Solo eventi/scadenze verificati, pertinenti al giorno e non terminati. La UI nasconde gli avvisi scaduti nella home e li etichetta come storici nell'archivio.
+
+## 6. Immagini dopo la selezione
+Preferire screenshot/banner specifico, poi og:image/social preview o immagine ufficiale pertinente. Logo solo ultima alternativa, dichiarato come logo; altrimenti image:null.
+Registrare HTTPS, alt, credito, source_url e verifica effettiva. Nessun URL inventato, segreto o temporaneo con credenziali. image_metadata.py estrae metadati da HTML già recuperato.
+Non aggirare accessi né redistribuire immagini protette senza autorizzazione. Verificare i file immagine, non soltanto uno status 200 che potrebbe essere HTML. Il sito gestisce proporzioni, lightbox e fallback.
+
+## 7. Persistenza idempotente e controlli
+Un rerun senza nuove notizie non deve svuotare/duplicare l'edizione né cambiare generated_at per produrre un commit. Il report di copertura può cambiare solo per verifiche realmente nuove. Una nuova giornata senza news può avere un'edizione vuota esplicita.
+Scrivere l'edizione, `python tools/news.py rebuild`, `python tools/news.py validate`, `python -m unittest discover -s tests -v`.
+Il rebuild genera manifest, ricerca, seen, ledger e schema; non riscrive le edizioni archiviate. Conservare entrambi i livelli editoriali in ricerca, link e preferenze.
+Rileggere HEAD, preparare commit coerente di edizione+derivati+eventuale riepilogo discovery su main senza force. In caso di concorrenza riconciliare. Una validazione fallita blocca la pubblicazione.
+Rileggere commit/file, verificare separatamente CI, deploy e contenuto servito. Per UI includere sintassi JS e browser. La salute esterna è diagnostica separata dalla CI strutturale.
+Non dichiarare Pages verificato solo perché il commit è riuscito. Attendere i contenuti del commit corrente, compresi indici e immagini; in caso di timeout dichiarare deploy in attesa o limite osservato.
+
+## 8. Briefing in chat
+Usare config/BRIEFING.md e tools/briefing.py: circa 8–10 righe, data, conteggi coerenti, titoli featured, avviso valido, esiti reali e website_url.
+NEW+UPDATE deve uguagliare News+Radar. Le aggiunte in questa run sono diverse dal totale dell'edizione: riportarle solo con confronto verificato. Due aggiunte a otto notizie non significa una newsletter di sole due news.
+Nessun testo completo della newsletter, test inesistenti, successo presunto o modello dedotto dalla chat.
 
 ## Pianificazione
-Questi file non avviano automaticamente alcun job. La pianificazione delle 07:00 è esterna e deve essere verificata/attivata separatamente con gli strumenti disponibili e l'autorizzazione dell'utente.
-
-## Sito pubblico e archivio iniziale (2026-09-27)
-L’utente ha autorizzato e attivato Pages; `website_url` contiene il link effettivo. Riutilizzarlo nella notifica. La selezione iniziale del mattino è stata preservata in `docs/data/initial/2026-09-27.json` (edition_id distinto, stessa data reale). Non modificarla nelle run ordinarie. Il rebuild include sia daily sia initial.
-Non assumere che un og:image sia corretto: controllare protocollo, contenuto e caricamento. Le immagini generiche/loghi sono indicate come tali, non fotografie della notizia. I test live fanno fallire la verifica se una preview configurata non si carica.
+Task ChatGPT esterno con solo bootstrap verso questa procedura. Non creare copie, non modificare hosting/visibilità o il Second Brain durante una run normale. Mantiene 07:00 Europe/Rome e legge le versioni canoniche aggiornate.
