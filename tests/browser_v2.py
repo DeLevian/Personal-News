@@ -1,5 +1,6 @@
 """Exercise v2 on a temporary copy. No synthetic edition enters the published archive."""
 import json,os,shutil,tempfile,sys
+from datetime import timedelta
 from pathlib import Path
 from threading import Thread
 from functools import partial
@@ -18,6 +19,12 @@ def main():
  with tempfile.TemporaryDirectory() as tmp:
   root=Path(tmp)/'repo';shutil.copytree(news.ROOT,root,ignore=shutil.ignore_patterns('.git','artifacts','__pycache__','_migration'))
   d=attention(edition(main=3,radar=2));d['items'][-1]['image']={'url':'https://example.com/preview.svg','alt':'Synthetic test image','credit':'Test fixture','source_url':'https://example.com/news/4'}
+  base_time=news.timestamp(d['generated_at'])
+  for item,hours in zip(d['items'],[5,1,None,4,0.5]):
+   if hours is None:
+    item.pop('published_at',None);item['published_date']=base_time.date().isoformat()
+   else:
+    pub=base_time-timedelta(hours=hours);item['published_at']=pub.isoformat();item['published_date']=pub.date().isoformat()
   d['items'][0]['title']='<img src=x onerror=window.fixtureXSS=true> main fixture'
   news.write_json(root/f'docs/data/daily/{d["date"]}.json',d);news.run(root,'rebuild')
   manifest=news.load(root/'docs/data/index.json')
@@ -30,11 +37,16 @@ def main():
     b=p.chromium.launch(**opts);ctx=b.new_context(viewport={'width':1440,'height':1000},color_scheme='light')
     ctx.add_init_script("const RealDate=Date;globalThis.Date=class extends RealDate{constructor(...args){super(...(args.length?args:['2030-01-03T08:00:00+01:00']));}static now(){return new RealDate('2030-01-03T08:00:00+01:00').getTime();}}");ctx.route('https://**/*',lambda r:r.fulfill(status=200,content_type='image/svg+xml',body='<svg xmlns="http://www.w3.org/2000/svg" width="80" height="40"><rect width="80" height="40" fill="gray"/></svg>'))
     page=ctx.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
-    page.goto(base);expect(page.locator('#cards .card')).to_have_count(3);expect(page.locator('#radar-cards .card')).to_have_count(2);expect(page.locator('#unread')).to_have_attribute('aria-pressed','true');expect(page.locator('#attention-today')).to_be_visible();expect(page.locator('#metrics')).to_contain_text('3News');expect(page.locator('#metrics')).to_contain_text('2Radar');assert not page.evaluate('window.fixtureXSS===true');checks.append('v2 main/radar, consistent counters, attention and XSS text safety')
+    page.goto(base);expect(page.locator('#cards .card')).to_have_count(3);expect(page.locator('#radar-cards .card')).to_have_count(2);expect(page.locator('#unread')).to_have_attribute('aria-pressed','true');expect(page.locator('#attention-today')).to_be_visible();expect(page.locator('#metrics')).to_contain_text('3News');expect(page.locator('#metrics')).to_contain_text('2Radar');assert not page.evaluate('window.fixtureXSS===true')
+    assert page.locator('#cards .card').evaluate_all('(nodes)=>nodes.map(n=>n.id)')==[d['items'][1]['id'],d['items'][0]['id'],d['items'][2]['id']]
+    assert page.locator('#radar-cards .card').evaluate_all('(nodes)=>nodes.map(n=>n.id)')==[d['items'][4]['id'],d['items'][3]['id']]
+    expect(page.locator('#cards .card').first.locator('.card-kicker')).to_contain_text('06:00')
+    expect(page.locator('#highlight-grid article').first).to_contain_text(d['items'][1]['title'])
+    checks.append('v2 main/radar ordered by real source publication timestamp, with date-only fallback, consistent counters, attention and XSS text safety')
     page.locator('[data-section-filter=radar]').click();expect(page.locator('.card')).to_have_count(2);expect(page.locator('#main-group')).to_be_hidden();page.reload();expect(page.locator('.card')).to_have_count(2)
     page.locator('.save-button').first.click();page.locator('#saved').click();expect(page.locator('.card')).to_have_count(1);page.locator('#reset').click();expect(page.locator('.card')).to_have_count(5);expect(page.locator('#unread')).to_have_attribute('aria-pressed','false');page.locator('#unread').click();expect(page.locator('#unread')).to_have_attribute('aria-pressed','true')
     page.locator('[data-section-filter=main]').click();expect(page.locator('.card')).to_have_count(3);page.locator('.read-button[aria-pressed="false"]').first.click();expect(page.locator('.card')).to_have_count(2);page.reload();expect(page.locator('.card')).to_have_count(2);expect(page.locator('#unread')).to_have_attribute('aria-pressed','true');page.locator('#unread').click();expect(page.locator('.card')).to_have_count(3);page.locator('#unread').click();expect(page.locator('.card')).to_have_count(2);page.locator('#reset').click();expect(page.locator('.card')).to_have_count(5)
-    page.locator('#scope').select_option('archive');page.locator('#search').fill('radar fixture');expect(page.locator('.card')).to_have_count(2);page.locator('#latest-button').click();expect(page.locator('#unread')).to_have_attribute('aria-pressed','true');expect(page.locator('.card')).to_have_count(4);checks.append('section/category/read/saved filters, reload, default unread and cross-archive search')
+    page.locator('#scope').select_option('archive');page.locator('#search').fill('radar fixture');expect(page.locator('.card')).to_have_count(2);assert page.locator('.card').evaluate_all('(nodes)=>nodes.map(n=>n.id)')==[d['items'][4]['id'],d['items'][3]['id']];page.locator('#latest-button').click();expect(page.locator('#unread')).to_have_attribute('aria-pressed','true');expect(page.locator('.card')).to_have_count(4);checks.append('section/category/read/saved filters, reload, default unread and chronologically sorted cross-archive search')
     page.locator('#radar-cards .image-expand').click();expect(page.locator('#image-dialog')).to_be_visible();page.wait_for_function('document.getElementById("full-image").naturalWidth>0');page.keyboard.press('Escape');expect(page.locator('#image-dialog')).to_be_hidden();checks.append('Radar image and lightbox')
     radar=d['items'][-1];page.goto(base+'?date='+d['date']+'&section=main#'+radar['id']);expect(page.locator('[id="'+radar['id']+'"]')).to_be_visible();checks.append('permanent Radar link clears conflicting section filter')
     page.locator('#density').click();expect(page.locator('.radar-card .why').first).to_be_visible();page.locator('#density').click()

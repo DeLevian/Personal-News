@@ -36,7 +36,7 @@ def derived(root,days):
     for d in ordered:
         manifest['editions'].append({'id':edition_key(d),'date':d['date'],'generated_at':d['generated_at'],'title':d['title'],'kind':d['kind'],'count':len(d['items']),'counts':counts(d['items']),'categories':sorted({i['category'] for i in d['items']}),'path':edition_path(d)})
         for i in d['items']:
-            search['items'].append({'id':i['id'],'event_id':i['event_id'],'edition':edition_key(d),'category':i['category'],'section':section(i),'status':i['status'],'title':i['title'],'search_text':' '.join([i['title'],i['summary'],i['why_you_care'],*i['tags'],*(s['name'] for s in i['sources'])])})
+            search['items'].append({'id':i['id'],'event_id':i['event_id'],'edition':edition_key(d),'category':i['category'],'section':section(i),'status':i['status'],'title':i['title'],'published_date':i.get('published_date'),'published_at':i.get('published_at'),'search_text':' '.join([i['title'],i['summary'],i['why_you_care'],*i['tags'],*(s['name'] for s in i['sources'])])})
     for d in days:
         for i in d['items']:
             events[i['event_id']]={'event_id':i['event_id'],'first_seen':events.get(i['event_id'],{}).get('first_seen',d['date']),'last_seen':d['date'],'last_item_id':i['id'],'last_edition':edition_key(d),'section':section(i),'title':i['title'],'last_summary':i['summary'],'sources':[s['url'] for s in i['sources']]}

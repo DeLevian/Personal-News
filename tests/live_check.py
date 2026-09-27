@@ -3,6 +3,7 @@ Read-only network checks. No tokens, private sources, or asset copying into repo
 """
 import hashlib,json,os,time,urllib.request
 from datetime import datetime
+from functools import cmp_to_key
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from playwright.sync_api import sync_playwright,expect
@@ -10,6 +11,16 @@ ROOT=Path(__file__).resolve().parents[1]
 def read(url):
     req=urllib.request.Request(url,headers={'User-Agent':'PersonalNewsDeploymentCheck/1.0'})
     with urllib.request.urlopen(req,timeout=20) as r:return r.read(4000000)
+def compare_publication(a,b):
+    ax=datetime.fromisoformat(a['published_at'].replace('Z','+00:00')) if a.get('published_at') else None
+    bx=datetime.fromisoformat(b['published_at'].replace('Z','+00:00')) if b.get('published_at') else None
+    if ax is not None and bx is not None and ax!=bx:return -1 if ax>bx else 1
+    ad=a.get('published_date') or '';bd=b.get('published_date') or ''
+    if ad!=bd:return -1 if ad>bd else 1
+    if (ax is not None)!=(bx is not None):return -1 if ax is not None else 1
+    if ax!=bx:return -1 if ax and (bx is None or ax>bx) else 1
+    aid=a.get('id','');bid=b.get('id','')
+    return -1 if aid<bid else 1 if aid>bid else 0
 def main():
     cfg=json.loads((ROOT/'config/pipeline.json').read_text())
     base=cfg.get('website_url')
@@ -61,6 +72,11 @@ def main():
                 except Exception as e:report['images'].append({'id':item['id'],'ok':False,'url':item['image']['url'],'error':str(e)[:350]})
         page.goto(base,wait_until='domcontentloaded');expect(page.locator('.card')).to_have_count(latest['count'])
         current=json.loads((ROOT/'docs'/latest['path']).read_text())
+        expected_main=[i['id'] for i in sorted([i for i in current['items'] if i.get('section','main')=='main'],key=cmp_to_key(compare_publication))]
+        expected_radar=[i['id'] for i in sorted([i for i in current['items'] if i.get('section','main')=='radar'],key=cmp_to_key(compare_publication))]
+        assert page.locator('#cards .card').evaluate_all('(nodes)=>nodes.map(n=>n.id)')==expected_main
+        assert page.locator('#radar-cards .card').evaluate_all('(nodes)=>nodes.map(n=>n.id)')==expected_radar
+        report['source_publication_order']='passed'
         attention=current.get('attention_today');now=datetime.now(ZoneInfo('Europe/Rome'))
         active=bool(attention and current['date']==now.date().isoformat() and datetime.fromisoformat(attention['valid_from'])<=now<datetime.fromisoformat(attention['expires_at']))
         if active:
