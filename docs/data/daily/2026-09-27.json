@@ -396,6 +396,38 @@
         }
       ],
       "image": null
+    },
+    {
+      "id": "2026-09-27-github-copilot-slack-teams-2026-09-25",
+      "event_id": "github-copilot-slack-teams-2026-09-25",
+      "category": "work",
+      "status": "NEW",
+      "section": "main",
+      "title": "GitHub Copilot in Teams e Slack usa più contesto e può cambiare modello",
+      "summary": "GitHub ha aggiornato le integrazioni Copilot per Slack e Microsoft Teams: più contesto da file, immagini, messaggi e thread, controllo del modello durante la conversazione e controlli contro issue duplicate. Migliora anche la gestione dei task lunghi e delle riconnessioni; la public preview è rivolta alle organizzazioni Copilot Business ed Enterprise.",
+      "why_you_care": "È rilevante per Digital Workplace e lavoro agentico: mostra come il coding agent stia entrando nei canali collaborativi con più contesto e tracciabilità verso GitHub.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "published_timezone": "America/New_York",
+      "verified_at": "2026-09-27T18:26:02+02:00",
+      "included_at": "2026-09-27T18:26:02+02:00",
+      "featured": false,
+      "recency_reason": "Aggiornamento ufficiale del 25 settembre recuperato entro 72 ore perché riguarda direttamente Teams, collaborazione e agenti collegati a GitHub.",
+      "tags": [
+        "GitHub Copilot",
+        "Microsoft Teams",
+        "Slack",
+        "Digital Workplace",
+        "agent"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog · Slack e Microsoft Teams",
+          "type": "official",
+          "url": "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams/"
+        }
+      ],
+      "image": null
     }
   ],
   "attention_today": {
