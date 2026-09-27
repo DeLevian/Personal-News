@@ -8,6 +8,7 @@
   const normalize = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const validId = s => typeof s === 'string' && /^[a-z0-9][a-z0-9-]{0,159}$/.test(s);
   const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+  const editionKey = e => e.id || e.edition_id || e.date;
   function cleanPrefs(p) {
     if (!p || p.version !== 1 || !allowedTheme.includes(p.theme) || typeof p.compact !== 'boolean' || typeof p.images !== 'boolean') throw Error('Formato preferenze non valido.');
     for (const key of ['read','saved']) if (!Array.isArray(p[key]) || p[key].length > 20000 || !p[key].every(validId)) throw Error('Elenco preferenze non valido.');
@@ -26,7 +27,7 @@
   function node(tag,cls,text) { const n = document.createElement(tag); if (cls) n.className = cls; if (text !== undefined) n.textContent = text; return n; }
   function https(url) { try { const u = new URL(url); return u.protocol === 'https:' && !u.username && !u.password ? u.href : null; } catch { return null; } }
   function link(url,text,cls) { const n = node('a',cls,text); const safe = https(url); if (safe) n.href = safe; n.target = '_blank';n.rel = 'noopener noreferrer';return n; }
-  function fmt(date,options={day:'numeric',month:'long'}) { return new Intl.DateTimeFormat('it-IT',{...options,timeZone:'Europe/Rome'}).format(new Date(date.length === 10 ? `${date}T12:00:00+02:00` : date)); }
+  function fmt(date,options={day:'numeric',month:'long'}) { return new Intl.DateTimeFormat('it-IT',{...options,timeZone:'Europe/Rome'}).format(new Date(/^\d{4}-\d{2}-\d{2}(-initial)?$/.test(date) ? `${date.slice(0,10)}T12:00:00+02:00` : date)); }
   function today() { return new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()); }
   function category(id) { return state.categories.find(c=>c.id===id) || {id,label:id,symbol:'↗'}; }
   function color(n,id) { if (state.categories.some(c=>c.id===id)) n.style.setProperty('--cat',`var(--${id})`); }
@@ -38,18 +39,23 @@
   }
   function checkManifest(m) {
     if (!m || m.version !== 1 || !Array.isArray(m.editions)) throw Error('Indice delle edizioni non valido.');
-    const dates = m.editions.map(e=>e.date);
-    if (new Set(dates).size !== dates.length || !dates.every(d=>datePattern.test(d))) throw Error('Date non valide nell’indice.');
-    if (dates.length && (!dates.includes(m.latest) || m.latest !== [...dates].sort().at(-1))) throw Error('L’ultima edizione non coincide con l’indice.');
-    for (const e of m.editions) if (e.path !== `data/daily/${e.date}.json`) throw Error('Percorso edizione non valido.');
-    m.editions.sort((a,b)=>b.date.localeCompare(a.date));return m;
+    const keys = m.editions.map(editionKey);
+    if (new Set(keys).size !== keys.length || !m.editions.every(e=>datePattern.test(e.date))) throw Error('Date non valide nell’indice.');
+    for (const e of m.editions) {
+      const initial = e.kind === 'bootstrap' && editionKey(e) === `${e.date}-initial`;
+      if (editionKey(e) !== e.date && !initial) throw Error('Identificatore edizione non valido.');
+      if (e.path !== `data/${initial?'initial':'daily'}/${e.date}.json`) throw Error('Percorso edizione non valido.');
+    }
+    m.editions.sort((a,b)=>(b.generated_at||b.date).localeCompare(a.generated_at||a.date));
+    if (keys.length && m.latest !== editionKey(m.editions[0])) throw Error('L’ultima edizione non coincide con l’indice.');
+    return m;
   }
   function getDay(date) {
     if (!state.cache.has(date)) {
-      const entry = state.manifest.editions.find(e=>e.date===date);
+      const entry = state.manifest.editions.find(e=>editionKey(e)===date);
       if (!entry) return Promise.reject(Error('Edizione non presente nell’archivio.'));
       const promise = fetchJson(entry.path).then(d=>{
-        if (d.version!==1 || d.date!==date || !Array.isArray(d.items) || !d.items.every(i=>validId(i.id)&&validId(i.event_id)&&Array.isArray(i.sources)&&i.sources.length)) throw Error('Dati dell’edizione non validi.');
+        if (d.version!==1 || d.date!==entry.date || editionKey(d)!==date || !Array.isArray(d.items) || !d.items.every(i=>validId(i.id)&&validId(i.event_id)&&Array.isArray(i.sources)&&i.sources.length)) throw Error('Dati dell’edizione non validi.');
         return d;
       }).catch(e=>{state.cache.delete(date);throw e;});
       state.cache.set(date,promise);
@@ -103,16 +109,25 @@
   }
   async function readRoute() {
     const u=new URL(location.href);const requested=u.searchParams.get('date');
-    const known=state.manifest.editions.some(e=>e.date===requested);
+    const known=state.manifest.editions.some(e=>editionKey(e)===requested);
     state.mode=u.searchParams.get('scope')==='archive'?'archive':'edition';state.q=u.searchParams.get('q')||'';
     state.category=state.categories.some(c=>c.id===u.searchParams.get('category'))?u.searchParams.get('category'):'all';
     state.saved=u.searchParams.get('saved')==='1';state.unread=u.searchParams.get('unread')==='1';state.limit=24;
-    await navigate(known?requested:state.manifest.latest,{url:false,reset:false});
+    let target = known?requested:state.manifest.latest;
+    const article = u.hash.slice(1);
+    if (validId(article)) {
+      const selected = await getDay(target);
+      if (!selected.items.some(i=>i.id===article)) {
+        const indexed = (await getSearch()).find(i=>i.id===article);
+        if (indexed) target=indexed.edition;
+      }
+    }
+    await navigate(target,{url:false,reset:false});
     if(requested&&!known)toast('Questa data non è in archivio: è stata aperta l’ultima edizione.');
   }
   function renderHeader() {
-    const d=state.day, all=state.manifest.editions, i=all.findIndex(e=>e.date===state.date), isLatest=state.date===state.manifest.latest;
-    $('date-label').textContent=fmt(d.date,{day:'numeric',month:'long',year:'numeric'});
+    const d=state.day, all=state.manifest.editions, i=all.findIndex(e=>editionKey(e)===state.date), isLatest=state.date===state.manifest.latest;
+    $('date-label').textContent=fmt(d.date,{day:'numeric',month:'long',year:'numeric'})+(d.kind==='bootstrap'?' · iniziale':'');
     $('latest-label').textContent=fmt(state.manifest.latest,{day:'numeric',month:'long',year:'numeric'});
     $('archive-total').textContent=all.length;$('edition-number').textContent=String(all.length-i).padStart(2,'0');$('stamp-date').textContent=fmt(d.date,{day:'2-digit',month:'short',year:'numeric'});
     $('edition-label').textContent=isLatest?'LA TUA RASSEGNA PERSONALE':'DAL TUO ARCHIVIO';
@@ -146,6 +161,13 @@
     }
   }
   function articleImage(url,alt,onError) {const img=node('img');img.loading='lazy';img.decoding='async';img.referrerPolicy='no-referrer';img.alt=alt||'';img.onerror=()=>{img.remove();onError?.();};img.src=url;return img;}
+  function openImage(image) {
+    if (!https(image?.url)) return;
+    $('full-image').src=image.url;$('full-image').alt=image.alt||'';
+    $('image-caption').textContent=[image.alt,image.credit].filter(Boolean).join(' · ');
+    $('image-source').href=https(image.source_url)||image.url;
+    $('image-dialog').showModal();
+  }
   function renderHighlights() {
     const items=state.day.items.filter(i=>i.featured).slice(0,3);$('highlights').hidden=!items.length || state.mode==='archive';const grid=$('highlight-grid');grid.replaceChildren();
     if(!items.length)return;
@@ -169,11 +191,11 @@
       if(state.mode==='archive') {
         const indexed=(await getSearch()).filter(matches);total=indexed.length;const page=indexed.slice(0,state.limit);
         const dates=[...new Set(page.map(i=>i.edition))];const days=await Promise.all(dates.map(getDay));
-        const byId=new Map(days.flatMap(d=>d.items.map(i=>[i.id,{...i,edition:d.date}])));rows=page.map(i=>byId.get(i.id)).filter(Boolean);
+        const byId=new Map(days.flatMap(d=>d.items.map(i=>[i.id,{...i,edition:editionKey(d)}])));rows=page.map(i=>byId.get(i.id)).filter(Boolean);
         if(rows.length!==page.length)throw Error('L’indice di ricerca non è allineato alle edizioni. Esegui tools/news.py rebuild.');
-      } else {const all=state.day.items.filter(matches);total=all.length;rows=all.slice(0,state.limit).map(i=>({...i,edition:state.day.date}));}
+      } else {const all=state.day.items.filter(matches);total=all.length;rows=all.slice(0,state.limit).map(i=>({...i,edition:editionKey(state.day)}));}
       if(ticket!==state.render)return;
-      state.visible=rows;$('cards').replaceChildren(...rows.map(createCard));$('cards').setAttribute('aria-busy','false');$('read-all').disabled=!rows.length;
+      $('error').hidden=true;state.visible=rows;$('cards').replaceChildren(...rows.map(createCard));$('cards').setAttribute('aria-busy','false');$('read-all').disabled=!rows.length;
       $('result-count').textContent=`${rows.length}${total>rows.length?' di '+total:''} notizi${rows.length===1?'a':'e'}`;
       $('feed-heading').textContent=state.mode==='archive'?(state.saved?'Le tue notizie salvate':'Cerca nel tuo archivio'):(state.date===state.manifest.latest?'News recenti':'News di questa edizione');
       $('empty').hidden=rows.length>0;$('empty-title').textContent=state.saved?'Nessuna notizia salvata con questi filtri.':'Nessuna notizia da mostrare.';
@@ -185,7 +207,15 @@
     const n=$('card-template').content.firstElementChild.cloneNode(true);n.id=item.id;n.dataset.id=item.id;color(n,item.category);n.classList.toggle('is-read',state.read.has(item.id));
     n.querySelector('.placeholder-label').textContent=category(item.category).label;n.querySelector('.placeholder-symbol').textContent=category(item.category).symbol||'↗';
     const img=n.querySelector('.article-image');
-    if(prefs.images&&https(item.image?.url)){img.src=item.image.url;img.alt=item.image.alt||'';n.querySelector('.media-credit').textContent=item.image.credit||'';img.onerror=()=>{img.remove();n.querySelector('.media-credit').textContent='';};}else img.remove();
+    if(prefs.images&&https(item.image?.url)){
+      img.alt=item.image.alt||'';
+      n.querySelector('.media-credit').textContent=item.image.credit||'';
+      const zoom=node('button','image-expand','⛶');zoom.type='button';zoom.title='Visualizza immagine completa';zoom.setAttribute('aria-label','Visualizza immagine completa');
+      zoom.onclick=()=>openImage(item.image);
+      n.querySelector('.card-media').append(zoom);
+      img.onerror=()=>{img.remove();zoom.remove();n.querySelector('.media-credit').textContent='';};
+      img.src=item.image.url;
+    }else img.remove();
     const meta=n.querySelector('.card-kicker');meta.append(node('span','card-category',category(item.category).label),node('span',`badge${item.status==='UPDATE'?' update':''}`,item.status==='UPDATE'?'Aggiornamento':'Nuova'),node('span','',item.published_date?`Fonte · ${fmt(item.published_date,{day:'numeric',month:'short',year:'numeric'})}`:'Fonte · data non dichiarata'));
     if(state.mode==='archive')meta.append(node('span','',`Edizione · ${fmt(item.edition,{day:'numeric',month:'short',year:'numeric'})}`));
     n.querySelector('.card-title').textContent=item.title;n.querySelector('.card-summary').textContent=item.summary;n.querySelector('.why p').textContent=item.why_you_care;
@@ -209,12 +239,12 @@
   function openArchive() {if(!state.manifest)return;renderArchive();$('archive-dialog').showModal();}
   function renderArchive() {
     const month=$('archive-month').value;const entries=state.manifest.editions.filter(d=>!month||d.date.startsWith(month));$('archive-list').replaceChildren();
-    for(const e of entries){const b=node('button',`archive-item${e.date===state.date?' current':''}`);b.type='button';const text=node('span');text.append(node('strong','',fmt(e.date,{weekday:'long',day:'numeric',month:'long',year:'numeric'})),node('small','',e.title));b.append(text,node('span','counter',`${e.count} news`));b.onclick=()=>{$('archive-dialog').close();navigate(e.date);};$('archive-list').append(b);}
+    for(const e of entries){const b=node('button',`archive-item${editionKey(e)===state.date?' current':''}`);b.type='button';const text=node('span');text.append(node('strong','',fmt(e.date,{weekday:'long',day:'numeric',month:'long',year:'numeric'})),node('small','',e.title));b.append(text,node('span','counter',`${e.count} news`));b.onclick=()=>{$('archive-dialog').close();navigate(editionKey(e));};$('archive-list').append(b);}
     $('archive-help').textContent=entries.length?`${entries.length} edizion${entries.length===1?'e disponibile':'i disponibili'}. Non vengono create giornate fittizie per riempire lo storico.`:'Nessuna edizione in questo mese.';
   }
   function latest() {if(state.manifest?.latest){$('new-edition').hidden=true;navigate(state.manifest.latest);}}
   function saved() {if(!state.day)return;state.mode='archive';clearFilters();state.saved=true;filtersChanged();$('feed').scrollIntoView();}
-  function adjacent(direction) {if(!state.day)return;const i=state.manifest.editions.findIndex(e=>e.date===state.date);const next=state.manifest.editions[i+direction];if(next)navigate(next.date);}
+  function adjacent(direction) {if(!state.day)return;const i=state.manifest.editions.findIndex(e=>editionKey(e)===state.date);const next=state.manifest.editions[i+direction];if(next)navigate(editionKey(next));}
   async function checkFreshness() {
     if(document.hidden||!state.manifest)return;
     try {const m=checkManifest(await fetchJson('data/index.json'));if(m.updated_at!==state.manifest.updated_at){state.manifest=m;state.cache.clear();state.search=null;state.searchPromise=null;$('new-edition').hidden=false;$('latest-label').textContent=fmt(m.latest,{day:'numeric',month:'long',year:'numeric'});}}catch{/* Keep the current edition on transient network errors. */}

@@ -27,48 +27,9 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Test browser functionality
         run: python tests/browser_check.py
-      - name: Probe source previews and published site
+      - name: Test deployed Pages and real images
         if: always()
-        run: |
-          python - <<'PY'
-          import json, urllib.request, urllib.parse, concurrent.futures
-          from html.parser import HTMLParser
-          from pathlib import Path
-          class Metadata(HTMLParser):
-              def __init__(self): super().__init__(); self.meta={}; self.images=[]
-              def handle_starttag(self,tag,attrs):
-                  a=dict(attrs)
-                  if tag=='meta': self.meta[a.get('property',a.get('name',''))]=a.get('content','')
-                  if tag=='img' and len(self.images)<50: self.images.append({'src':a.get('src',a.get('data-src','')),'alt':a.get('alt','')})
-          def read(url):
-              req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (compatible; PersonalNewsVerification/1.0)'})
-              with urllib.request.urlopen(req,timeout=20) as r: return r.status,r.headers.get('content-type',''),r.read(8000000)
-          urls=['https://delevian.github.io/Personal-News/','https://help.openai.com/en/articles/6825453-chatgpt-release-notes','https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/','https://www.serebii.net/','https://www.serebii.net/news/2026/25-September-2026.shtml','https://www.serebii.net/news/2026/27-September-2026.shtml','https://news.xbox.com/en-us/2026/09/26/minecraft-dungeons-ii-the-sift-new-mechanics-better-exploration-and-more-official-xbox-podcast/','https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/']
-          for path in Path('docs/data').rglob('*.json'):
-              d=json.loads(path.read_text())
-              if 'generated_at' in d: urls.extend(s['url'] for i in d.get('items',[]) for s in i.get('sources',[]))
-          def probe(url):
-              out={'url':url}
-              try:
-                  status,kind,body=read(url);out.update(status=status,content_type=kind)
-                  parser=Metadata();parser.feed(body.decode('utf-8','replace'))
-                  out['metadata']={k:v for k,v in parser.meta.items() if k.startswith(('og:','twitter:','article:'))}
-                  out['images']=parser.images[:30]
-                  image=parser.meta.get('og:image',parser.meta.get('twitter:image'))
-                  if image:
-                      image=urllib.parse.urljoin(url,image)
-                      try:
-                          st,ct,b=read(image)
-                          from PIL import Image
-                          import io
-                          im=Image.open(io.BytesIO(b));im.load()
-                          out['image_check']={'url':image,'status':st,'type':ct,'size':im.size}
-                      except Exception as e:out['image_check']={'url':image,'error':str(e)}
-              except Exception as e:out['error']=str(e)
-              return out
-          for record in concurrent.futures.ThreadPoolExecutor(max_workers=6).map(probe,dict.fromkeys(urls)):
-              print('SOURCE_CHECK '+json.dumps(record,ensure_ascii=False))
-          PY
+        run: python tests/live_check.py
       - name: Save browser evidence
         if: always()
         uses: actions/upload-artifact@v4

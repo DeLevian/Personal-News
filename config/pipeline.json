@@ -5,13 +5,13 @@
   "second_brain_repository": "DeLevian/Second-Brain",
   "profile_path": "03_PROJECTS/Second-Brain-News/NEWS_PROFILE.md",
   "target_time": "07:00",
-  "schedule_status": "not_activated_by_this_project",
+  "schedule_status": "external_chatgpt_enabled_2026-09-27",
   "state_retention_days": 30,
   "state_max_events": 200,
   "default_window_hours": 24,
   "exceptional_lookback_hours": 72,
   "max_items": 12,
   "max_featured": 3,
-  "website_url": null,
-  "public_deploy_authorized": false
+  "website_url": "https://delevian.github.io/Personal-News/",
+  "public_deploy_authorized": true
 }

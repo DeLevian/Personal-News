@@ -1,11 +1,27 @@
 {
   "version": 1,
   "latest": "2026-09-27",
-  "updated_at": "2026-09-27T09:58:59+02:00",
+  "updated_at": "2026-09-27T12:32:43+02:00",
   "editions": [
     {
+      "id": "2026-09-27",
       "date": "2026-09-27",
-      "title": "Prima edizione · AI, coding e game development",
+      "generated_at": "2026-09-27T12:32:43+02:00",
+      "title": "27 settembre · Champions, AI e novità per giocare",
+      "kind": "daily",
+      "count": 6,
+      "categories": [
+        "ai",
+        "devices",
+        "gaming"
+      ],
+      "path": "data/daily/2026-09-27.json"
+    },
+    {
+      "id": "2026-09-27-initial",
+      "date": "2026-09-27",
+      "generated_at": "2026-09-27T09:58:59+02:00",
+      "title": "Selezione iniziale · 27 settembre, mattina",
       "kind": "bootstrap",
       "count": 6,
       "categories": [
@@ -13,7 +29,7 @@
         "ai",
         "gamedev"
       ],
-      "path": "data/daily/2026-09-27.json"
+      "path": "data/initial/2026-09-27.json"
     }
   ]
 }

@@ -1,191 +1,224 @@
 {
   "version": 1,
   "date": "2026-09-27",
-  "generated_at": "2026-09-27T09:58:59+02:00",
-  "kind": "bootstrap",
-  "title": "Prima edizione · AI, coding e game development",
-  "summary": "Un punto di partenza verificato: sei letture su modelli, agenti e strumenti per creare. Apri le fonti, salva ciò che conta, ritrovalo nel tempo.",
-  "note": "Articoli pubblicati tra il 16 e il 22 settembre 2026. Le prossime edizioni seguiranno la finestra editoriale ordinaria.",
+  "generated_at": "2026-09-27T12:32:43+02:00",
+  "kind": "daily",
+  "title": "27 settembre · Champions, AI e novità per giocare",
+  "summary": "Sei novità verificate: competitivo Champions, sicurezza di ChatGPT, Windows e nuove idee per gli action RPG. Solo ciò che aggiunge qualcosa al tuo archivio.",
+  "note": "Prova manuale del flusso giornaliero. Due notizie delle ultime 24 ore e quattro recuperi motivati entro 72 ore. Le categorie senza novità sufficientemente verificate non sono riempite. La selezione iniziale di stamattina resta nell’archivio.",
   "items": [
     {
-      "id": "2026-09-27-unity-codex-plugin",
-      "event_id": "unity-codex-plugin",
-      "category": "gamedev",
+      "id": "2026-09-27-champions-frankfurt-2026-day-two",
+      "event_id": "champions-frankfurt-2026-day-two",
+      "category": "gaming",
       "status": "NEW",
-      "title": "Unity porta le sue skill ufficiali dentro Codex",
-      "summary": "Unity ha presentato un plugin ufficiale per Codex con 31 skill iniziali, strumenti da terminale e compatibilità con Unity 6+. Le istruzioni coprono anche uGUI, 2D, URP, Web e localizzazione.",
-      "why_you_care": "È un’integrazione da valutare per affidare all’agente lavori Unity seguendo istruzioni specifiche dell’engine, non soltanto codice generico.",
-      "published_date": "2026-09-16",
-      "event_date": "2026-09-16",
-      "verified_at": "2026-09-27T09:58:59+02:00",
+      "title": "Pokémon Champions: oggi la seconda giornata dei Regionali di Francoforte",
+      "summary": "La seconda giornata dei Regionali di Francoforte comprende Pokémon Champions, oltre ai tornei TCG e GO. La diretta del videogioco è programmata dalle 09:00 italiane: la cronaca del 27 settembre rimanda all’hub delle trasmissioni.",
+      "why_you_care": "Una finestra sul competitivo di Champions: incontri e scelte di squadra da seguire senza mescolare le notizie degli altri giochi Pokémon.",
+      "published_date": "2026-09-27",
+      "event_date": "2026-09-27",
+      "verified_at": "2026-09-27T12:32:43+02:00",
       "featured": true,
       "tags": [
-        "Unity",
-        "Codex",
-        "skill",
-        "vibe coding"
+        "Pokémon Champions",
+        "competitivo",
+        "Regionali",
+        "diretta"
       ],
       "sources": [
         {
-          "name": "Unity",
-          "type": "official",
-          "url": "https://unity.com/blog/unity-plugin-codex"
+          "name": "Serebii · cronaca del 27 settembre",
+          "type": "reputable",
+          "url": "https://www.serebii.net/news/2026/27-September-2026.shtml"
         }
       ],
       "image": {
-        "url": "https://cdn.sanity.io/images/fuvbjjlp/production/5bfb3c0c4469ae972d77eeeb73db7439de75abbf-1825x1026.png",
-        "alt": "Banner ufficiale con i loghi Unity e OpenAI",
-        "credit": "Unity Technologies",
-        "source_url": "https://unity.com/blog/unity-plugin-codex",
-        "verification": "URL ricavato dalla pagina ufficiale; disponibilità HTTP dell’immagine non confermata in questa sessione. Nessuna copia locale."
-      }
+        "url": "https://www.serebii.net/regionals24.jpg",
+        "alt": "Banner dei Pokémon Regional Championships usato dalla fonte; non una fotografia di Francoforte",
+        "credit": "The Pokémon Company · via Serebii",
+        "source_url": "https://www.serebii.net/news/2026/27-September-2026.shtml",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "published_at": "2026-09-27T07:00:00+01:00"
     },
     {
-      "id": "2026-09-27-pi-v0-87-1",
-      "event_id": "pi-v0-87-1",
-      "category": "agents",
-      "status": "NEW",
-      "title": "Pi Agent 0.87.1: supporto ai nuovi modelli",
-      "summary": "Le note di rilascio aggiungono supporto a GPT-6 Sol, GPT-6 Luna e Claude Opus 5.5 nei provider indicati. Per Sol e Luna sono citati sia le chiavi API OpenAI sia gli abbonamenti OpenAI Codex.",
-      "why_you_care": "È un cambiamento pertinente a chi usa Pi come interfaccia per il coding: disponibilità nell’agente e accesso del proprio account vanno comunque distinti.",
-      "published_date": "2026-09-22",
-      "event_date": "2026-09-22",
-      "verified_at": "2026-09-27T09:58:59+02:00",
-      "featured": true,
-      "tags": [
-        "Pi Agent",
-        "OpenAI Codex",
-        "Claude",
-        "release"
-      ],
-      "sources": [
-        {
-          "name": "Pi · release ufficiale",
-          "type": "official",
-          "url": "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
-        }
-      ],
-      "image": null
-    },
-    {
-      "id": "2026-09-27-gpt-6-sol-luna-launch",
-      "event_id": "gpt-6-sol-luna-launch",
+      "id": "2026-09-27-chatgpt-security-history-2026-09-25",
+      "event_id": "chatgpt-security-history-2026-09-25",
       "category": "ai",
       "status": "NEW",
-      "title": "GPT-6 Sol e Luna: nuovi modelli per il lavoro quotidiano",
-      "summary": "OpenAI ha annunciato Sol e Luna come estensione della famiglia GPT-6, con enfasi su coding, lavoro professionale ed efficienza. L’articolo distingue l’accesso via API, Codex e ChatGPT Work dalla disponibilità nella chat.",
-      "why_you_care": "Per scegliere l’agente conviene confrontare risultati, costi e canale di accesso sul proprio compito, senza confondere prezzi API e quote dell’abbonamento.",
-      "published_date": "2026-09-22",
-      "event_date": "2026-09-22",
-      "verified_at": "2026-09-27T09:58:59+02:00",
+      "title": "ChatGPT aggiunge la cronologia degli accessi e della sicurezza",
+      "summary": "OpenAI introduce Security history: accessi, disconnessioni e modifiche a MFA, passkey e altre impostazioni. Sul web si trova in Settings → Security and login → Security history. Orario, località e dispositivo possono essere approssimativi o non disponibili.",
+      "why_you_care": "È una novità pratica per tenere sotto controllo l’account usato con ChatGPT e strumenti collegati; non è un annuncio di un nuovo modello.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T12:32:43+02:00",
       "featured": true,
       "tags": [
+        "ChatGPT",
+        "sicurezza account",
         "OpenAI",
-        "GPT-6",
-        "Sol",
-        "Luna"
+        "passkey"
       ],
       "sources": [
         {
-          "name": "OpenAI",
+          "name": "OpenAI · release notes",
           "type": "official",
-          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
-        }
-      ],
-      "image": null
-    },
-    {
-      "id": "2026-09-27-unity-6-6-content-directories",
-      "event_id": "unity-6-6-content-directories",
-      "category": "gamedev",
-      "status": "NEW",
-      "title": "Unity 6.6: caricamento più granulare degli asset",
-      "summary": "Unity introduce le content directories come alternativa agli AssetBundle distribuiti con il Player. Il sistema permette di caricare e scaricare singoli artefatti e introduce deduplicazione dei contenuti; la distribuzione remota più granulare è descritta come sviluppo successivo.",
-      "why_you_care": "È un approfondimento pertinente alla gestione di memoria e dimensione dei giochi; l’idoneità ai singoli target va verificata nella documentazione.",
-      "published_date": "2026-09-22",
-      "event_date": "2026-09-22",
-      "verified_at": "2026-09-27T09:58:59+02:00",
-      "featured": false,
-      "tags": [
-        "Unity 6.6",
-        "asset",
-        "memoria",
-        "Addressables"
-      ],
-      "sources": [
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
         {
-          "name": "Unity",
+          "name": "OpenAI · guida alla sicurezza dell’account",
           "type": "official",
-          "url": "https://unity.com/blog/content-directories-beyond-the-assetbundle"
+          "url": "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
         }
       ],
       "image": {
-        "url": "https://cdn.sanity.io/images/fuvbjjlp/production/47c76e75822126a1cd7ec77bd22b086a379f379a-1200x676.png",
-        "alt": "Illustrazione ufficiale delle content directories in Unity 6.6",
-        "credit": "Unity Technologies",
-        "source_url": "https://unity.com/blog/content-directories-beyond-the-assetbundle",
-        "verification": "URL ricavato dalla pagina ufficiale; disponibilità HTTP dell’immagine non confermata in questa sessione. Nessuna copia locale."
-      }
+        "url": "https://help.openai.com/favicon.png",
+        "alt": "Logo OpenAI presente nella guida: immagine identificativa della fonte, non schermata della nuova funzione",
+        "credit": "OpenAI · logo della fonte",
+        "source_url": "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "recency_reason": "Recupero entro 72 ore: funzione nuova di sicurezza direttamente pertinente all’uso di ChatGPT, non presente nelle edizioni precedenti."
     },
     {
-      "id": "2026-09-27-claude-opus-5-5-launch",
-      "event_id": "claude-opus-5-5-launch",
-      "category": "ai",
+      "id": "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "event_id": "minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "category": "gaming",
       "status": "NEW",
-      "title": "Claude Opus 5.5 punta su coding ed efficienza",
-      "summary": "Anthropic presenta Opus 5.5 come aggiornamento per attività complesse, coding e lavoro professionale. Il produttore dichiara minori costi sui propri carichi di prova e una generazione più veloce rispetto a Opus 5: sono risultati del fornitore, non una misura sui tuoi progetti.",
-      "why_you_care": "È un’alternativa da confrontare con gli altri modelli sugli stessi task di sviluppo, considerando qualità, iterazioni necessarie e consumo effettivo.",
-      "published_date": "2026-09-22",
-      "event_date": "2026-09-22",
-      "verified_at": "2026-09-27T09:58:59+02:00",
-      "featured": false,
+      "title": "Action RPG: Minecraft Dungeons II racconta il nuovo sistema di esplorazione",
+      "summary": "Nel podcast ufficiale del 26 settembre, Mojang descrive un mondo interconnesso, il salto per esplorare spazi verticali e nuovi sistemi di equipaggiamento. L’intervista approfondisce come queste scelte cambino esplorazione e personalizzazione del combattimento.",
+      "why_you_care": "Entra nel radar per il genere action RPG e le build, non perché Minecraft sia stato aggiunto ai tre giochi monitorati per nome.",
+      "published_date": "2026-09-26",
+      "event_date": "2026-09-26",
+      "verified_at": "2026-09-27T12:32:43+02:00",
+      "featured": true,
       "tags": [
-        "Claude",
-        "Opus 5.5",
-        "coding",
-        "efficienza"
+        "action RPG",
+        "build",
+        "esplorazione",
+        "cooperativa"
       ],
       "sources": [
         {
-          "name": "Anthropic",
+          "name": "Xbox Wire · intervista a Mojang",
           "type": "official",
-          "url": "https://www.anthropic.com/claude-opus-5-5"
-        }
-      ],
-      "image": null
-    },
-    {
-      "id": "2026-09-27-deep-rock-survivor-mobile-optimization",
-      "event_id": "deep-rock-survivor-mobile-optimization",
-      "category": "gamedev",
-      "status": "NEW",
-      "title": "Dal PC al mobile: le lezioni di Deep Rock Galactic: Survivor",
-      "summary": "Unity racconta il lavoro di Piktiv sul port mobile: ripensare navigazione, rendering e uso della memoria, misurando le prestazioni con scenari automatizzati. È un approfondimento tecnico, non l’annuncio di una nuova uscita di oggi.",
-      "why_you_care": "Offre esempi concreti per ragionare sui limiti dei dispositivi mobili e sulla verifica delle prestazioni, anche senza replicare l’architettura del gioco.",
-      "published_date": "2026-09-18",
-      "event_date": "2026-09-18",
-      "verified_at": "2026-09-27T09:58:59+02:00",
-      "featured": false,
-      "tags": [
-        "ottimizzazione",
-        "mobile",
-        "Unity",
-        "game design"
-      ],
-      "sources": [
-        {
-          "name": "Unity · intervista a Piktiv",
-          "type": "official",
-          "url": "https://unity.com/blog/optimizing-deep-rock-galactic-survivor-for-mobile"
+          "url": "https://news.xbox.com/en-us/2026/09/26/minecraft-dungeons-ii-the-sift-new-mechanics-better-exploration-and-more-official-xbox-podcast/"
         }
       ],
       "image": {
-        "url": "https://cdn.sanity.io/images/fuvbjjlp/production/5bc1d57547841018c68bc6125d8b386e09e00bbb-3840x2048.jpg",
-        "alt": "Artwork ufficiale di Deep Rock Galactic: Survivor",
-        "credit": "Funday Games / Unity",
-        "source_url": "https://unity.com/blog/optimizing-deep-rock-galactic-survivor-for-mobile",
-        "verification": "URL ricavato dalla pagina ufficiale; disponibilità HTTP dell’immagine non confermata in questa sessione. Nessuna copia locale."
-      }
+        "url": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/09/Wire_EP286-3c39b574eab193c9cbae.jpg",
+        "alt": "Banner di Minecraft Dungeons II per il podcast ufficiale Xbox",
+        "credit": "Xbox / Mojang",
+        "source_url": "https://news.xbox.com/en-us/2026/09/26/minecraft-dungeons-ii-the-sift-new-mechanics-better-exploration-and-more-official-xbox-podcast/",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "published_at": "2026-09-26T18:00:00+00:00"
+    },
+    {
+      "id": "2026-09-27-champions-global-challenge-2027-i-battles",
+      "event_id": "champions-global-challenge-2027-i-battles",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Champions: la Global Challenge 2027 I si chiude nella notte",
+      "summary": "Sono in corso le lotte in doppio con regolamento M-C. La finestra di gioco termina il 28 settembre alle 03:59 italiane; chi completa almeno tre incontri riceve Archaludon. La notizia riguarda la fase di lotta: non implica che le iscrizioni siano ancora aperte.",
+      "why_you_care": "Una scadenza concreta per chi è già iscritto, con regolamento e ricompensa da controllare prima della chiusura.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T12:32:43+02:00",
+      "featured": false,
+      "tags": [
+        "Pokémon Champions",
+        "Global Challenge",
+        "regolamento M-C",
+        "scadenza"
+      ],
+      "sources": [
+        {
+          "name": "Serebii · cronaca del 25 settembre",
+          "type": "reputable",
+          "url": "https://www.serebii.net/news/2026/25-September-2026.shtml"
+        }
+      ],
+      "image": {
+        "url": "https://www.serebii.net/pokemonchampions/onlinecompetitions/globalchallenge2027i.jpg",
+        "alt": "Banner ufficiale Global Challenge 2027 I",
+        "credit": "The Pokémon Company · via Serebii",
+        "source_url": "https://www.serebii.net/news/2026/25-September-2026.shtml",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "recency_reason": "Recupero entro 72 ore: evento del gioco esplicitamente seguito e finestra di lotta ancora attiva, prossima alla chiusura.",
+      "published_at": "2026-09-25T03:00:00+01:00"
+    },
+    {
+      "id": "2026-09-27-windows-insider-2026-09-25-phone-companion",
+      "event_id": "windows-insider-2026-09-25-phone-companion",
+      "category": "devices",
+      "status": "NEW",
+      "title": "Windows Insider: più attività dello smartphone nel menu Start",
+      "summary": "Le build del 25 settembre aggiornano i canali Beta ed Experimental. In Experimental, Phone companion mostra più attività recenti in un pannello scorrevole; arrivano anche suggerimenti energetici nelle impostazioni rapide. Sono funzioni in anteprima, non un rilascio generale per tutti i PC.",
+      "why_you_care": "Rilevante per l’integrazione Windows–smartphone. La notizia non è un invito a installare build sperimentali sul computer principale.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T12:32:43+02:00",
+      "featured": false,
+      "tags": [
+        "Windows 11",
+        "Android",
+        "Phone companion",
+        "Insider"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft · Windows Insider",
+          "type": "official",
+          "url": "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
+        }
+      ],
+      "image": {
+        "url": "https://winblogs.thesourcemediaassets.com/sites/44/2026/09/9d-startmenu-phonecompanion.png",
+        "alt": "Schermata ufficiale del menu Start con il pannello scorrevole Phone companion",
+        "credit": "Microsoft",
+        "source_url": "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "recency_reason": "Recupero entro 72 ore: integrazione fra Windows e smartphone pertinente ai dispositivi seguiti, non già segnalata.",
+      "published_at": "2026-09-25T17:02:08+00:00"
+    },
+    {
+      "id": "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "event_id": "xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "RPG e recuperi dal passato: cosa arriva su Xbox la prossima settimana",
+      "summary": "Il calendario Xbox del 25 settembre segnala Gothic II Complete Classic e l’RPG gestionale Keep Driving per il 28 settembre, oltre a Dynasty Warriors 3: Complete Edition Remastered per il 1º ottobre. Sono date annunciate per Xbox, soggette a variazioni.",
+      "why_you_care": "Una selezione per generi e retrogaming: recuperi di catalogo, progressione e scelte di gioco, senza trasformare ogni titolo in una watchlist individuale.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T12:32:43+02:00",
+      "featured": false,
+      "tags": [
+        "Xbox",
+        "RPG",
+        "retrogaming",
+        "riedizioni",
+        "uscite"
+      ],
+      "sources": [
+        {
+          "name": "Xbox Wire · calendario ufficiale",
+          "type": "official",
+          "url": "https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/"
+        }
+      ],
+      "image": {
+        "url": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/09/NWOX_HERO_JPG-77b9d7d8c68d7f8d346a.jpg",
+        "alt": "Banner della rassegna Xbox: uscite dal 28 settembre al 2 ottobre",
+        "credit": "Xbox Wire",
+        "source_url": "https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "recency_reason": "Recupero entro 72 ore: calendario imminente delle uscite per console, con selezione mirata a RPG e retrogaming.",
+      "published_at": "2026-09-25T14:00:00+00:00"
     }
   ]
 }

@@ -46,3 +46,7 @@ Non inviare tutto il testo della newsletter in chat.
 
 ## Pianificazione
 Questi file non avviano automaticamente alcun job. La pianificazione delle 07:00 è esterna e deve essere verificata/attivata separatamente con gli strumenti disponibili e l'autorizzazione dell'utente.
+
+## Sito pubblico e archivio iniziale (2026-09-27)
+L’utente ha autorizzato e attivato Pages; `website_url` contiene il link effettivo. Riutilizzarlo nella notifica. La selezione iniziale del mattino è stata preservata in `docs/data/initial/2026-09-27.json` (edition_id distinto, stessa data reale). Non modificarla nelle run ordinarie. Il rebuild include sia daily sia initial.
+Non assumere che un og:image sia corretto: controllare protocollo, contenuto e caricamento. Le immagini generiche/loghi sono indicate come tali, non fotografie della notizia. I test live fanno fallire la verifica se una preview configurata non si carica.

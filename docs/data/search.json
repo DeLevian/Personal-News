@@ -2,9 +2,57 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-09-27-champions-frankfurt-2026-day-two",
+      "event_id": "champions-frankfurt-2026-day-two",
+      "edition": "2026-09-27",
+      "category": "gaming",
+      "title": "Pokémon Champions: oggi la seconda giornata dei Regionali di Francoforte",
+      "search_text": "Pokémon Champions: oggi la seconda giornata dei Regionali di Francoforte La seconda giornata dei Regionali di Francoforte comprende Pokémon Champions, oltre ai tornei TCG e GO. La diretta del videogioco è programmata dalle 09:00 italiane: la cronaca del 27 settembre rimanda all’hub delle trasmissioni. Una finestra sul competitivo di Champions: incontri e scelte di squadra da seguire senza mescolare le notizie degli altri giochi Pokémon. Pokémon Champions competitivo Regionali diretta Serebii · cronaca del 27 settembre"
+    },
+    {
+      "id": "2026-09-27-chatgpt-security-history-2026-09-25",
+      "event_id": "chatgpt-security-history-2026-09-25",
+      "edition": "2026-09-27",
+      "category": "ai",
+      "title": "ChatGPT aggiunge la cronologia degli accessi e della sicurezza",
+      "search_text": "ChatGPT aggiunge la cronologia degli accessi e della sicurezza OpenAI introduce Security history: accessi, disconnessioni e modifiche a MFA, passkey e altre impostazioni. Sul web si trova in Settings → Security and login → Security history. Orario, località e dispositivo possono essere approssimativi o non disponibili. È una novità pratica per tenere sotto controllo l’account usato con ChatGPT e strumenti collegati; non è un annuncio di un nuovo modello. ChatGPT sicurezza account OpenAI passkey OpenAI · release notes OpenAI · guida alla sicurezza dell’account"
+    },
+    {
+      "id": "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "event_id": "minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "edition": "2026-09-27",
+      "category": "gaming",
+      "title": "Action RPG: Minecraft Dungeons II racconta il nuovo sistema di esplorazione",
+      "search_text": "Action RPG: Minecraft Dungeons II racconta il nuovo sistema di esplorazione Nel podcast ufficiale del 26 settembre, Mojang descrive un mondo interconnesso, il salto per esplorare spazi verticali e nuovi sistemi di equipaggiamento. L’intervista approfondisce come queste scelte cambino esplorazione e personalizzazione del combattimento. Entra nel radar per il genere action RPG e le build, non perché Minecraft sia stato aggiunto ai tre giochi monitorati per nome. action RPG build esplorazione cooperativa Xbox Wire · intervista a Mojang"
+    },
+    {
+      "id": "2026-09-27-champions-global-challenge-2027-i-battles",
+      "event_id": "champions-global-challenge-2027-i-battles",
+      "edition": "2026-09-27",
+      "category": "gaming",
+      "title": "Champions: la Global Challenge 2027 I si chiude nella notte",
+      "search_text": "Champions: la Global Challenge 2027 I si chiude nella notte Sono in corso le lotte in doppio con regolamento M-C. La finestra di gioco termina il 28 settembre alle 03:59 italiane; chi completa almeno tre incontri riceve Archaludon. La notizia riguarda la fase di lotta: non implica che le iscrizioni siano ancora aperte. Una scadenza concreta per chi è già iscritto, con regolamento e ricompensa da controllare prima della chiusura. Pokémon Champions Global Challenge regolamento M-C scadenza Serebii · cronaca del 25 settembre"
+    },
+    {
+      "id": "2026-09-27-windows-insider-2026-09-25-phone-companion",
+      "event_id": "windows-insider-2026-09-25-phone-companion",
+      "edition": "2026-09-27",
+      "category": "devices",
+      "title": "Windows Insider: più attività dello smartphone nel menu Start",
+      "search_text": "Windows Insider: più attività dello smartphone nel menu Start Le build del 25 settembre aggiornano i canali Beta ed Experimental. In Experimental, Phone companion mostra più attività recenti in un pannello scorrevole; arrivano anche suggerimenti energetici nelle impostazioni rapide. Sono funzioni in anteprima, non un rilascio generale per tutti i PC. Rilevante per l’integrazione Windows–smartphone. La notizia non è un invito a installare build sperimentali sul computer principale. Windows 11 Android Phone companion Insider Microsoft · Windows Insider"
+    },
+    {
+      "id": "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "event_id": "xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "edition": "2026-09-27",
+      "category": "gaming",
+      "title": "RPG e recuperi dal passato: cosa arriva su Xbox la prossima settimana",
+      "search_text": "RPG e recuperi dal passato: cosa arriva su Xbox la prossima settimana Il calendario Xbox del 25 settembre segnala Gothic II Complete Classic e l’RPG gestionale Keep Driving per il 28 settembre, oltre a Dynasty Warriors 3: Complete Edition Remastered per il 1º ottobre. Sono date annunciate per Xbox, soggette a variazioni. Una selezione per generi e retrogaming: recuperi di catalogo, progressione e scelte di gioco, senza trasformare ogni titolo in una watchlist individuale. Xbox RPG retrogaming riedizioni uscite Xbox Wire · calendario ufficiale"
+    },
+    {
       "id": "2026-09-27-unity-codex-plugin",
       "event_id": "unity-codex-plugin",
-      "edition": "2026-09-27",
+      "edition": "2026-09-27-initial",
       "category": "gamedev",
       "title": "Unity porta le sue skill ufficiali dentro Codex",
       "search_text": "Unity porta le sue skill ufficiali dentro Codex Unity ha presentato un plugin ufficiale per Codex con 31 skill iniziali, strumenti da terminale e compatibilità con Unity 6+. Le istruzioni coprono anche uGUI, 2D, URP, Web e localizzazione. È un’integrazione da valutare per affidare all’agente lavori Unity seguendo istruzioni specifiche dell’engine, non soltanto codice generico. Unity Codex skill vibe coding Unity"
@@ -12,7 +60,7 @@
     {
       "id": "2026-09-27-pi-v0-87-1",
       "event_id": "pi-v0-87-1",
-      "edition": "2026-09-27",
+      "edition": "2026-09-27-initial",
       "category": "agents",
       "title": "Pi Agent 0.87.1: supporto ai nuovi modelli",
       "search_text": "Pi Agent 0.87.1: supporto ai nuovi modelli Le note di rilascio aggiungono supporto a GPT-6 Sol, GPT-6 Luna e Claude Opus 5.5 nei provider indicati. Per Sol e Luna sono citati sia le chiavi API OpenAI sia gli abbonamenti OpenAI Codex. È un cambiamento pertinente a chi usa Pi come interfaccia per il coding: disponibilità nell’agente e accesso del proprio account vanno comunque distinti. Pi Agent OpenAI Codex Claude release Pi · release ufficiale"
@@ -20,7 +68,7 @@
     {
       "id": "2026-09-27-gpt-6-sol-luna-launch",
       "event_id": "gpt-6-sol-luna-launch",
-      "edition": "2026-09-27",
+      "edition": "2026-09-27-initial",
       "category": "ai",
       "title": "GPT-6 Sol e Luna: nuovi modelli per il lavoro quotidiano",
       "search_text": "GPT-6 Sol e Luna: nuovi modelli per il lavoro quotidiano OpenAI ha annunciato Sol e Luna come estensione della famiglia GPT-6, con enfasi su coding, lavoro professionale ed efficienza. L’articolo distingue l’accesso via API, Codex e ChatGPT Work dalla disponibilità nella chat. Per scegliere l’agente conviene confrontare risultati, costi e canale di accesso sul proprio compito, senza confondere prezzi API e quote dell’abbonamento. OpenAI GPT-6 Sol Luna OpenAI"
@@ -28,7 +76,7 @@
     {
       "id": "2026-09-27-unity-6-6-content-directories",
       "event_id": "unity-6-6-content-directories",
-      "edition": "2026-09-27",
+      "edition": "2026-09-27-initial",
       "category": "gamedev",
       "title": "Unity 6.6: caricamento più granulare degli asset",
       "search_text": "Unity 6.6: caricamento più granulare degli asset Unity introduce le content directories come alternativa agli AssetBundle distribuiti con il Player. Il sistema permette di caricare e scaricare singoli artefatti e introduce deduplicazione dei contenuti; la distribuzione remota più granulare è descritta come sviluppo successivo. È un approfondimento pertinente alla gestione di memoria e dimensione dei giochi; l’idoneità ai singoli target va verificata nella documentazione. Unity 6.6 asset memoria Addressables Unity"
@@ -36,7 +84,7 @@
     {
       "id": "2026-09-27-claude-opus-5-5-launch",
       "event_id": "claude-opus-5-5-launch",
-      "edition": "2026-09-27",
+      "edition": "2026-09-27-initial",
       "category": "ai",
       "title": "Claude Opus 5.5 punta su coding ed efficienza",
       "search_text": "Claude Opus 5.5 punta su coding ed efficienza Anthropic presenta Opus 5.5 come aggiornamento per attività complesse, coding e lavoro professionale. Il produttore dichiara minori costi sui propri carichi di prova e una generazione più veloce rispetto a Opus 5: sono risultati del fornitore, non una misura sui tuoi progetti. È un’alternativa da confrontare con gli altri modelli sugli stessi task di sviluppo, considerando qualità, iterazioni necessarie e consumo effettivo. Claude Opus 5.5 coding efficienza Anthropic"
@@ -44,7 +92,7 @@
     {
       "id": "2026-09-27-deep-rock-survivor-mobile-optimization",
       "event_id": "deep-rock-survivor-mobile-optimization",
-      "edition": "2026-09-27",
+      "edition": "2026-09-27-initial",
       "category": "gamedev",
       "title": "Dal PC al mobile: le lezioni di Deep Rock Galactic: Survivor",
       "search_text": "Dal PC al mobile: le lezioni di Deep Rock Galactic: Survivor Unity racconta il lavoro di Piktiv sul port mobile: ripensare navigazione, rendering e uso della memoria, misurando le prestazioni con scenari automatizzati. È un approfondimento tecnico, non l’annuncio di una nuova uscita di oggi. Offre esempi concreti per ragionare sui limiti dei dispositivi mobili e sulla verifica delle prestazioni, anche senza replicare l’architettura del gioco. ottimizzazione mobile Unity game design Unity · intervista a Piktiv"

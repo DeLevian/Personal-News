@@ -21,7 +21,7 @@ def main():
         page=b.new_page(viewport={'width':1440,'height':1050},color_scheme='light')
         errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
         page.set_content(html)
-        page.add_style_tag(content=(ROOT/'docs/assets/styles.css').read_text())
+        page.add_style_tag(content=(ROOT/'docs/assets/styles.css').read_text()+'\n'+(ROOT/'docs/assets/media.css').read_text())
         page.evaluate('''data=>{
             const storage=new Map();
             Object.defineProperty(window,'localStorage',{value:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,String(v))}});
@@ -30,8 +30,8 @@ def main():
         }''',data)
         page.add_script_tag(content=(ROOT/'docs/assets/app.js').read_text())
         expect(page.locator('.card')).to_have_count(6)
-        expect(page.locator('#prev')).to_be_disabled();expect(page.locator('#next')).to_be_disabled()
-        page.locator('#search').fill('Pi Agent');expect(page.locator('.card')).to_have_count(1)
+        expect(page.locator('#prev')).to_be_enabled();expect(page.locator('#next')).to_be_disabled()
+        page.locator('#search').fill('ChatGPT');expect(page.locator('.card')).to_have_count(1)
         page.locator('#reset').click();expect(page.locator('.card')).to_have_count(6)
         page.locator('#chips button').filter(has_text='Microsoft').click();expect(page.locator('.card')).to_have_count(0)
         page.locator('#empty-reset').click();expect(page.locator('.card')).to_have_count(6)
@@ -50,7 +50,7 @@ def main():
         page.set_viewport_size({'width':390,'height':844});page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();page.keyboard.press('Escape')
         assert not errors,errors
         b.close()
-    result={'result':'passed','checks':['6-card initial render','single-edition boundaries','text search','category and empty state','saved filter','unread filter','archive search','return to latest','image error fallback','archive dialog','theme switching','5 responsive widths (320 to 1440)','mobile navigation','no JavaScript page errors'],'limitations':'In-memory fetch/storage/history doubles; not an HTTP end-to-end test. Live article images not loaded.'}
+    result={'result':'passed','checks':['6-card initial render','two-edition boundaries','text search','category and empty state','saved filter','unread filter','archive search','return to latest','image error fallback','archive dialog','theme switching','5 responsive widths (320 to 1440)','mobile navigation','no JavaScript page errors'],'limitations':'In-memory fetch/storage/history doubles; not an HTTP end-to-end test. Live article images not loaded.'}
     (out/'dom-results.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result,indent=2))
 if __name__=='__main__':main()

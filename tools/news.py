@@ -14,6 +14,14 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 ID = re.compile(r"^[a-z0-9][a-z0-9-]{0,159}$")
 DAY = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+def edition_key(d: dict) -> str:
+    return d.get("edition_id", d["date"])
+
+def edition_path(d: dict) -> str:
+    folder = "initial" if d.get("edition_id") else "daily"
+    return f"data/{folder}/{d['date']}.json"
+
 class Invalid(ValueError):
     pass
 
@@ -54,6 +62,8 @@ def validate_edition(d: dict, categories: set[str]) -> None:
     generated = timestamp(d.get("generated_at"))
     require(generated.date() == date_value, "generation date must match edition date")
     require(d.get("kind") in ("daily", "bootstrap"), "kind must be daily or bootstrap")
+    if "edition_id" in d:
+        require(d["kind"] == "bootstrap" and d["edition_id"] == d["date"]+"-initial", "only the preserved initial edition has a special id")
     require(text(d.get("title"), 160) and text(d.get("summary"), 700), "missing/oversized edition title or summary")
     require(isinstance(d.get("items"), list) and len(d["items"]) <= 12, "edition must contain 0-12 items")
     require(all(isinstance(i, dict) for i in d["items"]), "each item must be an object")
@@ -88,7 +98,7 @@ def validate_edition(d: dict, categories: set[str]) -> None:
                 require(0 <= (generated-published).total_seconds() <= 72*3600, "daily item outside 72-hour window")
             else:
                 require(age_days <= 2, "date-only source is too old to establish a 72-hour window")
-            if age_days > 1:
+            if age_days > 1 or (i.get("published_at") and (generated-published).total_seconds() > 24*3600):
                 require(text(i.get("recency_reason"), 400), "older daily item needs recency_reason")
         require(isinstance(i.get("sources"), list) and len(i["sources"]) > 0, "source required")
         for s in i["sources"]:
@@ -102,24 +112,30 @@ def validate_edition(d: dict, categories: set[str]) -> None:
         if i["status"] == "UPDATE":
             require(text(i.get("delta"), 800), "UPDATE needs a material delta")
             previous = i.get("previous", {})
-            require(bool(ID.fullmatch(previous.get("id", ""))) and day(previous.get("date")) < date_value, "UPDATE needs a prior article")
+            require(isinstance(previous, dict) and bool(ID.fullmatch(previous.get("id", ""))) and day(previous.get("date")) <= date_value, "UPDATE needs a prior article")
 
 def editions(root: Path) -> list[dict]:
     config = load(root / "docs/data/categories.json")
     cats = {c["id"] for c in config["categories"]}
     require(len(cats) == len(config["categories"]) and len(cats)>0, "duplicate/empty categories")
     result, ids, events = [], set(), {}
-    for path in sorted((root / "docs/data/daily").glob("*.json")):
-        d = load(path)
+    paths = [* (root / "docs/data/daily").glob("*.json"), * (root / "docs/data/initial").glob("*.json")]
+    loaded = [(path, load(path)) for path in paths]
+    loaded.sort(key=lambda pair: timestamp(pair[1]["generated_at"]))
+    keys = set()
+    for path, d in loaded:
         validate_edition(d, cats)
         require(path.stem == d["date"], "filename does not match date")
+        require(path.relative_to(root / "docs").as_posix() == edition_path(d), "wrong edition directory")
+        require(edition_key(d) not in keys, "duplicate edition key")
+        keys.add(edition_key(d))
         for i in d["items"]:
             require(i["id"] not in ids, "duplicate article id")
             ids.add(i["id"])
             prior = events.get(i["event_id"])
             if i["status"] == "UPDATE":
                 require(prior is not None, "UPDATE event has no prior record")
-                require(i["previous"] == {"id":prior["id"], "date":prior["date"]}, "UPDATE must link the latest previous record for this event")
+                require(i["previous"].get("id") == prior["id"] and i["previous"].get("date") == prior["date"], "UPDATE must link the latest previous record for this event")
                 require(i["summary"] != prior["summary"], "UPDATE repeats the previous summary")
             else:
                 require(prior is None, "known event cannot be labelled NEW")
@@ -131,17 +147,18 @@ def derived(root: Path, days: list[dict]) -> dict[str, dict]:
     settings = load(root / "config/pipeline.json")
     ordered = list(reversed(days))
     newest = ordered[0]["date"] if ordered else None
+    latest_key = edition_key(ordered[0]) if ordered else None
     generated = max((d["generated_at"] for d in days), key=timestamp) if days else None
-    manifest = {"version":1, "latest":newest, "updated_at":generated, "editions":[{"date":d["date"], "title":d["title"], "kind":d["kind"], "count":len(d["items"]), "categories":sorted({i["category"] for i in d["items"]}), "path":f"data/daily/{d['date']}.json"} for d in ordered]}
+    manifest = {"version":1, "latest":latest_key, "updated_at":generated, "editions":[{"id":edition_key(d), "date":d["date"], "generated_at":d["generated_at"], "title":d["title"], "kind":d["kind"], "count":len(d["items"]), "categories":sorted({i["category"] for i in d["items"]}), "path":edition_path(d)} for d in ordered]}
     search = {"version":1,"items":[]}
     for d in ordered:
         for i in d["items"]:
-            search["items"].append({"id":i["id"],"event_id":i["event_id"],"edition":d["date"],"category":i["category"],"title":i["title"],"search_text":" ".join([i["title"],i["summary"],i["why_you_care"],*i["tags"],*(s["name"] for s in i["sources"])])})
+            search["items"].append({"id":i["id"],"event_id":i["event_id"],"edition":edition_key(d),"category":i["category"],"title":i["title"],"search_text":" ".join([i["title"],i["summary"],i["why_you_care"],*i["tags"],*(s["name"] for s in i["sources"])])})
     event_map = {}
     for d in days:
         for i in d["items"]:
             first = event_map.get(i["event_id"], {}).get("first_seen", d["date"])
-            event_map[i["event_id"]] = {"event_id":i["event_id"],"first_seen":first,"last_seen":d["date"],"last_item_id":i["id"],"title":i["title"],"last_summary":i["summary"],"sources":[s["url"] for s in i["sources"]]}
+            event_map[i["event_id"]] = {"event_id":i["event_id"],"first_seen":first,"last_seen":d["date"],"last_item_id":i["id"],"last_edition":edition_key(d),"title":i["title"],"last_summary":i["summary"],"sources":[s["url"] for s in i["sources"]]}
     cutoff = day(newest) - timedelta(days=settings["state_retention_days"]-1) if newest else date.min
     seen = [e for e in event_map.values() if day(e["last_seen"]) >= cutoff]
     seen.sort(key=lambda e:(e["last_seen"],e["event_id"]),reverse=True)

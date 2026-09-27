@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "date": "2026-09-27",
+  "generated_at": "2026-09-27T09:58:59+02:00",
+  "kind": "bootstrap",
+  "title": "Selezione iniziale · 27 settembre, mattina",
+  "summary": "Un punto di partenza verificato: sei letture su modelli, agenti e strumenti per creare. Apri le fonti, salva ciò che conta, ritrovalo nel tempo.",
+  "note": "Articoli pubblicati tra il 16 e il 22 settembre 2026. Le prossime edizioni seguiranno la finestra editoriale ordinaria. Conservata come edizione iniziale separata; anteprime aggiornate durante la verifica del sito, senza cambiare notizie e identificatori.",
+  "items": [
+    {
+      "id": "2026-09-27-unity-codex-plugin",
+      "event_id": "unity-codex-plugin",
+      "category": "gamedev",
+      "status": "NEW",
+      "title": "Unity porta le sue skill ufficiali dentro Codex",
+      "summary": "Unity ha presentato un plugin ufficiale per Codex con 31 skill iniziali, strumenti da terminale e compatibilità con Unity 6+. Le istruzioni coprono anche uGUI, 2D, URP, Web e localizzazione.",
+      "why_you_care": "È un’integrazione da valutare per affidare all’agente lavori Unity seguendo istruzioni specifiche dell’engine, non soltanto codice generico.",
+      "published_date": "2026-09-16",
+      "event_date": "2026-09-16",
+      "verified_at": "2026-09-27T09:58:59+02:00",
+      "featured": true,
+      "tags": [
+        "Unity",
+        "Codex",
+        "skill",
+        "vibe coding"
+      ],
+      "sources": [
+        {
+          "name": "Unity",
+          "type": "official",
+          "url": "https://unity.com/blog/unity-plugin-codex"
+        }
+      ],
+      "image": {
+        "url": "https://cdn.sanity.io/images/fuvbjjlp/production/5bfb3c0c4469ae972d77eeeb73db7439de75abbf-1825x1026.png",
+        "alt": "Banner ufficiale con i loghi Unity e OpenAI",
+        "credit": "Unity Technologies",
+        "source_url": "https://unity.com/blog/unity-plugin-codex",
+        "verification": "Provenienza ricontrollata il 2026-09-27 durante la prova pubblica. Test HTTP/browser registrati nel workflow Verify Personal News."
+      }
+    },
+    {
+      "id": "2026-09-27-pi-v0-87-1",
+      "event_id": "pi-v0-87-1",
+      "category": "agents",
+      "status": "NEW",
+      "title": "Pi Agent 0.87.1: supporto ai nuovi modelli",
+      "summary": "Le note di rilascio aggiungono supporto a GPT-6 Sol, GPT-6 Luna e Claude Opus 5.5 nei provider indicati. Per Sol e Luna sono citati sia le chiavi API OpenAI sia gli abbonamenti OpenAI Codex.",
+      "why_you_care": "È un cambiamento pertinente a chi usa Pi come interfaccia per il coding: disponibilità nell’agente e accesso del proprio account vanno comunque distinti.",
+      "published_date": "2026-09-22",
+      "event_date": "2026-09-22",
+      "verified_at": "2026-09-27T09:58:59+02:00",
+      "featured": true,
+      "tags": [
+        "Pi Agent",
+        "OpenAI Codex",
+        "Claude",
+        "release"
+      ],
+      "sources": [
+        {
+          "name": "Pi · release ufficiale",
+          "type": "official",
+          "url": "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
+        }
+      ],
+      "image": {
+        "url": "https://opengraph.githubassets.com/05bbf7ac9a1cf29d43c420d2de4f6afc0a61db9243a2cd2c8970e99507c04f11/earendil-works/pi/releases/tag/v0.87.1",
+        "alt": "Anteprima GitHub della release Pi Agent 0.87.1",
+        "credit": "Pi / GitHub",
+        "source_url": "https://github.com/earendil-works/pi/releases/tag/v0.87.1",
+        "verification": "Provenienza ricontrollata il 2026-09-27 durante la prova pubblica. Test HTTP/browser registrati nel workflow Verify Personal News."
+      }
+    },
+    {
+      "id": "2026-09-27-gpt-6-sol-luna-launch",
+      "event_id": "gpt-6-sol-luna-launch",
+      "category": "ai",
+      "status": "NEW",
+      "title": "GPT-6 Sol e Luna: nuovi modelli per il lavoro quotidiano",
+      "summary": "OpenAI ha annunciato Sol e Luna come estensione della famiglia GPT-6, con enfasi su coding, lavoro professionale ed efficienza. L’articolo distingue l’accesso via API, Codex e ChatGPT Work dalla disponibilità nella chat.",
+      "why_you_care": "Per scegliere l’agente conviene confrontare risultati, costi e canale di accesso sul proprio compito, senza confondere prezzi API e quote dell’abbonamento.",
+      "published_date": "2026-09-22",
+      "event_date": "2026-09-22",
+      "verified_at": "2026-09-27T09:58:59+02:00",
+      "featured": true,
+      "tags": [
+        "OpenAI",
+        "GPT-6",
+        "Sol",
+        "Luna"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI",
+          "type": "official",
+          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+        }
+      ],
+      "image": {
+        "url": "https://help.openai.com/favicon.png",
+        "alt": "Logo OpenAI: immagine identificativa della fonte, non grafico delle prestazioni",
+        "credit": "OpenAI · logo della fonte",
+        "source_url": "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure",
+        "verification": "Provenienza ricontrollata il 2026-09-27 durante la prova pubblica. Test HTTP/browser registrati nel workflow Verify Personal News."
+      }
+    },
+    {
+      "id": "2026-09-27-unity-6-6-content-directories",
+      "event_id": "unity-6-6-content-directories",
+      "category": "gamedev",
+      "status": "NEW",
+      "title": "Unity 6.6: caricamento più granulare degli asset",
+      "summary": "Unity introduce le content directories come alternativa agli AssetBundle distribuiti con il Player. Il sistema permette di caricare e scaricare singoli artefatti e introduce deduplicazione dei contenuti; la distribuzione remota più granulare è descritta come sviluppo successivo.",
+      "why_you_care": "È un approfondimento pertinente alla gestione di memoria e dimensione dei giochi; l’idoneità ai singoli target va verificata nella documentazione.",
+      "published_date": "2026-09-22",
+      "event_date": "2026-09-22",
+      "verified_at": "2026-09-27T09:58:59+02:00",
+      "featured": false,
+      "tags": [
+        "Unity 6.6",
+        "asset",
+        "memoria",
+        "Addressables"
+      ],
+      "sources": [
+        {
+          "name": "Unity",
+          "type": "official",
+          "url": "https://unity.com/blog/content-directories-beyond-the-assetbundle"
+        }
+      ],
+      "image": {
+        "url": "https://cdn.sanity.io/images/fuvbjjlp/production/47c76e75822126a1cd7ec77bd22b086a379f379a-1200x676.png",
+        "alt": "Illustrazione ufficiale delle content directories in Unity 6.6",
+        "credit": "Unity Technologies",
+        "source_url": "https://unity.com/blog/content-directories-beyond-the-assetbundle",
+        "verification": "Provenienza ricontrollata il 2026-09-27 durante la prova pubblica. Test HTTP/browser registrati nel workflow Verify Personal News."
+      }
+    },
+    {
+      "id": "2026-09-27-claude-opus-5-5-launch",
+      "event_id": "claude-opus-5-5-launch",
+      "category": "ai",
+      "status": "NEW",
+      "title": "Claude Opus 5.5 punta su coding ed efficienza",
+      "summary": "Anthropic presenta Opus 5.5 come aggiornamento per attività complesse, coding e lavoro professionale. Il produttore dichiara minori costi sui propri carichi di prova e una generazione più veloce rispetto a Opus 5: sono risultati del fornitore, non una misura sui tuoi progetti.",
+      "why_you_care": "È un’alternativa da confrontare con gli altri modelli sugli stessi task di sviluppo, considerando qualità, iterazioni necessarie e consumo effettivo.",
+      "published_date": "2026-09-22",
+      "event_date": "2026-09-22",
+      "verified_at": "2026-09-27T09:58:59+02:00",
+      "featured": false,
+      "tags": [
+        "Claude",
+        "Opus 5.5",
+        "coding",
+        "efficienza"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic",
+          "type": "official",
+          "url": "https://www.anthropic.com/claude-opus-5-5"
+        }
+      ],
+      "image": {
+        "url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/f4d37a1d1f582f53f4e89440062b649b6273a093-1200x630.jpg",
+        "alt": "Anteprima ufficiale Anthropic della pagina Opus 5.5",
+        "credit": "Anthropic",
+        "source_url": "https://www.anthropic.com/claude-opus-5-5",
+        "verification": "Provenienza ricontrollata il 2026-09-27 durante la prova pubblica. Test HTTP/browser registrati nel workflow Verify Personal News."
+      }
+    },
+    {
+      "id": "2026-09-27-deep-rock-survivor-mobile-optimization",
+      "event_id": "deep-rock-survivor-mobile-optimization",
+      "category": "gamedev",
+      "status": "NEW",
+      "title": "Dal PC al mobile: le lezioni di Deep Rock Galactic: Survivor",
+      "summary": "Unity racconta il lavoro di Piktiv sul port mobile: ripensare navigazione, rendering e uso della memoria, misurando le prestazioni con scenari automatizzati. È un approfondimento tecnico, non l’annuncio di una nuova uscita di oggi.",
+      "why_you_care": "Offre esempi concreti per ragionare sui limiti dei dispositivi mobili e sulla verifica delle prestazioni, anche senza replicare l’architettura del gioco.",
+      "published_date": "2026-09-18",
+      "event_date": "2026-09-18",
+      "verified_at": "2026-09-27T09:58:59+02:00",
+      "featured": false,
+      "tags": [
+        "ottimizzazione",
+        "mobile",
+        "Unity",
+        "game design"
+      ],
+      "sources": [
+        {
+          "name": "Unity · intervista a Piktiv",
+          "type": "official",
+          "url": "https://unity.com/blog/optimizing-deep-rock-galactic-survivor-for-mobile"
+        }
+      ],
+      "image": {
+        "url": "https://cdn.sanity.io/images/fuvbjjlp/production/5bc1d57547841018c68bc6125d8b386e09e00bbb-3840x2048.jpg",
+        "alt": "Artwork ufficiale di Deep Rock Galactic: Survivor",
+        "credit": "Funday Games / Unity",
+        "source_url": "https://unity.com/blog/optimizing-deep-rock-galactic-survivor-for-mobile",
+        "verification": "Provenienza ricontrollata il 2026-09-27 durante la prova pubblica. Test HTTP/browser registrati nel workflow Verify Personal News."
+      }
+    }
+  ],
+  "edition_id": "2026-09-27-initial"
+}

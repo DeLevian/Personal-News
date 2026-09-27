@@ -17,6 +17,7 @@ class PipelineTests(unittest.TestCase):
         shutil.copytree(news.ROOT,self.root,ignore=shutil.ignore_patterns('__pycache__','.git','artifacts'))
         self.days=news.editions(self.root)
         self.base=copy.deepcopy(self.days[0])
+        self.base.pop('edition_id',None)
         self.cats={c['id'] for c in news.load(self.root/'docs/data/categories.json')['categories']}
     def tearDown(self):
         self.temp.cleanup()
@@ -54,7 +55,7 @@ class PipelineTests(unittest.TestCase):
         news.write_json(self.root/'docs/data/daily/2026-09-28.json',d)
         news.run(self.root,'rebuild');news.run(self.root,'validate')
         m=news.load(self.root/'docs/data/index.json')
-        self.assertEqual(m['latest'],'2026-09-28');self.assertEqual(len(m['editions']),2)
+        self.assertEqual(m['latest'],'2026-09-28');self.assertEqual(len(m['editions']),len(self.days)+1)
     def test_duplicate_new_in_later_edition_rejected(self):
         d=copy.deepcopy(self.base);d['date']='2026-09-28';d['generated_at']='2026-09-28T07:00:00+02:00'
         for i in d['items']:i['id']=i['id'].replace('2026-09-27','2026-09-28')
@@ -68,6 +69,18 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(r['url'],'https://example.com/banner.jpg')
     def test_image_metadata_rejects_unsafe_url(self):
         self.assertIsNone(extract('<meta property="og:image" content="javascript:alert(1)">','https://example.com/story'))
+    def test_initial_archive_has_distinct_identity(self):
+        m=news.load(self.root/'docs/data/index.json')
+        keys=[e['id'] for e in m['editions']]
+        self.assertEqual(len(keys),len(set(keys)))
+        self.assertIn('2026-09-27-initial',keys)
+        self.assertIn('2026-09-27',keys)
+    def test_initial_events_remain_in_dedup_state(self):
+        seen=news.load(self.root/'state/seen.json')
+        self.assertTrue(any(e['event_id']=='pi-v0-87-1' for e in seen['events']))
+    def test_unsafe_edition_id_rejected(self):
+        self.base['edition_id']='../../secret'
+        with self.assertRaises(news.Invalid):news.validate_edition(self.base,self.cats)
     def test_empty_edition_supported(self):
         d=copy.deepcopy(self.base);d['items']=[];d['kind']='daily'
         news.validate_edition(d,self.cats)
