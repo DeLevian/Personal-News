@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "latest": "2026-09-27",
+  "updated_at": "2026-09-27T09:58:59+02:00",
+  "editions": [
+    {
+      "date": "2026-09-27",
+      "title": "Prima edizione · AI, coding e game development",
+      "kind": "bootstrap",
+      "count": 6,
+      "categories": [
+        "agents",
+        "ai",
+        "gamedev"
+      ],
+      "path": "data/daily/2026-09-27.json"
+    }
+  ]
+}

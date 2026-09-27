@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f6f8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="La tua rassegna personale. Notizie selezionate, fonti e archivio navigabile.">
+  <title>Personal News — La tua rassegna</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#feed">Vai alle notizie</a>
+<div class="shell">
+  <aside class="rail" aria-label="Navigazione principale">
+    <a href="./" class="brand" aria-label="Personal News, ultima edizione"><span class="monogram">pn<span>.</span></span><span>personal<span class="brand-light">news</span></span></a>
+    <p class="rail-label">IL TUO OSSERVATORIO</p>
+    <nav class="main-nav">
+      <button class="nav-link active" id="nav-latest" type="button"><span aria-hidden="true">◈</span> News recenti <span class="live-dot" aria-hidden="true"></span></button>
+      <button class="nav-link" id="nav-archive" type="button"><span aria-hidden="true">▤</span> Archivio <span id="archive-total" class="counter">0</span></button>
+      <button class="nav-link" id="nav-saved" type="button"><span aria-hidden="true">☆</span> Salvati <span id="saved-total" class="counter">0</span></button>
+    </nav>
+    <p class="rail-label">CATEGORIE DA ESPLORARE</p>
+    <div id="rail-categories" class="category-nav"></div>
+    <div class="rail-bottom">
+      <div class="edition-note"><span class="live-dot" aria-hidden="true"></span><span>Ultima edizione<br><strong id="latest-label">Caricamento…</strong></span></div>
+      <button id="settings-open" class="nav-link" type="button"><span aria-hidden="true">☷</span> Preferenze e aiuto</button>
+      <p class="rail-foot">Curata per te. Fonti, non rumore.</p>
+    </div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <a href="./" class="mobile-brand" aria-label="Personal News">pn.</a>
+      <button class="latest-button" id="latest-button" type="button"><span class="live-dot" aria-hidden="true"></span> Ultime news</button>
+      <div class="date-controls" aria-label="Naviga tra le edizioni">
+        <button id="prev" class="icon-button" type="button" aria-label="Edizione precedente" title="Edizione precedente" disabled>‹</button>
+        <button id="date-open" class="date-button" type="button" title="Scegli un’edizione"><span id="date-label">Caricamento…</span><span aria-hidden="true">⌄</span></button>
+        <button id="next" class="icon-button" type="button" aria-label="Edizione successiva" title="Edizione successiva" disabled>›</button>
+      </div>
+      <div class="top-actions"><button id="density" class="icon-button" type="button" title="Vista compatta" aria-label="Vista compatta" aria-pressed="false">▤</button><button id="theme" class="icon-button" type="button" title="Cambia tema" aria-label="Cambia tema">◐</button></div>
+    </header>
+    <main id="main">
+      <div id="new-edition" class="notice" hidden>È disponibile un’edizione più recente. <button id="refresh-latest" type="button">Apri le ultime news →</button></div>
+      <div id="error" class="notice error" role="alert" hidden></div>
+      <section class="masthead" aria-labelledby="headline">
+        <div><p class="eyebrow" id="edition-label">LA TUA RASSEGNA PERSONALE</p><h1 id="headline">Le cose che contano<span>.</span></h1><p id="subtitle" class="subtitle">Sto caricando l’ultima edizione.</p></div>
+        <div class="edition-stamp"><span>PERSONAL NEWS</span><strong id="edition-number">01</strong><span id="stamp-date">—</span></div>
+      </section>
+      <div id="edition-notice" class="notice" hidden></div>
+      <div class="metrics" id="metrics" aria-label="Riepilogo dell’edizione"></div>
+      <section id="highlights" aria-labelledby="highlights-heading" hidden>
+        <div class="section-head"><h2 id="highlights-heading">Da non perdere</h2><span class="muted">Una selezione, non un altro elenco.</span></div>
+        <div id="highlight-grid" class="highlight-grid"></div>
+      </section>
+      <section id="feed" aria-labelledby="feed-heading" tabindex="-1">
+        <div class="section-head"><div><p class="eyebrow">IL TUO FEED</p><h2 id="feed-heading">News recenti</h2></div><span class="muted" id="result-count" role="status" aria-live="polite"></span></div>
+        <div class="filter-panel">
+          <div class="search-row"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Cerca un tema, uno strumento, una notizia…" aria-label="Cerca nelle notizie" autocomplete="off"><kbd>/</kbd></label><label class="scope-label"><span class="sr-only">Dove cercare</span><select id="scope"><option value="edition">Questa edizione</option><option value="archive">Tutto lo storico</option></select></label></div>
+          <div class="chips" id="chips" aria-label="Filtra per categoria"></div>
+          <div class="filter-actions"><button id="unread" type="button" class="pill" aria-pressed="false">Non letti</button><button id="saved" type="button" class="pill" aria-pressed="false">Salvati</button><button id="reset" type="button" class="text-button">Azzera filtri</button><span class="filter-spacer"></span><button id="read-all" type="button" class="text-button">Segna visibili come letti</button></div>
+        </div>
+        <div id="cards" class="cards" aria-busy="true"></div>
+        <div id="empty" class="empty" hidden><span aria-hidden="true">⌕</span><h3 id="empty-title">Qui non c’è ancora nulla.</h3><p id="empty-copy"></p><button id="empty-reset" class="primary-button" type="button">Mostra tutte le notizie</button></div>
+        <button id="more" class="load-more" type="button" hidden>Mostra altre notizie</button>
+      </section>
+      <footer><span><strong>personal news.</strong> Il tuo tempo è prezioso.</span><span id="footer-meta">Archivio persistente · lettura personale</span><button id="back-top" type="button" class="text-button">Torna su ↑</button></footer>
+    </main>
+    <nav class="mobile-nav" aria-label="Navigazione mobile"><button id="mobile-latest" type="button">◈ Recenti</button><button id="mobile-archive" type="button">▤ Archivio</button><button id="mobile-saved" type="button">☆ Salvati</button><button id="mobile-settings" type="button">☷ Opzioni</button></nav>
+  </div>
+</div>
+<dialog id="archive-dialog" aria-labelledby="archive-heading"><div class="dialog-head"><div><p class="eyebrow">NESSUNA NOTIZIA PERSA</p><h2 id="archive-heading">Il tuo archivio</h2></div><button type="button" class="icon-button close-dialog" aria-label="Chiudi archivio">×</button></div><label class="dialog-filter">Filtra per mese <input id="archive-month" type="month"></label><div id="archive-list"></div><p class="muted" id="archive-help">Le edizioni sono conservate nel repository.</p></dialog>
+<dialog id="settings-dialog" aria-labelledby="settings-heading"><div class="dialog-head"><div><p class="eyebrow">A MODO TUO</p><h2 id="settings-heading">Preferenze e aiuto</h2></div><button type="button" class="icon-button close-dialog" aria-label="Chiudi preferenze">×</button></div><div class="settings-row"><label for="theme-select">Aspetto</label><select id="theme-select"><option value="auto">Segui il dispositivo</option><option value="light">Chiaro</option><option value="dark">Scuro</option></select></div><div class="settings-row"><label for="images">Immagini degli articoli</label><input id="images" type="checkbox" checked></div><p class="muted">Le immagini arrivano dai siti delle fonti, senza inviare il riferimento di questa pagina. Se non sono raggiungibili, resta un riquadro di categoria. Nessun font, script o servizio di analisi esterno.</p><h3>La tua lettura resta qui</h3><p>Salvati, letti e preferenze vivono in questo browser: non si sincronizzano automaticamente tra telefono e PC. Puoi esportarli e importarli sull’altro dispositivo.</p><div class="button-row"><button id="export" class="pill" type="button">Esporta preferenze</button><button id="import" class="pill" type="button">Importa preferenze</button><input id="import-file" type="file" accept="application/json,.json" hidden></div><h3>Scorciatoie</h3><p><kbd>/</kbd> Cerca · <kbd>←</kbd> Edizione precedente · <kbd>→</kbd> Successiva · <kbd>Esc</kbd> Chiudi finestra</p><p class="muted">“Nuova” significa nuova nel tuo archivio, non necessariamente pubblicata oggi. Ogni card riporta la data della fonte. Le categorie sono configurate nel progetto; modificarle nei filtri non cambia il profilo editoriale.</p></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<noscript><p class="notice">Attiva JavaScript per caricare le edizioni e navigare nell’archivio.</p></noscript>
+<template id="card-template"><article class="card"><div class="card-media"><div class="media-placeholder" aria-hidden="true"><span class="placeholder-symbol">↗</span><span class="placeholder-label"></span><small>PERSONAL NEWS</small></div><img class="article-image" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt=""><span class="media-credit"></span></div><div class="card-body"><div class="card-kicker"></div><h3 class="card-title"></h3><p class="card-summary"></p><div class="why"><span>PERCHÉ TI INTERESSA</span><p></p></div><div class="delta" hidden></div><details class="sources"><summary>Fonti e dettagli</summary><div class="source-content"></div></details><div class="card-bottom"><a class="source-link" target="_blank" rel="noopener noreferrer">Leggi la fonte ↗</a><div class="card-buttons"><button class="read-button" type="button" title="Segna come letto" aria-label="Segna come letto" aria-pressed="false">✓</button><button class="save-button" type="button" title="Salva notizia" aria-label="Salva notizia" aria-pressed="false">☆</button><button class="share-button" type="button" title="Copia link alla notizia" aria-label="Copia link alla notizia">↗</button></div></div></div></article></template>
+</body>
+</html>

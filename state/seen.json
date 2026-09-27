@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "as_of": "2026-09-27",
+  "retention_days": 30,
+  "max_events": 200,
+  "events": [
+    {
+      "event_id": "unity-codex-plugin",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-unity-codex-plugin",
+      "title": "Unity porta le sue skill ufficiali dentro Codex",
+      "last_summary": "Unity ha presentato un plugin ufficiale per Codex con 31 skill iniziali, strumenti da terminale e compatibilità con Unity 6+. Le istruzioni coprono anche uGUI, 2D, URP, Web e localizzazione.",
+      "sources": [
+        "https://unity.com/blog/unity-plugin-codex"
+      ]
+    },
+    {
+      "event_id": "unity-6-6-content-directories",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-unity-6-6-content-directories",
+      "title": "Unity 6.6: caricamento più granulare degli asset",
+      "last_summary": "Unity introduce le content directories come alternativa agli AssetBundle distribuiti con il Player. Il sistema permette di caricare e scaricare singoli artefatti e introduce deduplicazione dei contenuti; la distribuzione remota più granulare è descritta come sviluppo successivo.",
+      "sources": [
+        "https://unity.com/blog/content-directories-beyond-the-assetbundle"
+      ]
+    },
+    {
+      "event_id": "pi-v0-87-1",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-pi-v0-87-1",
+      "title": "Pi Agent 0.87.1: supporto ai nuovi modelli",
+      "last_summary": "Le note di rilascio aggiungono supporto a GPT-6 Sol, GPT-6 Luna e Claude Opus 5.5 nei provider indicati. Per Sol e Luna sono citati sia le chiavi API OpenAI sia gli abbonamenti OpenAI Codex.",
+      "sources": [
+        "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
+      ]
+    },
+    {
+      "event_id": "gpt-6-sol-luna-launch",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-gpt-6-sol-luna-launch",
+      "title": "GPT-6 Sol e Luna: nuovi modelli per il lavoro quotidiano",
+      "last_summary": "OpenAI ha annunciato Sol e Luna come estensione della famiglia GPT-6, con enfasi su coding, lavoro professionale ed efficienza. L’articolo distingue l’accesso via API, Codex e ChatGPT Work dalla disponibilità nella chat.",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+      ]
+    },
+    {
+      "event_id": "deep-rock-survivor-mobile-optimization",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-deep-rock-survivor-mobile-optimization",
+      "title": "Dal PC al mobile: le lezioni di Deep Rock Galactic: Survivor",
+      "last_summary": "Unity racconta il lavoro di Piktiv sul port mobile: ripensare navigazione, rendering e uso della memoria, misurando le prestazioni con scenari automatizzati. È un approfondimento tecnico, non l’annuncio di una nuova uscita di oggi.",
+      "sources": [
+        "https://unity.com/blog/optimizing-deep-rock-galactic-survivor-for-mobile"
+      ]
+    },
+    {
+      "event_id": "claude-opus-5-5-launch",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-claude-opus-5-5-launch",
+      "title": "Claude Opus 5.5 punta su coding ed efficienza",
+      "last_summary": "Anthropic presenta Opus 5.5 come aggiornamento per attività complesse, coding e lavoro professionale. Il produttore dichiara minori costi sui propri carichi di prova e una generazione più veloce rispetto a Opus 5: sono risultati del fornitore, non una misura sui tuoi progetti.",
+      "sources": [
+        "https://www.anthropic.com/claude-opus-5-5"
+      ]
+    }
+  ]
+}
