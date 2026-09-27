@@ -21,5 +21,5 @@
     "unverified": 1
   },
   "shortfall_reason": null,
-  "note": "Coverage records attempts, not universal absence of news. The full audit remains an artifact or scoped run log."
+  "note": "Coverage records attempts, not universal absence of news. Full audit retained for this run."
 }
