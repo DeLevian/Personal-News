@@ -1,7 +1,7 @@
 {
   "version": 2,
   "date": "2026-09-27",
-  "generated_at": "2026-09-27T16:36:59+02:00",
+  "generated_at": "2026-09-27T18:26:02+02:00",
   "kind": "daily",
   "title": "27 settembre · Champions, Copilot, Pocket e novità da giocare",
   "summary": "Otto novità verificate tra AI, Digital Workplace, dispositivi e gaming: Copilot cambia forma, Pocket prepara un nuovo set e il competitivo Champions resta in primo piano.",
@@ -361,6 +361,38 @@
           "name": "TerraMaster · annuncio dello staff",
           "type": "official",
           "url": "https://forum.terra-master.com/en/viewtopic.php?t=10622"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-27-github-copilot-weekly-2026-09-21-models-sandbox",
+      "event_id": "github-copilot-weekly-2026-09-21-models-sandbox",
+      "category": "agents",
+      "status": "NEW",
+      "section": "main",
+      "title": "GitHub Copilot: nuovi modelli, sandbox locale e agenti nei Dev Container",
+      "summary": "Il riepilogo GitHub del 25 settembre porta GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5 e Grok 4.7 in diversi piani Copilot. La Copilot app aggiunge sandboxing locale in public preview e telemetria OpenTelemetry; VS Code 1.139 estende gradualmente le sessioni agentiche nei Dev Container ospitati via SSH, Tunnel e WSL.",
+      "why_you_care": "È un aggiornamento concreto del workflow di coding: separa disponibilità dei modelli, isolamento degli agenti e ambienti remoti, tutti aspetti utili quando si lavora con repository e strumenti agentici.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "published_timezone": "America/New_York",
+      "verified_at": "2026-09-27T18:26:02+02:00",
+      "included_at": "2026-09-27T18:26:02+02:00",
+      "featured": false,
+      "recency_reason": "Riepilogo ufficiale del 25 settembre recuperato entro la finestra eccezionale di 72 ore perché concentra cambiamenti pratici su modelli, sandbox e sessioni agentiche.",
+      "tags": [
+        "GitHub Copilot",
+        "coding agent",
+        "sandbox",
+        "VS Code",
+        "GPT-6"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog · weekly releases",
+          "type": "official",
+          "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
         }
       ],
       "image": null
