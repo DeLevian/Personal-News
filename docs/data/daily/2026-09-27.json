@@ -1,11 +1,11 @@
 {
   "version": 2,
   "date": "2026-09-27",
-  "generated_at": "2026-09-27T16:36:59+02:00",
+  "generated_at": "2026-09-27T17:34:22+02:00",
   "kind": "daily",
   "title": "27 settembre · Champions, Copilot, Pocket e novità da giocare",
-  "summary": "Otto novità verificate tra AI, Digital Workplace, dispositivi e gaming: Copilot cambia forma, Pocket prepara un nuovo set e il competitivo Champions resta in primo piano.",
-  "note": "Edizione aggiornata al formato v2: otto notizie già pubblicate preservate e due segnalazioni Radar verificate. La raccolta di 50 link candidati è una prova di discovery, non 50 notizie approvate.",
+  "summary": "Otto News principali e otto Radar verificati tra AI, agenti, Digital Workplace, game development, gaming e dispositivi: il rerun amplia soprattutto MCP/Copilot, Unity e SteamOS senza ripetere eventi già noti.",
+  "note": "Rerun v2 del 27 settembre: preservate le 10 schede già pubblicate e aggiunti 6 Radar da fonti ufficiali dopo discovery trasversale e deduplicazione completa. Nessun riempitivo e nessuna promozione artificiale a News principali.",
   "items": [
     {
       "id": "2026-09-27-champions-frankfurt-2026-day-two",
@@ -364,6 +364,186 @@
         }
       ],
       "image": null
+    },
+    {
+      "id": "2026-09-27-anthropic-billed-refusals-2026-09-24",
+      "event_id": "anthropic-billed-refusals-2026-09-24",
+      "section": "radar",
+      "category": "ai",
+      "status": "NEW",
+      "title": "Claude API: alcuni rifiuti di sicurezza tornano fatturati",
+      "summary": "Dal 24 settembre Anthropic addebita di nuovo i rifiuti che avvengono prima di qualsiasi output quando la categoria è bio, frontier_llm o reasoning_extraction; gli altri rifiuti pre-output restano non fatturati. La documentazione specifica che le regole valgono sulle piattaforme Claude supportate e che i rifiuti a metà stream continuano a essere fatturati normalmente.",
+      "why_you_care": "È un dettaglio operativo importante per API e pipeline agentiche: un rifiuto non implica più sempre costo zero e un fallback può produrre un ulteriore tentativo fatturabile.",
+      "published_date": "2026-09-24",
+      "event_date": "2026-09-24",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "Claude API",
+        "billing",
+        "safety"
+      ],
+      "sources": [
+        {
+          "name": "Claude Platform · release notes",
+          "type": "official",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "name": "Claude Platform · refusals and fallback",
+          "type": "official",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
+        }
+      ],
+      "image": null,
+      "verified_at": "2026-09-27T17:34:22+02:00",
+      "included_at": "2026-09-27T17:34:22+02:00"
+    },
+    {
+      "id": "2026-09-27-github-copilot-weekly-2026-09-25",
+      "event_id": "github-copilot-weekly-2026-09-25",
+      "section": "radar",
+      "category": "agents",
+      "status": "NEW",
+      "title": "GitHub Copilot: nuovi modelli, sandbox locale e agenti remoti",
+      "summary": "Il riepilogo GitHub del 25 settembre porta GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5 e Grok 4.7 in diversi piani Copilot. Aggiunge inoltre sandboxing locale in public preview, OpenTelemetry, miglioramenti per Slack e Teams, approvazioni assistite in JetBrains e agenti nei Dev Container remoti di VS Code 1.139.",
+      "why_you_care": "È un aggiornamento vicino ai workflow di coding agentico: modelli, isolamento, osservabilità e sessioni remote cambiano concretamente come si possono orchestrare gli agenti.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "GitHub Copilot",
+        "coding agent",
+        "sandbox"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog",
+          "type": "official",
+          "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
+        }
+      ],
+      "image": null,
+      "verified_at": "2026-09-27T17:34:22+02:00",
+      "included_at": "2026-09-27T17:34:22+02:00"
+    },
+    {
+      "id": "2026-09-27-claude-plugin-submission-portal-2026-09-25",
+      "event_id": "claude-plugin-submission-portal-2026-09-25",
+      "section": "radar",
+      "category": "agents",
+      "status": "NEW",
+      "title": "Claude apre il portale per pubblicare plugin MCP e Skills",
+      "summary": "Anthropic ha aperto ai piani Claude a pagamento un portale per inviare plugin alla directory, con validazione automatica, controllo di sicurezza, stato della review e analytics dopo la pubblicazione. I plugin possono essere un singolo server MCP o bundle con MCP e Agent Skills; in Claude Code possono includere anche LSP, comandi, hook e agenti.",
+      "why_you_care": "È direttamente rilevante per MCP e integrazioni: formalizza un percorso di distribuzione, controllo e scoperta dei plugin invece del solo setup manuale.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "Claude",
+        "MCP",
+        "plugin",
+        "Agent Skills"
+      ],
+      "sources": [
+        {
+          "name": "Claude · blog ufficiale",
+          "type": "official",
+          "url": "https://claude.com/blog/build-plugins-for-claude"
+        }
+      ],
+      "image": null,
+      "verified_at": "2026-09-27T17:34:22+02:00",
+      "included_at": "2026-09-27T17:34:22+02:00"
+    },
+    {
+      "id": "2026-09-27-unity-6000-6-3f1-2026-09-24",
+      "event_id": "unity-6000-6-3f1-2026-09-24",
+      "section": "radar",
+      "category": "gamedev",
+      "status": "NEW",
+      "title": "Unity 6.6: disponibile la patch 6000.6.3f1",
+      "summary": "Unity ha rilasciato il 24 settembre la 6000.6.3f1. Tra le modifiche ci sono l'aggiornamento dell'Android Gradle Plugin da 9.0.0 a 9.1.1, la nuova proprietà read-only Graphics.disableDepthAndStencilBuffers, 7-Zip 26.03 e numerose correzioni su Editor, 2D, Android e rendering.",
+      "why_you_care": "Per chi lavora già sulla serie 6000.6 è una patch concreta da valutare: aggiorna la toolchain Android e corregge problemi dell'editor senza cambiare linea principale.",
+      "published_date": "2026-09-24",
+      "event_date": "2026-09-24",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "Unity 6.6",
+        "Android",
+        "Editor"
+      ],
+      "sources": [
+        {
+          "name": "Unity · release notes",
+          "type": "official",
+          "url": "https://unity.com/releases/editor/whats-new/6000.6.3f1"
+        }
+      ],
+      "image": null,
+      "verified_at": "2026-09-27T17:34:22+02:00",
+      "included_at": "2026-09-27T17:34:22+02:00"
+    },
+    {
+      "id": "2026-09-27-unity-cli-1-0-0-beta-11-2026-09-22",
+      "event_id": "unity-cli-1-0-0-beta-11-2026-09-22",
+      "section": "radar",
+      "category": "gamedev",
+      "status": "NEW",
+      "title": "Unity CLI beta.11 rafforza privacy e sicurezza dei workflow da terminale",
+      "summary": "La 1.0.0-beta.11 del 22 settembre redige i log raccolti da unity bug prima dell'upload, mascherando dati locali sensibili. Su Linux impedisce inoltre che l'estrazione di un modulo .pkg scriva attraverso un symlink preesistente fuori dalla cartella di installazione.",
+      "why_you_care": "È utile per workflow automatizzati o agentici che pilotano Unity da terminale: riduce il rischio di includere dettagli locali nei report di errore.",
+      "published_date": "2026-09-22",
+      "event_date": "2026-09-22",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "Unity CLI",
+        "security",
+        "automation"
+      ],
+      "sources": [
+        {
+          "name": "Unity Docs · CLI release notes",
+          "type": "official",
+          "url": "https://docs.unity.com/en-us/unity-cli/release-notes"
+        }
+      ],
+      "image": null,
+      "verified_at": "2026-09-27T17:34:22+02:00",
+      "included_at": "2026-09-27T17:34:22+02:00"
+    },
+    {
+      "id": "2026-09-27-steamos-3-8-28-stable-2026-09-24",
+      "event_id": "steamos-3-8-28-stable-2026-09-24",
+      "section": "radar",
+      "category": "devices",
+      "status": "NEW",
+      "title": "SteamOS 3.8.28 stabile migliora VRAM, Mesa e resume",
+      "summary": "Valve ha distribuito SteamOS 3.8.28 a tutti gli utenti il 24 settembre. Aggiorna Mesa con miglioramenti alle prestazioni ray tracing, migliora la gestione della VRAM e corregge problemi di avvio, Wi-Fi, HDMI, sospensione/ripresa e compatibilità con diversi handheld; aggiunge anche supporto al Steam Controller 2026.",
+      "why_you_care": "È un aggiornamento stabile e concreto per Steam Deck: memoria grafica, prestazioni e affidabilità dopo la sospensione sono più utili di una preview sperimentale.",
+      "published_date": "2026-09-24",
+      "event_date": "2026-09-24",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "Steam Deck",
+        "SteamOS",
+        "VRAM"
+      ],
+      "sources": [
+        {
+          "name": "Steam Deck · News",
+          "type": "official",
+          "url": "https://www.steamdeck.com/en/news"
+        }
+      ],
+      "image": null,
+      "verified_at": "2026-09-27T17:34:22+02:00",
+      "included_at": "2026-09-27T17:34:22+02:00"
     }
   ],
   "attention_today": {
