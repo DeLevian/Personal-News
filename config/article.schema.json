@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Personal News — Italian original article v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "item_id",
+    "language",
+    "editorial_mode",
+    "source_item_hash",
+    "written_at",
+    "verified_at",
+    "sources",
+    "sections"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "item_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,159}$"
+    },
+    "language": {
+      "const": "it"
+    },
+    "editorial_mode": {
+      "const": "original"
+    },
+    "source_item_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "written_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "type",
+          "url"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "type": {
+            "enum": [
+              "official",
+              "research",
+              "reputable",
+              "community"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://"
+          }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "heading",
+          "paragraphs",
+          "source_urls"
+        ],
+        "properties": {
+          "heading": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "paragraphs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "items": {
+              "type": "string",
+              "minLength": 30,
+              "maxLength": 5000
+            }
+          },
+          "source_urls": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^https://"
+            }
+          }
+        }
+      }
+    }
+  }
+}

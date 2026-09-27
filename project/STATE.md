@@ -1,8 +1,15 @@
-# Personal News v2 — stato operativo
+# Personal News — stato operativo
 
 Aggiornato: 2026-09-27.
 
-## Consegna verificata
+## Lettura italiana interna — implementazione 2026-09-27
+Freccia delle schede → lettore a schermo intero; fonti esterne separate, condivisione interna, letti/salvati comuni, ritorno a filtri e posizione. Nuovi corpi originali in `docs/data/articles/`, schema e indice derivati, ricerca nel corpo e content_revision. I nuovi item senza corpo sono rifiutati; le eccezioni storiche sono congelate per payload/ID esatti.
+
+Integrazione iniziale: 17 corpi italiani su 22 item storici, senza modificare edizioni, identità, NEW/UPDATE, date o ricevute LEGACY_V1. Le cinque schede non integrate (Francoforte, Minecraft Dungeons II, Global Challenge, Pocket Deluxe Pack Mega, Deep Rock Survivor) conservano il fallback esplicito: il recupero completo delle fonti era bloccato, non sono stati inventati dettagli.
+
+Verifiche locali: 87 test Python e controlli sintattici app.js/reader.js. Browser HTTP locale non eseguibile per blocco del browser dell'ambiente; le tre suite HTTP sono eseguite in CI. Lo stato CI/deploy/live della consegna va verificato sul workflow del commit corrente; questo documento non anticipa l'esito. Contratto operativo: `config/ARTICLE_CONTENT.md`.
+
+## Consegna verificata della migrazione v2 (snapshot precedente)
 La v2 è stata unita su main tramite PR #1, merge `330217b5cec0b74492380467f6dff20b49629987`, dopo sviluppo sul branch `chatgpt/personal-news-v2` e verifica separata.
 Il workflow **Verify Personal News**, run **36326833388**, ha concluso con successo sia `structure-and-browser` sia `published-site` sul commit distribuito. Il sito reale è https://delevian.github.io/Personal-News/ e l'ingresso rimanda a docs/ senza variazioni di hosting.
 

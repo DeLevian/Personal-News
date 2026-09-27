@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "frozen_at": "2026-09-27",
+  "notes": "Exact pre-reader items only; never regenerate or extend during ordinary runs. This exception permits an explicitly labelled historical summary, never an incomplete new article.",
+  "items": {
+    "2026-09-27-anthropic-project-swap-2026-09-24": {
+      "edition": "2026-09-27",
+      "sha256": "dfcf0c8307df3f5c23aeb2c474ea57bcd7162b9ac49272bc9328d065d51b85c9"
+    },
+    "2026-09-27-champions-frankfurt-2026-day-two": {
+      "edition": "2026-09-27",
+      "sha256": "7e27d6044088d901de22c98fde0a7a039d4de4984f67d412bc383f7f259807f8"
+    },
+    "2026-09-27-champions-global-challenge-2027-i-battles": {
+      "edition": "2026-09-27",
+      "sha256": "483b93e5423af9201d565732bad19af4b45f83f1b29a4bf3a0fd0f11d85a5daa"
+    },
+    "2026-09-27-chatgpt-security-history-2026-09-25": {
+      "edition": "2026-09-27",
+      "sha256": "ed925ece321d20de5e417546c07ae10f2c13594219f99dd6e60545e1cca834ef"
+    },
+    "2026-09-27-claude-opus-5-5-launch": {
+      "edition": "2026-09-27-initial",
+      "sha256": "9e63064a56087791cc4122029fdbc128ffa5654c16d4b20375bab04e65a0a320"
+    },
+    "2026-09-27-cursor-rollouts-security-review-2026-09-23": {
+      "edition": "2026-09-27",
+      "sha256": "c2e3169c4d4341d29e9c1020d4bd9d11ded2eb124a99b67ed810f7627ea8751a"
+    },
+    "2026-09-27-deep-rock-survivor-mobile-optimization": {
+      "edition": "2026-09-27-initial",
+      "sha256": "99cd81e6b685d4eb419f2e5f7bb91e937eb1cf937153182f37aff01bb9874451"
+    },
+    "2026-09-27-github-copilot-slack-teams-2026-09-25": {
+      "edition": "2026-09-27",
+      "sha256": "e1a7b8f12e60ba6b58a275768126a5b26433258d621f0b3df364720996aece2b"
+    },
+    "2026-09-27-github-copilot-weekly-2026-09-21-models-sandbox": {
+      "edition": "2026-09-27",
+      "sha256": "f0d821279757c80a4fc246da66a8065f1482ba35bffd864f239899229c2874d0"
+    },
+    "2026-09-27-gpt-6-sol-luna-launch": {
+      "edition": "2026-09-27-initial",
+      "sha256": "bc4ad4390e593d7f09dba8faa1c9106c919086c6b72a239c906c2b937ba47744"
+    },
+    "2026-09-27-microsoft-copilot-home-code-autopilot-2026": {
+      "edition": "2026-09-27",
+      "sha256": "e6e11463212ba46329c2633a199ab60e3070ac45da59c761efe8a62a9c13fcdc"
+    },
+    "2026-09-27-microsoft-security-september-2026-agent-data-controls": {
+      "edition": "2026-09-27",
+      "sha256": "fd96a81a0f8ab09ff4f8ff021ac1f5f53daed9c99c5371b9190dd778664d3bb1"
+    },
+    "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26": {
+      "edition": "2026-09-27",
+      "sha256": "9d417d83ef2bd849023a8db380a15a3f9bb8c5f301aee8b227178be6fd3fde9b"
+    },
+    "2026-09-27-openai-gpt6-prompt-caching-2026-09-22": {
+      "edition": "2026-09-27",
+      "sha256": "bec09b966bd1b850c2ab60f78c4834f6ea9f989591513361b0d5380532505967"
+    },
+    "2026-09-27-pi-v0-87-1": {
+      "edition": "2026-09-27-initial",
+      "sha256": "cf54d495f59e560f92897cf511d0e0def8671feda0b07b837815a06cfc57bd95"
+    },
+    "2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026": {
+      "edition": "2026-09-27",
+      "sha256": "49ad1964334965d5091659f35a3c083733f186eca93bfa8d0720fe26716b62ec"
+    },
+    "2026-09-27-terramaster-tos-7-0-1278": {
+      "edition": "2026-09-27",
+      "sha256": "132a57705dff49e9cba0a0e27502d2b55b521aa4489f4a4857f51523e273a233"
+    },
+    "2026-09-27-unity-6-6-content-directories": {
+      "edition": "2026-09-27-initial",
+      "sha256": "bc2717ea80d9ca9ce01b0d8ae3365f65e57aabd0c6091eca7272c4062e240c88"
+    },
+    "2026-09-27-unity-codex-plugin": {
+      "edition": "2026-09-27-initial",
+      "sha256": "b60514ce53bef6dcbab7b416afde5ac3057ba23c81686e1723f983bab6f980f1"
+    },
+    "2026-09-27-unity-meta-vr-glasses-support-2026-09-24": {
+      "edition": "2026-09-27",
+      "sha256": "04687b32ac17b36289327b7b557d70d9b77c903f204e597507c3a5ff5550cf6a"
+    },
+    "2026-09-27-windows-insider-2026-09-25-phone-companion": {
+      "edition": "2026-09-27",
+      "sha256": "3f85077c2e02e192c47bd2def562445b3915e273b9186ad6cc0d753d4fd06a5e"
+    },
+    "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup": {
+      "edition": "2026-09-27",
+      "sha256": "3e4c88729c4c6a06e8ff058d8bb2d42c6f5e66b0d39f2075269943f9569a0709"
+    }
+  }
+}

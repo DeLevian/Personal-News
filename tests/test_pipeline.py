@@ -8,6 +8,7 @@ import tempfile
 import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 import news
+from article_fixtures import write_articles
 from image_metadata import extract
 
 class PipelineTests(unittest.TestCase):
@@ -54,6 +55,7 @@ class PipelineTests(unittest.TestCase):
         d=copy.deepcopy(self.base);d['date']=self.next_date;d['generated_at']=self.next_date+'T07:00:00+02:00';d['items']=d['items'][:1]
         i=d['items'][0];old=i['id'];i['id']=i['id'].replace(self.base['date'],self.next_date);i['status']='UPDATE';i['delta']='Test isolated update';i['summary']='A new fact for isolated tests';i['previous']={'id':old,'date':'2026-09-27'}
         news.write_json(self.root/f'docs/data/daily/{self.next_date}.json',d)
+        write_articles(self.root,d)
         news.run(self.root,'rebuild');news.run(self.root,'validate')
         m=news.load(self.root/'docs/data/index.json')
         self.assertEqual(m['latest'],self.next_date);self.assertEqual(len(m['editions']),len(self.days)+1)

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-terramaster-tos-7-0-1278",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "fa59b233b748e5c1ebaed3e034776919bce8b2312e279f67e0b155fc8a0f4185",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "TerraMaster · annuncio dello staff",
+      "type": "official",
+      "url": "https://forum.terra-master.com/en/viewtopic.php?t=10622"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Un aggiornamento di manutenzione",
+      "paragraphs": [
+        "TOS 7.0.1278 corregge diversi problemi su sistemi TerraMaster x86. Fra quelli elencati dallo staff compaiono consumo di memoria del centro messaggi, operazioni di copia e spostamento delle cartelle e alcuni accessi SMB dopo l’attivazione di LDAP. Sono presenti anche correzioni a controlli di connettività, ordinamento e gestione delle applicazioni."
+      ],
+      "source_urls": [
+        "https://forum.terra-master.com/en/viewtopic.php?t=10622"
+      ]
+    },
+    {
+      "heading": "Requisiti prima dell’installazione",
+      "paragraphs": [
+        "Il percorso indicato richiede TOS 7.0.0746 o successivo; per versioni più vecchie occorre seguire la sequenza di aggiornamento prevista dal produttore. L’avviso raccomanda un backup e almeno 3 GB liberi nel volume principale. Segnala inoltre che l’indirizzo IP può cambiare e che TNAS PC può essere necessario per ritrovare il dispositivo."
+      ],
+      "source_urls": [
+        "https://forum.terra-master.com/en/viewtopic.php?t=10622"
+      ]
+    },
+    {
+      "heading": "Come leggere la segnalazione",
+      "paragraphs": [
+        "Il numero della release non è sufficiente a stabilire la compatibilità con qualunque NAS. La decisione va presa confrontando architettura, modello, versione installata e istruzioni ufficiali. La notizia documenta correzioni disponibili: non è un invito ad aggiornare automaticamente un sistema che contiene dati importanti."
+      ],
+      "source_urls": [
+        "https://forum.terra-master.com/en/viewtopic.php?t=10622"
+      ]
+    }
+  ]
+}

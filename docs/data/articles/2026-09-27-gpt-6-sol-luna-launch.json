@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-gpt-6-sol-luna-launch",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "993052eff6bd2b042274cf6b32e4be2921be4a7eb4583e182c80ea5a99077c97",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "OpenAI",
+      "type": "official",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Due varianti per costi e ritmi diversi",
+      "paragraphs": [
+        "OpenAI amplia la famiglia GPT-6 con Sol e Luna, presentandoli come opzioni più economiche per lavoro professionale, coding e uso del computer. Il produttore attribuisce i miglioramenti a metodi di addestramento condivisi con Astra e a un’elaborazione più efficiente. Le valutazioni pubblicate sono però benchmark e prove del fornitore, non misure sui singoli progetti degli utenti."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+      ]
+    },
+    {
+      "heading": "Prezzi API e riuso del contesto",
+      "paragraphs": [
+        "I prezzi indicati per un milione di token sono 2 dollari in input e 10 in output per Sol; per Luna, 0,10 in input e 0,50 in output. OpenAI descrive inoltre miglioramenti alla cache dei prompt per le conversazioni e gli agenti che riutilizzano contesto. Prezzo per token, quantità consumata e quota di un abbonamento restano grandezze diverse."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+      ]
+    },
+    {
+      "heading": "Dove erano disponibili all’annuncio",
+      "paragraphs": [
+        "La disponibilità annunciata riguarda API, Codex e ChatGPT Work per i piani indicati; la stessa pagina distingue espressamente questi canali dalla Chat, dove i modelli non risultavano ancora disponibili all’annuncio. Il rollout è graduale. Questo articolo conserva quel contesto temporale: non trasforma un annuncio iniziale in una promessa permanente di accesso per ogni account."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+      ]
+    }
+  ]
+}

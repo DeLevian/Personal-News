@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-unity-codex-plugin",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "996e2b360c992a4b42b247c23451b0f8d0a2494e661f6dca7b9f793d3f16a76a",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Unity",
+      "type": "official",
+      "url": "https://unity.com/blog/unity-plugin-codex"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Istruzioni specifiche per lavorare su Unity",
+      "paragraphs": [
+        "Unity ha presentato un plugin ufficiale per Codex con 31 skill iniziali rivolte a Unity 6 e versioni successive. Non è soltanto un insieme di prompt generici: le procedure accompagnano l’agente nell’ispezione del progetto, nell’uso delle API pertinenti e nella verifica dei risultati ottenuti."
+      ],
+      "source_urls": [
+        "https://unity.com/blog/unity-plugin-codex"
+      ]
+    },
+    {
+      "heading": "Quali aree copre",
+      "paragraphs": [
+        "Le skill comprendono interfacce UI Toolkit e uGUI, 2D, URP, audio, fisica, acquisti integrati, multiplayer, Web e localizzazione. Gli strumenti da terminale permettono inoltre di interagire con Editor e progetti, gestire pacchetti e consultare build, test e log. Il valore pratico è legare una richiesta di modifica a operazioni e controlli dell’engine, anziché limitarsi a produrre uno script isolato."
+      ],
+      "source_urls": [
+        "https://unity.com/blog/unity-plugin-codex"
+      ]
+    },
+    {
+      "heading": "Come interpretare il vantaggio",
+      "paragraphs": [
+        "Il plugin può rendere più esplicito il percorso che l’agente deve seguire, ma non sostituisce gli standard del repository o una prova dentro Unity. Per un progetto mantenibile rimane necessario verificare componenti, prefab, dati configurabili e risultati di build. La novità va quindi valutata come supporto a un flusso di sviluppo controllato, non come garanzia che qualunque richiesta venga realizzata correttamente senza revisione."
+      ],
+      "source_urls": [
+        "https://unity.com/blog/unity-plugin-codex"
+      ]
+    }
+  ]
+}

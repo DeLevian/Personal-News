@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-anthropic-project-swap-2026-09-24",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "f42da5350550ef9a197606adad0edfdedca99a9f63469e5aa725594405517038",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Anthropic Research · Project Swap",
+      "type": "research",
+      "url": "https://www.anthropic.com/research/project-swap"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Un laboratorio di scambio fra agenti",
+      "paragraphs": [
+        "Con Project Swap, Anthropic ha affidato ad agenti Claude il compito di scambiare libri per 201 dipendenti in sei uffici. Una conversazione iniziale raccoglieva indicazioni sui gusti delle persone; gli agenti dovevano poi rappresentarle nelle negoziazioni. È un esperimento circoscritto, non una dimostrazione che gli agenti comprendano automaticamente ogni preferenza personale."
+      ],
+      "source_urls": [
+        "https://www.anthropic.com/research/project-swap"
+      ]
+    },
+    {
+      "heading": "Modello e istruzioni non pesano allo stesso modo",
+      "paragraphs": [
+        "Nelle ripetizioni descritte dai ricercatori, i mercati composti da modelli più forti risultavano più efficienti secondo le graduatorie usate nell’esperimento. Le istruzioni più aggressive o prosociali modificavano alcuni comportamenti, ma con differenze più contenute rispetto al cambio di modello. In alcuni casi gli agenti prosociali accettavano uno scambio meno favorevole per aiutare un altro partecipante."
+      ],
+      "source_urls": [
+        "https://www.anthropic.com/research/project-swap"
+      ]
+    },
+    {
+      "heading": "Che cosa insegna e che cosa non prova",
+      "paragraphs": [
+        "Il risultato interessante è la separazione fra capire la persona, scegliere una strategia e coordinarsi con altri agenti. Un sistema può negoziare efficacemente rispetto a una preferenza stimata senza aver rappresentato perfettamente quella reale. Campione, compito e metriche restano limiti essenziali: non sarebbe corretto trasferire direttamente questi risultati a mercati finanziari o ad acquisti autonomi di valore elevato."
+      ],
+      "source_urls": [
+        "https://www.anthropic.com/research/project-swap"
+      ]
+    }
+  ]
+}

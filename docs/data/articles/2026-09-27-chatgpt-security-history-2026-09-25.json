@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-chatgpt-security-history-2026-09-25",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "75a0799d83c0f68fe7d0abcfcdfd847708a616436da44cc5a030db26b02a2611",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "OpenAI · release notes",
+      "type": "official",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    },
+    {
+      "name": "OpenAI · guida alla sicurezza dell’account",
+      "type": "official",
+      "url": "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Un registro degli eventi, non delle conversazioni",
+      "paragraphs": [
+        "L’aggiornamento del 25 settembre aggiunge a ChatGPT una cronologia delle attività di sicurezza dell’account. Registra accessi e disconnessioni, modifiche della password e cambiamenti a autenticazione multifattore, passkey e altre impostazioni. Serve a ricostruire che cosa è accaduto all’account: non è un elenco dei contenuti delle chat e non sostituisce la gestione delle sessioni attualmente aperte."
+      ],
+      "source_urls": [
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ]
+    },
+    {
+      "heading": "Dove si trova e come interpretarla",
+      "paragraphs": [
+        "Sul sito di ChatGPT il percorso indicato da OpenAI è Settings → Security and login → Security history. Per ciascun evento è possibile confrontare tipo e orario con le informazioni disponibili su dispositivo e posizione. Questi ultimi dettagli possono essere approssimativi o assenti: una localizzazione insolita, da sola, non dimostra quindi un accesso abusivo. Il controllo utile consiste nel confrontare più elementi con le operazioni effettivamente eseguite."
+      ],
+      "source_urls": [
+        "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
+      ]
+    },
+    {
+      "heading": "Che cosa fare davanti a un’attività sconosciuta",
+      "paragraphs": [
+        "La guida ufficiale raccomanda di cambiare una password eventualmente esposta, disconnettere le sessioni e contattare l’assistenza conservando i dettagli utili. Se sono coinvolte chiavi API, occorre revocarle e controllarne l’utilizzo. Attivare MFA è una protezione aggiuntiva, ma non annulla automaticamente gli accessi già attivi: cronologia, revoca delle sessioni e secondo fattore hanno compiti distinti."
+      ],
+      "source_urls": [
+        "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
+      ]
+    }
+  ]
+}

@@ -27,12 +27,14 @@ jobs:
           python tools/news.py validate
           python -m unittest discover -s tests -v
           node --check docs/assets/app.js
+          node --check docs/assets/reader.js
           python tools/news.py rebuild
-          git diff --exit-code -- config/edition.schema.json docs/data state/seen.json state/event-index.json
+          git diff --exit-code -- config/edition.schema.json config/article.schema.json docs/data state/seen.json state/event-index.json
       - name: Real HTTP browser regressions
         run: |
           python tests/browser_check.py
           python tests/browser_v2.py
+          python tests/browser_reader.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:

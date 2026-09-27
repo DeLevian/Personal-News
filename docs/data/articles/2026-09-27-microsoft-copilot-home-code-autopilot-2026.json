@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-microsoft-copilot-home-code-autopilot-2026",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "ff4464312881e56ca9eac40570cbe5c27dffcd92f2cbbb614fb0a31cda5de63f",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Microsoft · blog ufficiale",
+      "type": "official",
+      "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Tre ambienti con ruoli diversi",
+      "paragraphs": [
+        "Microsoft presenta Copilot attraverso Home, Code e Autopilot. Home avvicina Chat e Cowork e permette di lavorare con Word, Excel e PowerPoint nell’esperienza Copilot. Code punta invece a creare applicazioni, dashboard e automazioni partendo da richieste in linguaggio naturale, usando tecnologia GitHub Copilot e ambienti isolati nel tenant."
+      ],
+      "source_urls": [
+        "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+      ]
+    },
+    {
+      "heading": "Che cosa significa Autopilot",
+      "paragraphs": [
+        "Autopilot è descritto come un agente persistente nel cloud: dispone di identità, memoria e spazio di lavoro, e può continuare un’attività entro gli obiettivi e i confini assegnati. Non equivale semplicemente a una conversazione lasciata aperta. Permessi, identità e tracciabilità diventano parte del funzionamento operativo, non aspetti da aggiungere soltanto dopo la costruzione dell’agente."
+      ],
+      "source_urls": [
+        "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+      ]
+    },
+    {
+      "heading": "Anteprime, disponibilità e costi",
+      "paragraphs": [
+        "L’annuncio prevede Home e Code attraverso Frontier nelle settimane successive e un ampliamento della private preview di Autopilot entro fine mese. Non promette disponibilità generale immediata per ogni cliente. Microsoft distingue inoltre licenza utente e utilizzo a consumo di attività e modelli. Prima di adottare questi flussi occorre quindi verificare accesso al programma, autorizzazioni e controlli di spesa: l’annuncio delle capacità non dimostra che siano già abilitate nel proprio ambiente."
+      ],
+      "source_urls": [
+        "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+      ]
+    }
+  ]
+}

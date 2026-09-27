@@ -5,8 +5,9 @@ Repository canonico tecnico: `DeLevian/Personal-News`. Sito pubblico italiano gi
 ## Avvio mirato
 1. Leggere questo file.
 2. Run quotidiana: `config/DAILY_RUN.md`, `config/pipeline.json`; seguire il routing verso il profilo nel Second Brain, rispettandone prima AGENTS.md e INDEX.md.
-3. Sviluppo: `README.md`, `project/STATE.md` e soltanto i file pertinenti.
-4. Prima di scrivere rileggere HEAD. Modifiche trasversali su branch dedicato; nessun force-push.
+3. Articoli italiani: leggere `config/ARTICLE_CONTENT.md` dopo la pipeline, anche per ricerche mirate. Ogni nuovo item richiede corpo italiano nello stesso commit.
+4. Sviluppo: `README.md`, `project/STATE.md` e soltanto i file pertinenti.
+5. Prima di scrivere rileggere HEAD. Modifiche trasversali su branch dedicato; nessun force-push.
 
 ## Responsabilità canoniche
 - Second Brain `03_PROJECTS/Second-Brain-News/NEWS_PROFILE.md`: interessi, priorità e regole editoriali personali.
@@ -14,12 +15,15 @@ Repository canonico tecnico: `DeLevian/Personal-News`. Sito pubblico italiano gi
 - `config/pipeline.json`: parametri numerici unici.
 - `config/DAILY_RUN.md` e `config/BRIEFING.md`: procedimento e notifica. Il task esterno è solo un bootstrap.
 - `docs/data/categories.json`: UI, non duplicazione di topics e fonti.
+- `config/ARTICLE_CONTENT.md`: redazione originale italiana, corpi separati e migrazione storica; limiti in `pipeline.json > article_content`.
+- `docs/data/articles/` e `article-index.json`: testi italiani verificati e indice derivato, senza alterare gli item originali.
 - `docs/data/daily/`: edizioni; `docs/data/initial/`: archivio iniziale autentico.
 - `state/seen.json`: cache recente; `state/event-index.json`: indice permanente ricostruibile dei precedenti.
 
 ## Contratto dati
 Nuove edizioni v2 con item `section: main|radar` e `included_at`. Lo storico v1 rimane leggibile come main. Featured solo main. NEW/UPDATE è indipendente dalla sezione. Le liste UI sono ordinate per pubblicazione reale della fonte: `published_at` decrescente quando disponibile, `published_date` come fallback; mai usare `included_at`, verifica o commit per stabilire la recenza.
 Non promuovere un vecchio Radar a NEW, né inventare delta. Le finestre temporali si riferiscono alla pubblicazione reale e alla prima inclusione, non all'ultimo rerun.
+Il manifesto congelato `config/ARTICLE_LEGACY.json` ammette solo schede storiche identiche senza corpo esteso: mostrare il limite, non simulare un articolo completo. Non ampliarlo nelle run. Un arricchimento della sola prosa non è NEW/UPDATE e non cambia date della fonte o prima inclusione.
 Le ricevute congelate `config/LEGACY_V1.json` tutelano esclusivamente i contenuti identici già ammessi nella medesima edizione v1. Non rigenerarle nelle run ordinarie, non usarle per ammettere vecchie notizie in giorni successivi.
 La selezione initial non va modificata ogni mattina. Date, ID e URL storici devono restare validi.
 
@@ -34,7 +38,7 @@ Mantenere mobile-first, accessibilità, proporzioni/lightbox/fallback delle imma
 
 ## Verifiche e scritture
 Installare `requirements.txt`, quindi `python tools/news.py rebuild`, `python tools/news.py validate`, `python -m unittest discover -s tests -v`.
-Per UI: `node --check docs/assets/app.js`, `tests/browser_check.py` e `tests/browser_v2.py` con requirements-test.txt. Test live soltanto dopo il deploy corrispondente.
+Per UI: `node --check docs/assets/app.js`, `node --check docs/assets/reader.js`, `tests/browser_check.py`, `tests/browser_v2.py` e `tests/browser_reader.py` con requirements-test.txt. Test live soltanto dopo il deploy corrispondente.
 Commit coerente di edizione e file derivati; rilettura dopo scrittura; concorrenza riconciliata senza force. Fonte temporaneamente offline: diagnostica separata dalla CI strutturale.
 Distinguere codice/test, commit, deploy e sito live. Non dichiarare eseguito un test mai effettuato.
 

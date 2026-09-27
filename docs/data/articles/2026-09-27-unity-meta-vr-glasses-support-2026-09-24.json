@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-unity-meta-vr-glasses-support-2026-09-24",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "0da772847dcfabdf850296af4fa9eb41e444a2c0ef6ece8c72c5c29818693554",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Unity",
+      "type": "official",
+      "url": "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Supporto dichiarato fin dal primo giorno",
+      "paragraphs": [
+        "Unity annuncia il supporto ai Meta VR Glasses a partire da Unity 6.6 con Meta XR All-in-One SDK v207. La continuità con i workflow OpenXR consente di riutilizzare parti del lavoro già svolto per l’ecosistema Quest, invece di considerare il dispositivo come un ambiente completamente separato."
+      ],
+      "source_urls": [
+        "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
+      ]
+    },
+    {
+      "heading": "Interazioni e strumenti nell’Editor",
+      "paragraphs": [
+        "Il pacchetto descritto comprende eye tracking, hand tracking, audio spaziale e modalità di rendering pensate per contenere il carico sulla GPU. Unity cita anche l’anteprima delle interazioni nell’Editor, utile per accorciare il ciclo di prova prima di passare al dispositivo. L’annuncio copre quindi sia l’esecuzione sia gli strumenti con cui preparare e verificare l’esperienza."
+      ],
+      "source_urls": [
+        "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
+      ]
+    },
+    {
+      "heading": "Compatibilità non significa porting già concluso",
+      "paragraphs": [
+        "Il supporto della piattaforma è un prerequisito, non una certificazione di ogni progetto esistente. Asset, input, budget grafico e comportamento sul dispositivo richiedono comunque controlli dedicati. Per chi segue Unity come ambiente multipiattaforma, la notizia riguarda soprattutto la possibilità di conservare un workflow comune, senza presumere che un gioco non XR diventi automaticamente pronto per la realtà virtuale."
+      ],
+      "source_urls": [
+        "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
+      ]
+    }
+  ]
+}

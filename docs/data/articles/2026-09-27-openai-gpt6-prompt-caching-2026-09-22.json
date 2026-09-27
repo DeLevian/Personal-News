@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-openai-gpt6-prompt-caching-2026-09-22",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "2cf90be74f8ee4cc6c1dc4fd33fab6358bfe2cbbf2d44f0fc9a2f3565e0d7bc9",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "OpenAI",
+      "type": "official",
+      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Dalla promessa di risparmio alla diagnosi",
+      "paragraphs": [
+        "OpenAI introduce strumenti per osservare quanto contesto viene realmente riutilizzato dalle applicazioni basate su GPT-6. La dashboard distingue input elaborato normalmente e input letto dalla cache, mostrando come il rapporto cambia nel tempo. Lo strumento diagnostico aiuta a confrontare richieste e risposte recenti e a individuare le differenze associate a opportunità di riuso perse."
+      ],
+      "source_urls": [
+        "https://openai.com/index/better-prompt-caching-for-gpt-6/"
+      ]
+    },
+    {
+      "heading": "Che cosa controllare negli agenti",
+      "paragraphs": [
+        "Il punto pratico è mantenere stabili i prefissi condivisi: istruzioni, definizioni degli strumenti, relativi schemi e ordine. La documentazione descrive controlli della disponibilità degli strumenti senza rimuoverne ogni volta le definizioni, breakpoint espliciti e variazioni dello sforzo di ragionamento compatibili con il riuso del contesto secondo il formato previsto. Non basta rendere due prompt simili a colpo d’occhio."
+      ],
+      "source_urls": [
+        "https://openai.com/index/better-prompt-caching-for-gpt-6/"
+      ]
+    },
+    {
+      "heading": "Il confine da non confondere",
+      "paragraphs": [
+        "Questa novità riguarda misurazione e ottimizzazione dei flussi API. Un miglioramento della cache può ridurre elaborazione e costo di quei flussi, ma non dimostra da solo che una quota dell’abbonamento ChatGPT aumenti. Per valutare un agente conviene misurare richieste effettive, cache hit e costo totale, invece di applicare automaticamente uno sconto teorico a tutto il lavoro."
+      ],
+      "source_urls": [
+        "https://openai.com/index/better-prompt-caching-for-gpt-6/"
+      ]
+    }
+  ]
+}

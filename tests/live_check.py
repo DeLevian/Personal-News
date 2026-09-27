@@ -36,9 +36,9 @@ def main():
             try:
                 live=json.loads(read(candidate+'data/index.json?check='+str(time.time_ns())))
                 js=read(candidate+'assets/app.js?check='+str(time.time_ns()))
-                if live['updated_at']==manifest['updated_at'] and hashlib.sha256(js).digest()==hashlib.sha256(expected).digest():
+                if live.get('content_revision')==manifest.get('content_revision') and live['updated_at']==manifest['updated_at'] and hashlib.sha256(js).digest()==hashlib.sha256(expected).digest():
                     edition_bytes_match=all(hashlib.sha256(read(candidate+entry['path']+'?check='+str(time.time_ns()))).digest()==hashlib.sha256((ROOT/'docs'/entry['path']).read_bytes()).digest() for entry in manifest['editions'][:2])
-                    asset_bytes_match=all(hashlib.sha256(read(candidate+name+'?check='+str(time.time_ns()))).digest()==hashlib.sha256((ROOT/'docs'/name).read_bytes()).digest() for name in ['index.html','assets/v2.css'])
+                    asset_bytes_match=all(hashlib.sha256(read(candidate+name+'?check='+str(time.time_ns()))).digest()==hashlib.sha256((ROOT/'docs'/name).read_bytes()).digest() for name in ['index.html','assets/styles.css','assets/media.css','assets/v2.css','assets/reader.css','assets/reader.js','data/search.json','data/article-index.json'])
                     if edition_bytes_match and asset_bytes_match:
                         base=candidate;ready=True;break
             except Exception as e:print('WAITING_DEPLOY',candidate,str(e),flush=True)
@@ -47,6 +47,15 @@ def main():
     if not ready:raise AssertionError('Pages has not yet published the tested data/code after waiting for propagation')
     out=ROOT/'artifacts';out.mkdir(exist_ok=True)
     report={'result':'running','entry_url':cfg['website_url'],'url':base,'edition':manifest['latest'],'images':[],'widths':[]}
+    article_index=json.loads((ROOT/'docs/data/article-index.json').read_text())
+    full=[x for x in article_index['items'] if x['status']=='full']
+    legacy=[x for x in article_index['items'] if x['status']=='legacy_summary']
+    # Check every published body against the tested commit, not only its HTTP status.
+    for entry in full:
+        assert entry['path']==f'data/articles/{entry["item_id"]}.json'
+        raw=read(base+entry['path']+'?check='+str(time.time_ns()))
+        assert hashlib.sha256(raw).hexdigest()==entry['sha256'], 'Deployed body mismatch: '+entry['item_id']
+    report['italian_bodies']={'full':len(full),'legacy_summary':len(legacy),'all_body_bytes_match':True}
     with sync_playwright() as p:
         options={'headless':True}
         if os.environ.get('CHROMIUM_PATH'):options['executable_path']=os.environ['CHROMIUM_PATH']
@@ -114,7 +123,30 @@ def main():
         if len(manifest['editions'])>1:
             page.locator('#prev').click();expect(page.locator('#next')).to_be_enabled()
         page.locator('#latest-button').click();expect(page.locator('.card')).to_have_count(latest['count'])
-        report['mobile_reading_chrome']='passed';report['live_navigation']='passed';report['javascript_errors']=errors
+        report['mobile_reading_chrome']='passed';report['live_navigation']='passed'
+        for entry in article_index['items']:
+            item_id=entry['item_id'];target=base+'?date='+entry['edition']+'&article='+item_id
+            page.goto(target,wait_until='domcontentloaded')
+            dialog=page.locator('#reader-dialog');expect(dialog).to_be_visible()
+            expected_status='full' if entry['status']=='full' else 'legacy-summary'
+            expect(dialog).to_have_attribute('data-content-status',expected_status)
+            if expected_status=='full':
+                body=json.loads((ROOT/'docs'/entry['path']).read_text())
+                expect(page.locator('#reader-body')).to_contain_text(body['sections'][0]['paragraphs'][0])
+                expect(page.locator('#reader-sources a').first).to_have_attribute('target','_blank')
+            else:expect(page.locator('#reader-status')).to_contain_text('scheda storica')
+            assert dialog.evaluate('(d)=>d.scrollWidth<=d.clientWidth'), 'Live reader overflow'
+            page.keyboard.press('Escape');expect(dialog).to_be_hidden()
+        if full:
+            entry=full[0];page.goto(base+'?date='+entry['edition'])
+            page.locator('[id="'+entry['item_id']+'"] .read-story-button').click()
+            expect(page.locator('#reader-dialog')).to_have_attribute('data-content-status','full')
+            for w,h in [(390,844),(1440,1000)]:
+                page.set_viewport_size({'width':w,'height':h})
+                page.screenshot(path=str(out/f'live-reader-{w}.png'))
+            page.locator('#reader-back').click();expect(page.locator('#reader-dialog')).to_be_hidden()
+        report['italian_reader_live']='all archived item routes and arrow passed'
+        report['javascript_errors']=errors
         browser.close()
     report['result']='passed' if not errors and all(i['ok'] for i in report['images']) else 'failed'
     (out/'live-results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

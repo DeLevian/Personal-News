@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-pi-v0-87-1",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "2bc36b40a6eeb7dcb442135318cb9700426016fae22983f695f3cd7419de6f3a",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Pi · release ufficiale",
+      "type": "official",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Il catalogo dell’agente si aggiorna",
+      "paragraphs": [
+        "La release 0.87.1 di Pi aggiunge supporto a Claude Opus 5.5, GPT-6 Sol e GPT-6 Luna attraverso i provider previsti, compreso GitHub Copilot. La nota ufficiale riguarda l’integrazione dei modelli nell’agente: è distinta dall’effettiva disponibilità del singolo modello sul piano e sull’account usati per autenticarsi."
+      ],
+      "source_urls": [
+        "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
+      ]
+    },
+    {
+      "heading": "Una modifica anche per chi usa xAI",
+      "paragraphs": [
+        "Le nuove sessioni xAI hanno Grok 4.7 come modello predefinito. Questo dettaglio riguarda le sessioni avviate con quel provider e non significa che tutti gli utenti di Pi vengano spostati automaticamente sullo stesso servizio. La release rimanda alle istruzioni per scegliere un modello e configurare l’autenticazione del provider."
+      ],
+      "source_urls": [
+        "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
+      ]
+    },
+    {
+      "heading": "Che cosa verificare nel proprio flusso",
+      "paragraphs": [
+        "Per usare una delle nuove opzioni occorre distinguere tre livelli: versione di Pi installata, provider selezionato e diritti di accesso dell’account. Aggiornare il client risolve soltanto il primo. Un confronto utile mantiene uguali compito, repository e criteri di verifica e misura le iterazioni effettive, senza dedurre qualità o consumo dal solo fatto che un nome compaia nella lista dei modelli."
+      ],
+      "source_urls": [
+        "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
+      ]
+    }
+  ]
+}
