@@ -1,6 +1,10 @@
 {
   "version": 2,
   "events": {
+    "anthropic-project-swap-2026-09-24": {
+      "id": "2026-09-27-anthropic-project-swap-2026-09-24",
+      "edition": "2026-09-27"
+    },
     "champions-frankfurt-2026-day-two": {
       "id": "2026-09-27-champions-frankfurt-2026-day-two",
       "edition": "2026-09-27"
@@ -20,6 +24,14 @@
     "deep-rock-survivor-mobile-optimization": {
       "id": "2026-09-27-deep-rock-survivor-mobile-optimization",
       "edition": "2026-09-27-initial"
+    },
+    "github-copilot-slack-teams-2026-09-25": {
+      "id": "2026-09-27-github-copilot-slack-teams-2026-09-25",
+      "edition": "2026-09-27"
+    },
+    "github-copilot-weekly-2026-09-21-models-sandbox": {
+      "id": "2026-09-27-github-copilot-weekly-2026-09-21-models-sandbox",
+      "edition": "2026-09-27"
     },
     "gpt-6-sol-luna-launch": {
       "id": "2026-09-27-gpt-6-sol-luna-launch",

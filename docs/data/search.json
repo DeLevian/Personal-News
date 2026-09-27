@@ -102,6 +102,36 @@
       "search_text": "TerraMaster TOS 7.0.1278: correzioni per memoria e gestione dei file L’annuncio dello staff elenca correzioni al consumo di memoria del centro messaggi, alla copia delle cartelle e ad alcuni accessi SMB. L’aggiornamento x86 richiede TOS 7.0.0746 o successivo; il produttore raccomanda un backup prima di procedere. Da valutare sul proprio modello e sulla versione installata, non come invito a un aggiornamento automatico o applicabile a ogni NAS. Radar NAS TerraMaster · annuncio dello staff"
     },
     {
+      "id": "2026-09-27-github-copilot-weekly-2026-09-21-models-sandbox",
+      "event_id": "github-copilot-weekly-2026-09-21-models-sandbox",
+      "edition": "2026-09-27",
+      "category": "agents",
+      "section": "main",
+      "status": "NEW",
+      "title": "GitHub Copilot: nuovi modelli, sandbox locale e agenti nei Dev Container",
+      "search_text": "GitHub Copilot: nuovi modelli, sandbox locale e agenti nei Dev Container Il riepilogo GitHub del 25 settembre porta GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5 e Grok 4.7 in diversi piani Copilot. La Copilot app aggiunge sandboxing locale in public preview e telemetria OpenTelemetry; VS Code 1.139 estende gradualmente le sessioni agentiche nei Dev Container ospitati via SSH, Tunnel e WSL. È un aggiornamento concreto del workflow di coding: separa disponibilità dei modelli, isolamento degli agenti e ambienti remoti, tutti aspetti utili quando si lavora con repository e strumenti agentici. GitHub Copilot coding agent sandbox VS Code GPT-6 GitHub Changelog · weekly releases"
+    },
+    {
+      "id": "2026-09-27-github-copilot-slack-teams-2026-09-25",
+      "event_id": "github-copilot-slack-teams-2026-09-25",
+      "edition": "2026-09-27",
+      "category": "work",
+      "section": "main",
+      "status": "NEW",
+      "title": "GitHub Copilot in Teams e Slack usa più contesto e può cambiare modello",
+      "search_text": "GitHub Copilot in Teams e Slack usa più contesto e può cambiare modello GitHub ha aggiornato le integrazioni Copilot per Slack e Microsoft Teams: più contesto da file, immagini, messaggi e thread, controllo del modello durante la conversazione e controlli contro issue duplicate. Migliora anche la gestione dei task lunghi e delle riconnessioni; la public preview è rivolta alle organizzazioni Copilot Business ed Enterprise. È rilevante per Digital Workplace e lavoro agentico: mostra come il coding agent stia entrando nei canali collaborativi con più contesto e tracciabilità verso GitHub. GitHub Copilot Microsoft Teams Slack Digital Workplace agent GitHub Changelog · Slack e Microsoft Teams"
+    },
+    {
+      "id": "2026-09-27-anthropic-project-swap-2026-09-24",
+      "event_id": "anthropic-project-swap-2026-09-24",
+      "edition": "2026-09-27",
+      "category": "agents",
+      "section": "radar",
+      "status": "NEW",
+      "title": "Anthropic prova un mercato in cui gli agenti negoziano tra loro",
+      "search_text": "Anthropic prova un mercato in cui gli agenti negoziano tra loro Nel Project Swap, 201 dipendenti Anthropic in sei uffici hanno affidato a agenti Claude lo scambio di libri. Dopo una breve conversazione, le preferenze stimate dagli agenti coincidevano con quelle delle persone nel 61% delle coppie; nei test ripetuti, modelli più forti hanno prodotto mercati più efficienti delle sole variazioni di prompt. È un esperimento controllato interessante per agenti che devono rappresentare preferenze, coordinarsi e negoziare: evidenzia che comprendere bene l’utente può essere un limite più importante della sola strategia di interazione. Radar Anthropic Claude multi-agent agentic workflows Anthropic Research · Project Swap"
+    },
+    {
       "id": "2026-09-27-unity-codex-plugin",
       "event_id": "unity-codex-plugin",
       "edition": "2026-09-27-initial",

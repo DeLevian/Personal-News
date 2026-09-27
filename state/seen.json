@@ -149,6 +149,32 @@
       ]
     },
     {
+      "event_id": "github-copilot-weekly-2026-09-21-models-sandbox",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-github-copilot-weekly-2026-09-21-models-sandbox",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "GitHub Copilot: nuovi modelli, sandbox locale e agenti nei Dev Container",
+      "last_summary": "Il riepilogo GitHub del 25 settembre porta GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5 e Grok 4.7 in diversi piani Copilot. La Copilot app aggiunge sandboxing locale in public preview e telemetria OpenTelemetry; VS Code 1.139 estende gradualmente le sessioni agentiche nei Dev Container ospitati via SSH, Tunnel e WSL.",
+      "sources": [
+        "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
+      ]
+    },
+    {
+      "event_id": "github-copilot-slack-teams-2026-09-25",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-github-copilot-slack-teams-2026-09-25",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "GitHub Copilot in Teams e Slack usa più contesto e può cambiare modello",
+      "last_summary": "GitHub ha aggiornato le integrazioni Copilot per Slack e Microsoft Teams: più contesto da file, immagini, messaggi e thread, controllo del modello durante la conversazione e controlli contro issue duplicate. Migliora anche la gestione dei task lunghi e delle riconnessioni; la public preview è rivolta alle organizzazioni Copilot Business ed Enterprise.",
+      "sources": [
+        "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams/"
+      ]
+    },
+    {
       "event_id": "deep-rock-survivor-mobile-optimization",
       "first_seen": "2026-09-27",
       "last_seen": "2026-09-27",
@@ -212,6 +238,19 @@
       "last_summary": "La seconda giornata dei Regionali di Francoforte comprende Pokémon Champions, oltre ai tornei TCG e GO. La diretta del videogioco è programmata dalle 09:00 italiane: la cronaca del 27 settembre rimanda all’hub delle trasmissioni.",
       "sources": [
         "https://www.serebii.net/news/2026/27-September-2026.shtml"
+      ]
+    },
+    {
+      "event_id": "anthropic-project-swap-2026-09-24",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-anthropic-project-swap-2026-09-24",
+      "last_edition": "2026-09-27",
+      "section": "radar",
+      "title": "Anthropic prova un mercato in cui gli agenti negoziano tra loro",
+      "last_summary": "Nel Project Swap, 201 dipendenti Anthropic in sei uffici hanno affidato a agenti Claude lo scambio di libri. Dopo una breve conversazione, le preferenze stimate dagli agenti coincidevano con quelle delle persone nel 61% delle coppie; nei test ripetuti, modelli più forti hanno prodotto mercati più efficienti delle sole variazioni di prompt.",
+      "sources": [
+        "https://www.anthropic.com/research/project-swap"
       ]
     }
   ]
