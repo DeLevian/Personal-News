@@ -1,39 +1,64 @@
 name: Verify Personal News
 on:
   push:
+    branches: [main, chatgpt/personal-news-v2]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: verify-${{ github.ref }}
+  group: verify-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  verify:
+  structure-and-browser:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Validate data and JavaScript
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements-test.txt
+          python -m playwright install --with-deps chromium
+      - name: Validate contracts and immutable archive
         run: |
           python tools/news.py validate
           python -m unittest discover -s tests -v
           node --check docs/assets/app.js
-      - name: Install browser test dependencies
+          python tools/news.py rebuild
+          git diff --exit-code -- config/edition.schema.json docs/data state/seen.json state/event-index.json
+      - name: Real HTTP browser regressions
         run: |
-          python -m pip install playwright pillow
-          python -m playwright install --with-deps chromium
-      - name: Test browser functionality
-        run: python tests/browser_check.py
-      - name: Test deployed Pages and real images
+          python tests/browser_check.py
+          python tests/browser_v2.py
+      - uses: actions/upload-artifact@v4
         if: always()
-        run: python tests/live_check.py
-      - name: Save browser evidence
-        if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: browser-evidence
+          name: structural-browser-evidence
           path: artifacts/
+          retention-days: 14
+          if-no-files-found: ignore
+  published-site:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: structure-and-browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install browser dependencies
+        run: |
+          python -m pip install -r requirements-test.txt
+          python -m playwright install --with-deps chromium
+      - name: Verify actual deployed Pages and source images
+        run: python tests/live_check.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-browser-evidence
+          path: artifacts/
+          retention-days: 14
           if-no-files-found: ignore
