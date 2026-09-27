@@ -25,7 +25,7 @@ def plan(root,when):
         if rotating:
             offset=(date_value.toordinal()*cfg['rotating_per_category'])%len(rotating)
             rotating=(rotating[offset:]+rotating[:offset])[:cfg['rotating_per_category']]
-        output[category]={'priority':1 if category in {'ai','agents','work','gamedev'} else 2,'candidate_target':[5,8] if category in {'ai','agents','work','gamedev'} else [4,6], 'check_first':daily+rotating,'on_gap':[s for s in src if s['check_policy']=='on_gap'],'optional':[s for s in src if s['check_policy']=='optional'],'open_web_queries':cat['query_matrix'][category]}
+        output[category]={'priority':1 if category in {'ai','agents','work','gamedev'} else 2,'candidate_target':cfg['category_candidate_targets']['p1' if category in {'ai','agents','work','gamedev'} else 'p2'], 'check_first':daily+rotating,'on_gap':[s for s in src if s['check_policy']=='on_gap'],'optional':[s for s in src if s['check_policy']=='optional'],'open_web_queries':cat['query_matrix'][category]}
     return {'version':2,'date':when,'target_unique_candidates':[cfg['discovery_candidate_target_min'],cfg['discovery_candidate_target_max']],'coverage_required':sorted(CATEGORIES),'categories':output,'rule':'Inspect every category, expand gaps, then verify/select. Do not claim this plan is completed discovery. Dates/facts/URLs must be checked on the article. Rotation is deterministic and requires no per-source history scan.'}
 
 def audit(root,data):

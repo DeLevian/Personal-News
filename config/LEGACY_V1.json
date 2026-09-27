@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "source_commit": "c5f4c6d581ec16157aa1ec2b0605c4e8f41c1135",
+  "note": "Frozen same-edition v1 admission receipt. included_at uses the last known v1 edition timestamp, not an invented source publication hour. Never regenerate during daily runs.",
+  "items": {
+    "2026-09-27-champions-frankfurt-2026-day-two": {
+      "edition": "2026-09-27",
+      "included_at": "2026-09-27T14:20:23+02:00",
+      "payload_sha256": "d72792ab6cad4178ae305d2117f3562f2baea78d626c90ebbc8a488b40eb659c"
+    },
+    "2026-09-27-chatgpt-security-history-2026-09-25": {
+      "edition": "2026-09-27",
+      "included_at": "2026-09-27T14:20:23+02:00",
+      "payload_sha256": "a760d9490b50408f6ade964c65f58d95bb45bee1214d4c41a07236121574445c"
+    },
+    "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26": {
+      "edition": "2026-09-27",
+      "included_at": "2026-09-27T14:20:23+02:00",
+      "payload_sha256": "87ebdeeb9e2383e40c31ef1b326e5e505e6a667ce4d11a846f4b7ace108ef92e"
+    },
+    "2026-09-27-champions-global-challenge-2027-i-battles": {
+      "edition": "2026-09-27",
+      "included_at": "2026-09-27T14:20:23+02:00",
+      "payload_sha256": "691d6ff15338dd5a2b2f18acb91a14dd6fc02472f34dbf64c5008127e85afec6"
+    },
+    "2026-09-27-windows-insider-2026-09-25-phone-companion": {
+      "edition": "2026-09-27",
+      "included_at": "2026-09-27T14:20:23+02:00",
+      "payload_sha256": "feaf295ac06576f74acd24061c7d23bc5a79941395b148ef12646d24ee809833"
+    },
+    "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup": {
+      "edition": "2026-09-27",
+      "included_at": "2026-09-27T14:20:23+02:00",
+      "payload_sha256": "1a2798785748b95bba254e4c52997bdf56155528b86ed23a7a1a10671abd2d88"
+    },
+    "2026-09-27-microsoft-copilot-home-code-autopilot-2026": {
+      "edition": "2026-09-27",
+      "included_at": "2026-09-27T14:20:23+02:00",
+      "payload_sha256": "12b0c6babd3d48aef77230fe16a4b52b22d894fb3fbf22927867198c428fa4ab"
+    },
+    "2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026": {
+      "edition": "2026-09-27",
+      "included_at": "2026-09-27T14:20:23+02:00",
+      "payload_sha256": "e7411ed65e8c9e02ce7c1dc25aa9d1a9652f5366d1a10636f160722394b18206"
+    }
+  }
+}

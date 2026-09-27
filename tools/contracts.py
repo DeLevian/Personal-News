@@ -63,6 +63,7 @@ def validate_catalogue(root=ROOT):
     require(cfg['max_featured']<=cfg['main_target_max'],'invalid featured cap')
     require(0<cfg['main_window_hours']<=cfg['main_exceptional_lookback_hours'],'invalid main windows')
     require(cfg['radar_lookback_days']>0,'invalid radar window')
+    require(set(cfg.get('category_candidate_targets',{}))=={'p1','p2'} and all(isinstance(v,list) and len(v)==2 and all(type(n) is int for n in v) and 0<v[0]<=v[1] for v in cfg['category_candidate_targets'].values()),'invalid category candidate targets')
     require(cfg['timezone']=='Europe/Rome' and url(cfg['website_url']),'invalid timezone/site')
     cats=load(root/'docs/data/categories.json')['categories']
     require({c['id'] for c in cats}==CATEGORIES and len(cats)==len(CATEGORIES),'invalid UI category IDs')
@@ -127,6 +128,8 @@ def validate_edition(d,categories,root=ROOT):
             continue
         included=timestamp(i['included_at'])
         require(verified<=included<=generated and included.astimezone(zone).date()==date_value,'invalid included_at (retain it on same-day reruns)')
+        from legacy import admitted
+        if admitted(i,d,root):continue  # Exact, same-edition v1 inclusion; no re-dating.
         if i.get('published_at'):
             pub=timestamp(i['published_at']);require(pub.date()==day(i['published_date']),'source timestamp/date mismatch')
         else:

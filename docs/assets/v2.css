@@ -16,3 +16,5 @@ body.no-images .radar-card,body.no-images.compact .radar-card{grid-template-colu
 .card-title,.card-summary,.why p{overflow-wrap:anywhere}
 .metrics{gap:18px}.metrics strong{font-size:18px}.metrics .updated{flex-basis:100%;margin-left:0}
 @media(max-width:580px){.radar-card,body.compact .radar-card{grid-template-columns:90px minmax(0,1fr)}.radar-card .card-body,body.compact .radar-card .card-body{padding:13px}.radar-card .card-title,body.compact .radar-card .card-title{font-size:15px}.radar-card .card-bottom{flex-wrap:wrap}.radar-card .placeholder-label,.radar-card .media-credit,.radar-card .media-placeholder small{display:none}.attention-box{padding:15px}.metrics{gap:12px}.metrics strong{font-size:16px}}
+
+.lead h3{overflow-wrap:anywhere}

@@ -82,6 +82,26 @@
       "search_text": "Pokémon TCG Pocket: Deluxe Pack: Mega arriva il 30 settembre in Italia The Pokémon Company ha annunciato Deluxe Pack: Mega, disponibile dal 29 settembre alle 18:00 PDT, quindi nella notte del 30 settembre in Italia. I pacchetti hanno quattro carte e garantiscono almeno un Pokémon ex; l’annuncio anticipa anche una funzione community decks, nuovi rental deck e una revisione delle battaglie step-up verso fine ottobre. Pokémon TCG Pocket è uno dei tre giochi monitorati direttamente: oltre al nuovo set, qui ci sono cambiamenti di sistema che possono incidere su costruzione dei mazzi e modalità in solitaria. Pokémon TCG Pocket Deluxe Pack Mega Pokémon ex community decks Pokémon · annuncio ufficiale Crunchyroll News · timestamp dell’annuncio"
     },
     {
+      "id": "2026-09-27-openai-gpt6-prompt-caching-2026-09-22",
+      "event_id": "openai-gpt6-prompt-caching-2026-09-22",
+      "edition": "2026-09-27",
+      "category": "ai",
+      "section": "radar",
+      "status": "NEW",
+      "title": "OpenAI: strumenti per capire quando la cache dei prompt funziona",
+      "search_text": "OpenAI: strumenti per capire quando la cache dei prompt funziona OpenAI ha presentato una dashboard e strumenti diagnostici per osservare il riuso dei prompt e individuare i cache miss. La documentazione illustra anche come mantenere stabili istruzioni e definizioni degli strumenti. Un approfondimento utile per integrare agenti via API: non implica automaticamente una riduzione delle quote del proprio abbonamento ChatGPT. Radar API OpenAI"
+    },
+    {
+      "id": "2026-09-27-terramaster-tos-7-0-1278",
+      "event_id": "terramaster-tos-7-0-1278",
+      "edition": "2026-09-27",
+      "category": "devices",
+      "section": "radar",
+      "status": "NEW",
+      "title": "TerraMaster TOS 7.0.1278: correzioni per memoria e gestione dei file",
+      "search_text": "TerraMaster TOS 7.0.1278: correzioni per memoria e gestione dei file L’annuncio dello staff elenca correzioni al consumo di memoria del centro messaggi, alla copia delle cartelle e ad alcuni accessi SMB. L’aggiornamento x86 richiede TOS 7.0.0746 o successivo; il produttore raccomanda un backup prima di procedere. Da valutare sul proprio modello e sulla versione installata, non come invito a un aggiornamento automatico o applicabile a ogni NAS. Radar NAS TerraMaster · annuncio dello staff"
+    },
+    {
       "id": "2026-09-27-unity-codex-plugin",
       "event_id": "unity-codex-plugin",
       "edition": "2026-09-27-initial",

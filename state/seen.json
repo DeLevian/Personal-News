@@ -57,6 +57,19 @@
       ]
     },
     {
+      "event_id": "terramaster-tos-7-0-1278",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-terramaster-tos-7-0-1278",
+      "last_edition": "2026-09-27",
+      "section": "radar",
+      "title": "TerraMaster TOS 7.0.1278: correzioni per memoria e gestione dei file",
+      "last_summary": "L’annuncio dello staff elenca correzioni al consumo di memoria del centro messaggi, alla copia delle cartelle e ad alcuni accessi SMB. L’aggiornamento x86 richiede TOS 7.0.0746 o successivo; il produttore raccomanda un backup prima di procedere.",
+      "sources": [
+        "https://forum.terra-master.com/en/viewtopic.php?t=10622"
+      ]
+    },
+    {
       "event_id": "pokemon-tcg-pocket-deluxe-pack-mega-2026",
       "first_seen": "2026-09-27",
       "last_seen": "2026-09-27",
@@ -81,6 +94,19 @@
       "last_summary": "Le note di rilascio aggiungono supporto a GPT-6 Sol, GPT-6 Luna e Claude Opus 5.5 nei provider indicati. Per Sol e Luna sono citati sia le chiavi API OpenAI sia gli abbonamenti OpenAI Codex.",
       "sources": [
         "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
+      ]
+    },
+    {
+      "event_id": "openai-gpt6-prompt-caching-2026-09-22",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-openai-gpt6-prompt-caching-2026-09-22",
+      "last_edition": "2026-09-27",
+      "section": "radar",
+      "title": "OpenAI: strumenti per capire quando la cache dei prompt funziona",
+      "last_summary": "OpenAI ha presentato una dashboard e strumenti diagnostici per osservare il riuso dei prompt e individuare i cache miss. La documentazione illustra anche come mantenere stabili istruzioni e definizioni degli strumenti.",
+      "sources": [
+        "https://openai.com/index/better-prompt-caching-for-gpt-6/"
       ]
     },
     {

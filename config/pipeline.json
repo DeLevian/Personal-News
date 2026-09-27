@@ -19,5 +19,15 @@
   "main_window_hours": 24,
   "main_exceptional_lookback_hours": 72,
   "radar_lookback_days": 7,
-  "rotating_per_category": 2
+  "rotating_per_category": 2,
+  "category_candidate_targets": {
+    "p1": [
+      5,
+      8
+    ],
+    "p2": [
+      4,
+      6
+    ]
+  }
 }

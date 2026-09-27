@@ -1,11 +1,11 @@
 {
-  "version": 1,
+  "version": 2,
   "date": "2026-09-27",
-  "generated_at": "2026-09-27T14:20:23+02:00",
+  "generated_at": "2026-09-27T16:36:59+02:00",
   "kind": "daily",
   "title": "27 settembre · Champions, Copilot, Pocket e novità da giocare",
   "summary": "Otto novità verificate tra AI, Digital Workplace, dispositivi e gaming: Copilot cambia forma, Pocket prepara un nuovo set e il competitivo Champions resta in primo piano.",
-  "note": "Run di test completa dell’automazione: due notizie pertinenti mancanti sono state aggiunte senza duplicare gli eventi già presenti. La selezione iniziale del mattino resta separata nell’archivio.",
+  "note": "Edizione aggiornata al formato v2: otto notizie già pubblicate preservate e due segnalazioni Radar verificate. La raccolta di 50 link candidati è una prova di discovery, non 50 notizie approvate.",
   "items": [
     {
       "id": "2026-09-27-champions-frankfurt-2026-day-two",
@@ -19,90 +19,360 @@
       "event_date": "2026-09-27",
       "verified_at": "2026-09-27T12:32:43+02:00",
       "featured": true,
-      "tags": ["Pokémon Champions","competitivo","Regionali","diretta"],
-      "sources": [{"name":"Serebii · cronaca del 27 settembre","type":"reputable","url":"https://www.serebii.net/news/2026/27-September-2026.shtml"}],
-      "image": {"url":"https://www.serebii.net/regionals24.jpg","alt":"Banner dei Pokémon Regional Championships usato dalla fonte; non una fotografia di Francoforte","credit":"The Pokémon Company · via Serebii","source_url":"https://www.serebii.net/news/2026/27-September-2026.shtml","verification":"URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."},
-      "published_at":"2026-09-27T07:00:00+01:00"
+      "tags": [
+        "Pokémon Champions",
+        "competitivo",
+        "Regionali",
+        "diretta"
+      ],
+      "sources": [
+        {
+          "name": "Serebii · cronaca del 27 settembre",
+          "type": "reputable",
+          "url": "https://www.serebii.net/news/2026/27-September-2026.shtml"
+        }
+      ],
+      "image": {
+        "url": "https://www.serebii.net/regionals24.jpg",
+        "alt": "Banner dei Pokémon Regional Championships usato dalla fonte; non una fotografia di Francoforte",
+        "credit": "The Pokémon Company · via Serebii",
+        "source_url": "https://www.serebii.net/news/2026/27-September-2026.shtml",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "published_at": "2026-09-27T07:00:00+01:00",
+      "section": "main",
+      "included_at": "2026-09-27T14:20:23+02:00"
     },
     {
-      "id":"2026-09-27-chatgpt-security-history-2026-09-25","event_id":"chatgpt-security-history-2026-09-25","category":"ai","status":"NEW",
-      "title":"ChatGPT aggiunge la cronologia degli accessi e della sicurezza",
-      "summary":"OpenAI introduce Security history: accessi, disconnessioni e modifiche a MFA, passkey e altre impostazioni. Sul web si trova in Settings → Security and login → Security history. Orario, località e dispositivo possono essere approssimativi o non disponibili.",
-      "why_you_care":"È una novità pratica per tenere sotto controllo l’account usato con ChatGPT e strumenti collegati; non è un annuncio di un nuovo modello.",
-      "published_date":"2026-09-25","event_date":"2026-09-25","verified_at":"2026-09-27T12:32:43+02:00","featured":true,
-      "tags":["ChatGPT","sicurezza account","OpenAI","passkey"],
-      "sources":[{"name":"OpenAI · release notes","type":"official","url":"https://help.openai.com/en/articles/6825453-chatgpt-release-notes"},{"name":"OpenAI · guida alla sicurezza dell’account","type":"official","url":"https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"}],
-      "image":{"url":"https://cdn.oaistatic.com/assets/apple-touch-icon-mz9nytnj.webp","alt":"Icona ufficiale ChatGPT: identificazione della fonte OpenAI, non schermata della notizia","credit":"OpenAI · icona ufficiale ChatGPT","source_url":"https://chatgpt.com/","verification":"Icona ufficiale servita dalla CDN OpenAI. Sostituisce la favicon del centro assistenza che risultava bloccata nel browser. Verifica HTTP e browser nel workflow Verify Personal News."},
-      "recency_reason":"Recupero entro 72 ore: funzione nuova di sicurezza direttamente pertinente all’uso di ChatGPT, non presente nelle edizioni precedenti."
+      "id": "2026-09-27-chatgpt-security-history-2026-09-25",
+      "event_id": "chatgpt-security-history-2026-09-25",
+      "category": "ai",
+      "status": "NEW",
+      "title": "ChatGPT aggiunge la cronologia degli accessi e della sicurezza",
+      "summary": "OpenAI introduce Security history: accessi, disconnessioni e modifiche a MFA, passkey e altre impostazioni. Sul web si trova in Settings → Security and login → Security history. Orario, località e dispositivo possono essere approssimativi o non disponibili.",
+      "why_you_care": "È una novità pratica per tenere sotto controllo l’account usato con ChatGPT e strumenti collegati; non è un annuncio di un nuovo modello.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T12:32:43+02:00",
+      "featured": true,
+      "tags": [
+        "ChatGPT",
+        "sicurezza account",
+        "OpenAI",
+        "passkey"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI · release notes",
+          "type": "official",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "name": "OpenAI · guida alla sicurezza dell’account",
+          "type": "official",
+          "url": "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
+        }
+      ],
+      "image": {
+        "url": "https://cdn.oaistatic.com/assets/apple-touch-icon-mz9nytnj.webp",
+        "alt": "Icona ufficiale ChatGPT: identificazione della fonte OpenAI, non schermata della notizia",
+        "credit": "OpenAI · icona ufficiale ChatGPT",
+        "source_url": "https://chatgpt.com/",
+        "verification": "Icona ufficiale servita dalla CDN OpenAI. Sostituisce la favicon del centro assistenza che risultava bloccata nel browser. Verifica HTTP e browser nel workflow Verify Personal News."
+      },
+      "recency_reason": "Recupero entro 72 ore: funzione nuova di sicurezza direttamente pertinente all’uso di ChatGPT, non presente nelle edizioni precedenti.",
+      "section": "main",
+      "included_at": "2026-09-27T14:20:23+02:00"
     },
     {
-      "id":"2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26","event_id":"minecraft-dungeons-ii-systems-podcast-2026-09-26","category":"gaming","status":"NEW",
-      "title":"Action RPG: Minecraft Dungeons II racconta il nuovo sistema di esplorazione",
-      "summary":"Nel podcast ufficiale del 26 settembre, Mojang descrive un mondo interconnesso, il salto per esplorare spazi verticali e nuovi sistemi di equipaggiamento. L’intervista approfondisce come queste scelte cambino esplorazione e personalizzazione del combattimento.",
-      "why_you_care":"Entra nel radar per il genere action RPG e le build, non perché Minecraft sia stato aggiunto ai tre giochi monitorati per nome.",
-      "published_date":"2026-09-26","event_date":"2026-09-26","verified_at":"2026-09-27T12:32:43+02:00","featured":false,
-      "tags":["action RPG","build","esplorazione","cooperativa"],
-      "sources":[{"name":"Xbox Wire · intervista a Mojang","type":"official","url":"https://news.xbox.com/en-us/2026/09/26/minecraft-dungeons-ii-the-sift-new-mechanics-better-exploration-and-more-official-xbox-podcast/"}],
-      "image":{"url":"https://xboxwire.thesourcemediaassets.com/sites/2/2026/09/Wire_EP286-3c39b574eab193c9cbae.jpg","alt":"Banner di Minecraft Dungeons II per il podcast ufficiale Xbox","credit":"Xbox / Mojang","source_url":"https://news.xbox.com/en-us/2026/09/26/minecraft-dungeons-ii-the-sift-new-mechanics-better-exploration-and-more-official-xbox-podcast/","verification":"URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."},
-      "published_at":"2026-09-26T18:00:00+00:00"
+      "id": "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "event_id": "minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Action RPG: Minecraft Dungeons II racconta il nuovo sistema di esplorazione",
+      "summary": "Nel podcast ufficiale del 26 settembre, Mojang descrive un mondo interconnesso, il salto per esplorare spazi verticali e nuovi sistemi di equipaggiamento. L’intervista approfondisce come queste scelte cambino esplorazione e personalizzazione del combattimento.",
+      "why_you_care": "Entra nel radar per il genere action RPG e le build, non perché Minecraft sia stato aggiunto ai tre giochi monitorati per nome.",
+      "published_date": "2026-09-26",
+      "event_date": "2026-09-26",
+      "verified_at": "2026-09-27T12:32:43+02:00",
+      "featured": false,
+      "tags": [
+        "action RPG",
+        "build",
+        "esplorazione",
+        "cooperativa"
+      ],
+      "sources": [
+        {
+          "name": "Xbox Wire · intervista a Mojang",
+          "type": "official",
+          "url": "https://news.xbox.com/en-us/2026/09/26/minecraft-dungeons-ii-the-sift-new-mechanics-better-exploration-and-more-official-xbox-podcast/"
+        }
+      ],
+      "image": {
+        "url": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/09/Wire_EP286-3c39b574eab193c9cbae.jpg",
+        "alt": "Banner di Minecraft Dungeons II per il podcast ufficiale Xbox",
+        "credit": "Xbox / Mojang",
+        "source_url": "https://news.xbox.com/en-us/2026/09/26/minecraft-dungeons-ii-the-sift-new-mechanics-better-exploration-and-more-official-xbox-podcast/",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "published_at": "2026-09-26T18:00:00+00:00",
+      "section": "main",
+      "included_at": "2026-09-27T14:20:23+02:00"
     },
     {
-      "id":"2026-09-27-champions-global-challenge-2027-i-battles","event_id":"champions-global-challenge-2027-i-battles","category":"gaming","status":"NEW",
-      "title":"Champions: la Global Challenge 2027 I si chiude nella notte",
-      "summary":"Sono in corso le lotte in doppio con regolamento M-C. La finestra di gioco termina il 28 settembre alle 03:59 italiane; chi completa almeno tre incontri riceve Archaludon. La notizia riguarda la fase di lotta: non implica che le iscrizioni siano ancora aperte.",
-      "why_you_care":"Una scadenza concreta per chi è già iscritto, con regolamento e ricompensa da controllare prima della chiusura.",
-      "published_date":"2026-09-25","event_date":"2026-09-25","verified_at":"2026-09-27T12:32:43+02:00","featured":false,
-      "tags":["Pokémon Champions","Global Challenge","regolamento M-C","scadenza"],
-      "sources":[{"name":"Serebii · cronaca del 25 settembre","type":"reputable","url":"https://www.serebii.net/news/2026/25-September-2026.shtml"}],
-      "image":{"url":"https://www.serebii.net/pokemonchampions/onlinecompetitions/globalchallenge2027i.jpg","alt":"Banner ufficiale Global Challenge 2027 I","credit":"The Pokémon Company · via Serebii","source_url":"https://www.serebii.net/news/2026/25-September-2026.shtml","verification":"URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."},
-      "recency_reason":"Recupero entro 72 ore: evento del gioco esplicitamente seguito e finestra di lotta ancora attiva, prossima alla chiusura.",
-      "published_at":"2026-09-25T03:00:00+01:00"
+      "id": "2026-09-27-champions-global-challenge-2027-i-battles",
+      "event_id": "champions-global-challenge-2027-i-battles",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Champions: la Global Challenge 2027 I si chiude nella notte",
+      "summary": "Sono in corso le lotte in doppio con regolamento M-C. La finestra di gioco termina il 28 settembre alle 03:59 italiane; chi completa almeno tre incontri riceve Archaludon. La notizia riguarda la fase di lotta: non implica che le iscrizioni siano ancora aperte.",
+      "why_you_care": "Una scadenza concreta per chi è già iscritto, con regolamento e ricompensa da controllare prima della chiusura.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T12:32:43+02:00",
+      "featured": false,
+      "tags": [
+        "Pokémon Champions",
+        "Global Challenge",
+        "regolamento M-C",
+        "scadenza"
+      ],
+      "sources": [
+        {
+          "name": "Serebii · cronaca del 25 settembre",
+          "type": "reputable",
+          "url": "https://www.serebii.net/news/2026/25-September-2026.shtml"
+        }
+      ],
+      "image": {
+        "url": "https://www.serebii.net/pokemonchampions/onlinecompetitions/globalchallenge2027i.jpg",
+        "alt": "Banner ufficiale Global Challenge 2027 I",
+        "credit": "The Pokémon Company · via Serebii",
+        "source_url": "https://www.serebii.net/news/2026/25-September-2026.shtml",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "recency_reason": "Recupero entro 72 ore: evento del gioco esplicitamente seguito e finestra di lotta ancora attiva, prossima alla chiusura.",
+      "published_at": "2026-09-25T03:00:00+01:00",
+      "section": "main",
+      "included_at": "2026-09-27T14:20:23+02:00"
     },
     {
-      "id":"2026-09-27-windows-insider-2026-09-25-phone-companion","event_id":"windows-insider-2026-09-25-phone-companion","category":"devices","status":"NEW",
-      "title":"Windows Insider: più attività dello smartphone nel menu Start",
-      "summary":"Le build del 25 settembre aggiornano i canali Beta ed Experimental. In Experimental, Phone companion mostra più attività recenti in un pannello scorrevole; arrivano anche suggerimenti energetici nelle impostazioni rapide. Sono funzioni in anteprima, non un rilascio generale per tutti i PC.",
-      "why_you_care":"Rilevante per l’integrazione Windows–smartphone. La notizia non è un invito a installare build sperimentali sul computer principale.",
-      "published_date":"2026-09-25","event_date":"2026-09-25","verified_at":"2026-09-27T12:32:43+02:00","featured":false,
-      "tags":["Windows 11","Android","Phone companion","Insider"],
-      "sources":[{"name":"Microsoft · Windows Insider","type":"official","url":"https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"}],
-      "image":{"url":"https://winblogs.thesourcemediaassets.com/sites/44/2026/09/9d-startmenu-phonecompanion.png","alt":"Schermata ufficiale del menu Start con il pannello scorrevole Phone companion","credit":"Microsoft","source_url":"https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/","verification":"URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."},
-      "recency_reason":"Recupero entro 72 ore: integrazione fra Windows e smartphone pertinente ai dispositivi seguiti, non già segnalata.",
-      "published_at":"2026-09-25T17:02:08+00:00"
+      "id": "2026-09-27-windows-insider-2026-09-25-phone-companion",
+      "event_id": "windows-insider-2026-09-25-phone-companion",
+      "category": "devices",
+      "status": "NEW",
+      "title": "Windows Insider: più attività dello smartphone nel menu Start",
+      "summary": "Le build del 25 settembre aggiornano i canali Beta ed Experimental. In Experimental, Phone companion mostra più attività recenti in un pannello scorrevole; arrivano anche suggerimenti energetici nelle impostazioni rapide. Sono funzioni in anteprima, non un rilascio generale per tutti i PC.",
+      "why_you_care": "Rilevante per l’integrazione Windows–smartphone. La notizia non è un invito a installare build sperimentali sul computer principale.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T12:32:43+02:00",
+      "featured": false,
+      "tags": [
+        "Windows 11",
+        "Android",
+        "Phone companion",
+        "Insider"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft · Windows Insider",
+          "type": "official",
+          "url": "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
+        }
+      ],
+      "image": {
+        "url": "https://winblogs.thesourcemediaassets.com/sites/44/2026/09/9d-startmenu-phonecompanion.png",
+        "alt": "Schermata ufficiale del menu Start con il pannello scorrevole Phone companion",
+        "credit": "Microsoft",
+        "source_url": "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "recency_reason": "Recupero entro 72 ore: integrazione fra Windows e smartphone pertinente ai dispositivi seguiti, non già segnalata.",
+      "published_at": "2026-09-25T17:02:08+00:00",
+      "section": "main",
+      "included_at": "2026-09-27T14:20:23+02:00"
     },
     {
-      "id":"2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup","event_id":"xbox-september-28-october-2-2026-rpg-retro-lineup","category":"gaming","status":"NEW",
-      "title":"RPG e recuperi dal passato: cosa arriva su Xbox la prossima settimana",
-      "summary":"Il calendario Xbox del 25 settembre segnala Gothic II Complete Classic e l’RPG gestionale Keep Driving per il 28 settembre, oltre a Dynasty Warriors 3: Complete Edition Remastered per il 1º ottobre. Sono date annunciate per Xbox, soggette a variazioni.",
-      "why_you_care":"Una selezione per generi e retrogaming: recuperi di catalogo, progressione e scelte di gioco, senza trasformare ogni titolo in una watchlist individuale.",
-      "published_date":"2026-09-25","event_date":"2026-09-25","verified_at":"2026-09-27T12:32:43+02:00","featured":false,
-      "tags":["Xbox","RPG","retrogaming","riedizioni","uscite"],
-      "sources":[{"name":"Xbox Wire · calendario ufficiale","type":"official","url":"https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/"}],
-      "image":{"url":"https://xboxwire.thesourcemediaassets.com/sites/2/2026/09/NWOX_HERO_JPG-77b9d7d8c68d7f8d346a.jpg","alt":"Banner della rassegna Xbox: uscite dal 28 settembre al 2 ottobre","credit":"Xbox Wire","source_url":"https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/","verification":"URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."},
-      "recency_reason":"Recupero entro 72 ore: calendario imminente delle uscite per console, con selezione mirata a RPG e retrogaming.",
-      "published_at":"2026-09-25T14:00:00+00:00"
+      "id": "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "event_id": "xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "RPG e recuperi dal passato: cosa arriva su Xbox la prossima settimana",
+      "summary": "Il calendario Xbox del 25 settembre segnala Gothic II Complete Classic e l’RPG gestionale Keep Driving per il 28 settembre, oltre a Dynasty Warriors 3: Complete Edition Remastered per il 1º ottobre. Sono date annunciate per Xbox, soggette a variazioni.",
+      "why_you_care": "Una selezione per generi e retrogaming: recuperi di catalogo, progressione e scelte di gioco, senza trasformare ogni titolo in una watchlist individuale.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T12:32:43+02:00",
+      "featured": false,
+      "tags": [
+        "Xbox",
+        "RPG",
+        "retrogaming",
+        "riedizioni",
+        "uscite"
+      ],
+      "sources": [
+        {
+          "name": "Xbox Wire · calendario ufficiale",
+          "type": "official",
+          "url": "https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/"
+        }
+      ],
+      "image": {
+        "url": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/09/NWOX_HERO_JPG-77b9d7d8c68d7f8d346a.jpg",
+        "alt": "Banner della rassegna Xbox: uscite dal 28 settembre al 2 ottobre",
+        "credit": "Xbox Wire",
+        "source_url": "https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/",
+        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+      },
+      "recency_reason": "Recupero entro 72 ore: calendario imminente delle uscite per console, con selezione mirata a RPG e retrogaming.",
+      "published_at": "2026-09-25T14:00:00+00:00",
+      "section": "main",
+      "included_at": "2026-09-27T14:20:23+02:00"
     },
     {
-      "id":"2026-09-27-microsoft-copilot-home-code-autopilot-2026","event_id":"microsoft-copilot-home-code-autopilot-2026","category":"work","status":"NEW",
-      "title":"Microsoft ridisegna Copilot con Home, Code e Autopilot",
-      "summary":"Microsoft ha presentato un nuovo Copilot organizzato attorno a Home, Code e Autopilot. Home unisce Chat e Cowork con Word, Excel e PowerPoint; Code crea app, dashboard e automazioni in linguaggio naturale; Autopilot è un agente persistente cloud che può continuare attività senza attendere un nuovo prompt. Home e Code iniziano dal programma Frontier, mentre Autopilot si espande in private preview a fine mese.",
-      "why_you_care":"È direttamente rilevante per Digital Workplace e sperimentazione AI: porta costruzione di soluzioni, agenti persistenti, governance e runtime gestito sempre più dentro l’ecosistema Microsoft 365.",
-      "published_date":"2026-09-25","event_date":"2026-09-25","verified_at":"2026-09-27T14:20:23+02:00","featured":true,
-      "tags":["Microsoft Copilot","Microsoft 365","Autopilot","Code","Digital Workplace"],
-      "sources":[{"name":"Microsoft · blog ufficiale","type":"official","url":"https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"}],
-      "image":{"url":"https://msblogs.thesourcemediaassets.com/2026/09/OMB-Copilot-9-25-Hero-9_22_26.png","alt":"Banner ufficiale Microsoft del nuovo Copilot con Home, Code e Autopilot","credit":"Microsoft","source_url":"https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/","verification":"Hero image collegata dalla pagina ufficiale Microsoft. La raggiungibilità effettiva viene verificata dal workflow live dopo il commit."},
-      "recency_reason":"Recupero entro 72 ore: aggiornamento sostanziale e direttamente pertinente a Microsoft 365, Digital Workplace, agenti e Copilot; non era presente nell’edizione già pubblicata oggi."
+      "id": "2026-09-27-microsoft-copilot-home-code-autopilot-2026",
+      "event_id": "microsoft-copilot-home-code-autopilot-2026",
+      "category": "work",
+      "status": "NEW",
+      "title": "Microsoft ridisegna Copilot con Home, Code e Autopilot",
+      "summary": "Microsoft ha presentato un nuovo Copilot organizzato attorno a Home, Code e Autopilot. Home unisce Chat e Cowork con Word, Excel e PowerPoint; Code crea app, dashboard e automazioni in linguaggio naturale; Autopilot è un agente persistente cloud che può continuare attività senza attendere un nuovo prompt. Home e Code iniziano dal programma Frontier, mentre Autopilot si espande in private preview a fine mese.",
+      "why_you_care": "È direttamente rilevante per Digital Workplace e sperimentazione AI: porta costruzione di soluzioni, agenti persistenti, governance e runtime gestito sempre più dentro l’ecosistema Microsoft 365.",
+      "published_date": "2026-09-25",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T14:20:23+02:00",
+      "featured": true,
+      "tags": [
+        "Microsoft Copilot",
+        "Microsoft 365",
+        "Autopilot",
+        "Code",
+        "Digital Workplace"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft · blog ufficiale",
+          "type": "official",
+          "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+        }
+      ],
+      "image": {
+        "url": "https://msblogs.thesourcemediaassets.com/2026/09/OMB-Copilot-9-25-Hero-9_22_26.png",
+        "alt": "Banner ufficiale Microsoft del nuovo Copilot con Home, Code e Autopilot",
+        "credit": "Microsoft",
+        "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+        "verification": "Hero image collegata dalla pagina ufficiale Microsoft. La raggiungibilità effettiva viene verificata dal workflow live dopo il commit."
+      },
+      "recency_reason": "Recupero entro 72 ore: aggiornamento sostanziale e direttamente pertinente a Microsoft 365, Digital Workplace, agenti e Copilot; non era presente nell’edizione già pubblicata oggi.",
+      "section": "main",
+      "included_at": "2026-09-27T14:20:23+02:00"
     },
     {
-      "id":"2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026","event_id":"pokemon-tcg-pocket-deluxe-pack-mega-2026","category":"gaming","status":"NEW",
-      "title":"Pokémon TCG Pocket: Deluxe Pack: Mega arriva il 30 settembre in Italia",
-      "summary":"The Pokémon Company ha annunciato Deluxe Pack: Mega, disponibile dal 29 settembre alle 18:00 PDT, quindi nella notte del 30 settembre in Italia. I pacchetti hanno quattro carte e garantiscono almeno un Pokémon ex; l’annuncio anticipa anche una funzione community decks, nuovi rental deck e una revisione delle battaglie step-up verso fine ottobre.",
-      "why_you_care":"Pokémon TCG Pocket è uno dei tre giochi monitorati direttamente: oltre al nuovo set, qui ci sono cambiamenti di sistema che possono incidere su costruzione dei mazzi e modalità in solitaria.",
-      "published_date":"2026-09-24","published_at":"2026-09-24T15:16:00+00:00","event_date":"2026-09-24","verified_at":"2026-09-27T14:20:23+02:00","featured":false,
-      "tags":["Pokémon TCG Pocket","Deluxe Pack Mega","Pokémon ex","community decks"],
-      "sources":[{"name":"Pokémon · annuncio ufficiale","type":"official","url":"https://www.pokemon.com/uk/news/pokemon-tcg-pocket-deluxe-pack-mega-coming-soon"},{"name":"Crunchyroll News · timestamp dell’annuncio","type":"reputable","url":"https://www.crunchyroll.com/news/latest/2026/9/24/pokemon-tcg-pocket-deluxe-pack-mega-announced"}],
-      "image":null,
-      "recency_reason":"Recupero entro 72 ore: gioco monitorato direttamente, uscita imminente e cambiamenti di sistema sostanziali; il timestamp indipendente del 24 settembre alle 15:16 UTC mantiene l’articolo entro la finestra massima al momento della run."
+      "id": "2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026",
+      "event_id": "pokemon-tcg-pocket-deluxe-pack-mega-2026",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Pokémon TCG Pocket: Deluxe Pack: Mega arriva il 30 settembre in Italia",
+      "summary": "The Pokémon Company ha annunciato Deluxe Pack: Mega, disponibile dal 29 settembre alle 18:00 PDT, quindi nella notte del 30 settembre in Italia. I pacchetti hanno quattro carte e garantiscono almeno un Pokémon ex; l’annuncio anticipa anche una funzione community decks, nuovi rental deck e una revisione delle battaglie step-up verso fine ottobre.",
+      "why_you_care": "Pokémon TCG Pocket è uno dei tre giochi monitorati direttamente: oltre al nuovo set, qui ci sono cambiamenti di sistema che possono incidere su costruzione dei mazzi e modalità in solitaria.",
+      "published_date": "2026-09-24",
+      "published_at": "2026-09-24T15:16:00+00:00",
+      "event_date": "2026-09-24",
+      "verified_at": "2026-09-27T14:20:23+02:00",
+      "featured": false,
+      "tags": [
+        "Pokémon TCG Pocket",
+        "Deluxe Pack Mega",
+        "Pokémon ex",
+        "community decks"
+      ],
+      "sources": [
+        {
+          "name": "Pokémon · annuncio ufficiale",
+          "type": "official",
+          "url": "https://www.pokemon.com/uk/news/pokemon-tcg-pocket-deluxe-pack-mega-coming-soon"
+        },
+        {
+          "name": "Crunchyroll News · timestamp dell’annuncio",
+          "type": "reputable",
+          "url": "https://www.crunchyroll.com/news/latest/2026/9/24/pokemon-tcg-pocket-deluxe-pack-mega-announced"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: gioco monitorato direttamente, uscita imminente e cambiamenti di sistema sostanziali; il timestamp indipendente del 24 settembre alle 15:16 UTC mantiene l’articolo entro la finestra massima al momento della run.",
+      "section": "main",
+      "included_at": "2026-09-27T14:20:23+02:00"
+    },
+    {
+      "id": "2026-09-27-openai-gpt6-prompt-caching-2026-09-22",
+      "event_id": "openai-gpt6-prompt-caching-2026-09-22",
+      "section": "radar",
+      "category": "ai",
+      "status": "NEW",
+      "title": "OpenAI: strumenti per capire quando la cache dei prompt funziona",
+      "summary": "OpenAI ha presentato una dashboard e strumenti diagnostici per osservare il riuso dei prompt e individuare i cache miss. La documentazione illustra anche come mantenere stabili istruzioni e definizioni degli strumenti.",
+      "why_you_care": "Un approfondimento utile per integrare agenti via API: non implica automaticamente una riduzione delle quote del proprio abbonamento ChatGPT.",
+      "published_date": "2026-09-22",
+      "event_date": "2026-09-22",
+      "verified_at": "2026-09-27T16:25:12+02:00",
+      "included_at": "2026-09-27T16:36:59+02:00",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "API"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI",
+          "type": "official",
+          "url": "https://openai.com/index/better-prompt-caching-for-gpt-6/"
+        }
+      ],
+      "image": {
+        "url": "https://cdn.oaistatic.com/assets/apple-touch-icon-mz9nytnj.webp",
+        "alt": "Icona ufficiale ChatGPT: identificazione della fonte OpenAI, non schermata della notizia",
+        "credit": "OpenAI · icona ufficiale ChatGPT",
+        "source_url": "https://chatgpt.com/",
+        "verification": "Icona ufficiale servita dalla CDN OpenAI. Sostituisce la favicon del centro assistenza che risultava bloccata nel browser. Verifica HTTP e browser nel workflow Verify Personal News."
+      }
+    },
+    {
+      "id": "2026-09-27-terramaster-tos-7-0-1278",
+      "event_id": "terramaster-tos-7-0-1278",
+      "section": "radar",
+      "category": "devices",
+      "status": "NEW",
+      "title": "TerraMaster TOS 7.0.1278: correzioni per memoria e gestione dei file",
+      "summary": "L’annuncio dello staff elenca correzioni al consumo di memoria del centro messaggi, alla copia delle cartelle e ad alcuni accessi SMB. L’aggiornamento x86 richiede TOS 7.0.0746 o successivo; il produttore raccomanda un backup prima di procedere.",
+      "why_you_care": "Da valutare sul proprio modello e sulla versione installata, non come invito a un aggiornamento automatico o applicabile a ogni NAS.",
+      "published_date": "2026-09-24",
+      "event_date": "2026-09-24",
+      "verified_at": "2026-09-27T16:25:12+02:00",
+      "included_at": "2026-09-27T16:36:59+02:00",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "NAS"
+      ],
+      "sources": [
+        {
+          "name": "TerraMaster · annuncio dello staff",
+          "type": "official",
+          "url": "https://forum.terra-master.com/en/viewtopic.php?t=10622"
+        }
+      ],
+      "image": null
     }
-  ]
+  ],
+  "attention_today": {
+    "text": "Champions: per chi è già iscritto, la fase di lotta della Global Challenge termina il 28 settembre alle 03:59 italiane.",
+    "item_ids": [
+      "2026-09-27-champions-global-challenge-2027-i-battles"
+    ],
+    "source_url": "https://www.serebii.net/news/2026/25-September-2026.shtml",
+    "valid_from": "2026-09-27T16:36:59+02:00",
+    "expires_at": "2026-09-28T03:59:00+02:00"
+  }
 }

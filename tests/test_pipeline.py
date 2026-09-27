@@ -18,6 +18,7 @@ class PipelineTests(unittest.TestCase):
         self.days=news.editions(self.root)
         self.base=copy.deepcopy(self.days[0])
         self.base.pop('edition_id',None)
+        self.next_date=(news.day(self.days[-1]['date'])+timedelta(days=1)).isoformat()
         self.cats={c['id'] for c in news.load(self.root/'docs/data/categories.json')['categories']}
     def tearDown(self):
         self.temp.cleanup()
@@ -50,16 +51,16 @@ class PipelineTests(unittest.TestCase):
         self.base['items'][0]['status']='UPDATE'
         with self.assertRaises(news.Invalid):news.validate_edition(self.base,self.cats)
     def test_valid_update_chain_and_date_navigation(self):
-        d=copy.deepcopy(self.base);d['date']='2026-09-28';d['generated_at']='2026-09-28T07:00:00+02:00';d['items']=d['items'][:1]
-        i=d['items'][0];old=i['id'];i['id']=i['id'].replace('2026-09-27','2026-09-28');i['status']='UPDATE';i['delta']='Test isolated update';i['summary']='A new fact for isolated tests';i['previous']={'id':old,'date':'2026-09-27'}
-        news.write_json(self.root/'docs/data/daily/2026-09-28.json',d)
+        d=copy.deepcopy(self.base);d['date']=self.next_date;d['generated_at']=self.next_date+'T07:00:00+02:00';d['items']=d['items'][:1]
+        i=d['items'][0];old=i['id'];i['id']=i['id'].replace(self.base['date'],self.next_date);i['status']='UPDATE';i['delta']='Test isolated update';i['summary']='A new fact for isolated tests';i['previous']={'id':old,'date':'2026-09-27'}
+        news.write_json(self.root/f'docs/data/daily/{self.next_date}.json',d)
         news.run(self.root,'rebuild');news.run(self.root,'validate')
         m=news.load(self.root/'docs/data/index.json')
-        self.assertEqual(m['latest'],'2026-09-28');self.assertEqual(len(m['editions']),len(self.days)+1)
+        self.assertEqual(m['latest'],self.next_date);self.assertEqual(len(m['editions']),len(self.days)+1)
     def test_duplicate_new_in_later_edition_rejected(self):
-        d=copy.deepcopy(self.base);d['date']='2026-09-28';d['generated_at']='2026-09-28T07:00:00+02:00'
-        for i in d['items']:i['id']=i['id'].replace('2026-09-27','2026-09-28')
-        news.write_json(self.root/'docs/data/daily/2026-09-28.json',d)
+        d=copy.deepcopy(self.base);d['date']=self.next_date;d['generated_at']=self.next_date+'T07:00:00+02:00'
+        for i in d['items']:i['id']=i['id'].replace(self.base['date'],self.next_date)
+        news.write_json(self.root/f'docs/data/daily/{self.next_date}.json',d)
         with self.assertRaises(news.Invalid):news.editions(self.root)
     def test_stale_manifest_detected(self):
         news.write_json(self.root/'docs/data/index.json',{'version':1})
@@ -76,8 +77,8 @@ class PipelineTests(unittest.TestCase):
         self.assertIn('2026-09-27-initial',keys)
         self.assertIn('2026-09-27',keys)
     def test_initial_events_remain_in_dedup_state(self):
-        seen=news.load(self.root/'state/seen.json')
-        self.assertTrue(any(e['event_id']=='pi-v0-87-1' for e in seen['events']))
+        seen=news.load(self.root/'state/event-index.json')
+        self.assertIn('pi-v0-87-1',seen['events'])
     def test_unsafe_edition_id_rejected(self):
         self.base['edition_id']='../../secret'
         with self.assertRaises(news.Invalid):news.validate_edition(self.base,self.cats)

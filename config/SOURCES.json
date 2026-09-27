@@ -59,7 +59,8 @@
       "requires_primary_verification": false,
       "enabled": true,
       "verified_on": "2026-09-27",
-      "verification_method": "web_content"
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
     },
     {
       "id": "chatgpt-notes",
@@ -76,7 +77,8 @@
       "requires_primary_verification": false,
       "enabled": true,
       "verified_on": "2026-09-27",
-      "verification_method": "web_content"
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
     },
     {
       "id": "anthropic",
@@ -214,7 +216,8 @@
       "requires_primary_verification": true,
       "enabled": true,
       "verified_on": "2026-09-27",
-      "verification_method": "web_content"
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
     },
     {
       "id": "pi",
@@ -519,10 +522,10 @@
       ],
       "check_policy": "rotating",
       "requires_primary_verification": false,
-      "enabled": false,
+      "enabled": true,
       "verified_on": "2026-09-27",
-      "verification_method": "pending_http",
-      "notes": "Dominio ufficiale; lettura web bloccata. Abilitare dopo un recupero HTTP verificato; usare ricerca aperta nel frattempo."
+      "verification_method": "http_content",
+      "notes": "HTTP 200 e titolo Blender Release Notes verificati su GitHub Actions il 2026-09-27; il browser di ricerca era bloccato."
     },
     {
       "id": "krita",
@@ -745,7 +748,8 @@
       "requires_primary_verification": false,
       "enabled": true,
       "verified_on": "2026-09-27",
-      "verification_method": "web_content"
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
     },
     {
       "id": "serebii",
@@ -847,7 +851,8 @@
       "requires_primary_verification": true,
       "enabled": true,
       "verified_on": "2026-09-27",
-      "verification_method": "web_content"
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
     },
     {
       "id": "windows",
@@ -951,7 +956,8 @@
       "enabled": true,
       "verified_on": "2026-09-27",
       "verification_method": "web_content",
-      "notes": "Primaria solo per annunci dello staff; commenti utenti sono testimonianze. Data del post originale, non ultimo commento."
+      "notes": "Primaria solo per annunci dello staff; commenti utenti sono testimonianze. Data del post originale, non ultimo commento.",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
     },
     {
       "id": "androidauthority",
@@ -968,7 +974,8 @@
       "requires_primary_verification": true,
       "enabled": true,
       "verified_on": "2026-09-27",
-      "verification_method": "web_content"
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
     },
     {
       "id": "gamingonlinux",
@@ -1002,7 +1009,8 @@
       "requires_primary_verification": true,
       "enabled": true,
       "verified_on": "2026-09-27",
-      "verification_method": "web_content"
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
     }
   ]
 }
