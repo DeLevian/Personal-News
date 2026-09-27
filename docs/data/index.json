@@ -17,7 +17,14 @@
         "update": 0,
         "featured": 3
       },
-      "categories": ["agents","ai","devices","gamedev","gaming","work"],
+      "categories": [
+        "agents",
+        "ai",
+        "devices",
+        "gamedev",
+        "gaming",
+        "work"
+      ],
       "path": "data/daily/2026-09-27.json"
     },
     {
@@ -34,7 +41,11 @@
         "update": 0,
         "featured": 3
       },
-      "categories": ["agents","ai","gamedev"],
+      "categories": [
+        "agents",
+        "ai",
+        "gamedev"
+      ],
       "path": "data/initial/2026-09-27.json"
     }
   ]

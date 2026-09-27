@@ -1,26 +1,89 @@
 {
-  "version":2,
-  "events":{
-    "cactus-needle-3-local-action-model":{"id":"2026-09-27-cactus-needle-3-local-action-model","edition":"2026-09-27"},
-    "champions-frankfurt-2026-day-two":{"id":"2026-09-27-champions-frankfurt-2026-day-two","edition":"2026-09-27"},
-    "champions-global-challenge-2027-i-battles":{"id":"2026-09-27-champions-global-challenge-2027-i-battles","edition":"2026-09-27"},
-    "chatgpt-security-history-2026-09-25":{"id":"2026-09-27-chatgpt-security-history-2026-09-25","edition":"2026-09-27"},
-    "claude-opus-5-5-launch":{"id":"2026-09-27-claude-opus-5-5-launch","edition":"2026-09-27-initial"},
-    "deep-rock-survivor-mobile-optimization":{"id":"2026-09-27-deep-rock-survivor-mobile-optimization","edition":"2026-09-27-initial"},
-    "github-copilot-weekly-september-21-2026":{"id":"2026-09-27-github-copilot-weekly-september-21-2026","edition":"2026-09-27"},
-    "gpt-6-sol-luna-launch":{"id":"2026-09-27-gpt-6-sol-luna-launch","edition":"2026-09-27-initial"},
-    "microsoft-copilot-home-code-autopilot-2026":{"id":"2026-09-27-microsoft-copilot-home-code-autopilot-2026","edition":"2026-09-27"},
-    "microsoft-security-agent-governance-september-2026":{"id":"2026-09-27-microsoft-security-agent-governance-september-2026","edition":"2026-09-27"},
-    "minecraft-dungeons-ii-systems-podcast-2026-09-26":{"id":"2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26","edition":"2026-09-27"},
-    "openai-gpt6-prompt-caching-2026-09-22":{"id":"2026-09-27-openai-gpt6-prompt-caching-2026-09-22","edition":"2026-09-27"},
-    "pi-v0-87-1":{"id":"2026-09-27-pi-v0-87-1","edition":"2026-09-27-initial"},
-    "pokemon-tcg-pocket-deluxe-pack-mega-2026":{"id":"2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026","edition":"2026-09-27"},
-    "steamos-3-8-28-stable":{"id":"2026-09-27-steamos-3-8-28-stable","edition":"2026-09-27"},
-    "terramaster-tos-7-0-1278":{"id":"2026-09-27-terramaster-tos-7-0-1278","edition":"2026-09-27"},
-    "tripo-p2-0-production-ready-3d":{"id":"2026-09-27-tripo-p2-0-production-ready-3d","edition":"2026-09-27"},
-    "unity-6-6-content-directories":{"id":"2026-09-27-unity-6-6-content-directories","edition":"2026-09-27-initial"},
-    "unity-codex-plugin":{"id":"2026-09-27-unity-codex-plugin","edition":"2026-09-27-initial"},
-    "windows-insider-2026-09-25-phone-companion":{"id":"2026-09-27-windows-insider-2026-09-25-phone-companion","edition":"2026-09-27"},
-    "xbox-september-28-october-2-2026-rpg-retro-lineup":{"id":"2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup","edition":"2026-09-27"}
+  "version": 2,
+  "events": {
+    "cactus-needle-3-local-action-model": {
+      "id": "2026-09-27-cactus-needle-3-local-action-model",
+      "edition": "2026-09-27"
+    },
+    "champions-frankfurt-2026-day-two": {
+      "id": "2026-09-27-champions-frankfurt-2026-day-two",
+      "edition": "2026-09-27"
+    },
+    "champions-global-challenge-2027-i-battles": {
+      "id": "2026-09-27-champions-global-challenge-2027-i-battles",
+      "edition": "2026-09-27"
+    },
+    "chatgpt-security-history-2026-09-25": {
+      "id": "2026-09-27-chatgpt-security-history-2026-09-25",
+      "edition": "2026-09-27"
+    },
+    "claude-opus-5-5-launch": {
+      "id": "2026-09-27-claude-opus-5-5-launch",
+      "edition": "2026-09-27-initial"
+    },
+    "deep-rock-survivor-mobile-optimization": {
+      "id": "2026-09-27-deep-rock-survivor-mobile-optimization",
+      "edition": "2026-09-27-initial"
+    },
+    "github-copilot-weekly-september-21-2026": {
+      "id": "2026-09-27-github-copilot-weekly-september-21-2026",
+      "edition": "2026-09-27"
+    },
+    "gpt-6-sol-luna-launch": {
+      "id": "2026-09-27-gpt-6-sol-luna-launch",
+      "edition": "2026-09-27-initial"
+    },
+    "microsoft-copilot-home-code-autopilot-2026": {
+      "id": "2026-09-27-microsoft-copilot-home-code-autopilot-2026",
+      "edition": "2026-09-27"
+    },
+    "microsoft-security-agent-governance-september-2026": {
+      "id": "2026-09-27-microsoft-security-agent-governance-september-2026",
+      "edition": "2026-09-27"
+    },
+    "minecraft-dungeons-ii-systems-podcast-2026-09-26": {
+      "id": "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "edition": "2026-09-27"
+    },
+    "openai-gpt6-prompt-caching-2026-09-22": {
+      "id": "2026-09-27-openai-gpt6-prompt-caching-2026-09-22",
+      "edition": "2026-09-27"
+    },
+    "pi-v0-87-1": {
+      "id": "2026-09-27-pi-v0-87-1",
+      "edition": "2026-09-27-initial"
+    },
+    "pokemon-tcg-pocket-deluxe-pack-mega-2026": {
+      "id": "2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026",
+      "edition": "2026-09-27"
+    },
+    "steamos-3-8-28-stable": {
+      "id": "2026-09-27-steamos-3-8-28-stable",
+      "edition": "2026-09-27"
+    },
+    "terramaster-tos-7-0-1278": {
+      "id": "2026-09-27-terramaster-tos-7-0-1278",
+      "edition": "2026-09-27"
+    },
+    "tripo-p2-0-production-ready-3d": {
+      "id": "2026-09-27-tripo-p2-0-production-ready-3d",
+      "edition": "2026-09-27"
+    },
+    "unity-6-6-content-directories": {
+      "id": "2026-09-27-unity-6-6-content-directories",
+      "edition": "2026-09-27-initial"
+    },
+    "unity-codex-plugin": {
+      "id": "2026-09-27-unity-codex-plugin",
+      "edition": "2026-09-27-initial"
+    },
+    "windows-insider-2026-09-25-phone-companion": {
+      "id": "2026-09-27-windows-insider-2026-09-25-phone-companion",
+      "edition": "2026-09-27"
+    },
+    "xbox-september-28-october-2-2026-rpg-retro-lineup": {
+      "id": "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "edition": "2026-09-27"
+    }
   }
 }
