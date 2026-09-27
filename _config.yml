@@ -1,0 +1,11 @@
+# Pages currently deploys main / (root); index.html redirects to docs/.
+# Keep operational files out of the generated website (they remain public in Git).
+exclude:
+  - AGENTS.md
+  - README.md
+  - config/
+  - project/
+  - state/
+  - tests/
+  - tools/
+  - artifacts/

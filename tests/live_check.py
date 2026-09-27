@@ -17,23 +17,29 @@ def main():
     expected=(ROOT/'docs/assets/app.js').read_bytes()
     latest=manifest['editions'][0]
     ready=False
+    candidates=[base.rstrip('/')+'/',base.rstrip('/')+'/docs/']
     for attempt in range(36):
-        try:
-            live=json.loads(read(base+'data/index.json?check='+str(time.time_ns())))
-            js=read(base+'assets/app.js?check='+str(time.time_ns()))
-            if live['updated_at']==manifest['updated_at'] and hashlib.sha256(js).digest()==hashlib.sha256(expected).digest():
-                ready=True;break
-        except Exception as e:print('WAITING_DEPLOY',str(e))
+        for candidate in dict.fromkeys(candidates):
+            try:
+                live=json.loads(read(candidate+'data/index.json?check='+str(time.time_ns())))
+                js=read(candidate+'assets/app.js?check='+str(time.time_ns()))
+                if live['updated_at']==manifest['updated_at'] and hashlib.sha256(js).digest()==hashlib.sha256(expected).digest():
+                    base=candidate;ready=True;break
+            except Exception as e:print('WAITING_DEPLOY',candidate,str(e),flush=True)
+        if ready:break
         time.sleep(5)
     if not ready:raise AssertionError('Pages has not yet published the tested data/code after waiting for propagation')
     out=ROOT/'artifacts';out.mkdir(exist_ok=True)
-    report={'result':'running','url':base,'edition':manifest['latest'],'images':[],'widths':[]}
+    report={'result':'running','entry_url':cfg['website_url'],'url':base,'edition':manifest['latest'],'images':[],'widths':[]}
     with sync_playwright() as p:
         options={'headless':True}
         if os.environ.get('CHROMIUM_PATH'):options['executable_path']=os.environ['CHROMIUM_PATH']
         browser=p.chromium.launch(**options)
         context=browser.new_context(viewport={'width':1440,'height':1050},color_scheme='light')
         page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+        page.goto(cfg['website_url'],wait_until='domcontentloaded')
+        expect(page).to_have_url(base)
+        report['public_entry_redirect']='passed'
         for entry in manifest['editions'][:2]:
             data=json.loads((ROOT/'docs'/entry['path']).read_text())
             target=base+'?date='+entry.get('id',entry['date'])
