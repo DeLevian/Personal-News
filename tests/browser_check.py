@@ -52,7 +52,9 @@ def main():
             page.locator('#reset').click();expect(page.locator('#unread')).to_have_attribute('aria-pressed','false');expect(page.locator('.card')).to_have_count(n)
             page.goto(base+'?date='+latest.get('id',latest['date'])+'#'+first['id'])
             expect(page.locator('[id="'+first['id']+'"]')).to_be_visible()
-            results.append('search, empty results, saved across reload, unread, mark visible, permanent article links')
+            results.append('search, empty results, saved across reload, default unread, mark visible, permanent article links')
+            # Isolate later navigation checks from the read-state fixture above.
+            page.evaluate('localStorage.clear()');page.goto(base);expect(page.locator('.card')).to_have_count(n);expect(page.locator('#unread')).to_have_attribute('aria-pressed','true')
         page.goto(base+'?date=1999-01-01');expect(page.locator('.card')).to_have_count(n)
         page.locator('#nav-archive').click();expect(page.locator('#archive-dialog')).to_be_visible()
         page.locator('#archive-month').fill('1990-01');expect(page.locator('.archive-item')).to_have_count(0)
