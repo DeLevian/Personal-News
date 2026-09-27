@@ -88,12 +88,14 @@ def main():
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),f'Horizontal overflow at {width}'
             if width in (1440,390):page.screenshot(path=str(out/f'fallback-{width}.png'),full_page=True)
         results.append('five responsive widths without overflow and external image fallback')
-        page.set_viewport_size({'width':390,'height':844});page.locator('#mobile-archive').click()
-        expect(page.locator('#archive-dialog')).to_be_visible();page.keyboard.press('Escape')
-        page.locator('#mobile-saved').click();expect(page.locator('#empty')).to_be_visible()
-        page.locator('#mobile-latest').click();expect(page.locator('.card')).to_have_count(n)
+        page.set_viewport_size({'width':390,'height':844});toggle=page.locator('#mobile-chrome-toggle')
+        expect(toggle).to_be_visible();expect(page.locator('.topbar')).to_be_hidden();expect(page.locator('#mobile-nav')).to_be_hidden()
+        toggle.click();expect(page.locator('.topbar')).to_be_visible();expect(page.locator('#mobile-nav')).to_be_visible();expect(toggle).to_have_attribute('aria-expanded','true')
+        page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();expect(toggle).to_have_attribute('aria-expanded','false');page.keyboard.press('Escape')
+        toggle.click();page.locator('#mobile-saved').click();expect(page.locator('#empty')).to_be_visible()
+        toggle.click();page.locator('#mobile-latest').click();expect(page.locator('.card')).to_have_count(n)
         assert not errors,errors
-        results.append('mobile navigation and zero JavaScript errors')
+        results.append('mobile reading chrome toggle, navigation and zero JavaScript errors')
         ctx.unroute_all(behavior='wait');ctx.close();b.close()
     finally:server.shutdown()
     evidence={'result':'passed','checks':results,'latest_count':n,'archive_count':len(manifest['editions'])}

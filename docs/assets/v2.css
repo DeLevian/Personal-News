@@ -18,3 +18,24 @@ body.no-images .radar-card,body.no-images.compact .radar-card{grid-template-colu
 @media(max-width:580px){.radar-card,body.compact .radar-card{grid-template-columns:90px minmax(0,1fr)}.radar-card .card-body,body.compact .radar-card .card-body{padding:13px}.radar-card .card-title,body.compact .radar-card .card-title{font-size:15px}.radar-card .card-bottom{flex-wrap:wrap}.radar-card .placeholder-label,.radar-card .media-credit,.radar-card .media-placeholder small{display:none}.attention-box{padding:15px}.metrics{gap:12px}.metrics strong{font-size:16px}}
 
 .lead h3{overflow-wrap:anywhere}
+
+/* Mobile reading mode: chrome stays out of the article until explicitly requested. */
+.mobile-chrome-toggle{display:none}
+@media(max-width:850px){
+  html{scroll-padding-top:24px}
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:45;transform:translateY(calc(-100% - 12px));opacity:0;visibility:hidden;pointer-events:none;box-shadow:var(--shadow);transition:transform .2s ease,opacity .2s ease,visibility .2s ease}
+  .mobile-nav{z-index:45;transform:translateY(calc(100% + 12px));opacity:0;visibility:hidden;pointer-events:none;box-shadow:0 -10px 30px #0002;transition:transform .2s ease,opacity .2s ease,visibility .2s ease}
+  body.mobile-chrome-open .topbar,body.mobile-chrome-open .mobile-nav{transform:none;opacity:1;visibility:visible;pointer-events:auto}
+  .mobile-chrome-toggle{display:grid;place-content:center;position:fixed;right:calc(12px + env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;width:40px;height:40px;border:1px solid var(--line);border-radius:13px;background:var(--surface);box-shadow:0 8px 24px #0002;font-size:18px;line-height:1;opacity:.84;transition:bottom .2s ease,opacity .2s ease,transform .2s ease}
+  .mobile-chrome-toggle:hover,.mobile-chrome-toggle:focus-visible{background:var(--surface);opacity:1}
+  body.mobile-chrome-open .mobile-chrome-toggle{bottom:calc(74px + env(safe-area-inset-bottom));opacity:1}
+  main{padding-bottom:24px}
+  .toast{bottom:66px}
+  .card,#feed{scroll-margin-top:24px}
+}
+@media(max-width:580px){
+  html{scroll-padding-top:20px}
+  .card,#feed{scroll-margin-top:20px}
+  main{padding-bottom:22px}
+  body.mobile-chrome-open .mobile-chrome-toggle{bottom:calc(78px + env(safe-area-inset-bottom))}
+}

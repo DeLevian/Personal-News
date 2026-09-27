@@ -91,11 +91,14 @@ def main():
         page.locator('[data-section-filter=main]').click();expect(page.locator('.card')).to_have_count(counts['main'])
         page.locator('[data-section-filter=all]').click();expect(page.locator('.card')).to_have_count(latest['count'])
         report['section_filters']='passed';report['counts']=counts
-        page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();page.keyboard.press('Escape')
+        toggle=page.locator('#mobile-chrome-toggle');expect(toggle).to_be_visible();expect(page.locator('.topbar')).to_be_hidden();expect(page.locator('#mobile-nav')).to_be_hidden()
+        toggle.click();expect(page.locator('.topbar')).to_be_visible();expect(page.locator('#mobile-nav')).to_be_visible()
+        page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();expect(toggle).to_have_attribute('aria-expanded','false');page.keyboard.press('Escape')
+        toggle.click()
         if len(manifest['editions'])>1:
             page.locator('#prev').click();expect(page.locator('#next')).to_be_enabled()
         page.locator('#latest-button').click();expect(page.locator('.card')).to_have_count(latest['count'])
-        report['live_navigation']='passed';report['javascript_errors']=errors
+        report['mobile_reading_chrome']='passed';report['live_navigation']='passed';report['javascript_errors']=errors
         browser.close()
     report['result']='passed' if not errors and all(i['ok'] for i in report['images']) else 'failed'
     (out/'live-results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
