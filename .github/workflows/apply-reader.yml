@@ -58,15 +58,16 @@ jobs:
           node --check docs/assets/reader.js
           git diff --exit-code -- docs/data/daily docs/data/initial config/LEGACY_V1.json
           git diff --check
-      - name: Remove temporary workflow and commit only to the development branch
+      - name: Commit code and data only to the development branch
         shell: bash
         run: |
           set -euo pipefail
           test "$GITHUB_REF" = 'refs/heads/chatgpt/italian-article-reader'
           test "$(git ls-remote origin refs/heads/chatgpt/italian-article-reader | cut -f1)" = "$GITHUB_SHA"
           rm -rf .reader-patches
-          rm .github/workflows/apply-reader.yml .github/workflows/reader-workspace.yml
+          git restore --source=HEAD --worktree --staged .github/workflows
           git add -A
+          git diff --cached --exit-code -- .github/workflows
           git config user.name 'DeLevian'
           git config user.email '152444661+DeLevian@users.noreply.github.com'
           git commit -m 'Implement Italian article reader with verified bodies and publication gates'
