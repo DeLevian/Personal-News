@@ -72,11 +72,11 @@
         }
       ],
       "image": {
-        "url": "https://help.openai.com/favicon.png",
-        "alt": "Logo OpenAI presente nella guida: immagine identificativa della fonte, non schermata della nuova funzione",
-        "credit": "OpenAI · logo della fonte",
-        "source_url": "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure",
-        "verification": "URL estratto dalla fonte; anteprima controllata tramite web e/o verifica HTTP indipendente. Nessuna copia locale del contenuto protetto."
+        "url": "https://cdn.oaistatic.com/assets/apple-touch-icon-mz9nytnj.webp",
+        "alt": "Icona ufficiale ChatGPT: identificazione della fonte OpenAI, non schermata della notizia",
+        "credit": "OpenAI · icona ufficiale ChatGPT",
+        "source_url": "https://chatgpt.com/",
+        "verification": "Icona ufficiale servita dalla CDN OpenAI. Sostituisce la favicon del centro assistenza che risultava bloccata nel browser. Verifica HTTP e browser nel workflow Verify Personal News."
       },
       "recency_reason": "Recupero entro 72 ore: funzione nuova di sicurezza direttamente pertinente all’uso di ChatGPT, non presente nelle edizioni precedenti."
     },

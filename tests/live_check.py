@@ -24,7 +24,9 @@ def main():
                 live=json.loads(read(candidate+'data/index.json?check='+str(time.time_ns())))
                 js=read(candidate+'assets/app.js?check='+str(time.time_ns()))
                 if live['updated_at']==manifest['updated_at'] and hashlib.sha256(js).digest()==hashlib.sha256(expected).digest():
-                    base=candidate;ready=True;break
+                    edition_bytes_match=all(hashlib.sha256(read(candidate+entry['path']+'?check='+str(time.time_ns()))).digest()==hashlib.sha256((ROOT/'docs'/entry['path']).read_bytes()).digest() for entry in manifest['editions'][:2])
+                    if edition_bytes_match:
+                        base=candidate;ready=True;break
             except Exception as e:print('WAITING_DEPLOY',candidate,str(e),flush=True)
         if ready:break
         time.sleep(5)
