@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "checked_at": "2026-09-27T18:39:42+02:00",
+  "candidate_count": 32,
+  "coverage": {
+    "agents": 6,
+    "ai": 5,
+    "devices": 5,
+    "gamedev": 5,
+    "gaming": 6,
+    "work": 5
+  },
+  "checks_attempted": 18,
+  "checks_successful": 16,
+  "decisions": {
+    "main": 0,
+    "radar": 3,
+    "known": 19,
+    "outdated": 5,
+    "irrelevant": 4,
+    "unverified": 1
+  },
+  "shortfall_reason": null,
+  "note": "Coverage records attempts, not universal absence of news. The full audit remains an artifact or scoped run log."
+}
