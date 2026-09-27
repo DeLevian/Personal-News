@@ -1,0 +1,357 @@
+diff --git a/docs/data/articles/2026-09-27-openai-gpt6-prompt-caching-2026-09-22.json b/docs/data/articles/2026-09-27-openai-gpt6-prompt-caching-2026-09-22.json
+new file mode 100644
+index 0000000..29848be
+--- /dev/null
++++ b/docs/data/articles/2026-09-27-openai-gpt6-prompt-caching-2026-09-22.json
+@@ -0,0 +1,45 @@
++{
++  "version": 1,
++  "item_id": "2026-09-27-openai-gpt6-prompt-caching-2026-09-22",
++  "language": "it",
++  "editorial_mode": "original",
++  "source_item_hash": "2cf90be74f8ee4cc6c1dc4fd33fab6358bfe2cbbf2d44f0fc9a2f3565e0d7bc9",
++  "written_at": "2026-09-27T17:52:39+00:00",
++  "verified_at": "2026-09-27T17:52:39+00:00",
++  "sources": [
++    {
++      "name": "OpenAI",
++      "type": "official",
++      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6/"
++    }
++  ],
++  "sections": [
++    {
++      "heading": "Dalla promessa di risparmio alla diagnosi",
++      "paragraphs": [
++        "OpenAI introduce strumenti per osservare quanto contesto viene realmente riutilizzato dalle applicazioni basate su GPT-6. La dashboard distingue input elaborato normalmente e input letto dalla cache, mostrando come il rapporto cambia nel tempo. Lo strumento diagnostico aiuta a confrontare richieste e risposte recenti e a individuare le differenze associate a opportunità di riuso perse."
++      ],
++      "source_urls": [
++        "https://openai.com/index/better-prompt-caching-for-gpt-6/"
++      ]
++    },
++    {
++      "heading": "Che cosa controllare negli agenti",
++      "paragraphs": [
++        "Il punto pratico è mantenere stabili i prefissi condivisi: istruzioni, definizioni degli strumenti, relativi schemi e ordine. La documentazione descrive controlli della disponibilità degli strumenti senza rimuoverne ogni volta le definizioni, breakpoint espliciti e variazioni dello sforzo di ragionamento compatibili con il riuso del contesto secondo il formato previsto. Non basta rendere due prompt simili a colpo d’occhio."
++      ],
++      "source_urls": [
++        "https://openai.com/index/better-prompt-caching-for-gpt-6/"
++      ]
++    },
++    {
++      "heading": "Il confine da non confondere",
++      "paragraphs": [
++        "Questa novità riguarda misurazione e ottimizzazione dei flussi API. Un miglioramento della cache può ridurre elaborazione e costo di quei flussi, ma non dimostra da solo che una quota dell’abbonamento ChatGPT aumenti. Per valutare un agente conviene misurare richieste effettive, cache hit e costo totale, invece di applicare automaticamente uno sconto teorico a tutto il lavoro."
++      ],
++      "source_urls": [
++        "https://openai.com/index/better-prompt-caching-for-gpt-6/"
++      ]
++    }
++  ]
++}
+diff --git a/docs/data/articles/2026-09-27-pi-v0-87-1.json b/docs/data/articles/2026-09-27-pi-v0-87-1.json
+new file mode 100644
+index 0000000..7f5dbf9
+--- /dev/null
++++ b/docs/data/articles/2026-09-27-pi-v0-87-1.json
+@@ -0,0 +1,45 @@
++{
++  "version": 1,
++  "item_id": "2026-09-27-pi-v0-87-1",
++  "language": "it",
++  "editorial_mode": "original",
++  "source_item_hash": "2bc36b40a6eeb7dcb442135318cb9700426016fae22983f695f3cd7419de6f3a",
++  "written_at": "2026-09-27T17:52:39+00:00",
++  "verified_at": "2026-09-27T17:52:39+00:00",
++  "sources": [
++    {
++      "name": "Pi · release ufficiale",
++      "type": "official",
++      "url": "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
++    }
++  ],
++  "sections": [
++    {
++      "heading": "Il catalogo dell’agente si aggiorna",
++      "paragraphs": [
++        "La release 0.87.1 di Pi aggiunge supporto a Claude Opus 5.5, GPT-6 Sol e GPT-6 Luna attraverso i provider previsti, compreso GitHub Copilot. La nota ufficiale riguarda l’integrazione dei modelli nell’agente: è distinta dall’effettiva disponibilità del singolo modello sul piano e sull’account usati per autenticarsi."
++      ],
++      "source_urls": [
++        "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
++      ]
++    },
++    {
++      "heading": "Una modifica anche per chi usa xAI",
++      "paragraphs": [
++        "Le nuove sessioni xAI hanno Grok 4.7 come modello predefinito. Questo dettaglio riguarda le sessioni avviate con quel provider e non significa che tutti gli utenti di Pi vengano spostati automaticamente sullo stesso servizio. La release rimanda alle istruzioni per scegliere un modello e configurare l’autenticazione del provider."
++      ],
++      "source_urls": [
++        "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
++      ]
++    },
++    {
++      "heading": "Che cosa verificare nel proprio flusso",
++      "paragraphs": [
++        "Per usare una delle nuove opzioni occorre distinguere tre livelli: versione di Pi installata, provider selezionato e diritti di accesso dell’account. Aggiornare il client risolve soltanto il primo. Un confronto utile mantiene uguali compito, repository e criteri di verifica e misura le iterazioni effettive, senza dedurre qualità o consumo dal solo fatto che un nome compaia nella lista dei modelli."
++      ],
++      "source_urls": [
++        "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
++      ]
++    }
++  ]
++}
+diff --git a/docs/data/articles/2026-09-27-terramaster-tos-7-0-1278.json b/docs/data/articles/2026-09-27-terramaster-tos-7-0-1278.json
+new file mode 100644
+index 0000000..07e929d
+--- /dev/null
++++ b/docs/data/articles/2026-09-27-terramaster-tos-7-0-1278.json
+@@ -0,0 +1,45 @@
++{
++  "version": 1,
++  "item_id": "2026-09-27-terramaster-tos-7-0-1278",
++  "language": "it",
++  "editorial_mode": "original",
++  "source_item_hash": "fa59b233b748e5c1ebaed3e034776919bce8b2312e279f67e0b155fc8a0f4185",
++  "written_at": "2026-09-27T17:52:39+00:00",
++  "verified_at": "2026-09-27T17:52:39+00:00",
++  "sources": [
++    {
++      "name": "TerraMaster · annuncio dello staff",
++      "type": "official",
++      "url": "https://forum.terra-master.com/en/viewtopic.php?t=10622"
++    }
++  ],
++  "sections": [
++    {
++      "heading": "Un aggiornamento di manutenzione",
++      "paragraphs": [
++        "TOS 7.0.1278 corregge diversi problemi su sistemi TerraMaster x86. Fra quelli elencati dallo staff compaiono consumo di memoria del centro messaggi, operazioni di copia e spostamento delle cartelle e alcuni accessi SMB dopo l’attivazione di LDAP. Sono presenti anche correzioni a controlli di connettività, ordinamento e gestione delle applicazioni."
++      ],
++      "source_urls": [
++        "https://forum.terra-master.com/en/viewtopic.php?t=10622"
++      ]
++    },
++    {
++      "heading": "Requisiti prima dell’installazione",
++      "paragraphs": [
++        "Il percorso indicato richiede TOS 7.0.0746 o successivo; per versioni più vecchie occorre seguire la sequenza di aggiornamento prevista dal produttore. L’avviso raccomanda un backup e almeno 3 GB liberi nel volume principale. Segnala inoltre che l’indirizzo IP può cambiare e che TNAS PC può essere necessario per ritrovare il dispositivo."
++      ],
++      "source_urls": [
++        "https://forum.terra-master.com/en/viewtopic.php?t=10622"
++      ]
++    },
++    {
++      "heading": "Come leggere la segnalazione",
++      "paragraphs": [
++        "Il numero della release non è sufficiente a stabilire la compatibilità con qualunque NAS. La decisione va presa confrontando architettura, modello, versione installata e istruzioni ufficiali. La notizia documenta correzioni disponibili: non è un invito ad aggiornare automaticamente un sistema che contiene dati importanti."
++      ],
++      "source_urls": [
++        "https://forum.terra-master.com/en/viewtopic.php?t=10622"
++      ]
++    }
++  ]
++}
+diff --git a/docs/data/articles/2026-09-27-unity-6-6-content-directories.json b/docs/data/articles/2026-09-27-unity-6-6-content-directories.json
+new file mode 100644
+index 0000000..1de2d57
+--- /dev/null
++++ b/docs/data/articles/2026-09-27-unity-6-6-content-directories.json
+@@ -0,0 +1,45 @@
++{
++  "version": 1,
++  "item_id": "2026-09-27-unity-6-6-content-directories",
++  "language": "it",
++  "editorial_mode": "original",
++  "source_item_hash": "36d37f405b93836a99af43c712c730c513fcf5c3c1ebffdbc21fae257d8a387b",
++  "written_at": "2026-09-27T17:52:39+00:00",
++  "verified_at": "2026-09-27T17:52:39+00:00",
++  "sources": [
++    {
++      "name": "Unity",
++      "type": "official",
++      "url": "https://unity.com/blog/content-directories-beyond-the-assetbundle"
++    }
++  ],
++  "sections": [
++    {
++      "heading": "Un’unità di caricamento più piccola",
++      "paragraphs": [
++        "Con Unity 6.6, le content directories offrono un’alternativa agli AssetBundle distribuiti insieme al Player. Il sistema permette di caricare e scaricare artefatti più granulari, come mesh e texture, evitando di trattare sempre un intero bundle come unità operativa. L’obiettivo è rendere più preciso il controllo della memoria utilizzata dai contenuti."
++      ],
++      "source_urls": [
++        "https://unity.com/blog/content-directories-beyond-the-assetbundle"
++      ]
++    },
++    {
++      "heading": "Deduplicazione e integrazione",
++      "paragraphs": [
++        "Unity descrive una deduplicazione implicita dei contenuti e un nuovo tipo di riferimento caricabile. Per i contenuti locali gestiti con Addressables viene indicato un percorso di adozione senza modifiche al codice. Questa continuità è importante perché permette di valutare il nuovo formato senza confonderlo con una riscrittura obbligatoria di tutta la logica di caricamento."
++      ],
++      "source_urls": [
++        "https://unity.com/blog/content-directories-beyond-the-assetbundle"
++      ]
++    },
++    {
++      "heading": "Locale oggi, distribuzione remota come evoluzione",
++      "paragraphs": [
++        "La distinzione essenziale è fra contenuti consegnati con il Player e aggiornamenti remoti granulari. L’articolo presenta questi ultimi come sviluppo successivo legato a Unity 7, non come capacità già completa di qualsiasi progetto Unity 6.6. I benefici concreti dipendono da struttura degli asset e modalità d’uso: vanno misurati con build e profilazione del proprio target, soprattutto quando memoria e dimensione del gioco sono vincoli importanti."
++      ],
++      "source_urls": [
++        "https://unity.com/blog/content-directories-beyond-the-assetbundle"
++      ]
++    }
++  ]
++}
+diff --git a/docs/data/articles/2026-09-27-unity-codex-plugin.json b/docs/data/articles/2026-09-27-unity-codex-plugin.json
+new file mode 100644
+index 0000000..2761a3e
+--- /dev/null
++++ b/docs/data/articles/2026-09-27-unity-codex-plugin.json
+@@ -0,0 +1,45 @@
++{
++  "version": 1,
++  "item_id": "2026-09-27-unity-codex-plugin",
++  "language": "it",
++  "editorial_mode": "original",
++  "source_item_hash": "996e2b360c992a4b42b247c23451b0f8d0a2494e661f6dca7b9f793d3f16a76a",
++  "written_at": "2026-09-27T17:52:39+00:00",
++  "verified_at": "2026-09-27T17:52:39+00:00",
++  "sources": [
++    {
++      "name": "Unity",
++      "type": "official",
++      "url": "https://unity.com/blog/unity-plugin-codex"
++    }
++  ],
++  "sections": [
++    {
++      "heading": "Istruzioni specifiche per lavorare su Unity",
++      "paragraphs": [
++        "Unity ha presentato un plugin ufficiale per Codex con 31 skill iniziali rivolte a Unity 6 e versioni successive. Non è soltanto un insieme di prompt generici: le procedure accompagnano l’agente nell’ispezione del progetto, nell’uso delle API pertinenti e nella verifica dei risultati ottenuti."
++      ],
++      "source_urls": [
++        "https://unity.com/blog/unity-plugin-codex"
++      ]
++    },
++    {
++      "heading": "Quali aree copre",
++      "paragraphs": [
++        "Le skill comprendono interfacce UI Toolkit e uGUI, 2D, URP, audio, fisica, acquisti integrati, multiplayer, Web e localizzazione. Gli strumenti da terminale permettono inoltre di interagire con Editor e progetti, gestire pacchetti e consultare build, test e log. Il valore pratico è legare una richiesta di modifica a operazioni e controlli dell’engine, anziché limitarsi a produrre uno script isolato."
++      ],
++      "source_urls": [
++        "https://unity.com/blog/unity-plugin-codex"
++      ]
++    },
++    {
++      "heading": "Come interpretare il vantaggio",
++      "paragraphs": [
++        "Il plugin può rendere più esplicito il percorso che l’agente deve seguire, ma non sostituisce gli standard del repository o una prova dentro Unity. Per un progetto mantenibile rimane necessario verificare componenti, prefab, dati configurabili e risultati di build. La novità va quindi valutata come supporto a un flusso di sviluppo controllato, non come garanzia che qualunque richiesta venga realizzata correttamente senza revisione."
++      ],
++      "source_urls": [
++        "https://unity.com/blog/unity-plugin-codex"
++      ]
++    }
++  ]
++}
+diff --git a/docs/data/articles/2026-09-27-unity-meta-vr-glasses-support-2026-09-24.json b/docs/data/articles/2026-09-27-unity-meta-vr-glasses-support-2026-09-24.json
+new file mode 100644
+index 0000000..f3fe5e0
+--- /dev/null
++++ b/docs/data/articles/2026-09-27-unity-meta-vr-glasses-support-2026-09-24.json
+@@ -0,0 +1,45 @@
++{
++  "version": 1,
++  "item_id": "2026-09-27-unity-meta-vr-glasses-support-2026-09-24",
++  "language": "it",
++  "editorial_mode": "original",
++  "source_item_hash": "0da772847dcfabdf850296af4fa9eb41e444a2c0ef6ece8c72c5c29818693554",
++  "written_at": "2026-09-27T17:52:39+00:00",
++  "verified_at": "2026-09-27T17:52:39+00:00",
++  "sources": [
++    {
++      "name": "Unity",
++      "type": "official",
++      "url": "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
++    }
++  ],
++  "sections": [
++    {
++      "heading": "Supporto dichiarato fin dal primo giorno",
++      "paragraphs": [
++        "Unity annuncia il supporto ai Meta VR Glasses a partire da Unity 6.6 con Meta XR All-in-One SDK v207. La continuità con i workflow OpenXR consente di riutilizzare parti del lavoro già svolto per l’ecosistema Quest, invece di considerare il dispositivo come un ambiente completamente separato."
++      ],
++      "source_urls": [
++        "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
++      ]
++    },
++    {
++      "heading": "Interazioni e strumenti nell’Editor",
++      "paragraphs": [
++        "Il pacchetto descritto comprende eye tracking, hand tracking, audio spaziale e modalità di rendering pensate per contenere il carico sulla GPU. Unity cita anche l’anteprima delle interazioni nell’Editor, utile per accorciare il ciclo di prova prima di passare al dispositivo. L’annuncio copre quindi sia l’esecuzione sia gli strumenti con cui preparare e verificare l’esperienza."
++      ],
++      "source_urls": [
++        "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
++      ]
++    },
++    {
++      "heading": "Compatibilità non significa porting già concluso",
++      "paragraphs": [
++        "Il supporto della piattaforma è un prerequisito, non una certificazione di ogni progetto esistente. Asset, input, budget grafico e comportamento sul dispositivo richiedono comunque controlli dedicati. Per chi segue Unity come ambiente multipiattaforma, la notizia riguarda soprattutto la possibilità di conservare un workflow comune, senza presumere che un gioco non XR diventi automaticamente pronto per la realtà virtuale."
++      ],
++      "source_urls": [
++        "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
++      ]
++    }
++  ]
++}
+diff --git a/docs/data/articles/2026-09-27-windows-insider-2026-09-25-phone-companion.json b/docs/data/articles/2026-09-27-windows-insider-2026-09-25-phone-companion.json
+new file mode 100644
+index 0000000..109e045
+--- /dev/null
++++ b/docs/data/articles/2026-09-27-windows-insider-2026-09-25-phone-companion.json
+@@ -0,0 +1,45 @@
++{
++  "version": 1,
++  "item_id": "2026-09-27-windows-insider-2026-09-25-phone-companion",
++  "language": "it",
++  "editorial_mode": "original",
++  "source_item_hash": "4da9261cb42fa85a4a24d6501970e42e604ed554a0718340438106fdfcfd5a95",
++  "written_at": "2026-09-27T17:52:39+00:00",
++  "verified_at": "2026-09-27T17:52:39+00:00",
++  "sources": [
++    {
++      "name": "Microsoft · Windows Insider",
++      "type": "official",
++      "url": "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
++    }
++  ],
++  "sections": [
++    {
++      "heading": "Che cosa cambia nel menu Start",
++      "paragraphs": [
++        "L’annuncio Windows Insider del 25 settembre introduce, nel canale Experimental, un pannello Phone companion più ricco. Le attività recenti dello smartphone sono raccolte in un’area scorrevole del menu Start. Il cambiamento riguarda quindi il modo di consultare le informazioni provenienti dal telefono, senza confonderlo con un aggiornamento generale già disponibile su qualsiasi installazione di Windows."
++      ],
++      "source_urls": [
++        "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
++      ]
++    },
++    {
++      "heading": "Anche indicazioni sul consumo energetico",
++      "paragraphs": [
++        "Sempre in Experimental arrivano le Energy Recommendations nelle impostazioni rapide. Le raccomandazioni diventano così più accessibili dalla superficie usata per i controlli immediati del sistema. Sono due interventi separati: il primo riguarda la continuità tra dispositivi, il secondo l’accesso alle indicazioni energetiche."
++      ],
++      "source_urls": [
++        "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
++      ]
++    },
++    {
++      "heading": "Disponibilità e limiti della notizia",
++      "paragraphs": [
++        "La pubblicazione comprende build Beta ed Experimental, anche per il ramo 26H1, ma le due funzioni qui descritte sono attribuite a Experimental. L’appartenenza al programma Insider non garantisce che ogni funzione compaia nello stesso momento su tutti i PC. Per verificare la disponibilità concreta occorre confrontare ramo, canale e build installata con le note ufficiali; questa segnalazione non richiede di passare a una versione sperimentale sul computer principale."
++      ],
++      "source_urls": [
++        "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
++      ]
++    }
++  ]
++}

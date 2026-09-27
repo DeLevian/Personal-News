@@ -1,0 +1,73 @@
+name: Apply reviewed Italian reader changes
+on:
+  push:
+    branches: [chatgpt/italian-article-reader]
+    paths: [.github/workflows/apply-reader.yml]
+permissions:
+  contents: read
+jobs:
+  apply:
+    if: github.repository == 'DeLevian/Personal-News' && github.ref == 'refs/heads/chatgpt/italian-article-reader' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Verify exact reviewed patches and apply
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          hashes = [
+            '3f7582a514ca90c36f2dfd0b059e690ea285569c3bdf334454940b4aa8e10be7',
+            '3a0b76b67a23514745c94c56fccd80b11b8560730e66098f3a285d3e06e745bd',
+            '6ce7b539636c87a0fe3efba9e93a4bbeee9afbe6e0b6210bf12ba1b1f87fb912',
+            'dbc670f61ae6830977b1d7c29b198496e9b25f4427139c36e4921d1825fd7d02',
+            '2d29b1563997171bd445aa308d6acc26ca15d28d4e1cdcaf10e4b8ab27b5050e',
+            'a3e2c26485a57930792a3287ec48e60274a30b34d368da33fe97b4cbb1039114',
+            'eeefdd1733a23cdcdc00343970649e118e1a78ceb9fbdd68b53d7dcd2fefa276',
+            '87ca9a9cd166bf7f41d6a2fedc6bbbaf1a444ddc8fcb8808d0408b7c7c68d421',
+            'a9b34a688913d5d39bb11ee431657f82d938f51d08ce2492c658c37120dbb67e'
+          ]
+          chunks=[]
+          for n, expected in enumerate(hashes):
+              raw=Path(f'.reader-patches/{n}.patch').read_bytes()
+              if n == 2:
+                  raw=raw.replace(b'\n diff --git a/docs/assets/reader.js', b'\ndiff --git a/docs/assets/reader.js')
+              assert hashlib.sha256(raw).hexdigest() == expected, f'Patch {n} differs from reviewed content'
+              chunks.append(raw)
+          patch=b''.join(chunks)
+          assert hashlib.sha256(patch).hexdigest() == '773fae705185d67dcf84d215cd2dfeee33b3a76a3c638b5ec315d13fb34c9783'
+          Path('/tmp/reader.patch').write_bytes(patch)
+          PY
+          git apply --check /tmp/reader.patch
+          git apply /tmp/reader.patch
+      - name: Rebuild and validate before any feature commit
+        run: |
+          set -euo pipefail
+          python -m pip install -r requirements.txt
+          python tools/news.py rebuild
+          python tools/news.py validate
+          python -m unittest discover -s tests -v
+          node --check docs/assets/app.js
+          node --check docs/assets/reader.js
+          git diff --exit-code -- docs/data/daily docs/data/initial config/LEGACY_V1.json
+          git diff --check
+      - name: Remove temporary workflow and commit only to the development branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = 'refs/heads/chatgpt/italian-article-reader'
+          test "$(git ls-remote origin refs/heads/chatgpt/italian-article-reader | cut -f1)" = "$GITHUB_SHA"
+          rm -rf .reader-patches
+          rm .github/workflows/apply-reader.yml .github/workflows/reader-workspace.yml
+          git add -A
+          git config user.name 'DeLevian'
+          git config user.email '152444661+DeLevian@users.noreply.github.com'
+          git commit -m 'Implement Italian article reader with verified bodies and publication gates'
+          git push origin HEAD:refs/heads/chatgpt/italian-article-reader

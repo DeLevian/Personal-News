@@ -1,0 +1,282 @@
+diff --git a/.github/workflows/check.yml b/.github/workflows/check.yml
+index 721be2e..58069c5 100644
+--- a/.github/workflows/check.yml
++++ b/.github/workflows/check.yml
+@@ -27,12 +27,14 @@ jobs:
+           python tools/news.py validate
+           python -m unittest discover -s tests -v
+           node --check docs/assets/app.js
++          node --check docs/assets/reader.js
+           python tools/news.py rebuild
+-          git diff --exit-code -- config/edition.schema.json docs/data state/seen.json state/event-index.json
++          git diff --exit-code -- config/edition.schema.json config/article.schema.json docs/data state/seen.json state/event-index.json
+       - name: Real HTTP browser regressions
+         run: |
+           python tests/browser_check.py
+           python tests/browser_v2.py
++          python tests/browser_reader.py
+       - uses: actions/upload-artifact@v4
+         if: always()
+         with:
+diff --git a/AGENTS.md b/AGENTS.md
+index b2badf3..3a2ef85 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -5,8 +5,9 @@ Repository canonico tecnico: `DeLevian/Personal-News`. Sito pubblico italiano gi
+ ## Avvio mirato
+ 1. Leggere questo file.
+ 2. Run quotidiana: `config/DAILY_RUN.md`, `config/pipeline.json`; seguire il routing verso il profilo nel Second Brain, rispettandone prima AGENTS.md e INDEX.md.
+-3. Sviluppo: `README.md`, `project/STATE.md` e soltanto i file pertinenti.
+-4. Prima di scrivere rileggere HEAD. Modifiche trasversali su branch dedicato; nessun force-push.
++3. Articoli italiani: leggere `config/ARTICLE_CONTENT.md` dopo la pipeline, anche per ricerche mirate. Ogni nuovo item richiede corpo italiano nello stesso commit.
++4. Sviluppo: `README.md`, `project/STATE.md` e soltanto i file pertinenti.
++5. Prima di scrivere rileggere HEAD. Modifiche trasversali su branch dedicato; nessun force-push.
+ 
+ ## Responsabilità canoniche
+ - Second Brain `03_PROJECTS/Second-Brain-News/NEWS_PROFILE.md`: interessi, priorità e regole editoriali personali.
+@@ -14,12 +15,15 @@ Repository canonico tecnico: `DeLevian/Personal-News`. Sito pubblico italiano gi
+ - `config/pipeline.json`: parametri numerici unici.
+ - `config/DAILY_RUN.md` e `config/BRIEFING.md`: procedimento e notifica. Il task esterno è solo un bootstrap.
+ - `docs/data/categories.json`: UI, non duplicazione di topics e fonti.
++- `config/ARTICLE_CONTENT.md`: redazione originale italiana, corpi separati e migrazione storica; limiti in `pipeline.json > article_content`.
++- `docs/data/articles/` e `article-index.json`: testi italiani verificati e indice derivato, senza alterare gli item originali.
+ - `docs/data/daily/`: edizioni; `docs/data/initial/`: archivio iniziale autentico.
+ - `state/seen.json`: cache recente; `state/event-index.json`: indice permanente ricostruibile dei precedenti.
+ 
+ ## Contratto dati
+ Nuove edizioni v2 con item `section: main|radar` e `included_at`. Lo storico v1 rimane leggibile come main. Featured solo main. NEW/UPDATE è indipendente dalla sezione. Le liste UI sono ordinate per pubblicazione reale della fonte: `published_at` decrescente quando disponibile, `published_date` come fallback; mai usare `included_at`, verifica o commit per stabilire la recenza.
+ Non promuovere un vecchio Radar a NEW, né inventare delta. Le finestre temporali si riferiscono alla pubblicazione reale e alla prima inclusione, non all'ultimo rerun.
++Il manifesto congelato `config/ARTICLE_LEGACY.json` ammette solo schede storiche identiche senza corpo esteso: mostrare il limite, non simulare un articolo completo. Non ampliarlo nelle run. Un arricchimento della sola prosa non è NEW/UPDATE e non cambia date della fonte o prima inclusione.
+ Le ricevute congelate `config/LEGACY_V1.json` tutelano esclusivamente i contenuti identici già ammessi nella medesima edizione v1. Non rigenerarle nelle run ordinarie, non usarle per ammettere vecchie notizie in giorni successivi.
+ La selezione initial non va modificata ogni mattina. Date, ID e URL storici devono restare validi.
+ 
+@@ -34,7 +38,7 @@ Mantenere mobile-first, accessibilità, proporzioni/lightbox/fallback delle imma
+ 
+ ## Verifiche e scritture
+ Installare `requirements.txt`, quindi `python tools/news.py rebuild`, `python tools/news.py validate`, `python -m unittest discover -s tests -v`.
+-Per UI: `node --check docs/assets/app.js`, `tests/browser_check.py` e `tests/browser_v2.py` con requirements-test.txt. Test live soltanto dopo il deploy corrispondente.
++Per UI: `node --check docs/assets/app.js`, `node --check docs/assets/reader.js`, `tests/browser_check.py`, `tests/browser_v2.py` e `tests/browser_reader.py` con requirements-test.txt. Test live soltanto dopo il deploy corrispondente.
+ Commit coerente di edizione e file derivati; rilettura dopo scrittura; concorrenza riconciliata senza force. Fonte temporaneamente offline: diagnostica separata dalla CI strutturale.
+ Distinguere codice/test, commit, deploy e sito live. Non dichiarare eseguito un test mai effettuato.
+ 
+diff --git a/README.md b/README.md
+index 16414ab..141a53e 100644
+--- a/README.md
++++ b/README.md
+@@ -14,6 +14,13 @@ Una rassegna personale in italiano: News principali, Radar, eventuali scadenze d
+ 
+ Le quantità sono obiettivi, non quote da riempire. La discovery cerca 30–50 candidati per aumentare il bacino; un candidato non è ancora una notizia verificata.
+ 
++## Leggere la notizia in italiano
++La freccia a destra della stella apre un lettore interno a schermo intero, con sezioni, fonti, immagini e comandi per letti, salvati e condivisione. Il link “Leggi la fonte” continua ad aprire la fonte esterna. Back/Esc e “Notizie” chiudono il lettore; i link condivisi usano `?date=<edizione>&article=<ID>`. I vecchi link con `#ID` restano validi.
++
++I testi sono articoli originali in italiano redatti dopo verifica, non traduzioni integrali di articoli protetti. Si trovano in `docs/data/articles/` e vengono cercati anche dalla ricerca del sito. Nessun modello o traduttore viene eseguito nel browser.
++
++Le nuove News e i nuovi Radar richiedono un corpo italiano valido prima della pubblicazione. Gli item storici identici possono mostrare un avviso esplicito di sola sintesi finché non vengono integrati. Regole comuni a automazione e skill: `config/ARTICLE_CONTENT.md`. Parametri soltanto in `config/pipeline.json`, schema generato `config/article.schema.json`.
++
+ ## Fonti canoniche
+ | Componente | Responsabilità |
+ |---|---|
+@@ -21,6 +28,8 @@ Le quantità sono obiettivi, non quote da riempire. La discovery cerca 30–50 c
+ | `config/SOURCES.json` | Dove cercare: fonti, tier, policy, query |
+ | `config/pipeline.json` | Limiti e finestre temporali |
+ | `config/DAILY_RUN.md` | Procedura completa della run |
++| `config/ARTICLE_CONTENT.md` | Corpo originale italiano, citazioni e migrazione |
++| `docs/data/articles/` | Testi completi separati dalle edizioni |
+ | `config/BRIEFING.md` | Messaggio finale breve |
+ | `docs/data/categories.json` | Presentazione delle sei categorie |
+ | `docs/data/daily/` e `initial/` | Archivio definitivo |
+@@ -55,10 +64,11 @@ python tools/news.py rebuild
+ python tools/news.py validate
+ python -m unittest discover -s tests -v
+ node --check docs/assets/app.js
++node --check docs/assets/reader.js
+ python tools/briefing.py
+ ```
+ 
+-Il rebuild non riscrive le edizioni: rigenera manifest, ricerca, cache, ledger e schema. Un rerun senza novità non svuota l'edizione né crea falsi aggiornamenti.
++Il rebuild non riscrive le edizioni né redige testi: rigenera manifest, ricerca nel corpo, indice articoli, cache, ledger e schemi. `content_revision` segnala anche una modifica ai soli corpi senza alterare generated_at. `python tools/articles.py describe --item-id ID` prepara fingerprint e riferimenti per redigere il corpo. Un rerun senza novità non svuota l'edizione né crea falsi aggiornamenti.
+ 
+ ## Test e sito locale
+ 
+@@ -69,6 +79,7 @@ python -m pip install -r requirements-test.txt
+ python -m playwright install chromium
+ python tests/browser_check.py
+ python tests/browser_v2.py
++python tests/browser_reader.py
+ python tests/live_check.py
+ ```
+ 
+diff --git a/config/ARTICLE_CONTENT.md b/config/ARTICLE_CONTENT.md
+new file mode 100644
+index 0000000..cdd78ca
+--- /dev/null
++++ b/config/ARTICLE_CONTENT.md
+@@ -0,0 +1,55 @@
++# Articoli italiani — contratto editoriale e tecnico
++
++Questo è il contratto comune a run giornaliera, ricerca mirata e integrazione dello storico. Non copiare queste regole in altri repository: collegare questo file.
++
++## Due livelli, una notizia
++
++L'item nell'edizione mantiene titolo, sintesi breve, fonti, date, NEW/UPDATE e identità. La freccia a destra dei preferiti apre una lettura interna a schermo intero. Il link “Leggi la fonte” continua ad aprire il sito esterno. Condivisione, letti e salvati sono disponibili nel lettore e usano le preferenze esistenti.
++
++Ogni nuovo item deve avere un corpo italiano completo in `docs/data/articles/<item_id>.json`, nello stesso commit dell'edizione e dei derivati. Non pubblicare prima la scheda e promettere il testo per dopo. Il browser legge JSON statici: non contiene un traduttore, un modello AI o credenziali.
++
++## Scrittura: spiegare la notizia, non allungare la descrizione
++
++Dopo verifica e deduplicazione, aprire le fonti e redigere un articolo autonomo e originale in italiano. Deve spiegare cosa è successo, i dettagli sostanziali, a chi si applica, disponibilità/prerequisiti e limiti realmente documentati. Contestualizzare l'impatto senza trasformare deduzioni in fatti. Un lettore deve poter capire la notizia senza dover aprire la pagina inglese.
++
++Usare sezioni e paragrafi proporzionati alla materia. Non ripetere il sommario, non produrre riempitivi per raggiungere una lunghezza, non inventare esempi, specifiche o disponibilità mancanti. Conservare nomi di prodotti, versioni e termini tecnici quando tradurli li renderebbe ambigui. “Originale” non significa inventato: ogni affermazione fattuale deve essere supportata dalle fonti citate nella sua sezione.
++
++La richiesta di lettura in italiano **non** autorizza a riprodurre o tradurre integralmente articoli protetti. Sintetizzare e riorganizzare i fatti con formulazioni e struttura proprie; eventuali citazioni devono essere brevi e attribuite. Non aggirare paywall o blocchi; non redistribuire gli articoli sorgente. La UI dichiara che si tratta di una redazione originale e mantiene i riferimenti agli originali.
++
++Le soglie strutturali sono soltanto un controllo contro testi vuoti: i numeri sono in `pipeline.json > article_content`. Superare lo schema non dimostra accuratezza, buona qualità o lingua corretta; verificarle editorialmente prima della pubblicazione.
++
++## Formato del corpo
++
++`config/article.schema.json` è generato da `tools/articles.py` con i parametri della pipeline. Campi:
++
++- `version: 1`, `item_id`, `language: "it"`, `editorial_mode: "original"`;
++- `source_item_hash`: fingerprint del contenuto fattuale dell'item, calcolata da `tools.articles.item_hash`; non indovinarla;
++- `verified_at` e `written_at`: verifica delle fonti del corpo e redazione, con offset; verifica non successiva alla redazione;
++- `sources`: oggetti `name`, `type`, `url` HTTPS, senza credenziali, almeno una fonte già collegata all'item;
++- `sections`: oggetti `heading`, `paragraphs` (array di stringhe di testo semplice), `source_urls` (URL presenti in `sources`). Ogni sezione cita le proprie fonti.
++
++Non inserire HTML, widget, embed, script o testo Markdown da interpretare. Il lettore rende i contenuti con `textContent`. I timestamp del corpo non sostituiscono `published_at` o `included_at`: un approfondimento non ridata la notizia.
++
++Per ottenere i riferimenti esatti prima di scrivere: `python tools/articles.py describe --item-id <ID>`. Il comando legge l'item e stampa percorso, fingerprint e fonti; non genera contenuti.
++
++## Validazione e derivati
++
++`python tools/news.py rebuild` controlla i corpi e genera anche `config/article.schema.json`, `docs/data/article-index.json` e la ricerca nel testo completo. `python tools/news.py validate` rifiuta nuovi item senza corpo, corpi orfani, identità errate, fingerprint obsolete, fonti/citazioni non valide e testi strutturalmente incompleti.
++
++`docs/data/index.json > content_revision` cambia anche quando si modifica soltanto un approfondimento, senza cambiare le date originali dell'edizione. Il lettore carica il testo su richiesta; il feed resta leggero. Le liste restano ordinate per pubblicazione reale, non per data di redazione o commit.
++
++Per un UPDATE servono sempre i fatti nuovi e il precedente secondo DAILY_RUN. Aggiornare il corpo insieme all'item se cambiano i fatti, altrimenti la fingerprint blocca la pubblicazione. Un miglioramento della sola prosa non è un UPDATE editoriale e non crea un nuovo evento.
++
++## Storico e migrazione
++
++Gli item v1/v2, gli ID, i permalink e `config/LEGACY_V1.json` non sono riscritti per introdurre il lettore. Il manifesto congelato `config/ARTICLE_LEGACY.json` ammette **solo** gli identici item già esistenti alla migrazione senza corpo esteso; in quel caso il lettore mostra un avviso “scheda storica” e la sintesi, senza fingere un articolo completo.
++
++Non rigenerare o estendere il manifesto nelle run ordinarie. Un nuovo ID, anche con data retrodatata, non eredita l'eccezione. I nuovi item richiedono sempre il corpo, inclusi Radar e UPDATE.
++
++Per integrare lo storico, rileggere le fonti e aggiungere il corpo separato con l'ID esistente, senza nuovi NEW/UPDATE, senza cambiare included_at, senza ritoccare le ricevute. Se una fonte non è verificabile, mantenere il fallback dichiarato e segnalare la lacuna. Gli errori HTTP del corpo sono invece segnalati come errore di caricamento con pulsante Riprova, non come assenza definitiva dell'articolo.
++
++## Controlli prima della consegna
++
++Oltre ai controlli canonici: `node --check docs/assets/reader.js` e `python tests/browser_reader.py`. Verificare apertura dalla freccia, link esterni, chiusura/Back/Esc, ritorno ai filtri e alla posizione, permalink/reload, letti/salvati/condivisione, ricerca nel corpo, temi, immagini/fallback, errori e retry, sicurezza del testo, mobile e assenza di overflow. Le fixture restano soltanto in copie temporanee.
++
++Dopo il deploy, controllare che HTML, JavaScript, CSS, indici e corpi serviti corrispondano al commit, quindi aprire realmente un articolo sul sito. Distinguere test locale/CI, commit, deploy e verifica live. La chat resta un briefing breve: l'articolo si legge sul sito.
+diff --git a/config/ARTICLE_LEGACY.json b/config/ARTICLE_LEGACY.json
+new file mode 100644
+index 0000000..6bcaa22
+--- /dev/null
++++ b/config/ARTICLE_LEGACY.json
+@@ -0,0 +1,95 @@
++{
++  "version": 1,
++  "frozen_at": "2026-09-27",
++  "notes": "Exact pre-reader items only; never regenerate or extend during ordinary runs. This exception permits an explicitly labelled historical summary, never an incomplete new article.",
++  "items": {
++    "2026-09-27-anthropic-project-swap-2026-09-24": {
++      "edition": "2026-09-27",
++      "sha256": "dfcf0c8307df3f5c23aeb2c474ea57bcd7162b9ac49272bc9328d065d51b85c9"
++    },
++    "2026-09-27-champions-frankfurt-2026-day-two": {
++      "edition": "2026-09-27",
++      "sha256": "7e27d6044088d901de22c98fde0a7a039d4de4984f67d412bc383f7f259807f8"
++    },
++    "2026-09-27-champions-global-challenge-2027-i-battles": {
++      "edition": "2026-09-27",
++      "sha256": "483b93e5423af9201d565732bad19af4b45f83f1b29a4bf3a0fd0f11d85a5daa"
++    },
++    "2026-09-27-chatgpt-security-history-2026-09-25": {
++      "edition": "2026-09-27",
++      "sha256": "ed925ece321d20de5e417546c07ae10f2c13594219f99dd6e60545e1cca834ef"
++    },
++    "2026-09-27-claude-opus-5-5-launch": {
++      "edition": "2026-09-27-initial",
++      "sha256": "9e63064a56087791cc4122029fdbc128ffa5654c16d4b20375bab04e65a0a320"
++    },
++    "2026-09-27-cursor-rollouts-security-review-2026-09-23": {
++      "edition": "2026-09-27",
++      "sha256": "c2e3169c4d4341d29e9c1020d4bd9d11ded2eb124a99b67ed810f7627ea8751a"
++    },
++    "2026-09-27-deep-rock-survivor-mobile-optimization": {
++      "edition": "2026-09-27-initial",
++      "sha256": "99cd81e6b685d4eb419f2e5f7bb91e937eb1cf937153182f37aff01bb9874451"
++    },
++    "2026-09-27-github-copilot-slack-teams-2026-09-25": {
++      "edition": "2026-09-27",
++      "sha256": "e1a7b8f12e60ba6b58a275768126a5b26433258d621f0b3df364720996aece2b"
++    },
++    "2026-09-27-github-copilot-weekly-2026-09-21-models-sandbox": {
++      "edition": "2026-09-27",
++      "sha256": "f0d821279757c80a4fc246da66a8065f1482ba35bffd864f239899229c2874d0"
++    },
++    "2026-09-27-gpt-6-sol-luna-launch": {
++      "edition": "2026-09-27-initial",
++      "sha256": "bc4ad4390e593d7f09dba8faa1c9106c919086c6b72a239c906c2b937ba47744"
++    },
++    "2026-09-27-microsoft-copilot-home-code-autopilot-2026": {
++      "edition": "2026-09-27",
++      "sha256": "e6e11463212ba46329c2633a199ab60e3070ac45da59c761efe8a62a9c13fcdc"
++    },
++    "2026-09-27-microsoft-security-september-2026-agent-data-controls": {
++      "edition": "2026-09-27",
++      "sha256": "fd96a81a0f8ab09ff4f8ff021ac1f5f53daed9c99c5371b9190dd778664d3bb1"
++    },
++    "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26": {
++      "edition": "2026-09-27",
++      "sha256": "9d417d83ef2bd849023a8db380a15a3f9bb8c5f301aee8b227178be6fd3fde9b"
++    },
++    "2026-09-27-openai-gpt6-prompt-caching-2026-09-22": {
++      "edition": "2026-09-27",
++      "sha256": "bec09b966bd1b850c2ab60f78c4834f6ea9f989591513361b0d5380532505967"
++    },
++    "2026-09-27-pi-v0-87-1": {
++      "edition": "2026-09-27-initial",
++      "sha256": "cf54d495f59e560f92897cf511d0e0def8671feda0b07b837815a06cfc57bd95"
++    },
++    "2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026": {
++      "edition": "2026-09-27",
++      "sha256": "49ad1964334965d5091659f35a3c083733f186eca93bfa8d0720fe26716b62ec"
++    },
++    "2026-09-27-terramaster-tos-7-0-1278": {
++      "edition": "2026-09-27",
++      "sha256": "132a57705dff49e9cba0a0e27502d2b55b521aa4489f4a4857f51523e273a233"
++    },
++    "2026-09-27-unity-6-6-content-directories": {
++      "edition": "2026-09-27-initial",
++      "sha256": "bc2717ea80d9ca9ce01b0d8ae3365f65e57aabd0c6091eca7272c4062e240c88"
++    },
++    "2026-09-27-unity-codex-plugin": {
++      "edition": "2026-09-27-initial",
++      "sha256": "b60514ce53bef6dcbab7b416afde5ac3057ba23c81686e1723f983bab6f980f1"
++    },
++    "2026-09-27-unity-meta-vr-glasses-support-2026-09-24": {
++      "edition": "2026-09-27",
++      "sha256": "04687b32ac17b36289327b7b557d70d9b77c903f204e597507c3a5ff5550cf6a"
++    },
++    "2026-09-27-windows-insider-2026-09-25-phone-companion": {
++      "edition": "2026-09-27",
++      "sha256": "3f85077c2e02e192c47bd2def562445b3915e273b9186ad6cc0d753d4fd06a5e"
++    },
++    "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup": {
++      "edition": "2026-09-27",
++      "sha256": "3e4c88729c4c6a06e8ff058d8bb2d42c6f5e66b0d39f2075269943f9569a0709"
++    }
++  }
++}
+diff --git a/config/BRIEFING.md b/config/BRIEFING.md
+index 3fffdde..5cbf330 100644
+--- a/config/BRIEFING.md
++++ b/config/BRIEFING.md
+@@ -20,5 +20,6 @@ GitHub: <esito effettivo> · Pages: <esito effettivo>
+ - Zero novità in una nuova giornata: edizione vuota esplicita e messaggio breve. Zero novità in un rerun: preservare l'edizione già pubblicata.
+ - “GitHub aggiornato” richiede rilettura del commit; “Pages verificato” richiede contenuto live corrispondente e controlli osservati. In attesa del deploy scrivere “in pubblicazione”.
+ - Un problema di accesso alle fonti è una ricerca incompleta, non prova che non esistano notizie. Esplicitarlo.
++- Gli articoli completi in italiano si leggono nel sito; la chat resta breve. Nelle migrazioni distinguere corpi completi, fallback storici e caricamenti falliti. Non chiamare “articolo completo” la sola sintesi.
+ - `tools/briefing.py` genera un testo di base con conteggi coerenti; gli esiti predefiniti sono “non verificato”.
+ - Non riportare un modello del task se i metadati non lo espongono.

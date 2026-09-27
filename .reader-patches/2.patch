@@ -1,0 +1,322 @@
+diff --git a/docs/assets/reader.css b/docs/assets/reader.css
+new file mode 100644
+index 0000000..39c3962
+--- /dev/null
++++ b/docs/assets/reader.css
+@@ -0,0 +1,26 @@
++/* Full-screen reader: independent from the compact feed and mobile navigation. */
++body.reader-open{overflow:hidden}
++#reader-dialog{inset:0;width:100%;max-width:none;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0;padding:0;background:var(--bg);color:var(--ink);overflow-y:auto;overscroll-behavior:contain;scroll-behavior:auto}
++#reader-dialog::backdrop{background:var(--bg)}
++.reader-toolbar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(8px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 8px max(16px,env(safe-area-inset-left));background:var(--bg);border-bottom:1px solid var(--line)}
++.reader-back{border:1px solid var(--line);border-radius:10px;min-height:44px;padding:9px 13px;background:var(--surface);font-size:13px}
++.reader-brand{font-weight:750;color:var(--muted);font-size:13px;letter-spacing:-.4px}
++.reader-paper{max-width:790px;margin:auto;padding:36px max(24px,env(safe-area-inset-right)) calc(60px + env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left))}
++#reader-dialog .reader-title{font-size:clamp(26px,4vw,40px);line-height:1.18;letter-spacing:-1px;margin:10px 0 16px;overflow-wrap:anywhere}
++.reader-meta,.reader-editorial{font-size:12px;color:var(--muted);line-height:1.65}
++.reader-actions{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 26px}.reader-actions button{min-height:44px}
++.reader-summary{font-size:19px;line-height:1.7;color:var(--muted);margin:24px 0}
++.reader-body{font-size:17px;line-height:1.85;overflow-wrap:anywhere}
++.reader-section{margin:30px 0}.reader-section h3,.reader-why h3,.reader-sources h3{font-size:21px;line-height:1.35;letter-spacing:-.3px;margin:0 0 14px}
++.reader-section p{margin:0 0 18px}.reader-section .reader-citations{font-size:12px;color:var(--muted);line-height:1.5}
++.reader-source{color:var(--accent);text-underline-offset:3px}.reader-source:focus-visible{outline-offset:1px}
++.reader-notice{font-size:12px;color:var(--muted);padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
++#reader-dialog[data-content-status=error] .reader-notice,#reader-dialog[data-content-status=legacy-summary] .reader-notice{border-left:3px solid var(--accent);padding:12px;background:var(--accent-soft)}
++.reader-why{background:var(--accent-soft);padding:20px;border-radius:14px;margin:32px 0;font-size:15px;line-height:1.7}
++.reader-why p{margin:8px 0}.reader-sources{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;line-height:1.7}
++.reader-sources li{padding:5px 0;overflow-wrap:anywhere}.reader-sources ol{padding-left:22px}
++.reader-image{margin:24px 0}.reader-image img{display:block;max-width:100%;width:100%;max-height:48dvh;object-fit:contain;background:var(--subtle);border-radius:14px}
++.reader-zoom{display:block;width:100%;padding:0;border-radius:14px}.reader-image figcaption{font-size:11px;color:var(--muted);margin-top:7px}
++.reader-editorial{margin:30px 0 0}
++@media(max-width:580px){.reader-paper{padding-top:25px;padding-right:max(20px,env(safe-area-inset-right));padding-left:max(20px,env(safe-area-inset-left))}.reader-body{font-size:17px}.reader-summary{font-size:18px}.reader-brand{font-size:11px}.reader-actions{gap:6px}.reader-actions button{font-size:12px;padding:9px 10px}}
++@media print{body.reader-open .shell,body.reader-open .skip,body.reader-open .toast{display:none!important}body.reader-open #reader-dialog{display:block!important;position:static;height:auto;max-height:none;overflow:visible}.reader-toolbar,.reader-actions,#reader-retry{display:none!important}.reader-paper{max-width:none;padding:0}.reader-section{break-inside:avoid}}
+ diff --git a/docs/assets/reader.js b/docs/assets/reader.js
+new file mode 100644
+index 0000000..b6e412a
+--- /dev/null
++++ b/docs/assets/reader.js
+@@ -0,0 +1,177 @@
++/* Full-screen Italian reading view. UI only; never scrape or translate in the browser. */
++(() => {
++  'use strict';
++  const validId = value => typeof value === 'string' && /^[a-z0-9][a-z0-9-]{0,159}$/.test(value);
++  const node = (tag, cls, text) => {
++    const element = document.createElement(tag);
++    if (cls) element.className = cls;
++    if (text !== undefined) element.textContent = text;
++    return element;
++  };
++  const safeURL = value => {
++    try {
++      const u = new URL(value);
++      return u.protocol === 'https:' && !u.username && !u.password ? u.href : null;
++    } catch { return null; }
++  };
++  function externalLink(source, label) {
++    const a = node('a', 'reader-source', label || source.name);
++    const href = safeURL(source.url);
++    if (href) a.href = href;
++    a.target = '_blank'; a.rel = 'noopener noreferrer'; a.referrerPolicy = 'no-referrer';
++    return a;
++  }
++  function checkBody(body, item) {
++    if (!body || body.version !== 1 || body.item_id !== item.id || body.language !== 'it' || body.editorial_mode !== 'original') throw Error('Articolo non valido.');
++    if (!Array.isArray(body.sources) || !body.sources.length || !body.sources.every(s => s && typeof s.name === 'string' && safeURL(s.url))) throw Error('Fonti dell’articolo non valide.');
++    const urls = new Set(body.sources.map(s => s.url));
++    if (!Array.isArray(body.sections) || body.sections.length < 2 || !body.sections.every(s => s && typeof s.heading === 'string' && Array.isArray(s.paragraphs) && s.paragraphs.length && s.paragraphs.every(p => typeof p === 'string') && Array.isArray(s.source_urls) && s.source_urls.length && s.source_urls.every(u => urls.has(u)))) throw Error('Testo dell’articolo non valido.');
++    return body;
++  }
++
++  window.PersonalNewsReader = {
++    create(hooks) {
++      const dialog = node('dialog', 'reader-dialog'); dialog.id = 'reader-dialog';
++      dialog.setAttribute('aria-labelledby', 'reader-title');
++      const toolbar = node('div', 'reader-toolbar');
++      const back = node('button', 'reader-back', '← Notizie'); back.type = 'button'; back.id = 'reader-back';
++      back.setAttribute('aria-label', 'Torna alle notizie'); back.onclick = hooks.requestClose;
++      const label = node('span', 'reader-brand', 'personal news.');
++      const theme = node('button', 'icon-button', '◐'); theme.type = 'button';
++      theme.setAttribute('aria-label', 'Cambia tema'); theme.onclick = hooks.changeTheme;
++      toolbar.append(back, label, theme);
++      const paper = node('article', 'reader-paper');
++      const kicker = node('p', 'eyebrow'); kicker.id = 'reader-kicker';
++      const title = node('h2', 'reader-title'); title.id = 'reader-title'; title.tabIndex = -1;
++      const meta = node('p', 'reader-meta'); meta.id = 'reader-meta';
++      const actions = node('div', 'reader-actions');
++      const read = node('button', 'pill'); read.id = 'reader-read'; read.type = 'button';
++      const save = node('button', 'pill'); save.id = 'reader-save'; save.type = 'button';
++      const share = node('button', 'pill', 'Condividi link'); share.id = 'reader-share'; share.type = 'button';
++      actions.append(read, save, share);
++      const imageBox = node('figure', 'reader-image');
++      const summary = node('p', 'reader-summary');
++      const status = node('p', 'reader-notice'); status.id = 'reader-status'; status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
++      const retry = node('button', 'pill', 'Riprova a caricare il testo'); retry.type = 'button'; retry.id = 'reader-retry'; retry.hidden = true;
++      const bodyBox = node('div', 'reader-body'); bodyBox.id = 'reader-body';
++      const why = node('section', 'reader-why');
++      const sourcesBox = node('section', 'reader-sources'); sourcesBox.id = 'reader-sources';
++      const footer = node('p', 'reader-editorial'); footer.textContent = 'Testo originale in italiano basato sulle fonti citate. Non è una traduzione integrale né una copia dell’articolo della fonte.';
++      paper.append(kicker, title, meta, actions, imageBox, summary, status, retry, bodyBox, why, sourcesBox, footer);
++      dialog.append(toolbar, paper); document.body.append(dialog);
++      let current = null, sequence = 0, controller = null;
++      let scrollBefore = 0;
++
++      function setStatus(kind, message) {
++        dialog.dataset.contentStatus = kind;
++        status.textContent = message;
++      }
++      function flags() {
++        if (!current) return;
++        const f = hooks.flags(current.id);
++        read.textContent = f.read ? '✓ Letta · segna non letta' : '✓ Segna come letta';
++        save.textContent = f.saved ? '★ Salvata' : '☆ Salva';
++        read.setAttribute('aria-pressed', String(f.read)); save.setAttribute('aria-pressed', String(f.saved));
++        read.setAttribute('aria-label', f.read ? 'Segna come non letto' : 'Segna come letto');
++        save.setAttribute('aria-label', f.saved ? 'Rimuovi dai salvati' : 'Salva notizia');
++      }
++      function renderSources(sources) {
++        sourcesBox.replaceChildren(node('h3', '', 'Fonti e approfondimenti originali'));
++        const list = node('ol');
++        for (const source of sources) {
++          const li = node('li'); li.append(externalLink(source)); list.append(li);
++        }
++        sourcesBox.append(list);
++      }
++      async function json(path, signal) {
++        const response = await fetch(path, {cache: 'no-store', credentials: 'same-origin', signal});
++        if (!response.ok) throw Error(`HTTP ${response.status}`);
++        return response.json();
++      }
++      async function loadBody() {
++        if (!current) return;
++        const item = current, ticket = ++sequence;
++        controller?.abort(); controller = new AbortController();
++        const signal = controller.signal;
++        bodyBox.replaceChildren(); retry.hidden = true; bodyBox.setAttribute('aria-busy', 'true');
++        setStatus('loading', 'Caricamento dell’articolo in italiano…');
++        try {
++          const index = await json('data/article-index.json', signal);
++          if (ticket !== sequence || !dialog.open) return;
++          if (index.version !== 1 || !Array.isArray(index.items)) throw Error('Indice articoli non valido.');
++          const entry = index.items.find(i => i.item_id === item.id);
++          if (!entry) throw Error('Articolo non indicizzato.');
++          if (entry.status === 'legacy_summary') {
++            setStatus('legacy-summary', 'Questa scheda storica contiene solo la sintesi in italiano. L’approfondimento completo non è ancora disponibile.');
++            footer.hidden = true;
++            return;
++          }
++          const expected = `data/articles/${item.id}.json`;
++          if (entry.status !== 'full' || entry.path !== expected) throw Error('Percorso articolo non valido.');
++          const body = checkBody(await json(expected, signal), item);
++          if (ticket !== sequence || !dialog.open) return;
++          for (const part of body.sections) {
++            const section = node('section', 'reader-section'); section.append(node('h3', '', part.heading));
++            part.paragraphs.forEach(p => section.append(node('p', '', p)));
++            const citations = node('p', 'reader-citations', 'Fonti: ');
++            part.source_urls.forEach((url, n) => {
++              const i = body.sources.findIndex(s => s.url === url);
++              if (n) citations.append(document.createTextNode(' · '));
++              citations.append(externalLink(body.sources[i], `[${i + 1}]`));
++            });
++            section.append(citations); bodyBox.append(section);
++          }
++          renderSources(body.sources);
++          const words = body.sections.reduce((n, s) => n + s.paragraphs.join(' ').trim().split(/\s+/).length, 0);
++          setStatus('full', `Articolo in italiano · ${Math.max(1, Math.ceil(words / 200))} min di lettura`);
++          footer.hidden = false;
++        } catch (error) {
++          if (ticket !== sequence || error.name === 'AbortError' || !dialog.open) return;
++          setStatus('error', 'Il testo completo non è stato caricato. Qui resta la sintesi: riprova oppure consulta le fonti.');
++          retry.hidden = false; footer.hidden = true;
++        } finally {
++          if (ticket === sequence) bodyBox.setAttribute('aria-busy', 'false');
++        }
++      }
++      read.onclick = () => { if (current) { hooks.toggleRead(current.id); flags(); } };
++      save.onclick = () => { if (current) { hooks.toggleSaved(current.id); flags(); } };
++      share.onclick = () => { if (current) hooks.share(current); };
++      retry.onclick = loadBody;
++      dialog.addEventListener('cancel', event => { event.preventDefault(); hooks.requestClose(); });
++      return {
++        isOpen: () => dialog.open,
++        itemId: () => current?.id,
++        refresh: flags,
++        open(item) {
++          if (!validId(item?.id)) return;
++          current = item; dialog.dataset.itemId = item.id;
++          title.textContent = item.title;
++          kicker.textContent = `${item.section === 'radar' ? 'RADAR' : 'NEWS'} · LETTURA IN ITALIANO`;
++          meta.textContent = `Fonte · ${hooks.publicationLabel(item)}${item.published_at ? ' · Europe/Rome' : ' · orario non dichiarato'}`;
++          summary.textContent = item.summary;
++          why.replaceChildren(node('h3', '', 'Perché conta'), node('p', '', item.why_you_care));
++          if (item.status === 'UPDATE') why.append(node('h3', '', 'Cosa cambia rispetto al precedente'), node('p', '', item.delta));
++          imageBox.replaceChildren(); imageBox.hidden = true;
++          if (hooks.imagesEnabled() && safeURL(item.image?.url)) {
++            const zoom = node('button', 'reader-zoom'); zoom.type = 'button'; zoom.setAttribute('aria-label', 'Visualizza immagine completa');
++            const img = node('img'); img.alt = item.image.alt || ''; img.referrerPolicy = 'no-referrer'; img.decoding = 'async';
++            img.onerror = () => { if (current?.id === item.id) imageBox.hidden = true; };
++            img.src = item.image.url; zoom.append(img); zoom.onclick = () => hooks.openImage(item.image);
++            imageBox.append(zoom, node('figcaption', '', item.image.credit || '')); imageBox.hidden = false;
++          }
++          renderSources(item.sources); footer.hidden = true; flags();
++          if (!dialog.open) { scrollBefore = window.scrollY; dialog.showModal(); }
++          document.body.classList.add('reader-open');
++          dialog.scrollTop = 0; title.focus({preventScroll: true});
++          loadBody();
++        },
++        close() {
++          ++sequence; controller?.abort(); current = null;
++          if (dialog.open) dialog.close();
++          document.body.classList.remove('reader-open');
++          window.scrollTo({top: scrollBefore, behavior: 'instant'});
++        }
++      };
++    }
++  };
++})();
+diff --git a/docs/data/articles/2026-09-27-anthropic-project-swap-2026-09-24.json b/docs/data/articles/2026-09-27-anthropic-project-swap-2026-09-24.json
+new file mode 100644
+index 0000000..aee4d4c
+--- /dev/null
++++ b/docs/data/articles/2026-09-27-anthropic-project-swap-2026-09-24.json
+@@ -0,0 +1,45 @@
++{
++  "version": 1,
++  "item_id": "2026-09-27-anthropic-project-swap-2026-09-24",
++  "language": "it",
++  "editorial_mode": "original",
++  "source_item_hash": "f42da5350550ef9a197606adad0edfdedca99a9f63469e5aa725594405517038",
++  "written_at": "2026-09-27T17:52:39+00:00",
++  "verified_at": "2026-09-27T17:52:39+00:00",
++  "sources": [
++    {
++      "name": "Anthropic Research · Project Swap",
++      "type": "research",
++      "url": "https://www.anthropic.com/research/project-swap"
++    }
++  ],
++  "sections": [
++    {
++      "heading": "Un laboratorio di scambio fra agenti",
++      "paragraphs": [
++        "Con Project Swap, Anthropic ha affidato ad agenti Claude il compito di scambiare libri per 201 dipendenti in sei uffici. Una conversazione iniziale raccoglieva indicazioni sui gusti delle persone; gli agenti dovevano poi rappresentarle nelle negoziazioni. È un esperimento circoscritto, non una dimostrazione che gli agenti comprendano automaticamente ogni preferenza personale."
++      ],
++      "source_urls": [
++        "https://www.anthropic.com/research/project-swap"
++      ]
++    },
++    {
++      "heading": "Modello e istruzioni non pesano allo stesso modo",
++      "paragraphs": [
++        "Nelle ripetizioni descritte dai ricercatori, i mercati composti da modelli più forti risultavano più efficienti secondo le graduatorie usate nell’esperimento. Le istruzioni più aggressive o prosociali modificavano alcuni comportamenti, ma con differenze più contenute rispetto al cambio di modello. In alcuni casi gli agenti prosociali accettavano uno scambio meno favorevole per aiutare un altro partecipante."
++      ],
++      "source_urls": [
++        "https://www.anthropic.com/research/project-swap"
++      ]
++    },
++    {
++      "heading": "Che cosa insegna e che cosa non prova",
++      "paragraphs": [
++        "Il risultato interessante è la separazione fra capire la persona, scegliere una strategia e coordinarsi con altri agenti. Un sistema può negoziare efficacemente rispetto a una preferenza stimata senza aver rappresentato perfettamente quella reale. Campione, compito e metriche restano limiti essenziali: non sarebbe corretto trasferire direttamente questi risultati a mercati finanziari o ad acquisti autonomi di valore elevato."
++      ],
++      "source_urls": [
++        "https://www.anthropic.com/research/project-swap"
++      ]
++    }
++  ]
++}
+diff --git a/docs/data/articles/2026-09-27-chatgpt-security-history-2026-09-25.json b/docs/data/articles/2026-09-27-chatgpt-security-history-2026-09-25.json
+new file mode 100644
+index 0000000..0a7eb8e
+--- /dev/null
++++ b/docs/data/articles/2026-09-27-chatgpt-security-history-2026-09-25.json
+@@ -0,0 +1,50 @@
++{
++  "version": 1,
++  "item_id": "2026-09-27-chatgpt-security-history-2026-09-25",
++  "language": "it",
++  "editorial_mode": "original",
++  "source_item_hash": "75a0799d83c0f68fe7d0abcfcdfd847708a616436da44cc5a030db26b02a2611",
++  "written_at": "2026-09-27T17:52:39+00:00",
++  "verified_at": "2026-09-27T17:52:39+00:00",
++  "sources": [
++    {
++      "name": "OpenAI · release notes",
++      "type": "official",
++      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
++    },
++    {
++      "name": "OpenAI · guida alla sicurezza dell’account",
++      "type": "official",
++      "url": "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
++    }
++  ],
++  "sections": [
++    {
++      "heading": "Un registro degli eventi, non delle conversazioni",
++      "paragraphs": [
++        "L’aggiornamento del 25 settembre aggiunge a ChatGPT una cronologia delle attività di sicurezza dell’account. Registra accessi e disconnessioni, modifiche della password e cambiamenti a autenticazione multifattore, passkey e altre impostazioni. Serve a ricostruire che cosa è accaduto all’account: non è un elenco dei contenuti delle chat e non sostituisce la gestione delle sessioni attualmente aperte."
++      ],
++      "source_urls": [
++        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
++      ]
++    },
++    {
++      "heading": "Dove si trova e come interpretarla",
++      "paragraphs": [
++        "Sul sito di ChatGPT il percorso indicato da OpenAI è Settings → Security and login → Security history. Per ciascun evento è possibile confrontare tipo e orario con le informazioni disponibili su dispositivo e posizione. Questi ultimi dettagli possono essere approssimativi o assenti: una localizzazione insolita, da sola, non dimostra quindi un accesso abusivo. Il controllo utile consiste nel confrontare più elementi con le operazioni effettivamente eseguite."
++      ],
++      "source_urls": [
++        "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
++      ]
++    },
++    {
++      "heading": "Che cosa fare davanti a un’attività sconosciuta",
++      "paragraphs": [
++        "La guida ufficiale raccomanda di cambiare una password eventualmente esposta, disconnettere le sessioni e contattare l’assistenza conservando i dettagli utili. Se sono coinvolte chiavi API, occorre revocarle e controllarne l’utilizzo. Attivare MFA è una protezione aggiuntiva, ma non annulla automaticamente gli accessi già attivi: cronologia, revoca delle sessioni e secondo fattore hanno compiti distinti."
++      ],
++      "source_urls": [
++        "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
++      ]
++    }
++  ]
++}
