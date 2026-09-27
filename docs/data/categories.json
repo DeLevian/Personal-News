@@ -120,13 +120,12 @@
         "accessibilità e compatibilità"
       ],
       "discovery_sources": [
-        "https://www.pokemon.com/us/pokemon-news",
-        "https://dbz-dokkanbattle.com/news",
+        "https://www.pokemon.com/it/novita/tutti/content-products_vg-and-apps-product-names.pokemon-tcg-pocket",
+        "https://dbz-dokkan.bngames.net/",
         "https://www.pokemon.com/us/pokemon-news",
         "https://www.nintendo.com/us/whatsnew/",
         "https://news.xbox.com/",
-        "https://store.steampowered.com/news/",
-        "https://www.gog.com/dreamlist/"
+        "https://store.steampowered.com/news/"
       ]
     },
     {
