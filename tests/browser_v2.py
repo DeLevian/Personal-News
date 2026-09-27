@@ -20,6 +20,8 @@ def main():
   d=attention(edition(main=3,radar=2));d['items'][-1]['image']={'url':'https://example.com/preview.svg','alt':'Synthetic test image','credit':'Test fixture','source_url':'https://example.com/news/4'}
   d['items'][0]['title']='<img src=x onerror=window.fixtureXSS=true> main fixture'
   news.write_json(root/f'docs/data/daily/{d["date"]}.json',d);news.run(root,'rebuild')
+  manifest=news.load(root/'docs/data/index.json')
+  previous=news.load(root/'docs'/manifest['editions'][1]['path'])
   server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(root/'docs')));Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/'
   try:
    with sync_playwright() as p:
@@ -39,7 +41,13 @@ def main():
     for w,h in [(1440,1000),(1024,900),(768,1024),(390,844),(320,740)]:
      page.set_viewport_size({'width':w,'height':h});assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),f'overflow {w}'
      if w in (1440,390):page.screenshot(path=str(out/f'v2-fixture-{w}.png'),full_page=True)
-    page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();page.keyboard.press('Escape');page.locator('#prev').click();expect(page.locator('#attention-today')).to_be_hidden();page.locator('#latest-button').click();expect(page.locator('#radar-cards .card')).to_have_count(2);checks.append('legacy archive, mobile navigation and 5 responsive widths')
+    page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();page.keyboard.press('Escape');page.locator('#prev').click()
+    expect(page.locator('#date-label')).not_to_contain_text('2030')
+    if previous.get('attention_today'):
+     expect(page.locator('#attention-today')).to_contain_text('DA SAPERE ALLORA · ARCHIVIO')
+    else:
+     expect(page.locator('#attention-today')).to_be_hidden()
+    page.locator('#latest-button').click();expect(page.locator('#radar-cards .card')).to_have_count(2);checks.append('historic attention labelled as archive; mobile navigation and 5 responsive widths')
     expired=b.new_context();expired.add_init_script("const R=Date;globalThis.Date=class extends R{constructor(...a){super(...(a.length?a:['2030-01-03T12:00:00+01:00']));}static now(){return new R('2030-01-03T12:00:00+01:00').getTime();}}")
     expired.route('https://**/*',lambda r:r.fulfill(status=404,body='fallback fixture'));ep=expired.new_page();ep.goto(base);expect(ep.locator('#attention-today')).to_be_hidden();expect(ep.locator('.card')).to_have_count(5);checks.append('expired attention hidden and unavailable-image fallback')
     assert not errors,errors;expired.close();ctx.unroute_all(behavior='wait');ctx.close();b.close()
