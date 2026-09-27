@@ -428,6 +428,37 @@
         }
       ],
       "image": null
+    },
+    {
+      "id": "2026-09-27-anthropic-project-swap-2026-09-24",
+      "event_id": "anthropic-project-swap-2026-09-24",
+      "category": "agents",
+      "status": "NEW",
+      "section": "radar",
+      "title": "Anthropic prova un mercato in cui gli agenti negoziano tra loro",
+      "summary": "Nel Project Swap, 201 dipendenti Anthropic in sei uffici hanno affidato a agenti Claude lo scambio di libri. Dopo una breve conversazione, le preferenze stimate dagli agenti coincidevano con quelle delle persone nel 61% delle coppie; nei test ripetuti, modelli più forti hanno prodotto mercati più efficienti delle sole variazioni di prompt.",
+      "why_you_care": "È un esperimento controllato interessante per agenti che devono rappresentare preferenze, coordinarsi e negoziare: evidenzia che comprendere bene l’utente può essere un limite più importante della sola strategia di interazione.",
+      "published_date": "2026-09-24",
+      "event_date": "2026-09-24",
+      "published_timezone": "America/Los_Angeles",
+      "verified_at": "2026-09-27T18:26:02+02:00",
+      "included_at": "2026-09-27T18:26:02+02:00",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "Anthropic",
+        "Claude",
+        "multi-agent",
+        "agentic workflows"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic Research · Project Swap",
+          "type": "research",
+          "url": "https://www.anthropic.com/research/project-swap"
+        }
+      ],
+      "image": null
     }
   ],
   "attention_today": {
