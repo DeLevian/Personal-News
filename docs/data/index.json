@@ -1,28 +1,23 @@
 {
   "version": 2,
   "latest": "2026-09-27",
-  "updated_at": "2026-09-27T16:36:59+02:00",
+  "updated_at": "2026-09-27T17:55:00+02:00",
   "editions": [
     {
       "id": "2026-09-27",
       "date": "2026-09-27",
-      "generated_at": "2026-09-27T16:36:59+02:00",
-      "title": "27 settembre · Champions, Copilot, Pocket e novità da giocare",
+      "generated_at": "2026-09-27T17:55:00+02:00",
+      "title": "27 settembre · Copilot, SteamOS, agenti locali e Pokémon",
       "kind": "daily",
-      "count": 10,
+      "count": 15,
       "counts": {
-        "main": 8,
-        "radar": 2,
-        "new": 10,
+        "main": 11,
+        "radar": 4,
+        "new": 15,
         "update": 0,
         "featured": 3
       },
-      "categories": [
-        "ai",
-        "devices",
-        "gaming",
-        "work"
-      ],
+      "categories": ["agents","ai","devices","gamedev","gaming","work"],
       "path": "data/daily/2026-09-27.json"
     },
     {
@@ -39,11 +34,7 @@
         "update": 0,
         "featured": 3
       },
-      "categories": [
-        "agents",
-        "ai",
-        "gamedev"
-      ],
+      "categories": ["agents","ai","gamedev"],
       "path": "data/initial/2026-09-27.json"
     }
   ]

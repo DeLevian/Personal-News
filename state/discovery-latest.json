@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "checked_at": "2026-09-27T17:55:00+02:00",
+  "candidate_count": 44,
+  "coverage": {"ai":8,"agents":7,"work":7,"gamedev":6,"gaming":9,"devices":7},
+  "checks_attempted": 45,
+  "checks_successful": 45,
+  "decisions": {"main":3,"radar":2,"known":10,"outdated":12,"irrelevant":9,"unverified":8},
+  "shortfall_reason": null,
+  "note": "Run di test v2: ricerca web a matrice su tutte e sei le categorie, con fonti primarie e discovery. I conteggi descrivono candidati unici raggruppati per evento; risultati deboli non sono stati trattati come assenza di notizie. Cinque candidati verificati sono stati selezionati, senza riempitivi."
+}
