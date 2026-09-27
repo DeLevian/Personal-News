@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "item_id": "2026-09-27-anthropic-project-swap-2026-09-24",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-anthropic-project-swap-2026-09-24.json",
+      "word_count": 164,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "71b20fd66208b26ef1fc6b028ca0ff38cae425a7a0cee2421b3d39dde861b8f8"
+    },
+    {
+      "item_id": "2026-09-27-champions-frankfurt-2026-day-two",
+      "edition": "2026-09-27",
+      "status": "legacy_summary"
+    },
+    {
+      "item_id": "2026-09-27-champions-global-challenge-2027-i-battles",
+      "edition": "2026-09-27",
+      "status": "legacy_summary"
+    },
+    {
+      "item_id": "2026-09-27-chatgpt-security-history-2026-09-25",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-chatgpt-security-history-2026-09-25.json",
+      "word_count": 176,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "d8bbd564da95265874acc6c9d97677cf15ba288d900c333313de941e699c570a"
+    },
+    {
+      "item_id": "2026-09-27-claude-opus-5-5-launch",
+      "edition": "2026-09-27-initial",
+      "status": "full",
+      "path": "data/articles/2026-09-27-claude-opus-5-5-launch.json",
+      "word_count": 170,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "7fe34aa3362f850c2d7003baaf04617cf970eaa966cb5a85a60f5c8e13f110f1"
+    },
+    {
+      "item_id": "2026-09-27-cursor-rollouts-security-review-2026-09-23",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-cursor-rollouts-security-review-2026-09-23.json",
+      "word_count": 155,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "8e5eacb4a922527624ecb0cb1704506adf7eba922a73765f099d624b48e04bf5"
+    },
+    {
+      "item_id": "2026-09-27-deep-rock-survivor-mobile-optimization",
+      "edition": "2026-09-27-initial",
+      "status": "legacy_summary"
+    },
+    {
+      "item_id": "2026-09-27-github-copilot-slack-teams-2026-09-25",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-github-copilot-slack-teams-2026-09-25.json",
+      "word_count": 163,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "b564fb0ca2105df63166617202886ca3c9bbeb74051ab73ef5c48521b8e5eacd"
+    },
+    {
+      "item_id": "2026-09-27-github-copilot-weekly-2026-09-21-models-sandbox",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-github-copilot-weekly-2026-09-21-models-sandbox.json",
+      "word_count": 168,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "aa46f3ee1d0678539fc25e6467417d1e90f4504ee3f80f1ba79ae7efa11ef077"
+    },
+    {
+      "item_id": "2026-09-27-gpt-6-sol-luna-launch",
+      "edition": "2026-09-27-initial",
+      "status": "full",
+      "path": "data/articles/2026-09-27-gpt-6-sol-luna-launch.json",
+      "word_count": 168,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "1ee69f75964f6db847188bc715e2f052aa85b4a6cc2b09ef3fe55f9270ed81fd"
+    },
+    {
+      "item_id": "2026-09-27-microsoft-copilot-home-code-autopilot-2026",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-microsoft-copilot-home-code-autopilot-2026.json",
+      "word_count": 172,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "69ef2f8ae4c84770e26071b91395d78bc144a3a7247635a49f60bd35d5192e87"
+    },
+    {
+      "item_id": "2026-09-27-microsoft-security-september-2026-agent-data-controls",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-microsoft-security-september-2026-agent-data-controls.json",
+      "word_count": 152,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "68615ec036695b7bb34954f0b18748f8e3ffb77e0dcb02596e07f0071f26bfaa"
+    },
+    {
+      "item_id": "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "edition": "2026-09-27",
+      "status": "legacy_summary"
+    },
+    {
+      "item_id": "2026-09-27-openai-gpt6-prompt-caching-2026-09-22",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-openai-gpt6-prompt-caching-2026-09-22.json",
+      "word_count": 168,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "6c885212b175373ae5d268b9a76648e099ac719f69af3d2b0ed8a4891d6c8609"
+    },
+    {
+      "item_id": "2026-09-27-pi-v0-87-1",
+      "edition": "2026-09-27-initial",
+      "status": "full",
+      "path": "data/articles/2026-09-27-pi-v0-87-1.json",
+      "word_count": 153,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "41c310af5843875e8d39a927b84079cbb8d97dc534f4f42fe3561391942f5b47"
+    },
+    {
+      "item_id": "2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026",
+      "edition": "2026-09-27",
+      "status": "legacy_summary"
+    },
+    {
+      "item_id": "2026-09-27-terramaster-tos-7-0-1278",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-terramaster-tos-7-0-1278.json",
+      "word_count": 144,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "56242377a826d4b88912dabcc83505b14be79534c7e49d583bb1d7cb1db394d5"
+    },
+    {
+      "item_id": "2026-09-27-unity-6-6-content-directories",
+      "edition": "2026-09-27-initial",
+      "status": "full",
+      "path": "data/articles/2026-09-27-unity-6-6-content-directories.json",
+      "word_count": 169,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "5b2c64a0e571ac3b07ed25f35ffe857236ce83840c3d3576739efe65c834132c"
+    },
+    {
+      "item_id": "2026-09-27-unity-codex-plugin",
+      "edition": "2026-09-27-initial",
+      "status": "full",
+      "path": "data/articles/2026-09-27-unity-codex-plugin.json",
+      "word_count": 166,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "e0928b44e7f47e1ca79579276a603df0a2671d22feedcb92257d133b06a457ff"
+    },
+    {
+      "item_id": "2026-09-27-unity-meta-vr-glasses-support-2026-09-24",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-unity-meta-vr-glasses-support-2026-09-24.json",
+      "word_count": 158,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "a753f76cc649a55bc01b990f6bdd574fa3a81a41d14f004dbe7798e64c10030b"
+    },
+    {
+      "item_id": "2026-09-27-windows-insider-2026-09-25-phone-companion",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-windows-insider-2026-09-25-phone-companion.json",
+      "word_count": 165,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "b3511ef35db5246f0b13f6e8763f467b7c2f46b58b640ce217b063eaac8f269a"
+    },
+    {
+      "item_id": "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "edition": "2026-09-27",
+      "status": "full",
+      "path": "data/articles/2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup.json",
+      "word_count": 167,
+      "written_at": "2026-09-27T17:52:39+00:00",
+      "sha256": "7bc3e8c113eda67e24a8479f11f0a6b515c0ab2cd501f276dab3040690af7cf1"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "a2efa7ec8fd198a2095a4fd5455d8066d1addb6f786b857c35931583ba1ccfee",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Xbox Wire · calendario ufficiale",
+      "type": "official",
+      "url": "https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Un calendario selezionato per RPG e recuperi",
+      "paragraphs": [
+        "Xbox Wire ha pubblicato il calendario delle uscite previste dal 28 settembre al 2 ottobre. Fra i titoli segnalati, tre rappresentano approcci diversi: un gioco di ruolo classico, un viaggio gestionale e un recupero della serie Dynasty Warriors. Le date sono quelle annunciate per Xbox e possono cambiare; non indicano automaticamente l’inclusione in un abbonamento."
+      ],
+      "source_urls": [
+        "https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/"
+      ]
+    },
+    {
+      "heading": "I due arrivi del 28 settembre",
+      "paragraphs": [
+        "Gothic II Complete Classic ripropone l’avventura insieme all’espansione Night of the Raven. Keep Driving, invece, usa un viaggio in automobile come struttura per un RPG gestionale: scegliere itinerari, raccogliere autostoppisti, affrontare lavori e problemi del veicolo diventa parte della progressione. Sono quindi proposte differenti anche se entrambe possono interessare chi cerca scelte e sviluppo del personaggio."
+      ],
+      "source_urls": [
+        "https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/"
+      ]
+    },
+    {
+      "heading": "Il ritorno di Dynasty Warriors 3",
+      "paragraphs": [
+        "Per il 1º ottobre è indicato Dynasty Warriors 3: Complete Edition Remastered, che riunisce il gioco base e Xtreme Legends. Il calendario cita più di quaranta ufficiali giocabili e il rifacimento con Unreal Engine 5. La selezione mette in evidenza questi elementi verificabili, senza anticipare giudizi su prestazioni, qualità del porting o contenuti non ancora provati."
+      ],
+      "source_urls": [
+        "https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/"
+      ]
+    }
+  ]
+}

@@ -29,5 +29,15 @@
       4,
       6
     ]
+  },
+  "article_content": {
+    "min_words_main": 120,
+    "min_words_radar": 80,
+    "max_words": 2200,
+    "min_sections": 2,
+    "max_sections": 12,
+    "max_sources": 12,
+    "max_paragraphs_per_section": 8,
+    "max_paragraph_chars": 5000
   }
 }

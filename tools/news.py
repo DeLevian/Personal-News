@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse, json, sys
 from datetime import timedelta
+from articles import collect_articles, article_schema, article_text, digest
 from pathlib import Path
 from contracts import ROOT, Invalid, require, load, day, timestamp, url, text, ID, DAY, section, counts, settings, make_schema, validate_edition, validate_catalogue
 
@@ -32,18 +33,20 @@ def editions(root=ROOT):
 def derived(root,days):
     cfg=settings(root);ordered=list(reversed(days));newest=ordered[0]['date'] if days else None
     manifest={'version':2,'latest':edition_key(ordered[0]) if days else None,'updated_at':max((d['generated_at'] for d in days),key=timestamp) if days else None,'editions':[]}
+    bodies, article_index = collect_articles(root, days)
+    manifest['content_revision'] = digest({'editions': days, 'articles': article_index})
     search={'version':2,'items':[]};events={}
     for d in ordered:
         manifest['editions'].append({'id':edition_key(d),'date':d['date'],'generated_at':d['generated_at'],'title':d['title'],'kind':d['kind'],'count':len(d['items']),'counts':counts(d['items']),'categories':sorted({i['category'] for i in d['items']}),'path':edition_path(d)})
         for i in d['items']:
-            search['items'].append({'id':i['id'],'event_id':i['event_id'],'edition':edition_key(d),'category':i['category'],'section':section(i),'status':i['status'],'title':i['title'],'published_date':i.get('published_date'),'published_at':i.get('published_at'),'search_text':' '.join([i['title'],i['summary'],i['why_you_care'],*i['tags'],*(s['name'] for s in i['sources'])])})
+            search['items'].append({'id':i['id'],'event_id':i['event_id'],'edition':edition_key(d),'category':i['category'],'section':section(i),'status':i['status'],'title':i['title'],'published_date':i.get('published_date'),'published_at':i.get('published_at'),'search_text':' '.join([i['title'],i['summary'],i['why_you_care'],*i['tags'],*(s['name'] for s in i['sources']),article_text(bodies.get(i['id']))]).strip()})
     for d in days:
         for i in d['items']:
             events[i['event_id']]={'event_id':i['event_id'],'first_seen':events.get(i['event_id'],{}).get('first_seen',d['date']),'last_seen':d['date'],'last_item_id':i['id'],'last_edition':edition_key(d),'section':section(i),'title':i['title'],'last_summary':i['summary'],'sources':[s['url'] for s in i['sources']]}
     cutoff=day(newest)-timedelta(days=cfg['state_retention_days']-1) if days else day('1970-01-01')
     seen=sorted([v for v in events.values() if day(v['last_seen'])>=cutoff],key=lambda x:(x['last_seen'],x['event_id']),reverse=True)[:cfg['state_max_events']]
     ledger={'version':2,'events':{k:{'id':v['last_item_id'],'edition':v['last_edition']} for k,v in sorted(events.items())}}
-    return {'docs/data/index.json':manifest,'docs/data/search.json':search,'state/seen.json':{'version':2,'as_of':newest,'retention_days':cfg['state_retention_days'],'max_events':cfg['state_max_events'],'events':seen},'state/event-index.json':ledger,'config/edition.schema.json':make_schema(cfg,load(root/'config/edition-v1.schema.json'))}
+    return {'config/article.schema.json':article_schema(cfg),'docs/data/article-index.json':article_index,'docs/data/index.json':manifest,'docs/data/search.json':search,'state/seen.json':{'version':2,'as_of':newest,'retention_days':cfg['state_retention_days'],'max_events':cfg['state_max_events'],'events':seen},'state/event-index.json':ledger,'config/edition.schema.json':make_schema(cfg,load(root/'config/edition-v1.schema.json'))}
 
 def write_json(path,data):
     path.parent.mkdir(parents=True,exist_ok=True);tmp=path.with_suffix(path.suffix+'.tmp')

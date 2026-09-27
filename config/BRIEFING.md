@@ -20,5 +20,6 @@ GitHub: <esito effettivo> · Pages: <esito effettivo>
 - Zero novità in una nuova giornata: edizione vuota esplicita e messaggio breve. Zero novità in un rerun: preservare l'edizione già pubblicata.
 - “GitHub aggiornato” richiede rilettura del commit; “Pages verificato” richiede contenuto live corrispondente e controlli osservati. In attesa del deploy scrivere “in pubblicazione”.
 - Un problema di accesso alle fonti è una ricerca incompleta, non prova che non esistano notizie. Esplicitarlo.
+- Gli articoli completi in italiano si leggono nel sito; la chat resta breve. Nelle migrazioni distinguere corpi completi, fallback storici e caricamenti falliti. Non chiamare “articolo completo” la sola sintesi.
 - `tools/briefing.py` genera un testo di base con conteggi coerenti; gli esiti predefiniti sono “non verificato”.
 - Non riportare un modello del task se i metadati non lo espongono.

@@ -6,10 +6,11 @@ Completare ricerca ampia, verifica, selezione News/Radar, persistenza, controlli
 - Fonti e query tecniche: config/SOURCES.json.
 - Parametri numerici: config/pipeline.json. Non mantenere copie dei limiti nel task.
 - Schema effettivo: config/edition.schema.json, generato dai parametri; il contratto v1 resta congelato per lo storico.
+- Articoli italiani: config/ARTICLE_CONTENT.md; schema del corpo config/article.schema.json. Obbligatori per nuove News, Radar e UPDATE.
 - UI: docs/data/categories.json, senza topics o discovery_sources duplicati.
 
 ## 1. Lettura mirata e preflight
-Leggere AGENTS.md, questa procedura e pipeline.json. Nel Second Brain leggere prima AGENTS.md e INDEX.md, poi solo NEWS_PROFILE.md per il contenuto personale. Nessuna scansione generale, nessuna copia del profilo nel repository pubblico.
+Leggere AGENTS.md, questa procedura e pipeline.json, quindi config/ARTICLE_CONTENT.md. Nel Second Brain leggere prima AGENTS.md e INDEX.md, poi solo NEWS_PROFILE.md per il contenuto personale. Nessuna scansione generale, nessuna copia del profilo nel repository pubblico.
 Leggere indice, seen.json e source map. Consultare vecchi JSON o state/event-index.json soltanto per confronti mirati; l'assenza dalla cache non prova che un evento sia nuovo.
 Controllare strumenti effettivi: web, lettura/scrittura GitHub, ambiente Python. Usare i connettori disponibili; non chiedere attività manuali evitabili. Se mancano capacità, non fingere ricerca, scrittura o test e non iniziare una pubblicazione parziale.
 Rilevare data/ora effettive Europe/Rome e HEAD di main. Se oggi esiste un'edizione, preservarne articoli validi, ID e orari di inclusione. Installare requirements.txt per i comandi Python; il sito resta statico.
@@ -65,6 +66,11 @@ Le edizioni v1 restano leggibili come News. Per la sola migrazione sono state co
 ### Da sapere oggi
 attention_today facoltativo: text, item_ids, source_url realmente presente negli item, valid_from ed expires_at con offset. Solo eventi/scadenze verificati, pertinenti al giorno e non terminati. La UI nasconde gli avvisi scaduti nella home e li etichetta come storici nell'archivio.
 
+## 5b. Redazione italiana completa
+Dopo verifica/deduplicazione e prima delle immagini, applicare integralmente `config/ARTICLE_CONTENT.md`. Per ogni nuovo item redigere un testo originale italiano autonomo, strutturato e citato in `docs/data/articles/<item_id>.json`. Spiegare i fatti sostanziali, disponibilità e limiti, non limitarsi a espandere meccanicamente il sommario o tradurre integralmente una pagina protetta.
+Il corpo, l'item e i derivati devono essere validi e pubblicati insieme. Se le fonti non consentono un articolo affidabile, non pubblicare la nuova scheda incompleta. Le eccezioni congelate riguardano soltanto lo storico preesistente: non estenderle per far passare una run.
+L'indice dei corpi e `content_revision` sono ricostruibili; i testi non vengono generati dallo script o dal browser. Non usare la data di redazione per ridatare la notizia.
+
 ## 6. Immagini dopo la selezione
 Preferire screenshot/banner specifico, poi og:image/social preview o immagine ufficiale pertinente. Logo solo ultima alternativa, dichiarato come logo; altrimenti image:null.
 Registrare HTTPS, alt, credito, source_url e verifica effettiva. Nessun URL inventato, segreto o temporaneo con credenziali. image_metadata.py estrae metadati da HTML già recuperato.
@@ -72,10 +78,10 @@ Non aggirare accessi né redistribuire immagini protette senza autorizzazione. V
 
 ## 7. Persistenza idempotente e controlli
 Un rerun senza nuove notizie non deve svuotare/duplicare l'edizione né cambiare generated_at per produrre un commit. Il report di copertura può cambiare solo per verifiche realmente nuove. Una nuova giornata senza news può avere un'edizione vuota esplicita.
-Scrivere l'edizione, `python tools/news.py rebuild`, `python tools/news.py validate`, `python -m unittest discover -s tests -v`.
-Il rebuild genera manifest, ricerca, seen, ledger e schema; non riscrive le edizioni archiviate. Conservare entrambi i livelli editoriali in ricerca, link e preferenze.
+Scrivere l'edizione e tutti i corpi nuovi/aggiornati, `python tools/news.py rebuild`, `python tools/news.py validate`, `python -m unittest discover -s tests -v`.
+Il rebuild genera manifest con content_revision, ricerca comprensiva dei corpi, indice articoli, seen, ledger e schemi; non riscrive le edizioni archiviate. Conservare entrambi i livelli editoriali in ricerca, link e preferenze.
 Rileggere HEAD, preparare commit coerente di edizione+derivati+eventuale riepilogo discovery su main senza force. In caso di concorrenza riconciliare. Una validazione fallita blocca la pubblicazione.
-Rileggere commit/file, verificare separatamente CI, deploy e contenuto servito. Per UI includere sintassi JS e browser. La salute esterna è diagnostica separata dalla CI strutturale.
+Rileggere commit/file, verificare separatamente CI, deploy e contenuto servito. Per UI includere sintassi di app.js/reader.js e tutte le suite browser, compresa browser_reader.py. La CI verifica il lettore anche nelle pubblicazioni di soli dati. La salute esterna è diagnostica separata dalla CI strutturale.
 Non dichiarare Pages verificato solo perché il commit è riuscito. Attendere i contenuti del commit corrente, compresi indici e immagini; in caso di timeout dichiarare deploy in attesa o limite osservato.
 
 ## 8. Briefing in chat

@@ -5,6 +5,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 import news,discovery,briefing
+from article_fixtures import write_articles
 from contracts import CATEGORIES,counts,make_schema
 
 def edition(date='2030-01-03',main=1,radar=1):
@@ -58,7 +59,8 @@ class V2Tests(unittest.TestCase):
     def test_image_null_valid(self):self.valid()
     def test_image_metadata_required(self):self.d['items'][0]['image']={'url':'https://example.com/i.png'};self.bad()
     def test_totals_consistent(self):c=counts(self.d['items']);self.assertEqual(c['main']+c['radar'],c['new']+c['update'])
-    def save(self,d):news.write_json(self.root/f'docs/data/daily/{d["date"]}.json',d)
+    def save(self,d):
+        news.write_json(self.root/f'docs/data/daily/{d["date"]}.json',d);write_articles(self.root,d)
     def test_radar_to_main_new_rejected(self):
         a=edition(main=0,radar=1);b=edition('2030-01-04',main=1,radar=0);b['items'][0]['event_id']=a['items'][0]['event_id'];self.save(a);self.save(b)
         with self.assertRaises(news.Invalid):news.editions(self.root)

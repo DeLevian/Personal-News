@@ -14,6 +14,13 @@ Una rassegna personale in italiano: News principali, Radar, eventuali scadenze d
 
 Le quantità sono obiettivi, non quote da riempire. La discovery cerca 30–50 candidati per aumentare il bacino; un candidato non è ancora una notizia verificata.
 
+## Leggere la notizia in italiano
+La freccia a destra della stella apre un lettore interno a schermo intero, con sezioni, fonti, immagini e comandi per letti, salvati e condivisione. Il link “Leggi la fonte” continua ad aprire la fonte esterna. Back/Esc e “Notizie” chiudono il lettore; i link condivisi usano `?date=<edizione>&article=<ID>`. I vecchi link con `#ID` restano validi.
+
+I testi sono articoli originali in italiano redatti dopo verifica, non traduzioni integrali di articoli protetti. Si trovano in `docs/data/articles/` e vengono cercati anche dalla ricerca del sito. Nessun modello o traduttore viene eseguito nel browser.
+
+Le nuove News e i nuovi Radar richiedono un corpo italiano valido prima della pubblicazione. Gli item storici identici possono mostrare un avviso esplicito di sola sintesi finché non vengono integrati. Regole comuni a automazione e skill: `config/ARTICLE_CONTENT.md`. Parametri soltanto in `config/pipeline.json`, schema generato `config/article.schema.json`.
+
 ## Fonti canoniche
 | Componente | Responsabilità |
 |---|---|
@@ -21,6 +28,8 @@ Le quantità sono obiettivi, non quote da riempire. La discovery cerca 30–50 c
 | `config/SOURCES.json` | Dove cercare: fonti, tier, policy, query |
 | `config/pipeline.json` | Limiti e finestre temporali |
 | `config/DAILY_RUN.md` | Procedura completa della run |
+| `config/ARTICLE_CONTENT.md` | Corpo originale italiano, citazioni e migrazione |
+| `docs/data/articles/` | Testi completi separati dalle edizioni |
 | `config/BRIEFING.md` | Messaggio finale breve |
 | `docs/data/categories.json` | Presentazione delle sei categorie |
 | `docs/data/daily/` e `initial/` | Archivio definitivo |
@@ -55,10 +64,11 @@ python tools/news.py rebuild
 python tools/news.py validate
 python -m unittest discover -s tests -v
 node --check docs/assets/app.js
+node --check docs/assets/reader.js
 python tools/briefing.py
 ```
 
-Il rebuild non riscrive le edizioni: rigenera manifest, ricerca, cache, ledger e schema. Un rerun senza novità non svuota l'edizione né crea falsi aggiornamenti.
+Il rebuild non riscrive le edizioni né redige testi: rigenera manifest, ricerca nel corpo, indice articoli, cache, ledger e schemi. `content_revision` segnala anche una modifica ai soli corpi senza alterare generated_at. `python tools/articles.py describe --item-id ID` prepara fingerprint e riferimenti per redigere il corpo. Un rerun senza novità non svuota l'edizione né crea falsi aggiornamenti.
 
 ## Test e sito locale
 
@@ -69,6 +79,7 @@ python -m pip install -r requirements-test.txt
 python -m playwright install chromium
 python tests/browser_check.py
 python tests/browser_v2.py
+python tests/browser_reader.py
 python tests/live_check.py
 ```
 

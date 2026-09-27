@@ -9,6 +9,7 @@ from playwright.sync_api import sync_playwright,expect
 from test_v2 import edition,attention
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 import news
+from article_fixtures import write_articles
 class Quiet(SimpleHTTPRequestHandler):
  def log_message(self,*args):pass
 
@@ -26,7 +27,7 @@ def main():
    else:
     pub=base_time-timedelta(hours=hours);item['published_at']=pub.isoformat();item['published_date']=pub.date().isoformat()
   d['items'][0]['title']='<img src=x onerror=window.fixtureXSS=true> main fixture'
-  news.write_json(root/f'docs/data/daily/{d["date"]}.json',d);news.run(root,'rebuild')
+  news.write_json(root/f'docs/data/daily/{d["date"]}.json',d);write_articles(root,d);news.run(root,'rebuild')
   manifest=news.load(root/'docs/data/index.json')
   previous=news.load(root/'docs'/manifest['editions'][1]['path'])
   server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(root/'docs')));Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/'

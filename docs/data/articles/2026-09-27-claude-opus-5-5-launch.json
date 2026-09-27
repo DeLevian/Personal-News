@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-claude-opus-5-5-launch",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "7d27e80f210e555558e25799a841156479ae005712694bbf1893e168e46dab83",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Anthropic",
+      "type": "official",
+      "url": "https://www.anthropic.com/claude-opus-5-5"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Un aggiornamento per compiti lunghi",
+      "paragraphs": [
+        "Anthropic presenta Claude Opus 5.5 con enfasi su coding agentico, uso del computer e lavoro professionale. Gli esempi riportati comprendono audit e migrazioni che attraversano intere basi di codice. Sono prove e testimonianze selezionate dal produttore: non garantiscono lo stesso risultato su qualunque progetto o configurazione."
+      ],
+      "source_urls": [
+        "https://www.anthropic.com/claude-opus-5-5"
+      ]
+    },
+    {
+      "heading": "Come cambiano costo e velocità",
+      "paragraphs": [
+        "Il listino citato indica 4 dollari per milione di token in input, 20 in output e 0,20 per le letture dalla cache. Anthropic dichiara un costo inferiore del 40% su carichi tipici alle impostazioni predefinite e una generazione oltre il 30% più veloce rispetto a Opus 5. Il risparmio per attività dipende però anche dai token usati e dal riuso del contesto, non soltanto dal prezzo nominale."
+      ],
+      "source_urls": [
+        "https://www.anthropic.com/claude-opus-5-5"
+      ]
+    },
+    {
+      "heading": "Sicurezza e confronto pratico",
+      "paragraphs": [
+        "Il produttore riporta miglioramenti nei propri test di rispetto dei confini e resistenza alla prompt injection, riconoscendo limiti residui. Indica inoltre aumenti delle soglie di utilizzo nelle finestre di cinque ore, per i piani menzionati. Per confrontarlo con alternative servono stessi task, test e strumenti: benchmark del fornitore, costo API e limiti dell’abbonamento non sono misure intercambiabili."
+      ],
+      "source_urls": [
+        "https://www.anthropic.com/claude-opus-5-5"
+      ]
+    }
+  ]
+}

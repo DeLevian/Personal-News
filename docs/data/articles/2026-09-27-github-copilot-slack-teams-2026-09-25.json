@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-github-copilot-slack-teams-2026-09-25",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "52373594abbb5f6e94ed6cf2dabba262bd5ff593ea014af7509ba71415389c2f",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "GitHub Changelog · Slack e Microsoft Teams",
+      "type": "official",
+      "url": "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Più contesto dalla conversazione di lavoro",
+      "paragraphs": [
+        "Le integrazioni GitHub Copilot per Slack e Microsoft Teams ricevono un aggiornamento dedicato al contesto. In Slack migliorano il supporto a file, allegati e collegamenti ai messaggi; in Teams entrano immagini, messaggi inoltrati e cronologia del thread. L’obiettivo è ridurre la necessità di ricostruire manualmente ogni richiesta quando il lavoro nasce in una conversazione collaborativa."
+      ],
+      "source_urls": [
+        "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams/"
+      ]
+    },
+    {
+      "heading": "Continuità e tracciabilità",
+      "paragraphs": [
+        "L’agente può cambiare modello per il messaggio successivo senza abbandonare il thread. Migliorano inoltre aggiornamenti di stato, riconnessioni e recupero dei task lunghi. I controlli sulle issue duplicate e il collegamento alla conversazione originale servono a mantenere leggibile il passaggio dal messaggio all’attività registrata su GitHub."
+      ],
+      "source_urls": [
+        "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams/"
+      ]
+    },
+    {
+      "heading": "Non basta avere Teams o Slack",
+      "paragraphs": [
+        "La public preview è destinata alle organizzazioni Copilot Business ed Enterprise e viene distribuita progressivamente. Restano necessari i permessi, le policy organizzative e i budget del cloud agent applicabili. Installare o aggiornare l’app GitHub e collegare l’account sono parti del percorso, non una garanzia di accesso a qualunque repository o modello. Per un uso aziendale, contesto aggiuntivo e autorizzazioni vanno verificati insieme."
+      ],
+      "source_urls": [
+        "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams/"
+      ]
+    }
+  ]
+}

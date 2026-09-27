@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-github-copilot-weekly-2026-09-21-models-sandbox",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "1a231aafb8eae1dff778e6b63da195a20a4bffa389e301d456c55cab4272e059",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "GitHub Changelog · weekly releases",
+      "type": "official",
+      "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Modelli: accesso diverso secondo il piano",
+      "paragraphs": [
+        "Il riepilogo GitHub del 25 settembre include Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna e Grok 4.7. I piani supportati non sono identici: la disponibilità di un modello nel catalogo non implica che sia utilizzabile da ogni account. Anche il canale concreto — applicazione, IDE o altro strumento — va verificato prima di cambiare un flusso di lavoro."
+      ],
+      "source_urls": [
+        "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
+      ]
+    },
+    {
+      "heading": "Isolamento e osservabilità degli agenti",
+      "paragraphs": [
+        "La Copilot app introduce in public preview il sandboxing locale, con controlli su file, rete e credenziali. Aggiunge inoltre telemetria OpenTelemetry per ambienti gestiti. Il primo intervento riguarda il perimetro operativo dell’agente, il secondo la possibilità di osservarne le attività: non sono sostituti della revisione delle modifiche."
+      ],
+      "source_urls": [
+        "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
+      ]
+    },
+    {
+      "heading": "IDE e ambienti remoti",
+      "paragraphs": [
+        "In JetBrains arrivano approvazioni assistite per operazioni a basso rischio e il riavvolgimento di conversazione e file quando si modifica un messaggio precedente. VS Code 1.139 estende gradualmente le sessioni agentiche ai Dev Container raggiunti attraverso SSH, Tunnel e WSL. Il quadro è quello di agenti più integrati negli ambienti di sviluppo, ma con disponibilità e controlli da verificare separatamente per ciascuna funzione."
+      ],
+      "source_urls": [
+        "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
+      ]
+    }
+  ]
+}

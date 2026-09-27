@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-windows-insider-2026-09-25-phone-companion",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "4da9261cb42fa85a4a24d6501970e42e604ed554a0718340438106fdfcfd5a95",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Microsoft · Windows Insider",
+      "type": "official",
+      "url": "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Che cosa cambia nel menu Start",
+      "paragraphs": [
+        "L’annuncio Windows Insider del 25 settembre introduce, nel canale Experimental, un pannello Phone companion più ricco. Le attività recenti dello smartphone sono raccolte in un’area scorrevole del menu Start. Il cambiamento riguarda quindi il modo di consultare le informazioni provenienti dal telefono, senza confonderlo con un aggiornamento generale già disponibile su qualsiasi installazione di Windows."
+      ],
+      "source_urls": [
+        "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
+      ]
+    },
+    {
+      "heading": "Anche indicazioni sul consumo energetico",
+      "paragraphs": [
+        "Sempre in Experimental arrivano le Energy Recommendations nelle impostazioni rapide. Le raccomandazioni diventano così più accessibili dalla superficie usata per i controlli immediati del sistema. Sono due interventi separati: il primo riguarda la continuità tra dispositivi, il secondo l’accesso alle indicazioni energetiche."
+      ],
+      "source_urls": [
+        "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
+      ]
+    },
+    {
+      "heading": "Disponibilità e limiti della notizia",
+      "paragraphs": [
+        "La pubblicazione comprende build Beta ed Experimental, anche per il ramo 26H1, ma le due funzioni qui descritte sono attribuite a Experimental. L’appartenenza al programma Insider non garantisce che ogni funzione compaia nello stesso momento su tutti i PC. Per verificare la disponibilità concreta occorre confrontare ramo, canale e build installata con le note ufficiali; questa segnalazione non richiede di passare a una versione sperimentale sul computer principale."
+      ],
+      "source_urls": [
+        "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
+      ]
+    }
+  ]
+}

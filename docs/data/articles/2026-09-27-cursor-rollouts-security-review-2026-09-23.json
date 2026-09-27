@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-cursor-rollouts-security-review-2026-09-23",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "d99cbe74d06a2ad5ce42a153ea1b62d216670c02d86b49f0fcb839cb86fb5580",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Cursor · changelog",
+      "type": "official",
+      "url": "https://cursor.com/changelog/rollouts-and-security-reviewer"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Dal codice distribuito ai segnali di regressione",
+      "paragraphs": [
+        "Cursor presenta Rollouts e Security Review per Teams ed Enterprise. Rollouts collega una modifica alla distribuzione e ai segnali di funzionamento dei diversi ambienti. Dal diff prepara un piano di osservazione modificabile, usando log, metriche e tracce; l’esito può essere positivo, indicare una regressione oppure restare inconcludente."
+      ],
+      "source_urls": [
+        "https://cursor.com/changelog/rollouts-and-security-reviewer"
+      ]
+    },
+    {
+      "heading": "La revisione della sicurezza ha un obiettivo specifico",
+      "paragraphs": [
+        "Security Review cerca problemi sfruttabili nelle modifiche, con indicazioni su gravità, percorso di attacco e possibile correzione. Non coincide con un controllo di stile e può utilizzare regole del repository. Questo mantiene distinti due passaggi spesso confusi: trovare un difetto potenziale nella pull request e osservare ciò che avviene dopo il deploy."
+      ],
+      "source_urls": [
+        "https://cursor.com/changelog/rollouts-and-security-reviewer"
+      ]
+    },
+    {
+      "heading": "Automazione senza confondere i permessi",
+      "paragraphs": [
+        "Rollouts può proporre una pull request di ripristino o passare una correzione a un cloud agent secondo la configurazione. Ciò non significa un rollback o un merge autonomo e incondizionato. La qualità del risultato dipende anche dai collegamenti a repository, distribuzioni e telemetria: un segnale mancante non deve essere interpretato come prova che la modifica funzioni."
+      ],
+      "source_urls": [
+        "https://cursor.com/changelog/rollouts-and-security-reviewer"
+      ]
+    }
+  ]
+}

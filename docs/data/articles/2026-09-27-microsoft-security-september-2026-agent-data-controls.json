@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "item_id": "2026-09-27-microsoft-security-september-2026-agent-data-controls",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "bfb4e9e48e3f36370e313e15e3a21ef8306b58b748acaabe3c305d4045fba091",
+  "written_at": "2026-09-27T17:52:39+00:00",
+  "verified_at": "2026-09-27T17:52:39+00:00",
+  "sources": [
+    {
+      "name": "Microsoft Security Blog",
+      "type": "official",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/24/whats-new-in-microsoft-security-september-2026/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "La protezione segue anche il traffico agentico",
+      "paragraphs": [
+        "L’aggiornamento Microsoft Security di settembre estende l’integrazione fra Purview ed Entra Global Secure Access alla protezione dei dati attraverso la rete, compresi flussi eseguiti dagli agenti per conto di un utente. L’intento è applicare classificazione e policy anche quando file o testo passano verso servizi AI che non fanno parte degli strumenti autorizzati dall’organizzazione."
+      ],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/09/24/whats-new-in-microsoft-security-september-2026/"
+      ]
+    },
+    {
+      "heading": "Perché identità e dati devono essere collegati",
+      "paragraphs": [
+        "Nei flussi on-behalf-of l’agente opera in relazione all’identità e alle autorizzazioni della persona. Affiancare a questo contesto le regole di protezione permette di ragionare sul contenuto trasferito, non soltanto sulla destinazione raggiunta. La notizia riguarda dunque il controllo dei percorsi del dato, non la sola interfaccia del chatbot."
+      ],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/09/24/whats-new-in-microsoft-security-september-2026/"
+      ]
+    },
+    {
+      "heading": "Il limite operativo",
+      "paragraphs": [
+        "Microsoft presenta queste capacità come parte dei controlli disponibili nella propria piattaforma. L’annuncio non dimostra che le policy siano già configurate nel proprio ambiente né che qualunque trasferimento rischioso venga bloccato automaticamente. Per una valutazione reale occorre verificare licenze, copertura del traffico, classificazione dei dati e prove delle regole applicate."
+      ],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/09/24/whats-new-in-microsoft-security-september-2026/"
+      ]
+    }
+  ]
+}
