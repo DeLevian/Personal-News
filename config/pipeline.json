@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "repository": "DeLevian/Personal-News",
   "timezone": "Europe/Rome",
   "second_brain_repository": "DeLevian/Second-Brain",
@@ -8,10 +8,16 @@
   "schedule_status": "external_chatgpt_enabled_2026-09-27",
   "state_retention_days": 30,
   "state_max_events": 200,
-  "default_window_hours": 24,
-  "exceptional_lookback_hours": 72,
-  "max_items": 12,
   "max_featured": 3,
   "website_url": "https://delevian.github.io/Personal-News/",
-  "public_deploy_authorized": true
+  "public_deploy_authorized": true,
+  "main_target_min": 10,
+  "main_target_max": 16,
+  "radar_max": 8,
+  "discovery_candidate_target_min": 30,
+  "discovery_candidate_target_max": 50,
+  "main_window_hours": 24,
+  "main_exceptional_lookback_hours": 72,
+  "radar_lookback_days": 7,
+  "rotating_per_category": 2
 }

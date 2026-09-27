@@ -1,1 +1,192 @@
-{"version":1,"as_of":"2026-09-27","retention_days":30,"max_events":200,"events":[{"event_id":"xbox-september-28-october-2-2026-rpg-retro-lineup","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup","last_edition":"2026-09-27","title":"RPG e recuperi dal passato: cosa arriva su Xbox la prossima settimana","last_summary":"Il calendario Xbox del 25 settembre segnala Gothic II Complete Classic e l’RPG gestionale Keep Driving per il 28 settembre, oltre a Dynasty Warriors 3: Complete Edition Remastered per il 1º ottobre. Sono date annunciate per Xbox, soggette a variazioni.","sources":["https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/"]},{"event_id":"windows-insider-2026-09-25-phone-companion","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-windows-insider-2026-09-25-phone-companion","last_edition":"2026-09-27","title":"Windows Insider: più attività dello smartphone nel menu Start","last_summary":"Le build del 25 settembre aggiornano i canali Beta ed Experimental. In Experimental, Phone companion mostra più attività recenti in un pannello scorrevole; arrivano anche suggerimenti energetici nelle impostazioni rapide. Sono funzioni in anteprima, non un rilascio generale per tutti i PC.","sources":["https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"]},{"event_id":"unity-codex-plugin","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-unity-codex-plugin","last_edition":"2026-09-27-initial","title":"Unity porta le sue skill ufficiali dentro Codex","last_summary":"Unity ha presentato un plugin ufficiale per Codex con 31 skill iniziali, strumenti da terminale e compatibilità con Unity 6+. Le istruzioni coprono anche uGUI, 2D, URP, Web e localizzazione.","sources":["https://unity.com/blog/unity-plugin-codex"]},{"event_id":"unity-6-6-content-directories","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-unity-6-6-content-directories","last_edition":"2026-09-27-initial","title":"Unity 6.6: caricamento più granulare degli asset","last_summary":"Unity introduce le content directories come alternativa agli AssetBundle distribuiti con il Player. Il sistema permette di caricare e scaricare singoli artefatti e introduce deduplicazione dei contenuti; la distribuzione remota più granulare è descritta come sviluppo successivo.","sources":["https://unity.com/blog/content-directories-beyond-the-assetbundle"]},{"event_id":"pokemon-tcg-pocket-deluxe-pack-mega-2026","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026","last_edition":"2026-09-27","title":"Pokémon TCG Pocket: Deluxe Pack: Mega arriva il 30 settembre in Italia","last_summary":"The Pokémon Company ha annunciato Deluxe Pack: Mega, disponibile dal 29 settembre alle 18:00 PDT, quindi nella notte del 30 settembre in Italia. I pacchetti hanno quattro carte e garantiscono almeno un Pokémon ex; l’annuncio anticipa anche una funzione community decks, nuovi rental deck e una revisione delle battaglie step-up verso fine ottobre.","sources":["https://www.pokemon.com/uk/news/pokemon-tcg-pocket-deluxe-pack-mega-coming-soon","https://www.crunchyroll.com/news/latest/2026/9/24/pokemon-tcg-pocket-deluxe-pack-mega-announced"]},{"event_id":"pi-v0-87-1","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-pi-v0-87-1","last_edition":"2026-09-27-initial","title":"Pi Agent 0.87.1: supporto ai nuovi modelli","last_summary":"Le note di rilascio aggiungono supporto a GPT-6 Sol, GPT-6 Luna e Claude Opus 5.5 nei provider indicati. Per Sol e Luna sono citati sia le chiavi API OpenAI sia gli abbonamenti OpenAI Codex.","sources":["https://github.com/earendil-works/pi/releases/tag/v0.87.1"]},{"event_id":"minecraft-dungeons-ii-systems-podcast-2026-09-26","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26","last_edition":"2026-09-27","title":"Action RPG: Minecraft Dungeons II racconta il nuovo sistema di esplorazione","last_summary":"Nel podcast ufficiale del 26 settembre, Mojang descrive un mondo interconnesso, il salto per esplorare spazi verticali e nuovi sistemi di equipaggiamento. L’intervista approfondisce come queste scelte cambino esplorazione e personalizzazione del combattimento.","sources":["https://news.xbox.com/en-us/2026/09/26/minecraft-dungeons-ii-the-sift-new-mechanics-better-exploration-and-more-official-xbox-podcast/"]},{"event_id":"microsoft-copilot-home-code-autopilot-2026","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-microsoft-copilot-home-code-autopilot-2026","last_edition":"2026-09-27","title":"Microsoft ridisegna Copilot con Home, Code e Autopilot","last_summary":"Microsoft ha presentato un nuovo Copilot organizzato attorno a Home, Code e Autopilot. Home unisce Chat e Cowork con Word, Excel e PowerPoint; Code crea app, dashboard e automazioni in linguaggio naturale; Autopilot è un agente persistente cloud che può continuare attività senza attendere un nuovo prompt. Home e Code iniziano dal programma Frontier, mentre Autopilot si espande in private preview a fine mese.","sources":["https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"]},{"event_id":"gpt-6-sol-luna-launch","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-gpt-6-sol-luna-launch","last_edition":"2026-09-27-initial","title":"GPT-6 Sol e Luna: nuovi modelli per il lavoro quotidiano","last_summary":"OpenAI ha annunciato Sol e Luna come estensione della famiglia GPT-6, con enfasi su coding, lavoro professionale ed efficienza. L’articolo distingue l’accesso via API, Codex e ChatGPT Work dalla disponibilità nella chat.","sources":["https://openai.com/index/introducing-gpt-6-sol-and-luna/"]},{"event_id":"deep-rock-survivor-mobile-optimization","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-deep-rock-survivor-mobile-optimization","last_edition":"2026-09-27-initial","title":"Dal PC al mobile: le lezioni di Deep Rock Galactic: Survivor","last_summary":"Unity racconta il lavoro di Piktiv sul port mobile: ripensare navigazione, rendering e uso della memoria, misurando le prestazioni con scenari automatizzati. È un approfondimento tecnico, non l’annuncio di una nuova uscita di oggi.","sources":["https://unity.com/blog/optimizing-deep-rock-galactic-survivor-for-mobile"]},{"event_id":"claude-opus-5-5-launch","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-claude-opus-5-5-launch","last_edition":"2026-09-27-initial","title":"Claude Opus 5.5 punta su coding ed efficienza","last_summary":"Anthropic presenta Opus 5.5 come aggiornamento per attività complesse, coding e lavoro professionale. Il produttore dichiara minori costi sui propri carichi di prova e una generazione più veloce rispetto a Opus 5: sono risultati del fornitore, non una misura sui tuoi progetti.","sources":["https://www.anthropic.com/claude-opus-5-5"]},{"event_id":"chatgpt-security-history-2026-09-25","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-chatgpt-security-history-2026-09-25","last_edition":"2026-09-27","title":"ChatGPT aggiunge la cronologia degli accessi e della sicurezza","last_summary":"OpenAI introduce Security history: accessi, disconnessioni e modifiche a MFA, passkey e altre impostazioni. Sul web si trova in Settings → Security and login → Security history. Orario, località e dispositivo possono essere approssimativi o non disponibili.","sources":["https://help.openai.com/en/articles/6825453-chatgpt-release-notes","https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"]},{"event_id":"champions-global-challenge-2027-i-battles","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-champions-global-challenge-2027-i-battles","last_edition":"2026-09-27","title":"Champions: la Global Challenge 2027 I si chiude nella notte","last_summary":"Sono in corso le lotte in doppio con regolamento M-C. La finestra di gioco termina il 28 settembre alle 03:59 italiane; chi completa almeno tre incontri riceve Archaludon. La notizia riguarda la fase di lotta: non implica che le iscrizioni siano ancora aperte.","sources":["https://www.serebii.net/news/2026/25-September-2026.shtml"]},{"event_id":"champions-frankfurt-2026-day-two","first_seen":"2026-09-27","last_seen":"2026-09-27","last_item_id":"2026-09-27-champions-frankfurt-2026-day-two","last_edition":"2026-09-27","title":"Pokémon Champions: oggi la seconda giornata dei Regionali di Francoforte","last_summary":"La seconda giornata dei Regionali di Francoforte comprende Pokémon Champions, oltre ai tornei TCG e GO. La diretta del videogioco è programmata dalle 09:00 italiane: la cronaca del 27 settembre rimanda all’hub delle trasmissioni.","sources":["https://www.serebii.net/news/2026/27-September-2026.shtml"]}]}
+{
+  "version": 2,
+  "as_of": "2026-09-27",
+  "retention_days": 30,
+  "max_events": 200,
+  "events": [
+    {
+      "event_id": "xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-xbox-september-28-october-2-2026-rpg-retro-lineup",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "RPG e recuperi dal passato: cosa arriva su Xbox la prossima settimana",
+      "last_summary": "Il calendario Xbox del 25 settembre segnala Gothic II Complete Classic e l’RPG gestionale Keep Driving per il 28 settembre, oltre a Dynasty Warriors 3: Complete Edition Remastered per il 1º ottobre. Sono date annunciate per Xbox, soggette a variazioni.",
+      "sources": [
+        "https://news.xbox.com/en-us/2026/09/25/next-week-on-xbox-new-games-for-september-28-to-october-2/"
+      ]
+    },
+    {
+      "event_id": "windows-insider-2026-09-25-phone-companion",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-windows-insider-2026-09-25-phone-companion",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "Windows Insider: più attività dello smartphone nel menu Start",
+      "last_summary": "Le build del 25 settembre aggiornano i canali Beta ed Experimental. In Experimental, Phone companion mostra più attività recenti in un pannello scorrevole; arrivano anche suggerimenti energetici nelle impostazioni rapide. Sono funzioni in anteprima, non un rilascio generale per tutti i PC.",
+      "sources": [
+        "https://blogs.windows.com/windows-insider/2026/09/25/announcing-new-builds-for-25-september-2026/"
+      ]
+    },
+    {
+      "event_id": "unity-codex-plugin",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-unity-codex-plugin",
+      "last_edition": "2026-09-27-initial",
+      "section": "main",
+      "title": "Unity porta le sue skill ufficiali dentro Codex",
+      "last_summary": "Unity ha presentato un plugin ufficiale per Codex con 31 skill iniziali, strumenti da terminale e compatibilità con Unity 6+. Le istruzioni coprono anche uGUI, 2D, URP, Web e localizzazione.",
+      "sources": [
+        "https://unity.com/blog/unity-plugin-codex"
+      ]
+    },
+    {
+      "event_id": "unity-6-6-content-directories",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-unity-6-6-content-directories",
+      "last_edition": "2026-09-27-initial",
+      "section": "main",
+      "title": "Unity 6.6: caricamento più granulare degli asset",
+      "last_summary": "Unity introduce le content directories come alternativa agli AssetBundle distribuiti con il Player. Il sistema permette di caricare e scaricare singoli artefatti e introduce deduplicazione dei contenuti; la distribuzione remota più granulare è descritta come sviluppo successivo.",
+      "sources": [
+        "https://unity.com/blog/content-directories-beyond-the-assetbundle"
+      ]
+    },
+    {
+      "event_id": "pokemon-tcg-pocket-deluxe-pack-mega-2026",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "Pokémon TCG Pocket: Deluxe Pack: Mega arriva il 30 settembre in Italia",
+      "last_summary": "The Pokémon Company ha annunciato Deluxe Pack: Mega, disponibile dal 29 settembre alle 18:00 PDT, quindi nella notte del 30 settembre in Italia. I pacchetti hanno quattro carte e garantiscono almeno un Pokémon ex; l’annuncio anticipa anche una funzione community decks, nuovi rental deck e una revisione delle battaglie step-up verso fine ottobre.",
+      "sources": [
+        "https://www.pokemon.com/uk/news/pokemon-tcg-pocket-deluxe-pack-mega-coming-soon",
+        "https://www.crunchyroll.com/news/latest/2026/9/24/pokemon-tcg-pocket-deluxe-pack-mega-announced"
+      ]
+    },
+    {
+      "event_id": "pi-v0-87-1",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-pi-v0-87-1",
+      "last_edition": "2026-09-27-initial",
+      "section": "main",
+      "title": "Pi Agent 0.87.1: supporto ai nuovi modelli",
+      "last_summary": "Le note di rilascio aggiungono supporto a GPT-6 Sol, GPT-6 Luna e Claude Opus 5.5 nei provider indicati. Per Sol e Luna sono citati sia le chiavi API OpenAI sia gli abbonamenti OpenAI Codex.",
+      "sources": [
+        "https://github.com/earendil-works/pi/releases/tag/v0.87.1"
+      ]
+    },
+    {
+      "event_id": "minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "Action RPG: Minecraft Dungeons II racconta il nuovo sistema di esplorazione",
+      "last_summary": "Nel podcast ufficiale del 26 settembre, Mojang descrive un mondo interconnesso, il salto per esplorare spazi verticali e nuovi sistemi di equipaggiamento. L’intervista approfondisce come queste scelte cambino esplorazione e personalizzazione del combattimento.",
+      "sources": [
+        "https://news.xbox.com/en-us/2026/09/26/minecraft-dungeons-ii-the-sift-new-mechanics-better-exploration-and-more-official-xbox-podcast/"
+      ]
+    },
+    {
+      "event_id": "microsoft-copilot-home-code-autopilot-2026",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-microsoft-copilot-home-code-autopilot-2026",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "Microsoft ridisegna Copilot con Home, Code e Autopilot",
+      "last_summary": "Microsoft ha presentato un nuovo Copilot organizzato attorno a Home, Code e Autopilot. Home unisce Chat e Cowork con Word, Excel e PowerPoint; Code crea app, dashboard e automazioni in linguaggio naturale; Autopilot è un agente persistente cloud che può continuare attività senza attendere un nuovo prompt. Home e Code iniziano dal programma Frontier, mentre Autopilot si espande in private preview a fine mese.",
+      "sources": [
+        "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+      ]
+    },
+    {
+      "event_id": "gpt-6-sol-luna-launch",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-gpt-6-sol-luna-launch",
+      "last_edition": "2026-09-27-initial",
+      "section": "main",
+      "title": "GPT-6 Sol e Luna: nuovi modelli per il lavoro quotidiano",
+      "last_summary": "OpenAI ha annunciato Sol e Luna come estensione della famiglia GPT-6, con enfasi su coding, lavoro professionale ed efficienza. L’articolo distingue l’accesso via API, Codex e ChatGPT Work dalla disponibilità nella chat.",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+      ]
+    },
+    {
+      "event_id": "deep-rock-survivor-mobile-optimization",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-deep-rock-survivor-mobile-optimization",
+      "last_edition": "2026-09-27-initial",
+      "section": "main",
+      "title": "Dal PC al mobile: le lezioni di Deep Rock Galactic: Survivor",
+      "last_summary": "Unity racconta il lavoro di Piktiv sul port mobile: ripensare navigazione, rendering e uso della memoria, misurando le prestazioni con scenari automatizzati. È un approfondimento tecnico, non l’annuncio di una nuova uscita di oggi.",
+      "sources": [
+        "https://unity.com/blog/optimizing-deep-rock-galactic-survivor-for-mobile"
+      ]
+    },
+    {
+      "event_id": "claude-opus-5-5-launch",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-claude-opus-5-5-launch",
+      "last_edition": "2026-09-27-initial",
+      "section": "main",
+      "title": "Claude Opus 5.5 punta su coding ed efficienza",
+      "last_summary": "Anthropic presenta Opus 5.5 come aggiornamento per attività complesse, coding e lavoro professionale. Il produttore dichiara minori costi sui propri carichi di prova e una generazione più veloce rispetto a Opus 5: sono risultati del fornitore, non una misura sui tuoi progetti.",
+      "sources": [
+        "https://www.anthropic.com/claude-opus-5-5"
+      ]
+    },
+    {
+      "event_id": "chatgpt-security-history-2026-09-25",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-chatgpt-security-history-2026-09-25",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "ChatGPT aggiunge la cronologia degli accessi e della sicurezza",
+      "last_summary": "OpenAI introduce Security history: accessi, disconnessioni e modifiche a MFA, passkey e altre impostazioni. Sul web si trova in Settings → Security and login → Security history. Orario, località e dispositivo possono essere approssimativi o non disponibili.",
+      "sources": [
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+        "https://help.openai.com/en/articles/8304786-keeping-your-openai-account-secure"
+      ]
+    },
+    {
+      "event_id": "champions-global-challenge-2027-i-battles",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-champions-global-challenge-2027-i-battles",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "Champions: la Global Challenge 2027 I si chiude nella notte",
+      "last_summary": "Sono in corso le lotte in doppio con regolamento M-C. La finestra di gioco termina il 28 settembre alle 03:59 italiane; chi completa almeno tre incontri riceve Archaludon. La notizia riguarda la fase di lotta: non implica che le iscrizioni siano ancora aperte.",
+      "sources": [
+        "https://www.serebii.net/news/2026/25-September-2026.shtml"
+      ]
+    },
+    {
+      "event_id": "champions-frankfurt-2026-day-two",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-champions-frankfurt-2026-day-two",
+      "last_edition": "2026-09-27",
+      "section": "main",
+      "title": "Pokémon Champions: oggi la seconda giornata dei Regionali di Francoforte",
+      "last_summary": "La seconda giornata dei Regionali di Francoforte comprende Pokémon Champions, oltre ai tornei TCG e GO. La diretta del videogioco è programmata dalle 09:00 italiane: la cronaca del 27 settembre rimanda all’hub delle trasmissioni.",
+      "sources": [
+        "https://www.serebii.net/news/2026/27-September-2026.shtml"
+      ]
+    }
+  ]
+}
