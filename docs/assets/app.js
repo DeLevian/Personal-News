@@ -11,6 +11,7 @@
   const editionKey = e => e.id || e.edition_id || e.date;
   const sectionOf = i => i.section || 'main';
   const itemCounts = items => ({main:items.filter(i=>sectionOf(i)==='main').length,radar:items.filter(i=>sectionOf(i)==='radar').length,new:items.filter(i=>i.status==='NEW').length,update:items.filter(i=>i.status==='UPDATE').length,featured:items.filter(i=>i.featured).length});
+  const defaultUnread = true;
   function cleanPrefs(p) {
     if (!p || p.version !== 1 || !allowedTheme.includes(p.theme) || typeof p.compact !== 'boolean' || typeof p.images !== 'boolean') throw Error('Formato preferenze non valido.');
     for (const key of ['read','saved']) if (!Array.isArray(p[key]) || p[key].length > 20000 || !p[key].every(validId)) throw Error('Elenco preferenze non valido.');
@@ -18,7 +19,7 @@
   }
   let prefs;
   try { prefs = cleanPrefs(JSON.parse(localStorage.getItem(storeKey))); } catch { prefs = {...fallback}; }
-  const state = {manifest:null,categories:[],day:null,date:null,mode:'edition',category:'all',section:'all',q:'',unread:false,saved:false,limit:24,read:new Set(prefs.read),bookmarks:new Set(prefs.saved),cache:new Map(),search:null,searchPromise:null,route:0,render:0,visible:[]};
+  const state = {manifest:null,categories:[],day:null,date:null,mode:'edition',category:'all',section:'all',q:'',unread:defaultUnread,saved:false,limit:24,read:new Set(prefs.read),bookmarks:new Set(prefs.saved),cache:new Map(),search:null,searchPromise:null,route:0,render:0,visible:[]};
   let toastTimer, storageWarned = false;
   function toast(message) { $('toast').textContent = message; $('toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').hidden = true,4200); }
   function persist() {
@@ -81,7 +82,7 @@
     $('theme').setAttribute('aria-label',$('theme').title);
   }
   function error(message) { $('error').textContent=message;$('error').hidden=false; }
-  function clearFilters() {state.section='all';state.category='all';state.q='';state.unread=false;state.saved=false;state.limit=24;$('search').value='';}
+  function clearFilters({defaultUnreadFilter=false}={}) {state.section='all';state.category='all';state.q='';state.unread=defaultUnreadFilter?defaultUnread:false;state.saved=false;state.limit=24;$('search').value='';}
   function syncControls() {
     $('scope').value=state.mode;$('search').value=state.q;
     document.querySelectorAll('[data-section-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sectionFilter===state.section)));
@@ -97,14 +98,14 @@
     if (state.section!=='all') u.searchParams.set('section',state.section);
     if (state.category!=='all') u.searchParams.set('category',state.category);
     if (state.saved) u.searchParams.set('saved','1');
-    if (state.unread) u.searchParams.set('unread','1');
+    if (state.unread !== defaultUnread) u.searchParams.set('unread',state.unread?'1':'0');
     history[replace?'replaceState':'pushState']({},'',u);
   }
   async function navigate(date,{url=true,reset=true}={}) {
     const ticket=++state.route;++state.render;state.visible=[];$('cards').setAttribute('aria-busy','true');
     try {
       const day=await getDay(date);if(ticket!==state.route)return;
-      state.day=day;state.date=date;if(reset){clearFilters();state.mode='edition';}
+      state.day=day;state.date=date;if(reset){clearFilters({defaultUnreadFilter:true});state.mode='edition';}
       $('error').hidden=true;if(url){const u=new URL(location.href);u.hash='';history.pushState({},'',u);writeURL(true);}
       renderHeader();renderAttention();renderCategories();syncControls();renderHighlights();await renderCards();
       if(url)window.scrollTo({top:0,behavior:'instant'});
@@ -117,7 +118,7 @@
     state.mode=u.searchParams.get('scope')==='archive'?'archive':'edition';state.q=u.searchParams.get('q')||'';
     state.category=state.categories.some(c=>c.id===u.searchParams.get('category'))?u.searchParams.get('category'):'all';
     state.section=['main','radar'].includes(u.searchParams.get('section'))?u.searchParams.get('section'):'all';
-    state.saved=u.searchParams.get('saved')==='1';state.unread=u.searchParams.get('unread')==='1';state.limit=24;
+    state.saved=u.searchParams.get('saved')==='1';const unreadParam=u.searchParams.get('unread');state.unread=unreadParam==='0'?false:unreadParam==='1'?true:defaultUnread;state.limit=24;
     let target = known?requested:state.manifest.latest;
     const article = u.hash.slice(1);
     if (validId(article)) {
@@ -188,7 +189,7 @@
     $('image-dialog').showModal();
   }
   function renderHighlights() {
-    const items=state.day.items.filter(i=>i.featured&&sectionOf(i)==='main').slice(0,3);$('highlights').hidden=!items.length || state.mode==='archive';const grid=$('highlight-grid');grid.replaceChildren();
+    const items=state.day.items.filter(i=>i.featured&&sectionOf(i)==='main'&&(!state.unread||!state.read.has(i.id))).slice(0,3);$('highlights').hidden=!items.length || state.mode==='archive';const grid=$('highlight-grid');grid.replaceChildren();
     if(!items.length)return;
     const first=items[0],lead=node('article','lead');
     if(prefs.images && https(first.image?.url))lead.append(articleImage(first.image.url,first.image.alt));
@@ -205,6 +206,7 @@
     return !state.q||normalize(i.search_text||[i.title,i.summary,i.why_you_care,...(i.tags||[]),...(i.sources||[]).map(s=>s.name)].join(' ')).includes(normalize(state.q));
   }
   async function renderCards() {
+    renderHighlights();
     const ticket=++state.render;$('cards').setAttribute('aria-busy','true');$('read-all').disabled=true;state.visible=[];
     try {
       let rows, total;
