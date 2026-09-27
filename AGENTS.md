@@ -18,7 +18,7 @@ Repository canonico tecnico: `DeLevian/Personal-News`. Sito pubblico italiano gi
 - `state/seen.json`: cache recente; `state/event-index.json`: indice permanente ricostruibile dei precedenti.
 
 ## Contratto dati
-Nuove edizioni v2 con item `section: main|radar` e `included_at`. Lo storico v1 rimane leggibile come main. Featured solo main. NEW/UPDATE è indipendente dalla sezione.
+Nuove edizioni v2 con item `section: main|radar` e `included_at`. Lo storico v1 rimane leggibile come main. Featured solo main. NEW/UPDATE è indipendente dalla sezione. Le liste UI sono ordinate per pubblicazione reale della fonte: `published_at` decrescente quando disponibile, `published_date` come fallback; mai usare `included_at`, verifica o commit per stabilire la recenza.
 Non promuovere un vecchio Radar a NEW, né inventare delta. Le finestre temporali si riferiscono alla pubblicazione reale e alla prima inclusione, non all'ultimo rerun.
 Le ricevute congelate `config/LEGACY_V1.json` tutelano esclusivamente i contenuti identici già ammessi nella medesima edizione v1. Non rigenerarle nelle run ordinarie, non usarle per ammettere vecchie notizie in giorni successivi.
 La selezione initial non va modificata ogni mattina. Date, ID e URL storici devono restare validi.

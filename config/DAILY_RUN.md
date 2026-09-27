@@ -43,7 +43,7 @@ Registrare evidenze e decisioni editoriali, non ragionamenti interni o dati priv
 
 ## 3. Verifica e deduplicazione
 Raggruppare fonti del medesimo evento prima di contarle. Togliere tracking dagli URL, ma non considerare una pagina release-notes condivisa come un singolo evento eterno.
-Aprire gli articoli selezionabili. Verificare date, versione, piattaforma, preview/GA e disponibilità; un commento recente o una ripubblicazione non è un annuncio nuovo. Attribuire benchmark e dichiarazioni del fornitore.
+Aprire gli articoli selezionabili. Verificare date, versione, piattaforma, preview/GA e disponibilità; un commento recente o una ripubblicazione non è un annuncio nuovo. Per ogni candidato selezionabile cercare anche il timestamp reale di pubblicazione (`published_at`) nella fonte, nei metadati `datePublished`, RSS/API o timestamp del post, preservando offset/fuso. Attribuire benchmark e dichiarazioni del fornitore.
 Cercare l'event_id nella cache e, se necessario, nel ledger permanente con `python tools/discovery.py lookup --event-id ID`; aprire la scheda precedente per confrontare i fatti.
 - NEW: evento mai fornito nell'intero archivio.
 - UPDATE: sviluppo sostanziale, delta esplicito e previous dell'ultimo id/data del medesimo evento.
@@ -59,7 +59,7 @@ Con poche notizie valide ampliare prima la discovery nei sottodomini scoperti; p
 ## 5. Dati e tempo
 Nuove edizioni version:2, kind:daily; item section:main|radar e included_at, oltre agli altri campi del contratto.
 included_at è l'ora reale di prima inclusione, non la pubblicazione della fonte. Non cambiarla per far sembrare fresca una news o a ogni rerun. verified_at <= included_at <= generated_at.
-Una fonte con sola data non autorizza un orario inventato. Conservare published_date e, se noto, published_timezone IANA. Il validatore usa un limite conservativo; se la finestra Main non è dimostrabile, valutare Radar o escludere.
+`published_at` rappresenta esclusivamente l'istante reale di pubblicazione della fonte: non usare `included_at`, `verified_at`, `generated_at`, ora di crawl, ora del commit o un generico `updated_at` come sostituti. Recuperarlo ogni volta che la fonte espone un orario verificabile. Una fonte con sola data non autorizza un orario inventato: in quel caso lasciare `published_at` assente, conservare `published_date` e, se noto, `published_timezone` IANA. Il frontend ordina dal più recente al più vecchio usando `published_at`; per gli elementi senza ora usa la data e, nello stesso giorno, li colloca dopo quelli con timestamp preciso. Il validatore usa un limite conservativo; se la finestra Main non è dimostrabile, valutare Radar o escludere.
 Le edizioni v1 restano leggibili come News. Per la sola migrazione sono state congelate ricevute con hash in config/LEGACY_V1.json: consentono di mantenere i contenuti identici nella stessa edizione, senza cambiarne pubblicazione o data. Non rigenerare ricevute né usarle per nuove giornate. `tools/legacy.py` espone promote per una conversione esatta, non un bypass di freschezza. L'edizione iniziale non va promossa/modificata nelle run ordinarie.
 
 ### Da sapere oggi

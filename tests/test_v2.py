@@ -67,7 +67,7 @@ class V2Tests(unittest.TestCase):
     def test_cache_eviction_does_not_reset_event(self):
         a=edition(main=0,radar=1);b=edition('2030-03-04',main=1,radar=0);b['items'][0]['event_id']=a['items'][0]['event_id'];self.save(a);self.save(b)
         with self.assertRaises(news.Invalid):news.editions(self.root)
-    def test_search_includes_both_sections(self):self.save(self.d);news.run(self.root,'rebuild');items=news.load(self.root/'docs/data/search.json')['items'];self.assertEqual({i['section'] for i in items if i['edition']==self.d['date']},{'main','radar'})
+    def test_search_includes_both_sections(self):self.save(self.d);news.run(self.root,'rebuild');items=[i for i in news.load(self.root/'docs/data/search.json')['items'] if i['edition']==self.d['date']];self.assertEqual({i['section'] for i in items},{'main','radar'});self.assertTrue(all('published_date' in i and 'published_at' in i for i in items));self.assertEqual(items[0]['published_at'],self.d['items'][0]['published_at'])
     def test_rebuild_idempotent(self):news.run(self.root,'rebuild');a=(self.root/'docs/data/index.json').read_bytes();news.run(self.root,'rebuild');self.assertEqual(a,(self.root/'docs/data/index.json').read_bytes())
     def test_sources_contract(self):news.validate_catalogue(self.root)
     def mutate_sources(self,fn):

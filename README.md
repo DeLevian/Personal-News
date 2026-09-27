@@ -9,6 +9,7 @@ Una rassegna personale in italiano: News principali, Radar, eventuali scadenze d
 - Radar: 0–8 segnalazioni più brevi, fino a 7 giorni. Accuratezza identica, peso editoriale differente.
 - Fino a 3 “Da non perdere”, soltanto nelle News. “Da sapere oggi” solo per eventi/scadenze documentati, nascosto dopo la scadenza nella home e chiaramente storico nell'archivio.
 - Ricerca e filtri Tutto/News/Radar, categorie, letti e salvati. Contatori coerenti: News+Radar = NEW+UPDATE.
+- Feed, Radar, evidenze e risultati d'archivio ordinati per l'uscita reale della fonte: timestamp `published_at` quando verificabile, sola data come fallback senza inventare l'ora.
 - Stesso design, modalità scura/chiara, vista compatta, navigazione mobile, URL permanenti e immagini ingrandibili.
 
 Le quantità sono obiettivi, non quote da riempire. La discovery cerca 30–50 candidati per aumentare il bacino; un candidato non è ancora una notizia verificata.
@@ -45,7 +46,7 @@ Prova iniziale: 50 link candidati da 30 controlli, di cui 27 recuperati via HTTP
 
 ## Dati e compatibilità
 Lo schema v1 è congelato. Lo schema corrente accetta v1 e v2 ed è generato dai parametri di pipeline.json, evitando limiti diversi nel codice e nella documentazione.
-`included_at` non è la data della fonte: conserva l'ammissione originaria negli aggiornamenti della stessa giornata. Non spostarla per far passare notizie vecchie.
+`included_at` non è la data della fonte: conserva l'ammissione originaria negli aggiornamenti della stessa giornata. Non spostarla per far passare notizie vecchie e non usarla per l'ordinamento. `published_at`, quando presente, è l'istante reale verificato sulla fonte e viene mostrato in Europe/Rome; se la fonte pubblica soltanto il giorno, il sito mostra la data senza fabbricare un orario.
 La migrazione del 27 settembre preserva gli otto articoli già pubblicati e l'archivio initial. `config/LEGACY_V1.json` conserva hash dei payload e ammissione originale solo per la medesima edizione: nessuna esenzione generica per vecchie news.
 Ogni nuovo giorno parte direttamente da v2. Un evento visto in Radar resta noto quando esce dalla cache o cambia sezione. Un UPDATE richiede un delta reale e un riferimento all'ultimo precedente.
 
