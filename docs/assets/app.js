@@ -20,6 +20,7 @@
   let prefs;
   try { prefs = cleanPrefs(JSON.parse(localStorage.getItem(storeKey))); } catch { prefs = {...fallback}; }
   const state = {manifest:null,categories:[],day:null,date:null,mode:'edition',category:'all',section:'all',q:'',unread:defaultUnread,saved:false,limit:24,read:new Set(prefs.read),bookmarks:new Set(prefs.saved),cache:new Map(),search:null,searchPromise:null,route:0,render:0,visible:[]};
+  const mobileChrome = matchMedia('(max-width: 850px)');
   let toastTimer, storageWarned = false;
   function toast(message) { $('toast').textContent = message; $('toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').hidden = true,4200); }
   function persist() {
@@ -276,11 +277,25 @@
     if(document.hidden||!state.manifest)return;
     try {const m=checkManifest(await fetchJson('data/index.json'));if(m.updated_at!==state.manifest.updated_at){state.manifest=m;state.cache.clear();state.search=null;state.searchPromise=null;$('new-edition').hidden=false;$('latest-label').textContent=fmt(m.latest,{day:'numeric',month:'long',year:'numeric'});}}catch{/* Keep the current edition on transient network errors. */}
   }
+  function setMobileChrome(open) {
+    const button=$('mobile-chrome-toggle');
+    if(!button)return;
+    const active=Boolean(open)&&mobileChrome.matches;
+    document.body.classList.toggle('mobile-chrome-open',active);
+    button.setAttribute('aria-expanded',String(active));
+    button.textContent=active?'×':'☰';
+    const label=active?'Nascondi navigazione':'Mostra navigazione';
+    button.setAttribute('aria-label',label);button.title=label;
+  }
   function bind() {
     for(const id of ['nav-latest','latest-button','mobile-latest','refresh-latest'])$(id).onclick=latest;
     for(const id of ['nav-archive','date-open','mobile-archive'])$(id).onclick=openArchive;
     for(const id of ['nav-saved','mobile-saved'])$(id).onclick=saved;
     for(const id of ['settings-open','mobile-settings'])$(id).onclick=()=>$('settings-dialog').showModal();
+    $('mobile-chrome-toggle').onclick=()=>setMobileChrome(!document.body.classList.contains('mobile-chrome-open'));
+    for(const id of ['mobile-latest','mobile-archive','mobile-saved','mobile-settings','latest-button','date-open'])$(id).addEventListener('click',()=>setMobileChrome(false));
+    mobileChrome.addEventListener('change',()=>setMobileChrome(false));
+    document.addEventListener('pointerdown',e=>{if(!mobileChrome.matches||!document.body.classList.contains('mobile-chrome-open'))return;const target=e.target instanceof Element?e.target:null;if(target?.closest('#mobile-chrome-toggle,.topbar,.mobile-nav'))return;setMobileChrome(false);});
     document.querySelectorAll('.close-dialog').forEach(b=>b.onclick=()=>b.closest('dialog').close());
     $('image-dialog').addEventListener('close',()=>{$('full-image').removeAttribute('src');});
     document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}}));
@@ -299,7 +314,7 @@
     $('import').onclick=()=>$('import-file').click();$('import-file').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>3000000)throw Error('File troppo grande.');const imported=cleanPrefs(JSON.parse(await file.text()));prefs={...imported};state.read=new Set([...state.read,...imported.read]);state.bookmarks=new Set([...state.bookmarks,...imported.saved]);persist();applyPrefs();if(state.day){syncControls();renderHighlights();renderCards();}toast('Preferenze importate; letti e salvati uniti a quelli presenti.');}catch(err){toast(err.message);}finally{e.target.value='';}};
     window.addEventListener('popstate',()=>{if(state.manifest)readRoute();});
     document.addEventListener('visibilitychange',checkFreshness);setInterval(checkFreshness,300000);setInterval(()=>{if(state.day)renderAttention();},60000);
-    document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||e.shiftKey||document.querySelector('dialog[open]')||e.target.closest('input,textarea,select,button,a,summary,[contenteditable="true"]'))return;if(e.key==='/'){e.preventDefault();$('search').focus();}else if(e.key==='ArrowLeft'){e.preventDefault();adjacent(1);}else if(e.key==='ArrowRight'){e.preventDefault();adjacent(-1);}});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('mobile-chrome-open')){e.preventDefault();setMobileChrome(false);return;}if(e.ctrlKey||e.metaKey||e.altKey||e.shiftKey||document.querySelector('dialog[open]')||e.target.closest('input,textarea,select,button,a,summary,[contenteditable="true"]'))return;if(e.key==='/'){e.preventDefault();$('search').focus();}else if(e.key==='ArrowLeft'){e.preventDefault();adjacent(1);}else if(e.key==='ArrowRight'){e.preventDefault();adjacent(-1);}});
   }
   async function init() {
     applyPrefs();bind();

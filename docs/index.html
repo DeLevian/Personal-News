@@ -12,8 +12,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css?v=20260927v2">
   <link rel="stylesheet" href="assets/media.css?v=20260927v2">
-  <link rel="stylesheet" href="assets/v2.css?v=20260927v2">
-  <script src="assets/app.js?v=20260927v3" defer></script>
+  <link rel="stylesheet" href="assets/v2.css?v=20260927v3">
+  <script src="assets/app.js?v=20260927v4" defer></script>
 </head>
 <body>
 <a class="skip" href="#feed">Vai alle notizie</a>
@@ -35,7 +35,7 @@
     </div>
   </aside>
   <div class="workspace">
-    <header class="topbar">
+    <header class="topbar" id="topbar">
       <a href="./" class="mobile-brand" aria-label="Personal News">pn.</a>
       <button class="latest-button" id="latest-button" type="button"><span class="live-dot" aria-hidden="true"></span> Ultime news</button>
       <div class="date-controls" aria-label="Naviga tra le edizioni">
@@ -73,7 +73,8 @@
       </section>
       <footer><span><strong>personal news.</strong> Il tuo tempo è prezioso.</span><span id="footer-meta">Archivio persistente · lettura personale</span><button id="back-top" type="button" class="text-button">Torna su ↑</button></footer>
     </main>
-    <nav class="mobile-nav" aria-label="Navigazione mobile"><button id="mobile-latest" type="button">◈ Recenti</button><button id="mobile-archive" type="button">▤ Archivio</button><button id="mobile-saved" type="button">☆ Salvati</button><button id="mobile-settings" type="button">☷ Opzioni</button></nav>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Navigazione mobile"><button id="mobile-latest" type="button">◈ Recenti</button><button id="mobile-archive" type="button">▤ Archivio</button><button id="mobile-saved" type="button">☆ Salvati</button><button id="mobile-settings" type="button">☷ Opzioni</button></nav>
+    <button id="mobile-chrome-toggle" class="mobile-chrome-toggle" type="button" aria-controls="topbar mobile-nav" aria-expanded="false" aria-label="Mostra navigazione" title="Mostra navigazione">☰</button>
   </div>
 </div>
 <dialog id="archive-dialog" aria-labelledby="archive-heading"><div class="dialog-head"><div><p class="eyebrow">NESSUNA NOTIZIA PERSA</p><h2 id="archive-heading">Il tuo archivio</h2></div><button type="button" class="icon-button close-dialog" aria-label="Chiudi archivio">×</button></div><label class="dialog-filter">Filtra per mese <input id="archive-month" type="month"></label><div id="archive-list"></div><p class="muted" id="archive-help">Le edizioni sono conservate nel repository.</p></dialog>

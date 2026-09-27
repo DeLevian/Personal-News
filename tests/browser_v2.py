@@ -41,13 +41,16 @@ def main():
     for w,h in [(1440,1000),(1024,900),(768,1024),(390,844),(320,740)]:
      page.set_viewport_size({'width':w,'height':h});assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),f'overflow {w}'
      if w in (1440,390):page.screenshot(path=str(out/f'v2-fixture-{w}.png'),full_page=True)
-    page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();page.keyboard.press('Escape');page.locator('#prev').click()
+    toggle=page.locator('#mobile-chrome-toggle');expect(toggle).to_be_visible();expect(page.locator('.topbar')).to_be_hidden();expect(page.locator('#mobile-nav')).to_be_hidden()
+    toggle.click();expect(page.locator('.topbar')).to_be_visible();expect(page.locator('#mobile-nav')).to_be_visible()
+    page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();expect(toggle).to_have_attribute('aria-expanded','false');page.keyboard.press('Escape')
+    toggle.click();page.locator('#prev').click()
     expect(page.locator('#date-label')).not_to_contain_text('2030')
     if previous.get('attention_today'):
      expect(page.locator('#attention-today')).to_contain_text('DA SAPERE ALLORA · ARCHIVIO')
     else:
      expect(page.locator('#attention-today')).to_be_hidden()
-    page.locator('#latest-button').click();expect(page.locator('#radar-cards .card')).to_have_count(2);checks.append('historic attention labelled as archive; mobile navigation and 5 responsive widths')
+    page.locator('#latest-button').click();expect(page.locator('#radar-cards .card')).to_have_count(2);checks.append('historic attention labelled as archive; mobile reading chrome and 5 responsive widths')
     expired=b.new_context();expired.add_init_script("const R=Date;globalThis.Date=class extends R{constructor(...a){super(...(a.length?a:['2030-01-03T12:00:00+01:00']));}static now(){return new R('2030-01-03T12:00:00+01:00').getTime();}}")
     expired.route('https://**/*',lambda r:r.fulfill(status=404,body='fallback fixture'));ep=expired.new_page();ep.goto(base);expect(ep.locator('#attention-today')).to_be_hidden();expect(ep.locator('.card')).to_have_count(5);checks.append('expired attention hidden and unavailable-image fallback')
     assert not errors,errors;expired.close();ctx.unroute_all(behavior='wait');ctx.close();b.close()
