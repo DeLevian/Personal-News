@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "updated": "2026-09-27",
-  "note": "Mappa di visualizzazione e scoperta derivata dal profilo canonico; non sostituisce NEWS_PROFILE.md. Le fonti sono punti di partenza, non una whitelist esclusiva.",
+  "note": "Configurazione UI. Le fonti e le query sono canoniche in config/SOURCES.json; le preferenze restano nel Second Brain.",
   "categories": [
     {
       "id": "ai",
@@ -9,21 +9,7 @@
       "priority": 1,
       "symbol": "AI",
       "description": "Nuovi modelli, capacità, disponibilità e impatto pratico.",
-      "topics": [
-        "OpenAI",
-        "ChatGPT",
-        "Codex",
-        "Anthropic",
-        "Claude",
-        "LLM locali",
-        "Ollama",
-        "Qwen"
-      ],
-      "discovery_sources": [
-        "https://openai.com/news/",
-        "https://www.anthropic.com/news",
-        "https://ollama.com/blog"
-      ]
+      "order": 0
     },
     {
       "id": "agents",
@@ -31,17 +17,7 @@
       "priority": 1,
       "symbol": "⌘",
       "description": "Coding agent, Pi Agent, estensioni, MCP e automazione.",
-      "topics": [
-        "Pi Agent",
-        "MCP",
-        "coding agent",
-        "estensioni",
-        "workflow agentici"
-      ],
-      "discovery_sources": [
-        "https://github.com/earendil-works/pi/releases",
-        "https://modelcontextprotocol.io/"
-      ]
+      "order": 1
     },
     {
       "id": "work",
@@ -49,19 +25,7 @@
       "priority": 1,
       "symbol": "M",
       "description": "Copilot Studio, Microsoft 365, SharePoint, RAG e knowledge base.",
-      "topics": [
-        "Copilot Studio",
-        "Microsoft 365 Copilot",
-        "SharePoint",
-        "Teams",
-        "Entra ID",
-        "RAG",
-        "gestione documentale"
-      ],
-      "discovery_sources": [
-        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
-        "https://www.microsoft.com/en-us/microsoft-365/blog/"
-      ]
+      "order": 2
     },
     {
       "id": "gamedev",
@@ -69,23 +33,7 @@
       "priority": 1,
       "symbol": "◇",
       "description": "Unity, asset 2D/3D, animazione, tool creativi e workflow designer-friendly.",
-      "topics": [
-        "Unity 6",
-        "WebGL",
-        "Odin Inspector",
-        "Blender",
-        "GIMP",
-        "Krita",
-        "rigging",
-        "animazione 2D/3D",
-        "asset AI"
-      ],
-      "discovery_sources": [
-        "https://unity.com/blog",
-        "https://www.blender.org/news/",
-        "https://krita.org/en/posts/",
-        "https://www.gimp.org/news/"
-      ]
+      "order": 3
     },
     {
       "id": "gaming",
@@ -93,40 +41,7 @@
       "priority": 2,
       "symbol": "✦",
       "description": "Pokémon Champions, Dokkan Battle e Pokémon TCG Pocket; generi preferiti, console, retrogaming e macro-temi videoludici.",
-      "topics": [
-        "Pokémon Champions",
-        "Dragon Ball Z Dokkan Battle",
-        "Pokémon TCG Pocket",
-        "RPG e JRPG",
-        "strategici e tattici a turni",
-        "roguelike e roguelite",
-        "deckbuilder e card battler",
-        "picchiaduro e fighting game",
-        "metroidvania",
-        "action RPG e soulslike",
-        "giochi con build e progressione",
-        "Nintendo Switch 2 e Nintendo Switch",
-        "ecosistema Xbox",
-        "Steam e Steam Deck come piattaforma di gioco",
-        "Nintendo Direct e grandi showcase",
-        "retrogaming",
-        "preservazione videoludica",
-        "riedizioni raccolte remaster e remake",
-        "retrocompatibilità",
-        "emulazione e conservazione",
-        "grandi annunci dell'industria videoludica",
-        "servizi e distribuzione gaming",
-        "trend di game design",
-        "accessibilità e compatibilità"
-      ],
-      "discovery_sources": [
-        "https://www.pokemon.com/it/novita/tutti/content-products_vg-and-apps-product-names.pokemon-tcg-pocket",
-        "https://dbz-dokkan.bngames.net/",
-        "https://www.pokemon.com/us/pokemon-news",
-        "https://www.nintendo.com/us/whatsnew/",
-        "https://news.xbox.com/",
-        "https://store.steampowered.com/news/"
-      ]
+      "order": 4
     },
     {
       "id": "devices",
@@ -134,23 +49,7 @@
       "priority": 2,
       "symbol": "▱",
       "description": "Novità utili per Windows, Android, gaming handheld e hardware.",
-      "topics": [
-        "Windows",
-        "NVIDIA",
-        "Android",
-        "Samsung Galaxy S25 Ultra",
-        "Steam Deck",
-        "SteamOS",
-        "Switch 2",
-        "Switch",
-        "Xbox Series X",
-        "TerraMaster"
-      ],
-      "discovery_sources": [
-        "https://blogs.windows.com/",
-        "https://news.samsung.com/global/",
-        "https://store.steampowered.com/news/app/1675200/"
-      ]
+      "order": 5
     }
   ]
 }

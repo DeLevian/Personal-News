@@ -25,7 +25,8 @@ def main():
                 js=read(candidate+'assets/app.js?check='+str(time.time_ns()))
                 if live['updated_at']==manifest['updated_at'] and hashlib.sha256(js).digest()==hashlib.sha256(expected).digest():
                     edition_bytes_match=all(hashlib.sha256(read(candidate+entry['path']+'?check='+str(time.time_ns()))).digest()==hashlib.sha256((ROOT/'docs'/entry['path']).read_bytes()).digest() for entry in manifest['editions'][:2])
-                    if edition_bytes_match:
+                    asset_bytes_match=all(hashlib.sha256(read(candidate+name+'?check='+str(time.time_ns()))).digest()==hashlib.sha256((ROOT/'docs'/name).read_bytes()).digest() for name in ['index.html','assets/v2.css'])
+                    if edition_bytes_match and asset_bytes_match:
                         base=candidate;ready=True;break
             except Exception as e:print('WAITING_DEPLOY',candidate,str(e),flush=True)
         if ready:break
@@ -70,6 +71,11 @@ def main():
             page.wait_for_function('document.getElementById("full-image").naturalWidth>0')
             page.keyboard.press('Escape');expect(page.locator('#image-dialog')).not_to_be_visible()
             report['image_lightbox']='passed'
+        counts=latest.get('counts',{'main':latest['count'],'radar':0})
+        page.locator('[data-section-filter=radar]').click();expect(page.locator('.card')).to_have_count(counts['radar'])
+        page.locator('[data-section-filter=main]').click();expect(page.locator('.card')).to_have_count(counts['main'])
+        page.locator('[data-section-filter=all]').click();expect(page.locator('.card')).to_have_count(latest['count'])
+        report['section_filters']='passed';report['counts']=counts
         page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();page.keyboard.press('Escape')
         page.locator('#prev').click();expect(page.locator('#next')).to_be_enabled()
         page.locator('#latest-button').click();expect(page.locator('.card')).to_have_count(latest['count'])

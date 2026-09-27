@@ -1,0 +1,1016 @@
+{
+  "version": 2,
+  "verified_on": "2026-09-27",
+  "notes": "Registro tecnico canonico. Fonti prioritarie, non whitelist. Query derivate dal profilo, non sostitutive delle preferenze personali. Verificare fatti, autori e date dei singoli articoli.",
+  "query_matrix": {
+    "ai": [
+      "OpenAI ChatGPT API Codex release capabilities availability",
+      "Anthropic Claude model release availability",
+      "Qwen Ollama local LLM inference model release",
+      "Gemini Mistral local open models benchmark release"
+    ],
+    "agents": [
+      "Pi Agent release extensions provider support",
+      "MCP protocol servers integrations release",
+      "coding agents terminal IDE workflow tool release"
+    ],
+    "work": [
+      "Copilot Studio SharePoint knowledge base document processing release",
+      "Microsoft 365 Copilot Teams Digital Workplace roadmap release",
+      "Entra identity governance new features",
+      "RAG enterprise search retrieval document AI release"
+    ],
+    "gamedev": [
+      "Unity Web mobile performance authoring editor release",
+      "Odin Unity ScriptableObject prefab data driven tools release",
+      "Blender 3D rigging animation AI tool release",
+      "Krita GIMP 2D asset generation editing animation release"
+    ],
+    "gaming": [
+      "Pokemon Champions news regulation competition",
+      "Dragon Ball Z Dokkan Battle Global JP news events update",
+      "Pokemon TCG Pocket news update cards",
+      "JRPG tactical turn based strategy roguelike deckbuilder demo release",
+      "fighting metroidvania soulslike action RPG build demo release",
+      "Nintendo Switch 2 Xbox Steam showcase Direct services news",
+      "retrogaming preservation emulation remaster remake compatibility news",
+      "gaming industry distribution accessibility game design announcements"
+    ],
+    "devices": [
+      "Windows Android Samsung Galaxy S25 Ultra software firmware update",
+      "NVIDIA drivers GPU compatibility local AI performance",
+      "Steam Deck SteamOS Nintendo Switch 2 Xbox Series X firmware update",
+      "TerraMaster TOS NAS release update"
+    ]
+  },
+  "sources": [
+    {
+      "id": "openai",
+      "name": "OpenAI News",
+      "url": "https://openai.com/news/",
+      "category": "ai",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "OpenAI GPT API modelli"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
+    },
+    {
+      "id": "chatgpt-notes",
+      "name": "ChatGPT release notes",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "category": "ai",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "ChatGPT disponibilità funzioni"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic News",
+      "url": "https://www.anthropic.com/news",
+      "category": "ai",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Claude modelli ricerca"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "qwen",
+      "name": "Qwen Blog",
+      "url": "https://qwen.ai/blog",
+      "category": "ai",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Qwen modelli locali multimodali"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_index",
+      "notes": "Indice dinamico: verificare i singoli articoli; pagina vuota non significa assenza di novità."
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama Blog",
+      "url": "https://ollama.com/blog",
+      "category": "ai",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Ollama modelli locali"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/",
+      "category": "ai",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Gemini modelli ricerca"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral News",
+      "url": "https://mistral.ai/news/",
+      "category": "ai",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Mistral modelli locali"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "lmstudio",
+      "name": "LM Studio Blog",
+      "url": "https://lmstudio.ai/blog",
+      "category": "ai",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "inferenza locale LM Studio"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog",
+      "category": "ai",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "aggregator",
+      "topics": [
+        "modelli open weights tool ricerca"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "notes": "Piattaforma con autori diversi: il dominio non rende ogni contributo una fonte primaria."
+    },
+    {
+      "id": "localllama",
+      "name": "r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/",
+      "category": "ai",
+      "tier": 3,
+      "role": "scouting",
+      "source_type": "community",
+      "topics": [
+        "LLM locali inferenza quantizzazione"
+      ],
+      "check_policy": "optional",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
+    },
+    {
+      "id": "pi",
+      "name": "Pi Agent releases",
+      "url": "https://github.com/earendil-works/pi/releases",
+      "category": "agents",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "Pi Agent estensioni provider"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "mcp",
+      "name": "Model Context Protocol Blog",
+      "url": "https://blog.modelcontextprotocol.io/",
+      "category": "agents",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "MCP protocollo integrazioni"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot changelog",
+      "url": "https://github.blog/changelog/label/copilot/",
+      "category": "agents",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "Copilot coding agent CLI IDE"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "vscode",
+      "name": "Visual Studio Code updates",
+      "url": "https://code.visualstudio.com/updates",
+      "category": "agents",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "IDE coding agent integrazioni"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "aider",
+      "name": "Aider history",
+      "url": "https://aider.chat/HISTORY.html",
+      "category": "agents",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "coding terminale agenti"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "cline",
+      "name": "Cline Blog",
+      "url": "https://cline.bot/blog",
+      "category": "agents",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "coding agent strumenti"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor changelog",
+      "url": "https://cursor.com/changelog",
+      "category": "agents",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "coding agent IDE"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "showhn",
+      "name": "Show Hacker News",
+      "url": "https://news.ycombinator.com/show",
+      "category": "agents",
+      "tier": 3,
+      "role": "scouting",
+      "source_type": "community",
+      "topics": [
+        "scouting tool agenti developer"
+      ],
+      "check_policy": "optional",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "copilot-studio",
+      "name": "Copilot Studio whats new",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+      "category": "work",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "Copilot Studio chatbot Knowledge Base"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "copilot-blog",
+      "name": "Microsoft Copilot Blog",
+      "url": "https://www.microsoft.com/en-us/copilot/blog/",
+      "category": "work",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Microsoft 365 Copilot Digital Workplace"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "m365-roadmap",
+      "name": "Microsoft 365 Roadmap",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap",
+      "category": "work",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "roadmap",
+      "topics": [
+        "Teams SharePoint Copilot roadmap"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "notes": "Roadmap non equivale a disponibilità generale: verificare rollout e stato preview/GA."
+    },
+    {
+      "id": "sharepoint",
+      "name": "Microsoft SharePoint Blog",
+      "url": "https://techcommunity.microsoft.com/category/content_management/blog/spblog",
+      "category": "work",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "SharePoint gestione documentale knowledge"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "teams",
+      "name": "Microsoft Teams Blog",
+      "url": "https://techcommunity.microsoft.com/category/microsoftteams/blog/microsoftteamsblog",
+      "category": "work",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Teams Digital Workplace"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "entra",
+      "name": "Microsoft Entra whats new",
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new",
+      "category": "work",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "Entra identità governance"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "azure-search",
+      "name": "Azure AI Search whats new",
+      "url": "https://learn.microsoft.com/en-us/azure/search/whats-new",
+      "category": "work",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "RAG enterprise search KB"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "practical365",
+      "name": "Practical 365",
+      "url": "https://practical365.com/",
+      "category": "work",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "publication",
+      "topics": [
+        "Microsoft 365 workplace amministrazione"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "unity",
+      "name": "Unity Blog",
+      "url": "https://unity.com/blog",
+      "category": "gamedev",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Unity Web mobile authoring asset"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "blender",
+      "name": "Blender release notes",
+      "url": "https://developer.blender.org/docs/release_notes/",
+      "category": "gamedev",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "Blender 3D rigging animazione"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "http_content",
+      "notes": "HTTP 200 e titolo Blender Release Notes verificati su GitHub Actions il 2026-09-27; il browser di ricerca era bloccato."
+    },
+    {
+      "id": "krita",
+      "name": "Krita News",
+      "url": "https://krita.org/en/posts/",
+      "category": "gamedev",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Krita grafica 2D animazione"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "gimp",
+      "name": "GIMP News",
+      "url": "https://www.gimp.org/news/",
+      "category": "gamedev",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "GIMP editing asset 2D"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "odin",
+      "name": "Odin Inspector patch notes",
+      "url": "https://odininspector.com/patch-notes",
+      "category": "gamedev",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "Unity Odin authoring editor"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "80level",
+      "name": "80 Level",
+      "url": "https://80.lv/",
+      "category": "gamedev",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "publication",
+      "topics": [
+        "asset 2D 3D AI rigging tool game development"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "champions",
+      "name": "Pokemon Champions official",
+      "url": "https://champions.pokemon.com/en-us/",
+      "category": "gaming",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "official_site",
+      "topics": [
+        "Pokémon Champions regolamenti eventi"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "pocket",
+      "name": "Pokemon TCG Pocket official",
+      "url": "https://tcgpocket.pokemon.com/en-us/",
+      "category": "gaming",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "official_site",
+      "topics": [
+        "Pokémon TCG Pocket carte eventi"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "dokkan",
+      "name": "Dokkan Battle Bandai Namco",
+      "url": "https://dbz-dokkan.bn-ent.net/",
+      "category": "gaming",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "official_site",
+      "topics": [
+        "Dragon Ball Z Dokkan Battle Global JP"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "notes": "Sito giapponese; verificare Global/JP e fuso, non trasferire automaticamente eventi tra versioni."
+    },
+    {
+      "id": "dokkan-news",
+      "name": "Dragon Ball official Dokkan news",
+      "url": "https://en.dragon-ball-official.com/search.php?tag=dokkanbattle",
+      "category": "gaming",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "official_site",
+      "topics": [
+        "Dokkan Battle annunci distinguere merchandise"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "nintendo",
+      "name": "Nintendo News",
+      "url": "https://www.nintendo.com/us/whatsnew/",
+      "category": "gaming",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Switch 2 Switch Direct showcase ecosistema"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "xbox",
+      "name": "Xbox Wire",
+      "url": "https://news.xbox.com/en-us/",
+      "category": "gaming",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Xbox servizi RPG console showcase"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "steam",
+      "name": "Steam News Hub",
+      "url": "https://store.steampowered.com/news/",
+      "category": "gaming",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "aggregator",
+      "topics": [
+        "Steam demo roguelike RPG deckbuilder"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_index",
+      "notes": "Indice dinamico: verificare i singoli articoli; pagina vuota non significa assenza di novità."
+    },
+    {
+      "id": "gog",
+      "name": "GOG Blog",
+      "url": "https://www.gog.com/blog/",
+      "category": "gaming",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "retrogaming preservazione cataloghi"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "dolphin",
+      "name": "Dolphin development blog",
+      "url": "https://dolphin-emu.org/blog/",
+      "category": "gaming",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "emulazione preservazione retrocompatibilità"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
+    },
+    {
+      "id": "serebii",
+      "name": "Serebii",
+      "url": "https://www.serebii.net/",
+      "category": "gaming",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "publication",
+      "topics": [
+        "Champions Pocket verificare gioco specifico"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "gematsu",
+      "name": "Gematsu",
+      "url": "https://www.gematsu.com/",
+      "category": "gaming",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "publication",
+      "topics": [
+        "JRPG tactical fighting metroidvania soulslike"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "rpgsite",
+      "name": "RPG Site",
+      "url": "https://www.rpgsite.net/",
+      "category": "gaming",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "publication",
+      "topics": [
+        "RPG JRPG tattici build progressione"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "nintendolife",
+      "name": "Nintendo Life",
+      "url": "https://www.nintendolife.com/",
+      "category": "gaming",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "publication",
+      "topics": [
+        "Switch Nintendo Direct demo"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "timeextension",
+      "name": "Time Extension",
+      "url": "https://www.timeextension.com/",
+      "category": "gaming",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "publication",
+      "topics": [
+        "retrogaming remaster remake preservazione"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "dokkan-community",
+      "name": "r/DBZDokkanBattle",
+      "url": "https://www.reddit.com/r/DBZDokkanBattle/",
+      "category": "gaming",
+      "tier": 3,
+      "role": "scouting",
+      "source_type": "community",
+      "topics": [
+        "Dokkan Battle scouting eventi Global JP"
+      ],
+      "check_policy": "optional",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
+    },
+    {
+      "id": "windows",
+      "name": "Windows Blog",
+      "url": "https://blogs.windows.com/",
+      "category": "devices",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Windows firmware prestazioni Insider"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA Blog",
+      "url": "https://blogs.nvidia.com/",
+      "category": "devices",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "GPU NVIDIA driver prestazioni AI locale"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "android",
+      "name": "Google Android Blog",
+      "url": "https://blog.google/products-and-platforms/platforms/android/",
+      "category": "devices",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Android funzioni aggiornamenti"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Global Newsroom",
+      "url": "https://news.samsung.com/global/",
+      "category": "devices",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "blog",
+      "topics": [
+        "Samsung Galaxy S25 Ultra Android"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "steamdeck",
+      "name": "Steam Deck updates",
+      "url": "https://store.steampowered.com/news/app/1675200/",
+      "category": "devices",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "release_notes",
+      "topics": [
+        "Steam Deck SteamOS firmware"
+      ],
+      "check_policy": "daily",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_index",
+      "notes": "Indice dinamico: verificare i singoli articoli; pagina vuota non significa assenza di novità."
+    },
+    {
+      "id": "terramaster",
+      "name": "TerraMaster Update Notice",
+      "url": "https://forum.terra-master.com/en/viewforum.php?f=28",
+      "category": "devices",
+      "tier": 1,
+      "role": "primary",
+      "source_type": "official_forum",
+      "topics": [
+        "TerraMaster TOS NAS aggiornamenti"
+      ],
+      "check_policy": "rotating",
+      "requires_primary_verification": false,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "notes": "Primaria solo per annunci dello staff; commenti utenti sono testimonianze. Data del post originale, non ultimo commento.",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
+    },
+    {
+      "id": "androidauthority",
+      "name": "Android Authority",
+      "url": "https://www.androidauthority.com/",
+      "category": "devices",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "publication",
+      "topics": [
+        "Android Samsung analisi dispositivi"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
+    },
+    {
+      "id": "gamingonlinux",
+      "name": "GamingOnLinux",
+      "url": "https://www.gamingonlinux.com/",
+      "category": "devices",
+      "tier": 2,
+      "role": "discovery",
+      "source_type": "publication",
+      "topics": [
+        "SteamOS Steam Deck compatibilità"
+      ],
+      "check_policy": "on_gap",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content"
+    },
+    {
+      "id": "deck-community",
+      "name": "r/SteamDeck",
+      "url": "https://www.reddit.com/r/SteamDeck/",
+      "category": "devices",
+      "tier": 3,
+      "role": "scouting",
+      "source_type": "community",
+      "topics": [
+        "Steam Deck compatibilità esperienza utenti"
+      ],
+      "check_policy": "optional",
+      "requires_primary_verification": true,
+      "enabled": true,
+      "verified_on": "2026-09-27",
+      "verification_method": "web_content",
+      "access_hint": "Esistenza/contenuto verificati via web; HTTP automatizzato 403 nel controllo del 2026-09-27. Usare ricerca web e fonti alternative, non concludere assenza di news."
+    }
+  ]
+}

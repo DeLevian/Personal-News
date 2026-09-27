@@ -1,59 +1,82 @@
-# personal news.
+# personal news. v2
 
 **Sito:** https://delevian.github.io/Personal-News/
 
-Rassegna personale in italiano: ultima edizione, archivio, categorie, ricerca, immagini ingrandibili, letti e salvati. HTML/CSS/JavaScript e JSON, senza framework, chiavi API nel browser o build obbligatoria.
+Una rassegna personale in italiano: News principali, Radar, eventuali scadenze del giorno, archivio e fonti. HTML/CSS/JavaScript statici; nessun framework, servizio AI o token nel browser.
 
-## Uso
-La home apre le news più recenti. Il pulsante Ultime news rimane visibile; le frecce e l’archivio permettono di tornare alle edizioni precedenti. Ricerca nell’edizione o in tutto lo storico, filtri, salvati/non letti, modalità compatta, tema automatico/chiaro/scuro. Le miniature rispettano le proporzioni originali e si possono ingrandire.
+## Cosa cambia
+- News: obiettivo 10–16 elementi verificati; 24 ore normalmente, recupero motivato fino a 72.
+- Radar: 0–8 segnalazioni più brevi, fino a 7 giorni. Accuratezza identica, peso editoriale differente.
+- Fino a 3 “Da non perdere”, soltanto nelle News. “Da sapere oggi” solo per eventi/scadenze documentati, nascosto dopo la scadenza nella home e chiaramente storico nell'archivio.
+- Ricerca e filtri Tutto/News/Radar, categorie, letti e salvati. Contatori coerenti: News+Radar = NEW+UPDATE.
+- Stesso design, modalità scura/chiara, vista compatta, navigazione mobile, URL permanenti e immagini ingrandibili.
 
-Letti, salvati e preferenze sono conservati nel browser, non sincronizzati automaticamente. Importa/esporta dalle preferenze per trasferirli tra dispositivi. I link permanenti aprono l’edizione e l’articolo corretti.
+Le quantità sono obiettivi, non quote da riempire. La discovery cerca 30–50 candidati per aumentare il bacino; un candidato non è ancora una notizia verificata.
 
-## Dati e aggiornamento
-- `docs/index.html`, `docs/assets/`: template stabile, non rigenerato ogni mattina.
-- `docs/data/categories.json`: mappa di visualizzazione/scoperta derivata dal profilo personale.
-- `docs/data/daily/YYYY-MM-DD.json`: edizioni correnti.
-- `docs/data/initial/2026-09-27.json`: selezione iniziale del mattino, con id `2026-09-27-initial`. Non è una giornata precedente inventata.
-- `docs/data/index.json`, `search.json`, `state/seen.json`: file derivati automaticamente.
-- `config/DAILY_RUN.md`: procedura editoriale canonica.
-- `config/pipeline.json`: link sito, riferimenti e limiti.
+## Fonti canoniche
+| Componente | Responsabilità |
+|---|---|
+| Second Brain privato / NEWS_PROFILE.md | Interessi e criteri personali |
+| `config/SOURCES.json` | Dove cercare: fonti, tier, policy, query |
+| `config/pipeline.json` | Limiti e finestre temporali |
+| `config/DAILY_RUN.md` | Procedura completa della run |
+| `config/BRIEFING.md` | Messaggio finale breve |
+| `docs/data/categories.json` | Presentazione delle sei categorie |
+| `docs/data/daily/` e `initial/` | Archivio definitivo |
+| `state/seen.json` e `event-index.json` | Cache recente e indice permanente |
 
-Il profilo personale rimane nel Second Brain privato; non è copiato nel sito. La selezione del mattino e la prova giornaliera del 27 settembre sono entrambe navigabili con la loro data reale. Gli ID degli articoli e i vecchi link sono preservati.
+Non copiare il profilo privato nel repository pubblico. Non mantenere una seconda lista di siti dentro categories.json o nel prompt del task.
+
+## Discovery utilizzabile
+`SOURCES.json` contiene 56 fonti nelle sei categorie, con ruoli primary/discovery/scouting e politiche daily/rotating/on_gap/optional. La rotazione è deterministica e non richiede un registro crescente da leggere ogni mattina.
+
+```sh
+python -m pip install -r requirements.txt
+python tools/discovery.py plan --date YYYY-MM-DD
+python tools/collect.py --date YYYY-MM-DD --output artifacts/discovery.json
+python tools/discovery.py lookup --event-id ID
+python tools/discovery.py audit --input artifacts/editorial-audit.json --output state/discovery-latest.json
+```
+
+Il planner non effettua ricerche. Il collector recupera metadati da indici pubblici con limiti di tempo/dimensione/concorrenza. L'agente deve poi integrare la ricerca web, raggruppare eventi, aprire le fonti e verificare date/fatti/rilevanza. Non esiste un provider AI nascosto nello script.
+Il rapporto di copertura distingue successo, errore, blocco e nessun risultato. Un sito bloccato non è prova di assenza di notizie. Il mancato target richiede una spiegazione fattuale.
+
+Prova iniziale: 50 link candidati da 30 controlli, di cui 27 recuperati via HTTP. Verifica separata di tutti i 56 indirizzi: 48 HTTP 200, 8 con blocco 403 del runner ma verificati via web. Non sono 50 notizie approvate. Evidenza: workflow Bootstrap v2 branch, run 36325422199.
+
+## Dati e compatibilità
+Lo schema v1 è congelato. Lo schema corrente accetta v1 e v2 ed è generato dai parametri di pipeline.json, evitando limiti diversi nel codice e nella documentazione.
+`included_at` non è la data della fonte: conserva l'ammissione originaria negli aggiornamenti della stessa giornata. Non spostarla per far passare notizie vecchie.
+La migrazione del 27 settembre preserva gli otto articoli già pubblicati e l'archivio initial. `config/LEGACY_V1.json` conserva hash dei payload e ammissione originale solo per la medesima edizione: nessuna esenzione generica per vecchie news.
+Ogni nuovo giorno parte direttamente da v2. Un evento visto in Radar resta noto quando esce dalla cache o cambia sezione. Un UPDATE richiede un delta reale e un riferimento all'ultimo precedente.
 
 ```sh
 python tools/news.py rebuild
 python tools/news.py validate
 python -m unittest discover -s tests -v
 node --check docs/assets/app.js
+python tools/briefing.py
 ```
 
-Python 3.10+, libreria standard per dati e validazione. La validazione strutturale non sostituisce la verifica giornalistica. Non far passare come NEW un evento presente nell’archivio iniziale o in una vecchia edizione.
+Il rebuild non riscrive le edizioni: rigenera manifest, ricerca, cache, ledger e schema. Un rerun senza novità non svuota l'edizione né crea falsi aggiornamenti.
 
-## Avvio locale
+## Test e sito locale
 
 ```sh
 python -m http.server 8000 --bind 127.0.0.1 --directory docs
-```
-
-Aprire http://localhost:8000. Su Windows anche `py -m http.server 8000 --bind 127.0.0.1 --directory docs`. Il doppio clic su HTML non basta per fetch dei JSON. L’index nella root rimanda a docs/; Pages pubblica esclusivamente docs/.
-
-## Verifica browser e immagini
-`tests/browser_check.py` esegue test HTTP con Chromium: ricerca, letti/salvati e persistenza, navigazione reale, link vecchi, filtri, tema, mobile e cinque larghezze. Le immagini esterne sono deliberatamente bloccate in questo test per verificare il fallback.
-
-`tests/live_check.py` controlla invece il sito Pages effettivo: attende i dati e il codice correnti, carica ogni immagine delle ultime due edizioni, verifica dimensioni naturali, lightbox, layout e navigazione. Non sostituisce i test di tutte le piattaforme possibili.
-
-```sh
-python -m pip install playwright pillow
+# Aprire http://localhost:8000
+python -m pip install -r requirements-test.txt
 python -m playwright install chromium
 python tests/browser_check.py
+python tests/browser_v2.py
 python tests/live_check.py
 ```
 
-In GitHub Actions, **Verify Personal News** esegue verifiche in sola lettura a ogni push. Screenshot e risultati JSON sono negli artifact `browser-evidence`. Non modifica i dati e non pianifica la newsletter. Un’immagine che viene bloccata/rimossa dal fornitore può fallire in futuro: il fallback resta sempre attivo.
+Le fixture sintetiche sono solo in copie temporanee. I test verificano limiti, finestre, deduplicazione cross-section, schema fonti, vecchi link, ricerca, preferenze, immagini, scadenze e cinque larghezze. `dom_check.py` resta un alias di compatibilità al nuovo test HTTP.
+La CI strutturale è indipendente dalla salute dei siti esterni. Il job live sul branch main attende il deploy, confronta dati/codice/CSS/HTML e verifica le immagini configurate. Source-health è una diagnostica manuale separata. Gli artifact contengono risultati e screenshot, non credenziali o dati privati.
 
-## Privacy e pubblicazione
-L’utente ha reso pubblico il repository e abilitato Pages il 2026-09-27. Il sito non contiene credenziali o copie del Second Brain. Anche config e state sono visibili nel repository pubblico, ma non sono la radice del sito.
+## Uso quotidiano e privacy
+Ultime news è sempre raggiungibile; precedente/successiva e archivio preservano date e link. Letti e salvati vivono nel browser: import/export permette il trasferimento, non c'è sincronizzazione cloud.
+Il sito pubblico entra dalla root e rimanda a docs/. Non serve cambiare Pages. Le immagini rimangono sui server delle fonti, con credito, proporzioni corrette e fallback: la loro disponibilità futura non è garantita.
 
-Le immagini provengono dai siti delle fonti, con credito e collegamento. Nessuna copia di foto protette viene redistribuita dal repository. Dove manca un banner specifico, un logo ufficiale è esplicitamente identificato come logo, non come fotografia della novità. Disattivare le immagini nelle preferenze elimina le richieste ai rispettivi server durante la visualizzazione.
-
-La newsletter delle 07:00 Europe/Rome è gestita dall’automazione ChatGPT esterna; questo repository non contiene un cron autonomo. Consultare `project/STATE.md` per lo stato di prova e i limiti verificati.
+La pianificazione delle 07:00 Europe/Rome è un task ChatGPT esterno. Il suo prompt richiama soltanto AGENTS.md, DAILY_RUN.md e pipeline.json. Codice, Pages e un test manuale non dimostrano da soli la riuscita di una futura run programmata.
+Vedere `project/STATE.md` per gli esiti reali della consegna.

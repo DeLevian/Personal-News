@@ -1,0 +1,20 @@
+/* Additive v2 layout: keep the approved design and all v1 styles. */
+.section-filters{display:flex;gap:7px;margin-top:14px}
+.group-label{font-size:12px;color:var(--muted);font-weight:650;margin:0 0 14px}
+.attention-box{background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:14px;padding:18px 22px;margin:0 0 24px}
+.attention-box p{margin:6px 0 12px;font-size:14px}.attention-box .muted{font-size:11px}
+#radar-group{margin-top:36px;scroll-margin-top:110px}.radar-intro{color:var(--muted);font-size:12px;margin:-6px 0 18px}
+.radar-cards{display:grid;grid-template-columns:1fr;gap:14px}
+.radar-card,body.compact .radar-card{display:grid;grid-template-columns:150px minmax(0,1fr);border-radius:14px}
+.radar-card .card-media,body.compact .radar-card .card-media{height:100%;min-height:140px}
+.radar-card .card-body,body.compact .radar-card .card-body{padding:17px 20px}
+.radar-card .card-title,body.compact .radar-card .card-title{font-size:17px;margin:8px 0}
+.radar-card .card-summary{font-size:12px;margin-bottom:10px}
+.radar-card .why,body.compact .radar-card .why{display:block;margin-bottom:10px}.radar-card .why p{font-size:11px}
+.radar-badge{border:1px solid var(--line);background:var(--subtle);color:var(--muted)}
+body.no-images .radar-card,body.no-images.compact .radar-card{grid-template-columns:1fr}
+.card-title,.card-summary,.why p{overflow-wrap:anywhere}
+.metrics{gap:18px}.metrics strong{font-size:18px}.metrics .updated{flex-basis:100%;margin-left:0}
+@media(max-width:580px){.radar-card,body.compact .radar-card{grid-template-columns:90px minmax(0,1fr)}.radar-card .card-body,body.compact .radar-card .card-body{padding:13px}.radar-card .card-title,body.compact .radar-card .card-title{font-size:15px}.radar-card .card-bottom{flex-wrap:wrap}.radar-card .placeholder-label,.radar-card .media-credit,.radar-card .media-placeholder small{display:none}.attention-box{padding:15px}.metrics{gap:12px}.metrics strong{font-size:16px}}
+
+.lead h3{overflow-wrap:anywhere}

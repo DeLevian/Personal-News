@@ -1,0 +1,25 @@
+name: Source health diagnostics
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-source-health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python -m pip install -r requirements.txt
+      - name: Probe public registry without changing it
+        run: |
+          TODAY=$(TZ=Europe/Rome date +%F)
+          python tools/collect.py --health --date "$TODAY" --output artifacts/source-health.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-health
+          path: artifacts/source-health.json
+          retention-days: 14
+          if-no-files-found: warn
