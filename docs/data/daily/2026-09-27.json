@@ -1,11 +1,11 @@
 {
   "version": 2,
   "date": "2026-09-27",
-  "generated_at": "2026-09-27T16:36:59+02:00",
+  "generated_at": "2026-09-27T17:55:00+02:00",
   "kind": "daily",
-  "title": "27 settembre · Champions, Copilot, Pocket e novità da giocare",
-  "summary": "Otto novità verificate tra AI, Digital Workplace, dispositivi e gaming: Copilot cambia forma, Pocket prepara un nuovo set e il competitivo Champions resta in primo piano.",
-  "note": "Edizione aggiornata al formato v2: otto notizie già pubblicate preservate e due segnalazioni Radar verificate. La raccolta di 50 link candidati è una prova di discovery, non 50 notizie approvate.",
+  "title": "27 settembre · Copilot, SteamOS, agenti locali e Pokémon",
+  "summary": "Quindici letture verificate tra AI, agenti, Digital Workplace, game development, gaming e dispositivi: undici News principali e quattro segnalazioni Radar.",
+  "note": "Rerun v2 delle 17:55: cinque aggiunte verificate dopo discovery trasversale; gli articoli già pubblicati, gli ID e gli orari di prima inclusione restano invariati.",
   "items": [
     {
       "id": "2026-09-27-champions-frankfurt-2026-day-two",
@@ -361,6 +361,176 @@
           "name": "TerraMaster · annuncio dello staff",
           "type": "official",
           "url": "https://forum.terra-master.com/en/viewtopic.php?t=10622"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-27-github-copilot-weekly-september-21-2026",
+      "event_id": "github-copilot-weekly-september-21-2026",
+      "section": "main",
+      "category": "agents",
+      "status": "NEW",
+      "title": "GitHub Copilot: sandbox locale, nuovi modelli e agenti più controllabili",
+      "summary": "Il riepilogo settimanale GitHub del 25 settembre aggiunge a Copilot Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna e Grok 4.7 secondo i piani indicati. Nell’app Copilot arrivano inoltre sandboxing locale in public preview e OpenTelemetry per l’attività degli agenti; JetBrains introduce approvazioni assistite e VS Code 1.139 estende gli agenti ai Dev Container su host remoti.",
+      "why_you_care": "È direttamente collegato ai workflow di coding agentico: sandboxing, osservabilità e approvazioni aiutano a separare la potenza del modello dal controllo operativo dell’agente.",
+      "published_date": "2026-09-25",
+      "published_at": "2026-09-25T09:42:00-07:00",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T17:55:00+02:00",
+      "included_at": "2026-09-27T17:55:00+02:00",
+      "featured": false,
+      "tags": [
+        "GitHub Copilot",
+        "coding agent",
+        "sandbox",
+        "OpenTelemetry"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog",
+          "type": "official",
+          "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
+        },
+        {
+          "name": "Techseen · timestamp della fonte primaria",
+          "type": "reputable",
+          "url": "https://techseen.com/story/github-copilot-weekly-releases-september-21-48eaa8b"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: aggiornamento molto pertinente a coding agent, modelli, sicurezza e osservabilità, non ancora presente nell’archivio."
+    },
+    {
+      "id": "2026-09-27-steamos-3-8-28-stable",
+      "event_id": "steamos-3-8-28-stable",
+      "section": "main",
+      "category": "devices",
+      "status": "NEW",
+      "title": "SteamOS 3.8.28 stabile migliora VRAM, ray tracing e compatibilità",
+      "summary": "Valve ha rilasciato SteamOS 3.8.28 nel canale stabile. Le note includono un nuovo ramo Mesa con miglioramenti dichiarati al ray tracing, gestione VRAM più robusta, correzioni per avvio dei giochi e Proton, stabilità Bluetooth con Switch Pro Controller e vari fix di sospensione/ripresa; il kernel passa a Linux 6.18.50.",
+      "why_you_care": "È un aggiornamento concreto per Steam Deck: tocca prestazioni, memoria, compatibilità dei giochi e problemi quotidiani di resume e periferiche.",
+      "published_date": "2026-09-25",
+      "published_at": "2026-09-25T06:31:00+00:00",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-27T17:55:00+02:00",
+      "included_at": "2026-09-27T17:55:00+02:00",
+      "featured": false,
+      "tags": [
+        "Steam Deck",
+        "SteamOS",
+        "Mesa",
+        "VRAM"
+      ],
+      "sources": [
+        {
+          "name": "Valve · Steam Deck announcements",
+          "type": "official",
+          "url": "https://steamcommunity.com/games/1675200/announcements/detail/711161056325534553"
+        },
+        {
+          "name": "GamingOnLinux · timestamp e riepilogo",
+          "type": "reputable",
+          "url": "https://www.gamingonlinux.com/2026/09/steamos-3-8-28-stable-released-with-big-improvements-for-steam-deck-steam-machine-and-more-hardware-support/"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: release stabile direttamente pertinente allo Steam Deck, con cambiamenti pratici di prestazioni e compatibilità."
+    },
+    {
+      "id": "2026-09-27-cactus-needle-3-local-action-model",
+      "event_id": "cactus-needle-3-local-action-model",
+      "section": "main",
+      "category": "ai",
+      "status": "NEW",
+      "title": "Needle 3: un modello da 8–29 MB per azioni locali e tool calling",
+      "summary": "Cactus Compute ha pubblicato Needle 3, una famiglia laddered per tool calling, estrazione strutturata ed embedding su dispositivi molto piccoli. Il produttore distribuisce subnet da 8–29 MB e runtime per Linux, Windows, Android, iOS e WebAssembly; i confronti prestazionali pubblicati nella pagina sono benchmark del fornitore e vanno letti come tali.",
+      "why_you_care": "È un esempio concreto di agente locale estremamente compatto: interessante per capire fin dove possono spingersi tool calling e automazioni on-device senza dipendere da un LLM generalista cloud.",
+      "published_date": "2026-09-27",
+      "event_date": "2026-09-27",
+      "verified_at": "2026-09-27T17:55:00+02:00",
+      "included_at": "2026-09-27T17:55:00+02:00",
+      "featured": false,
+      "tags": [
+        "LLM locale",
+        "tool calling",
+        "edge AI",
+        "agenti"
+      ],
+      "sources": [
+        {
+          "name": "Cactus Compute · Needle 3",
+          "type": "official",
+          "url": "https://cactuscompute.com/needle"
+        },
+        {
+          "name": "Raspberry Pi · contesto su Needle",
+          "type": "reputable",
+          "url": "https://www.raspberrypi.com/news/turn-text-input-into-actions-with-needle-a-14mb-function-calling-llm/"
+        }
+      ],
+      "image": null,
+      "recency_reason": "La pagina ufficiale dichiara il rilascio odierno ma non espone un orario; la fonte con sola data viene trattata in modo conservativo."
+    },
+    {
+      "id": "2026-09-27-microsoft-security-agent-governance-september-2026",
+      "event_id": "microsoft-security-agent-governance-september-2026",
+      "section": "radar",
+      "category": "work",
+      "status": "NEW",
+      "title": "Microsoft rafforza governance e protezione dei flussi AI agentici",
+      "summary": "L’aggiornamento Microsoft Security di settembre introduce strumenti per scoprire e controllare agenti AI locali ed estende il modello Zero Trust al traffico degli agenti. Microsoft segnala inoltre la disponibilità generale dell’integrazione Purview–Entra per bloccare dati sensibili diretti a destinazioni AI rischiose, incluso traffico agentico on-behalf-of, e nuove capacità eDiscovery per contenuti Copilot.",
+      "why_you_care": "È molto vicino ai problemi reali del Digital Workplace: governance degli agenti, protezione documentale e controlli sui dati diventano parte concreta dell’adozione enterprise dell’AI.",
+      "published_date": "2026-09-24",
+      "event_date": "2026-09-24",
+      "verified_at": "2026-09-27T17:55:00+02:00",
+      "included_at": "2026-09-27T17:55:00+02:00",
+      "featured": false,
+      "tags": [
+        "Microsoft Security",
+        "Purview",
+        "Entra",
+        "AI governance"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft Security Blog",
+          "type": "official",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/09/24/whats-new-in-microsoft-security-september-2026/"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-27-tripo-p2-0-production-ready-3d",
+      "event_id": "tripo-p2-0-production-ready-3d",
+      "section": "radar",
+      "category": "gamedev",
+      "status": "NEW",
+      "title": "Tripo P2.0 porta quad mesh native e Mesh Edit negli asset AI 3D",
+      "summary": "Tripo P2.0 punta a rendere più utilizzabili gli asset generati nei workflow di gioco: quad topology nativa, separazione automatica delle parti, input multivista, più varianti per generazione e Mesh Edit per rigenerare solo una regione. Tripo indica fino a 25.000 facce per le quad mesh; l’effettiva riduzione del lavoro di retopology va verificata sui propri asset.",
+      "why_you_care": "È esattamente il tipo di passaggio che può rendere più realistico un flusso artwork → modello 3D → rig/animazione → Unity, riducendo potenzialmente il cleanup manuale.",
+      "published_date": "2026-09-23",
+      "event_date": "2026-09-21",
+      "verified_at": "2026-09-27T17:55:00+02:00",
+      "included_at": "2026-09-27T17:55:00+02:00",
+      "featured": false,
+      "tags": [
+        "Tripo P2.0",
+        "3D AI",
+        "quad mesh",
+        "rigging"
+      ],
+      "sources": [
+        {
+          "name": "Tripo · P2.0",
+          "type": "official",
+          "url": "https://www.tripo3d.ai/fr/blog/tripo-p2-0-preview"
+        },
+        {
+          "name": "VoxelMatters · data del lancio",
+          "type": "reputable",
+          "url": "https://www.voxelmatters.com/tripo-ai-launches-p2-0-model-to-generate-native-quad-meshes-for-production-pipelines/"
         }
       ],
       "image": null
