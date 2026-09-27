@@ -1,33 +1,32 @@
-# Personal News v2 — stato tecnico
+# Personal News v2 — stato operativo
 
 Aggiornato: 2026-09-27.
 
-## Implementazione
+## Consegna verificata
+La v2 è stata unita su main tramite PR #1, merge `330217b5cec0b74492380467f6dff20b49629987`, dopo sviluppo sul branch `chatgpt/personal-news-v2` e verifica separata.
+Il workflow **Verify Personal News**, run **36326833388**, ha concluso con successo sia `structure-and-browser` sia `published-site` sul commit distribuito. Il sito reale è https://delevian.github.io/Personal-News/ e l'ingresso rimanda a docs/ senza variazioni di hosting.
+
+## Architettura e parametri
 Profilo nel Second Brain privato; SOURCES.json per fonti/query; pipeline.json per limiti; DAILY_RUN.md/BRIEFING.md per processo e notifica; categories.json soltanto UI.
-
-Target: 10–16 News, 0–8 Radar, 3 featured solo News. Main 24 ore, eccezione 72 con motivo; Radar 7 giorni. Discovery 30–50 candidati e copertura di tutte le sei categorie. Nessun minimo di pubblicazione imposto.
-
-56 fonti: 41 primarie, 11 discovery, 4 community. Controlli quotidiani mirati e rotazione deterministica, senza rileggere l'intero Second Brain.
+Target 10–16 News, 0–8 Radar, 3 featured solo Main. Main 24 ore, eccezione 72 con motivo; Radar 7 giorni. Discovery 30–50 candidati e copertura delle sei categorie, non quote di pubblicazione obbligatorie.
+56 fonti: 41 primarie, 11 discovery, 4 community; controlli mirati e rotazione deterministica. Nessuna scansione quotidiana dell'intero Second Brain.
 
 ## Compatibilità e dati
 Lo schema v1 è conservato e il frontend legge v1/v2. News/Radar condividono NEW/UPDATE, ricerca, archivio, preferenze e indice permanente degli eventi oltre alla cache recente.
-L'edizione del 27 settembre contiene otto News preesistenti, conservate con gli stessi payload/ID, e due nuovi Radar verificati. L'archivio iniziale non è stato riscritto. Le ricevute hash LEGACY_V1 valgono soltanto per gli item identici nella stessa edizione, non per pubblicare vecchie notizie in altri giorni.
-Attenzione opzionale con scadenza, avviso storico distinto da quello corrente; immagini ingrandibili, proporzioni preservate, fallback; nessun dato sintetico nei JSON pubblicati.
+L'edizione del 27 settembre contiene **8 News + 2 Radar**, 10 NEW e 0 UPDATE, 3 evidenze. Gli otto payload precedenti e gli ID sono preservati; l'archivio iniziale non è stato riscritto. Le ricevute hash LEGACY_V1 valgono solo per contenuti identici nella stessa edizione, non per ripubblicare vecchie notizie in altri giorni.
+Avviso del giorno opzionale con scadenza; etichetta storica distinta; immagini con proporzioni preservate, ingrandimento e fallback. Nessuna fixture sintetica è entrata nei dati pubblicati.
 
-## Verifiche concluse sul branch
-- Primo bootstrap: run 36325422199, 62 test Python e browser HTTP superati.
-- Finalizzazione: run 36326127301, tentativo 2, 66 test Python e due suite browser HTTP superati; commit generato 891b0a26102766abf276e1684cb9474418ca38c7.
-- Coperti contratti, limiti, finestre, attenzione, deduplicazione cross-section, sicurezza URL/testo, ricevute v1, vecchi link, ricerca, saved/read, temi, lightbox e cinque larghezze.
-- Primo controllo delle 56 fonti: 48 recuperi HTTP riusciti, 8 blocchi 403 del runner con contenuto verificato via web. Un blocco non viene equiparato ad assenza di notizie.
-- Prova collector: 50 link candidati da 30 controlli, 27 recuperati. Sono metadati reali da verificare, non 50 eventi approvati né una rassegna giornalistica completa.
+## Verifiche effettive
+- **66 test Python** superati, schema/catalogo/indici coerenti, controllo sintattico JavaScript superato.
+- Due suite HTTP Chromium: filtri Main/Radar, ricerca globale, NEW/UPDATE cross-section, vecchi link, saved/read dopo reload, temi, attenzione corrente/scaduta/storica, lightbox, sicurezza testo e cinque larghezze.
+- Pages reale: **14 immagini configurate su 14 caricate**, sezioni e contatori corretti, navigazione e lightbox superati, nessun errore JavaScript, nessun overflow a 320/390/768/1024/1440 px.
+- Source-health iniziale: 56 fonti, 48 HTTP riusciti e 8 blocchi del runner con contenuto verificato via web. Il collector ha recuperato 50 link candidati da 30 controlli (27 riusciti): non sono 50 notizie approvate.
+- Evidenza: https://github.com/DeLevian/Personal-News/actions/runs/36326833388 ; artifact `structural-browser-evidence` e `live-browser-evidence`. Il workflow del commit corrente resta il riferimento per eventuali verifiche successive.
 
-## CI e pubblicazione
-Rimossi il workflow temporaneo con permessi di scrittura e gli script di migrazione. La CI permanente è in sola lettura: contratto/dati e browser separati dalla verifica Pages; salute fonti su diagnostica manuale separata.
-Sito pubblico autorizzato: https://delevian.github.io/Personal-News/ . L'ingresso root rimanda a docs/; hosting e visibilità invariati.
-Il workflow Verify Personal News su main confronta contenuti distribuiti e verifica realmente immagini, layout e navigazione. L'esito del job published-site e gli artifact live-browser-evidence attestano il deploy specifico, non il semplice successo del commit.
+## Automazione e sicurezza
+Il task ChatGPT esistente **Personal News** è stato aggiornato il 2026-09-27 alle 16:44 Europe/Rome: **enabled**, cadenza giornaliera **07:00 Europe/Rome**, prompt breve che avvia AGENTS.md, DAILY_RUN.md e pipeline.json. Nessun nuovo task creato. Il modello non è esposto dai metadati e non viene dedotto.
+Rimossi il workflow temporaneo con permessi di scrittura e gli script di migrazione. CI permanente in sola lettura; salute fonti in diagnostica manuale separata. Nessuna modifica a visibilità/hosting e nessuna credenziale o copia del Second Brain inserita nel repository pubblico.
 
-## Automazione
-La run delle 07:00 Europe/Rome è gestita dal task ChatGPT Personal News. Deve richiamare AGENTS.md, DAILY_RUN.md e pipeline.json tramite il bootstrap breve, senza una copia delle regole nel task. Per stato enabled, fuso e prompt effettivi fare riferimento allo strumento automazioni; il repository non crea un secondo cron.
-
-## Limiti
-Quantità editoriali non garantite; fonti e immagini esterne possono cambiare disponibilità. Ricerca aperta e verifica umana/agentica delle fonti rimangono necessarie: il collector non è un redattore autonomo. Letti/salvati sono locali, con import/export. I test Chromium non certificano tutti i browser/dispositivi.
+## Limiti e osservazione
+Le quantità sono target; fonti e immagini possono cambiare disponibilità. Un blocco va completato con ricerca aperta o dichiarato, non interpretato come assenza di notizie. Il collector non sostituisce verifica e selezione editoriale.
+Letti/salvati sono locali con import/export, non sincronizzati. Test Chromium non equivalgono a certificazione di ogni dispositivo. Resta da osservare la prima run programmata della v2: test e deploy riusciti non garantiscono anticipatamente una futura esecuzione del servizio ChatGPT.

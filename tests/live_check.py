@@ -2,6 +2,8 @@
 Read-only network checks. No tokens, private sources, or asset copying into repo.
 """
 import hashlib,json,os,time,urllib.request
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from playwright.sync_api import sync_playwright,expect
 ROOT=Path(__file__).resolve().parents[1]
@@ -58,13 +60,26 @@ def main():
                     report['images'].append({'id':item['id'],'ok':True,**dim})
                 except Exception as e:report['images'].append({'id':item['id'],'ok':False,'url':item['image']['url'],'error':str(e)[:350]})
         page.goto(base,wait_until='domcontentloaded');expect(page.locator('.card')).to_have_count(latest['count'])
+        current=json.loads((ROOT/'docs'/latest['path']).read_text())
+        attention=current.get('attention_today');now=datetime.now(ZoneInfo('Europe/Rome'))
+        active=bool(attention and current['date']==now.date().isoformat() and datetime.fromisoformat(attention['valid_from'])<=now<datetime.fromisoformat(attention['expires_at']))
+        if active:
+            expect(page.locator('#attention-today')).to_be_visible()
+            expect(page.locator('#attention-today')).to_contain_text('DA SAPERE OGGI')
+        elif current['date']==now.date().isoformat():
+            expect(page.locator('#attention-today')).to_be_hidden()
+        report['attention_current_state']='passed'
         for card in page.locator('.card').all():card.scroll_into_view_if_needed()
         page.wait_for_timeout(700)
         for width,height in [(1440,1050),(1024,900),(768,1024),(390,844),(320,740)]:
-            page.set_viewport_size({'width':width,'height':height});page.evaluate('scrollTo(0,0)')
+            page.set_viewport_size({'width':width,'height':height})
+            page.evaluate("window.scrollTo({top:0,left:0,behavior:'instant'})")
+            page.wait_for_function('window.scrollY===0')
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),f'Overflow at {width}'
             report['widths'].append(width)
-            if width in (1440,390):page.screenshot(path=str(out/f'live-{width}.png'),full_page=True)
+            if width in (1440,390):
+                page.screenshot(path=str(out/f'live-{width}.png'),full_page=True)
+                page.screenshot(path=str(out/f'viewport-{width}.png'),full_page=False)
         page.set_viewport_size({'width':390,'height':844})
         if latest['count'] and page.locator('.image-expand').count():
             page.locator('.image-expand').first.click();expect(page.locator('#image-dialog')).to_be_visible()
@@ -77,7 +92,8 @@ def main():
         page.locator('[data-section-filter=all]').click();expect(page.locator('.card')).to_have_count(latest['count'])
         report['section_filters']='passed';report['counts']=counts
         page.locator('#mobile-archive').click();expect(page.locator('#archive-dialog')).to_be_visible();page.keyboard.press('Escape')
-        page.locator('#prev').click();expect(page.locator('#next')).to_be_enabled()
+        if len(manifest['editions'])>1:
+            page.locator('#prev').click();expect(page.locator('#next')).to_be_enabled()
         page.locator('#latest-button').click();expect(page.locator('.card')).to_have_count(latest['count'])
         report['live_navigation']='passed';report['javascript_errors']=errors
         browser.close()
