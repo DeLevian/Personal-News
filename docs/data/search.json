@@ -132,6 +132,36 @@
       "search_text": "Anthropic prova un mercato in cui gli agenti negoziano tra loro Nel Project Swap, 201 dipendenti Anthropic in sei uffici hanno affidato a agenti Claude lo scambio di libri. Dopo una breve conversazione, le preferenze stimate dagli agenti coincidevano con quelle delle persone nel 61% delle coppie; nei test ripetuti, modelli più forti hanno prodotto mercati più efficienti delle sole variazioni di prompt. È un esperimento controllato interessante per agenti che devono rappresentare preferenze, coordinarsi e negoziare: evidenzia che comprendere bene l’utente può essere un limite più importante della sola strategia di interazione. Radar Anthropic Claude multi-agent agentic workflows Anthropic Research · Project Swap"
     },
     {
+      "id": "2026-09-27-microsoft-security-september-2026-agent-data-controls",
+      "event_id": "microsoft-security-september-2026-agent-data-controls",
+      "edition": "2026-09-27",
+      "category": "work",
+      "section": "radar",
+      "status": "NEW",
+      "title": "Microsoft estende Purview ed Entra al traffico degli agenti AI",
+      "search_text": "Microsoft estende Purview ed Entra al traffico degli agenti AI Microsoft ha annunciato nuovi controlli con Purview ed Entra Global Secure Access per applicare classificazione e policy al traffico di rete, inclusi i flussi agentici on-behalf-of. L'obiettivo è estendere la protezione dei dati anche all'uso di servizi AI non autorizzati. È rilevante per la governance AI aziendale perché porta identità, rete e protezione dei dati dentro i flussi agentici. Radar Microsoft Purview Microsoft Entra AI governance Microsoft Security Blog"
+    },
+    {
+      "id": "2026-09-27-cursor-rollouts-security-review-2026-09-23",
+      "event_id": "cursor-rollouts-security-review-2026-09-23",
+      "edition": "2026-09-27",
+      "category": "agents",
+      "section": "radar",
+      "status": "NEW",
+      "title": "Cursor aggiunge bot per seguire i deploy e revisionare le PR",
+      "search_text": "Cursor aggiunge bot per seguire i deploy e revisionare le PR Cursor ha lanciato Rollouts e Security Review per i piani Teams ed Enterprise. Rollouts segue una modifica dalla pull request al deploy e segnala regressioni; Security Review aggiunge una revisione automatizzata delle modifiche. Mostra come i coding agent stiano estendendo il ciclo oltre la generazione di codice, verso verifica del deploy e revisione automatizzata. Radar Cursor coding agent deploy code review Cursor · changelog"
+    },
+    {
+      "id": "2026-09-27-unity-meta-vr-glasses-support-2026-09-24",
+      "event_id": "unity-meta-vr-glasses-support-2026-09-24",
+      "edition": "2026-09-27",
+      "category": "gamedev",
+      "section": "radar",
+      "status": "NEW",
+      "title": "Unity 6.6 supporta già i Meta VR Glasses",
+      "search_text": "Unity 6.6 supporta già i Meta VR Glasses Unity ha annunciato supporto immediato ai Meta VR Glasses con Unity 6.6 o superiore e Meta XR All-in-One SDK v207. Sono previsti workflow OpenXR, eye e hand tracking, ottimizzazioni di rendering, audio spaziale e anteprima delle interazioni nell'Editor. È un segnale utile sull'evoluzione multipiattaforma di Unity 6.6 e sulla riusabilità dei workflow dell'Editor. Radar Unity 6.6 XR OpenXR Meta VR Unity"
+    },
+    {
       "id": "2026-09-27-unity-codex-plugin",
       "event_id": "unity-codex-plugin",
       "edition": "2026-09-27-initial",

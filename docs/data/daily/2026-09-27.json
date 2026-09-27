@@ -1,11 +1,11 @@
 {
   "version": 2,
   "date": "2026-09-27",
-  "generated_at": "2026-09-27T18:26:02+02:00",
+  "generated_at": "2026-09-27T18:39:42+02:00",
   "kind": "daily",
   "title": "27 settembre · Champions, Copilot, Pocket e novità da giocare",
-  "summary": "Otto novità verificate tra AI, Digital Workplace, dispositivi e gaming: Copilot cambia forma, Pocket prepara un nuovo set e il competitivo Champions resta in primo piano.",
-  "note": "Edizione aggiornata al formato v2: otto notizie già pubblicate preservate e due segnalazioni Radar verificate. La raccolta di 50 link candidati è una prova di discovery, non 50 notizie approvate.",
+  "summary": "Sedici segnalazioni verificate tra AI, agenti, Digital Workplace, game development, gaming e dispositivi: dieci News principali e sei elementi Radar.",
+  "note": "Rerun idempotente: preservati identificatori e included_at dei 13 elementi già pubblicati; aggiunti tre elementi Radar verificati. Discovery ampliata a 32 candidati distinti sulle sei categorie.",
   "items": [
     {
       "id": "2026-09-27-champions-frankfurt-2026-day-two",
@@ -456,6 +456,95 @@
           "name": "Anthropic Research · Project Swap",
           "type": "research",
           "url": "https://www.anthropic.com/research/project-swap"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-27-microsoft-security-september-2026-agent-data-controls",
+      "event_id": "microsoft-security-september-2026-agent-data-controls",
+      "section": "radar",
+      "category": "work",
+      "status": "NEW",
+      "title": "Microsoft estende Purview ed Entra al traffico degli agenti AI",
+      "summary": "Microsoft ha annunciato nuovi controlli con Purview ed Entra Global Secure Access per applicare classificazione e policy al traffico di rete, inclusi i flussi agentici on-behalf-of. L'obiettivo è estendere la protezione dei dati anche all'uso di servizi AI non autorizzati.",
+      "why_you_care": "È rilevante per la governance AI aziendale perché porta identità, rete e protezione dei dati dentro i flussi agentici.",
+      "published_date": "2026-09-24",
+      "event_date": "2026-09-24",
+      "verified_at": "2026-09-27T18:39:42+02:00",
+      "included_at": "2026-09-27T18:39:42+02:00",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "Microsoft Purview",
+        "Microsoft Entra",
+        "AI governance"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft Security Blog",
+          "type": "official",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/09/24/whats-new-in-microsoft-security-september-2026/"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-27-cursor-rollouts-security-review-2026-09-23",
+      "event_id": "cursor-rollouts-security-review-2026-09-23",
+      "section": "radar",
+      "category": "agents",
+      "status": "NEW",
+      "title": "Cursor aggiunge bot per seguire i deploy e revisionare le PR",
+      "summary": "Cursor ha lanciato Rollouts e Security Review per i piani Teams ed Enterprise. Rollouts segue una modifica dalla pull request al deploy e segnala regressioni; Security Review aggiunge una revisione automatizzata delle modifiche.",
+      "why_you_care": "Mostra come i coding agent stiano estendendo il ciclo oltre la generazione di codice, verso verifica del deploy e revisione automatizzata.",
+      "published_date": "2026-09-23",
+      "event_date": "2026-09-23",
+      "verified_at": "2026-09-27T18:39:42+02:00",
+      "included_at": "2026-09-27T18:39:42+02:00",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "Cursor",
+        "coding agent",
+        "deploy",
+        "code review"
+      ],
+      "sources": [
+        {
+          "name": "Cursor · changelog",
+          "type": "official",
+          "url": "https://cursor.com/changelog/rollouts-and-security-reviewer"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-27-unity-meta-vr-glasses-support-2026-09-24",
+      "event_id": "unity-meta-vr-glasses-support-2026-09-24",
+      "section": "radar",
+      "category": "gamedev",
+      "status": "NEW",
+      "title": "Unity 6.6 supporta già i Meta VR Glasses",
+      "summary": "Unity ha annunciato supporto immediato ai Meta VR Glasses con Unity 6.6 o superiore e Meta XR All-in-One SDK v207. Sono previsti workflow OpenXR, eye e hand tracking, ottimizzazioni di rendering, audio spaziale e anteprima delle interazioni nell'Editor.",
+      "why_you_care": "È un segnale utile sull'evoluzione multipiattaforma di Unity 6.6 e sulla riusabilità dei workflow dell'Editor.",
+      "published_date": "2026-09-24",
+      "event_date": "2026-09-24",
+      "verified_at": "2026-09-27T18:39:42+02:00",
+      "included_at": "2026-09-27T18:39:42+02:00",
+      "featured": false,
+      "tags": [
+        "Radar",
+        "Unity 6.6",
+        "XR",
+        "OpenXR",
+        "Meta VR"
+      ],
+      "sources": [
+        {
+          "name": "Unity",
+          "type": "official",
+          "url": "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
         }
       ],
       "image": null

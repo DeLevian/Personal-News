@@ -1,19 +1,19 @@
 {
   "version": 2,
   "latest": "2026-09-27",
-  "updated_at": "2026-09-27T18:26:02+02:00",
+  "updated_at": "2026-09-27T18:39:42+02:00",
   "editions": [
     {
       "id": "2026-09-27",
       "date": "2026-09-27",
-      "generated_at": "2026-09-27T18:26:02+02:00",
+      "generated_at": "2026-09-27T18:39:42+02:00",
       "title": "27 settembre · Champions, Copilot, Pocket e novità da giocare",
       "kind": "daily",
-      "count": 13,
+      "count": 16,
       "counts": {
         "main": 10,
-        "radar": 3,
-        "new": 13,
+        "radar": 6,
+        "new": 16,
         "update": 0,
         "featured": 3
       },
@@ -21,6 +21,7 @@
         "agents",
         "ai",
         "devices",
+        "gamedev",
         "gaming",
         "work"
       ],

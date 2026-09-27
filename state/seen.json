@@ -31,6 +31,19 @@
       ]
     },
     {
+      "event_id": "unity-meta-vr-glasses-support-2026-09-24",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-unity-meta-vr-glasses-support-2026-09-24",
+      "last_edition": "2026-09-27",
+      "section": "radar",
+      "title": "Unity 6.6 supporta già i Meta VR Glasses",
+      "last_summary": "Unity ha annunciato supporto immediato ai Meta VR Glasses con Unity 6.6 o superiore e Meta XR All-in-One SDK v207. Sono previsti workflow OpenXR, eye e hand tracking, ottimizzazioni di rendering, audio spaziale e anteprima delle interazioni nell'Editor.",
+      "sources": [
+        "https://unity.com/news/unity-delivers-day-one-support-for-meta-vr-glasses"
+      ]
+    },
+    {
       "event_id": "unity-codex-plugin",
       "first_seen": "2026-09-27",
       "last_seen": "2026-09-27",
@@ -123,6 +136,19 @@
       ]
     },
     {
+      "event_id": "microsoft-security-september-2026-agent-data-controls",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-microsoft-security-september-2026-agent-data-controls",
+      "last_edition": "2026-09-27",
+      "section": "radar",
+      "title": "Microsoft estende Purview ed Entra al traffico degli agenti AI",
+      "last_summary": "Microsoft ha annunciato nuovi controlli con Purview ed Entra Global Secure Access per applicare classificazione e policy al traffico di rete, inclusi i flussi agentici on-behalf-of. L'obiettivo è estendere la protezione dei dati anche all'uso di servizi AI non autorizzati.",
+      "sources": [
+        "https://www.microsoft.com/en-us/security/blog/2026/09/24/whats-new-in-microsoft-security-september-2026/"
+      ]
+    },
+    {
       "event_id": "microsoft-copilot-home-code-autopilot-2026",
       "first_seen": "2026-09-27",
       "last_seen": "2026-09-27",
@@ -185,6 +211,19 @@
       "last_summary": "Unity racconta il lavoro di Piktiv sul port mobile: ripensare navigazione, rendering e uso della memoria, misurando le prestazioni con scenari automatizzati. È un approfondimento tecnico, non l’annuncio di una nuova uscita di oggi.",
       "sources": [
         "https://unity.com/blog/optimizing-deep-rock-galactic-survivor-for-mobile"
+      ]
+    },
+    {
+      "event_id": "cursor-rollouts-security-review-2026-09-23",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "last_item_id": "2026-09-27-cursor-rollouts-security-review-2026-09-23",
+      "last_edition": "2026-09-27",
+      "section": "radar",
+      "title": "Cursor aggiunge bot per seguire i deploy e revisionare le PR",
+      "last_summary": "Cursor ha lanciato Rollouts e Security Review per i piani Teams ed Enterprise. Rollouts segue una modifica dalla pull request al deploy e segnala regressioni; Security Review aggiunge una revisione automatizzata delle modifiche.",
+      "sources": [
+        "https://cursor.com/changelog/rollouts-and-security-reviewer"
       ]
     },
     {
