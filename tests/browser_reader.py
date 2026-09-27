@@ -54,7 +54,7 @@ def main():
                 page = ctx.new_page(); errors = []; page.on('pageerror', lambda e: errors.append(str(e)))
                 dialog = page.locator('#reader-dialog')
                 page.goto(base); expect(page.locator('.card')).to_have_count(2)
-                arrow = page.locator('#'+first['id']+' .read-story-button')
+                arrow = page.locator('[id="'+first['id']+'"] .read-story-button')
                 arrow.scroll_into_view_if_needed(); before_url = page.url; before_y = page.evaluate('scrollY')
                 arrow.click(); expect(dialog).to_be_visible(); expect(dialog).to_have_attribute('data-content-status', 'full')
                 expect(page.locator('#reader-body')).to_contain_text('Ricercasolograndetesto')
@@ -62,7 +62,7 @@ def main():
                 assert 'article='+first['id'] in page.url
                 page.locator('#reader-back').click(); expect(dialog).to_be_hidden(); expect(page).to_have_url(before_url)
                 assert abs(page.evaluate('scrollY')-before_y) < 3
-                assert page.locator('#'+first['id']+' .read-story-button').evaluate('(b)=>b===document.activeElement')
+                assert page.locator('[id="'+first['id']+'"] .read-story-button').evaluate('(b)=>b===document.activeElement')
                 checks.append('arrow opens full Italian article; close restores URL, scroll and focus')
 
                 arrow.click(); expect(dialog).to_have_attribute('data-content-status', 'full')
