@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "item_id": "2026-09-28-empire-in-decay-stardock-publishing-2026-09-22",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "f520702f3376068f2ca978c43a4db88dc6605134557d7c944338189d26a598d6",
+  "written_at": "2026-09-28T07:33:50+02:00",
+  "verified_at": "2026-09-28T07:33:00+02:00",
+  "sources": [
+    {
+      "name": "Stardock · annuncio publishing",
+      "type": "official",
+      "url": "https://www.stardock.com/news/542465/stardock-to-publish-empire-in-decay-a-tactical-roguelike-deckbuilder-set-in-a-dark-fantasy-world"
+    },
+    {
+      "name": "Steam · Empire in Decay",
+      "type": "official",
+      "url": "https://store.steampowered.com/app/3345260/Empire_in_Decay/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Stardock entra come publisher",
+      "paragraphs": [
+        "Stardock ha annunciato il 22 settembre che pubblicherà Empire in Decay, roguelike deckbuilder sviluppato da Siesta Games e previsto su Steam all’inizio del 2027. Il progetto entra nel programma di publishing ampliato dell’azienda e mantiene Siesta Games come sviluppatore."
+      ],
+      "source_urls": [
+        "https://www.stardock.com/news/542465/stardock-to-publish-empire-in-decay-a-tactical-roguelike-deckbuilder-set-in-a-dark-fantasy-world"
+      ]
+    },
+    {
+      "heading": "Carte e tattica ispirata agli scacchi",
+      "paragraphs": [
+        "Il gioco combina deckbuilding e combattimenti a turni con movimento tattico ispirato agli scacchi, più di 200 carte e quattro fazioni giocabili. La pagina Steam aggiunge che unità e carte possono essere potenziate mentre si attraversano i distretti di Daandria e include già l’italiano tra le lingue dell’interfaccia. Non c’è ancora una data di uscita precisa, quindi per ora resta un progetto da monitorare."
+      ],
+      "source_urls": [
+        "https://www.stardock.com/news/542465/stardock-to-publish-empire-in-decay-a-tactical-roguelike-deckbuilder-set-in-a-dark-fantasy-world",
+        "https://store.steampowered.com/app/3345260/Empire_in_Decay/"
+      ]
+    }
+  ]
+}

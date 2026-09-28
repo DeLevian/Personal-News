@@ -1,8 +1,27 @@
 {
   "version": 2,
-  "latest": "2026-09-27",
-  "updated_at": "2026-09-27T18:39:42+02:00",
+  "latest": "2026-09-28",
+  "updated_at": "2026-09-28T07:34:20+02:00",
   "editions": [
+    {
+      "id": "2026-09-28",
+      "date": "2026-09-28",
+      "generated_at": "2026-09-28T07:34:20+02:00",
+      "title": "28 settembre · Champions, Dokkan e tattici da tenere d’occhio",
+      "kind": "daily",
+      "count": 7,
+      "counts": {
+        "main": 2,
+        "radar": 5,
+        "new": 6,
+        "update": 1,
+        "featured": 2
+      },
+      "categories": [
+        "gaming"
+      ],
+      "path": "data/daily/2026-09-28.json"
+    },
     {
       "id": "2026-09-27",
       "date": "2026-09-27",
@@ -49,5 +68,5 @@
       "path": "data/initial/2026-09-27.json"
     }
   ],
-  "content_revision": "91bc639da31db14d4c3c1499b20ae3355e80520bfa554339c74a0161bf69e062"
+  "content_revision": "8202f70da7cf6816bf1cec64d560f3ef65bc7c7f80750004a99c170a016d3181"
 }

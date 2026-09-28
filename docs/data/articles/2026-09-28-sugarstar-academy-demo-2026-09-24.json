@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "item_id": "2026-09-28-sugarstar-academy-demo-2026-09-24",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "0de71e0a55596d6f2ab7c8101d20c5f67c6f8a45620855a016aacfa7e5ea913c",
+  "written_at": "2026-09-28T07:33:50+02:00",
+  "verified_at": "2026-09-28T07:33:00+02:00",
+  "sources": [
+    {
+      "name": "Steam · Sugarstar Academy Demo",
+      "type": "official",
+      "url": "https://store.steampowered.com/app/5251750/Sugarstar_Academy_Demo/"
+    },
+    {
+      "name": "Steam · Sugarstar Academy",
+      "type": "official",
+      "url": "https://store.steampowered.com/app/5135350/Sugarstar_Academy/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Una demo già giocabile",
+      "paragraphs": [
+        "La demo gratuita di Sugarstar Academy è disponibile su Steam dal 24 settembre. Il gioco è un tactical deckbuilder ambientato in un’accademia magica: le carte personaggio diventano unità da schierare su un campo 5×5 e il giocatore vede in anticipo le celle in cui entreranno i nemici."
+      ],
+      "source_urls": [
+        "https://store.steampowered.com/app/5251750/Sugarstar_Academy_Demo/"
+      ]
+    },
+    {
+      "heading": "Come funziona il combattimento",
+      "paragraphs": [
+        "Ogni round permette di schierare al massimo una carta personaggio, mentre le Hero Skills possono essere usate senza consumare quello schieramento. Dopo la conferma, le due squadre combattono automaticamente secondo l’ordine d’azione: il peso della scelta è quindi soprattutto nella composizione del mazzo, nel posizionamento e nel timing. Steam indica la versione completa per il primo trimestre 2027."
+      ],
+      "source_urls": [
+        "https://store.steampowered.com/app/5251750/Sugarstar_Academy_Demo/",
+        "https://store.steampowered.com/app/5135350/Sugarstar_Academy/"
+      ]
+    }
+  ]
+}

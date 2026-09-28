@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "item_id": "2026-09-28-dokkan-global-campaign-2026-part-3-broadcast",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "dbf82c2824cd405932b0db216d2629e4d61e0b1e342a3e5a8de69cd7f602fc41",
+  "written_at": "2026-09-28T07:33:50+02:00",
+  "verified_at": "2026-09-28T07:33:00+02:00",
+  "sources": [
+    {
+      "name": "DOKKAN.FYI · avviso in-game Part 3",
+      "type": "reputable",
+      "url": "https://dokkan.fyi/news/107331"
+    },
+    {
+      "name": "DokkanStats · news index",
+      "type": "reputable",
+      "url": "https://dokkanstats.com/en/news/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "La diretta dedicata alla Parte 3",
+      "paragraphs": [
+        "Un avviso di gioco riprodotto da DOKKAN.FYI conferma un nuovo DOKKAN NOW! SPECIAL dedicato alla Parte 3 della Global Dokkan Campaign 2026. La trasmissione è programmata per il 29 settembre alle 03:00 PST secondo la fonte e dovrebbe presentare eventi, nuovi personaggi e altri contenuti collegati alla nuova fase della campagna.",
+        "Durante la diretta è prevista anche una challenge con Dragon Stones destinati ai giocatori. L’avviso specifica però che orario, ospiti e contenuti possono cambiare, quindi il programma definitivo va verificato al momento della trasmissione."
+      ],
+      "source_urls": [
+        "https://dokkan.fyi/news/107331",
+        "https://dokkanstats.com/en/news/"
+      ]
+    },
+    {
+      "heading": "Cosa è confermato e cosa no",
+      "paragraphs": [
+        "Al momento non sono stati verificati i nomi dei nuovi personaggi né l’elenco completo degli eventi della Parte 3. Eventuali leak o anticipazioni più dettagliate non vengono quindi trattati come fatti. La notizia entra oggi nelle News perché la diretta è ancora imminente e rappresenta il prossimo aggiornamento sostanziale della Global Campaign 2026."
+      ],
+      "source_urls": [
+        "https://dokkan.fyi/news/107331"
+      ]
+    }
+  ]
+}

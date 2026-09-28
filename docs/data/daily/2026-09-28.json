@@ -1,0 +1,251 @@
+{
+  "version": 2,
+  "date": "2026-09-28",
+  "generated_at": "2026-09-28T07:34:20+02:00",
+  "kind": "daily",
+  "title": "28 settembre · Champions, Dokkan e tattici da tenere d’occhio",
+  "summary": "Ricerca mirata Gaming: risultati dei Regionali di Francoforte e prossima diretta Dokkan in evidenza, più cinque Radar su tactical deckbuilder, strategy RPG, JRPG e metroidvania.",
+  "note": "Edizione creata da una ricerca mirata sui videogiochi richiesta dall’utente; non simula la discovery completa delle altre categorie del 28 settembre.",
+  "items": [
+    {
+      "id": "2026-09-28-champions-frankfurt-2026-day-two",
+      "event_id": "champions-frankfurt-2026-day-two",
+      "category": "gaming",
+      "status": "UPDATE",
+      "title": "Pokémon Champions: Eric Rios vince i Regionali di Francoforte",
+      "summary": "I Regionali di Francoforte si sono chiusi con la vittoria di Eric Rios su Sebastian Liu Li per 2–1. Bulbagarden riporta 1.129 partecipanti VGC; Mega Garchomp Z era presente nelle squadre di entrambi i finalisti, mentre Rios ha giocato anche Mega Raichu Y.",
+      "why_you_care": "Completa la notizia di ieri sul torneo e offre un primo dato concreto sul metagame M-C di Pokémon Champions.",
+      "published_date": "2026-09-28",
+      "event_date": "2026-09-27",
+      "verified_at": "2026-09-28T07:33:00+02:00",
+      "included_at": "2026-09-28T07:34:00+02:00",
+      "section": "main",
+      "featured": true,
+      "tags": [
+        "Pokémon Champions",
+        "VGC",
+        "Regionali",
+        "Mega Garchomp Z",
+        "competitivo"
+      ],
+      "sources": [
+        {
+          "name": "Bulbagarden · Frankfurt Regional results and teams",
+          "type": "reputable",
+          "url": "https://bulbagarden.net/threads/vgc-2027-frankfurt-regional-championships-results-and-teams.311683/"
+        },
+        {
+          "name": "Top Cut Explorer · Frankfurt 2027",
+          "type": "community",
+          "url": "https://cut-explorer.stalruth.dev/2027/regional-frankfurt"
+        }
+      ],
+      "image": null,
+      "delta": "Il torneo, ieri ancora in corso, si è concluso: Eric Rios ha vinto la finale 2–1 contro Sebastian Liu Li e sono ora disponibili risultati e composizioni delle squadre del Top Cut.",
+      "previous": {
+        "id": "2026-09-27-champions-frankfurt-2026-day-two",
+        "date": "2026-09-27"
+      }
+    },
+    {
+      "id": "2026-09-28-dokkan-global-campaign-2026-part-3-broadcast",
+      "event_id": "dokkan-global-campaign-2026-part-3-broadcast",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Dokkan Battle: diretta Part 3 della Global Campaign il 29 settembre",
+      "summary": "Un avviso di gioco conferma un nuovo DOKKAN NOW! SPECIAL dedicato alla Parte 3 della Global Dokkan Campaign 2026. La trasmissione è programmata per il 29 settembre alle 03:00 PST e presenterà eventi, nuovi personaggi e una challenge legata a Dragon Stones per i giocatori.",
+      "why_you_care": "Dokkan Battle è tra i giochi monitorati direttamente: la diretta anticiperà il prossimo blocco sostanziale di contenuti della campagna globale.",
+      "published_date": "2026-09-26",
+      "published_at": "2026-09-26T11:00:00+00:00",
+      "event_date": "2026-09-29",
+      "verified_at": "2026-09-28T07:33:00+02:00",
+      "included_at": "2026-09-28T07:34:00+02:00",
+      "section": "main",
+      "featured": true,
+      "tags": [
+        "Dokkan Battle",
+        "Global Campaign 2026",
+        "DOKKAN NOW",
+        "Part 3"
+      ],
+      "sources": [
+        {
+          "name": "DOKKAN.FYI · avviso in-game Part 3",
+          "type": "reputable",
+          "url": "https://dokkan.fyi/news/107331"
+        },
+        {
+          "name": "DokkanStats · news index",
+          "type": "reputable",
+          "url": "https://dokkanstats.com/en/news/"
+        }
+      ],
+      "image": null,
+      "recency_reason": "L’annuncio è del 26 settembre, ma la diretta è ancora imminente e costituisce il prossimo aggiornamento sostanziale della Global Campaign 2026."
+    },
+    {
+      "id": "2026-09-28-sugarstar-academy-demo-2026-09-24",
+      "event_id": "sugarstar-academy-demo-2026-09-24",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Sugarstar Academy: disponibile la demo del tactical deckbuilder 5×5",
+      "summary": "La demo gratuita di Sugarstar Academy è disponibile su Steam dal 24 settembre. Le carte diventano unità su una griglia 5×5, le celle di ingresso dei nemici sono visibili prima dello scontro e il risultato dell’auto-combat dipende da schieramento, deckbuilding e Hero Skills.",
+      "why_you_care": "È un incrocio diretto tra tattica a turni, deckbuilding e posizionamento ragionato, tre elementi centrali nei generi seguiti.",
+      "published_date": "2026-09-24",
+      "event_date": "2026-09-24",
+      "verified_at": "2026-09-28T07:33:00+02:00",
+      "included_at": "2026-09-28T07:34:00+02:00",
+      "section": "radar",
+      "featured": false,
+      "tags": [
+        "Sugarstar Academy",
+        "demo",
+        "tactical deckbuilder",
+        "turn-based tactics",
+        "Steam"
+      ],
+      "sources": [
+        {
+          "name": "Steam · Sugarstar Academy Demo",
+          "type": "official",
+          "url": "https://store.steampowered.com/app/5251750/Sugarstar_Academy_Demo/"
+        },
+        {
+          "name": "Steam · Sugarstar Academy",
+          "type": "official",
+          "url": "https://store.steampowered.com/app/5135350/Sugarstar_Academy/"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-28-empire-in-decay-stardock-publishing-2026-09-22",
+      "event_id": "empire-in-decay-stardock-publishing-2026-09-22",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Empire in Decay trova un publisher: Stardock lo porterà su Steam",
+      "summary": "Stardock pubblicherà Empire in Decay, roguelike deckbuilder di Siesta Games previsto su Steam all’inizio del 2027. Il progetto combina movimento tattico ispirato agli scacchi, oltre 200 carte e quattro fazioni giocabili; Steam elenca già l’interfaccia italiana.",
+      "why_you_care": "Roguelike deckbuilder e tattica a turni sono esattamente nel perimetro seguito, e il supporto italiano lo rende ancora più interessante da monitorare.",
+      "published_date": "2026-09-22",
+      "event_date": "2026-09-22",
+      "verified_at": "2026-09-28T07:33:00+02:00",
+      "included_at": "2026-09-28T07:34:00+02:00",
+      "section": "radar",
+      "featured": false,
+      "tags": [
+        "Empire in Decay",
+        "Stardock",
+        "roguelike deckbuilder",
+        "tattica",
+        "Steam"
+      ],
+      "sources": [
+        {
+          "name": "Stardock · annuncio publishing",
+          "type": "official",
+          "url": "https://www.stardock.com/news/542465/stardock-to-publish-empire-in-decay-a-tactical-roguelike-deckbuilder-set-in-a-dark-fantasy-world"
+        },
+        {
+          "name": "Steam · Empire in Decay",
+          "type": "official",
+          "url": "https://store.steampowered.com/app/3345260/Empire_in_Decay/"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-28-mercenaries-grace-announcement-2026-09-25",
+      "event_id": "mercenaries-grace-announcement-2026-09-25",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Mercenaries Grace: nuovo strategico a turni con alternanza unità per unità",
+      "summary": "RideonJapan ha annunciato Mercenaries Grace: Black Feather and the Golden Right Arm per PS5, Switch e PC. Il sistema di turni alterna una singola unità alleata e una nemica, imponendo di considerare una possibile risposta avversaria dopo ogni mossa.",
+      "why_you_care": "La struttura ricorda scacchi e shogi più del classico turno di squadra ed è un’idea di combat design particolarmente interessante per chi segue i tattici.",
+      "published_date": "2026-09-25",
+      "published_at": "2026-09-25T00:30:00-04:00",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-28T07:33:00+02:00",
+      "included_at": "2026-09-28T07:34:00+02:00",
+      "section": "radar",
+      "featured": false,
+      "tags": [
+        "Mercenaries Grace",
+        "strategy RPG",
+        "turn-based tactics",
+        "Switch",
+        "PC"
+      ],
+      "sources": [
+        {
+          "name": "Gematsu · annuncio Mercenaries Grace",
+          "type": "reputable",
+          "url": "https://www.gematsu.com/2026/09/mercenaries-grace-black-feather-and-the-golden-right-arm-announced-for-ps5-switch-and-pc"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-28-dragon-quest-monsters-withered-world-systems-2026-09-24",
+      "event_id": "dragon-quest-monsters-withered-world-systems-2026-09-24",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Dragon Quest Monsters: The Withered World mostra Quick Scouting e Joint Battles",
+      "summary": "Square Enix e TOSE hanno dettagliato nuovi sistemi di The Withered World: Quick Scouting permette di tentare il reclutamento senza entrare in battaglia, mentre le Joint Battles impiegano due party contro mostri enormi con risorse condivise e una Rage Gauge legata alle reazioni del boss.",
+      "why_you_care": "Aggiunge variazioni concrete alla gestione del party e al loop di reclutamento, due aspetti centrali per un JRPG basato su composizione e progressione.",
+      "published_date": "2026-09-24",
+      "published_at": "2026-09-24T18:00:00-04:00",
+      "event_date": "2026-09-24",
+      "verified_at": "2026-09-28T07:33:00+02:00",
+      "included_at": "2026-09-28T07:34:00+02:00",
+      "section": "radar",
+      "featured": false,
+      "tags": [
+        "Dragon Quest Monsters",
+        "JRPG",
+        "monster collecting",
+        "party building",
+        "Square Enix"
+      ],
+      "sources": [
+        {
+          "name": "Gematsu · nuovi sistemi di The Withered World",
+          "type": "reputable",
+          "url": "https://www.gematsu.com/2026/09/dragon-quest-monsters-the-withered-world-details-quick-scouting-scout-run-joint-battles-almira-and-new-monsters"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-28-nocturnal-ii-pc-release-date-2026-09-25",
+      "event_id": "nocturnal-ii-pc-release-date-2026-09-25",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Nocturnal II uscirà su PC il 10 novembre",
+      "summary": "Sunnyside Games ha fissato al 10 novembre l’uscita PC di Nocturnal II via Steam. Il metroidvania 2D propone una città interconnessa da riaprire con nuove abilità, grafica disegnata a mano ispirata all’architettura persiana e un sistema di movimento e combattimento rapido.",
+      "why_you_care": "I metroidvania sono tra i generi seguiti e qui c’è finalmente una data concreta per un titolo centrato su esplorazione e mobilità.",
+      "published_date": "2026-09-25",
+      "published_at": "2026-09-25T06:00:00-04:00",
+      "event_date": "2026-09-25",
+      "verified_at": "2026-09-28T07:33:00+02:00",
+      "included_at": "2026-09-28T07:34:00+02:00",
+      "section": "radar",
+      "featured": false,
+      "tags": [
+        "Nocturnal II",
+        "metroidvania",
+        "PC",
+        "Steam",
+        "Sunnyside Games"
+      ],
+      "sources": [
+        {
+          "name": "Gematsu · data PC di Nocturnal II",
+          "type": "reputable",
+          "url": "https://www.gematsu.com/2026/09/nocturnal-ii-for-pc-launches-november-10"
+        }
+      ],
+      "image": null
+    }
+  ],
+  "attention_today": null
+}

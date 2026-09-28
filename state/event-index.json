@@ -6,8 +6,8 @@
       "edition": "2026-09-27"
     },
     "champions-frankfurt-2026-day-two": {
-      "id": "2026-09-27-champions-frankfurt-2026-day-two",
-      "edition": "2026-09-27"
+      "id": "2026-09-28-champions-frankfurt-2026-day-two",
+      "edition": "2026-09-28"
     },
     "champions-global-challenge-2027-i-battles": {
       "id": "2026-09-27-champions-global-challenge-2027-i-battles",
@@ -29,6 +29,18 @@
       "id": "2026-09-27-deep-rock-survivor-mobile-optimization",
       "edition": "2026-09-27-initial"
     },
+    "dokkan-global-campaign-2026-part-3-broadcast": {
+      "id": "2026-09-28-dokkan-global-campaign-2026-part-3-broadcast",
+      "edition": "2026-09-28"
+    },
+    "dragon-quest-monsters-withered-world-systems-2026-09-24": {
+      "id": "2026-09-28-dragon-quest-monsters-withered-world-systems-2026-09-24",
+      "edition": "2026-09-28"
+    },
+    "empire-in-decay-stardock-publishing-2026-09-22": {
+      "id": "2026-09-28-empire-in-decay-stardock-publishing-2026-09-22",
+      "edition": "2026-09-28"
+    },
     "github-copilot-slack-teams-2026-09-25": {
       "id": "2026-09-27-github-copilot-slack-teams-2026-09-25",
       "edition": "2026-09-27"
@@ -40,6 +52,10 @@
     "gpt-6-sol-luna-launch": {
       "id": "2026-09-27-gpt-6-sol-luna-launch",
       "edition": "2026-09-27-initial"
+    },
+    "mercenaries-grace-announcement-2026-09-25": {
+      "id": "2026-09-28-mercenaries-grace-announcement-2026-09-25",
+      "edition": "2026-09-28"
     },
     "microsoft-copilot-home-code-autopilot-2026": {
       "id": "2026-09-27-microsoft-copilot-home-code-autopilot-2026",
@@ -53,6 +69,10 @@
       "id": "2026-09-27-minecraft-dungeons-ii-systems-podcast-2026-09-26",
       "edition": "2026-09-27"
     },
+    "nocturnal-ii-pc-release-date-2026-09-25": {
+      "id": "2026-09-28-nocturnal-ii-pc-release-date-2026-09-25",
+      "edition": "2026-09-28"
+    },
     "openai-gpt6-prompt-caching-2026-09-22": {
       "id": "2026-09-27-openai-gpt6-prompt-caching-2026-09-22",
       "edition": "2026-09-27"
@@ -64,6 +84,10 @@
     "pokemon-tcg-pocket-deluxe-pack-mega-2026": {
       "id": "2026-09-27-pokemon-tcg-pocket-deluxe-pack-mega-2026",
       "edition": "2026-09-27"
+    },
+    "sugarstar-academy-demo-2026-09-24": {
+      "id": "2026-09-28-sugarstar-academy-demo-2026-09-24",
+      "edition": "2026-09-28"
     },
     "terramaster-tos-7-0-1278": {
       "id": "2026-09-27-terramaster-tos-7-0-1278",

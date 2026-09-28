@@ -1,9 +1,104 @@
 {
   "version": 2,
-  "as_of": "2026-09-27",
+  "as_of": "2026-09-28",
   "retention_days": 30,
   "max_events": 200,
   "events": [
+    {
+      "event_id": "sugarstar-academy-demo-2026-09-24",
+      "first_seen": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "last_item_id": "2026-09-28-sugarstar-academy-demo-2026-09-24",
+      "last_edition": "2026-09-28",
+      "section": "radar",
+      "title": "Sugarstar Academy: disponibile la demo del tactical deckbuilder 5×5",
+      "last_summary": "La demo gratuita di Sugarstar Academy è disponibile su Steam dal 24 settembre. Le carte diventano unità su una griglia 5×5, le celle di ingresso dei nemici sono visibili prima dello scontro e il risultato dell’auto-combat dipende da schieramento, deckbuilding e Hero Skills.",
+      "sources": [
+        "https://store.steampowered.com/app/5251750/Sugarstar_Academy_Demo/",
+        "https://store.steampowered.com/app/5135350/Sugarstar_Academy/"
+      ]
+    },
+    {
+      "event_id": "nocturnal-ii-pc-release-date-2026-09-25",
+      "first_seen": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "last_item_id": "2026-09-28-nocturnal-ii-pc-release-date-2026-09-25",
+      "last_edition": "2026-09-28",
+      "section": "radar",
+      "title": "Nocturnal II uscirà su PC il 10 novembre",
+      "last_summary": "Sunnyside Games ha fissato al 10 novembre l’uscita PC di Nocturnal II via Steam. Il metroidvania 2D propone una città interconnessa da riaprire con nuove abilità, grafica disegnata a mano ispirata all’architettura persiana e un sistema di movimento e combattimento rapido.",
+      "sources": [
+        "https://www.gematsu.com/2026/09/nocturnal-ii-for-pc-launches-november-10"
+      ]
+    },
+    {
+      "event_id": "mercenaries-grace-announcement-2026-09-25",
+      "first_seen": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "last_item_id": "2026-09-28-mercenaries-grace-announcement-2026-09-25",
+      "last_edition": "2026-09-28",
+      "section": "radar",
+      "title": "Mercenaries Grace: nuovo strategico a turni con alternanza unità per unità",
+      "last_summary": "RideonJapan ha annunciato Mercenaries Grace: Black Feather and the Golden Right Arm per PS5, Switch e PC. Il sistema di turni alterna una singola unità alleata e una nemica, imponendo di considerare una possibile risposta avversaria dopo ogni mossa.",
+      "sources": [
+        "https://www.gematsu.com/2026/09/mercenaries-grace-black-feather-and-the-golden-right-arm-announced-for-ps5-switch-and-pc"
+      ]
+    },
+    {
+      "event_id": "empire-in-decay-stardock-publishing-2026-09-22",
+      "first_seen": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "last_item_id": "2026-09-28-empire-in-decay-stardock-publishing-2026-09-22",
+      "last_edition": "2026-09-28",
+      "section": "radar",
+      "title": "Empire in Decay trova un publisher: Stardock lo porterà su Steam",
+      "last_summary": "Stardock pubblicherà Empire in Decay, roguelike deckbuilder di Siesta Games previsto su Steam all’inizio del 2027. Il progetto combina movimento tattico ispirato agli scacchi, oltre 200 carte e quattro fazioni giocabili; Steam elenca già l’interfaccia italiana.",
+      "sources": [
+        "https://www.stardock.com/news/542465/stardock-to-publish-empire-in-decay-a-tactical-roguelike-deckbuilder-set-in-a-dark-fantasy-world",
+        "https://store.steampowered.com/app/3345260/Empire_in_Decay/"
+      ]
+    },
+    {
+      "event_id": "dragon-quest-monsters-withered-world-systems-2026-09-24",
+      "first_seen": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "last_item_id": "2026-09-28-dragon-quest-monsters-withered-world-systems-2026-09-24",
+      "last_edition": "2026-09-28",
+      "section": "radar",
+      "title": "Dragon Quest Monsters: The Withered World mostra Quick Scouting e Joint Battles",
+      "last_summary": "Square Enix e TOSE hanno dettagliato nuovi sistemi di The Withered World: Quick Scouting permette di tentare il reclutamento senza entrare in battaglia, mentre le Joint Battles impiegano due party contro mostri enormi con risorse condivise e una Rage Gauge legata alle reazioni del boss.",
+      "sources": [
+        "https://www.gematsu.com/2026/09/dragon-quest-monsters-the-withered-world-details-quick-scouting-scout-run-joint-battles-almira-and-new-monsters"
+      ]
+    },
+    {
+      "event_id": "dokkan-global-campaign-2026-part-3-broadcast",
+      "first_seen": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "last_item_id": "2026-09-28-dokkan-global-campaign-2026-part-3-broadcast",
+      "last_edition": "2026-09-28",
+      "section": "main",
+      "title": "Dokkan Battle: diretta Part 3 della Global Campaign il 29 settembre",
+      "last_summary": "Un avviso di gioco conferma un nuovo DOKKAN NOW! SPECIAL dedicato alla Parte 3 della Global Dokkan Campaign 2026. La trasmissione è programmata per il 29 settembre alle 03:00 PST e presenterà eventi, nuovi personaggi e una challenge legata a Dragon Stones per i giocatori.",
+      "sources": [
+        "https://dokkan.fyi/news/107331",
+        "https://dokkanstats.com/en/news/"
+      ]
+    },
+    {
+      "event_id": "champions-frankfurt-2026-day-two",
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-28",
+      "last_item_id": "2026-09-28-champions-frankfurt-2026-day-two",
+      "last_edition": "2026-09-28",
+      "section": "main",
+      "title": "Pokémon Champions: Eric Rios vince i Regionali di Francoforte",
+      "last_summary": "I Regionali di Francoforte si sono chiusi con la vittoria di Eric Rios su Sebastian Liu Li per 2–1. Bulbagarden riporta 1.129 partecipanti VGC; Mega Garchomp Z era presente nelle squadre di entrambi i finalisti, mentre Rios ha giocato anche Mega Raichu Y.",
+      "sources": [
+        "https://bulbagarden.net/threads/vgc-2027-frankfurt-regional-championships-results-and-teams.311683/",
+        "https://cut-explorer.stalruth.dev/2027/regional-frankfurt"
+      ]
+    },
     {
       "event_id": "xbox-september-28-october-2-2026-rpg-retro-lineup",
       "first_seen": "2026-09-27",
@@ -264,19 +359,6 @@
       "last_summary": "Sono in corso le lotte in doppio con regolamento M-C. La finestra di gioco termina il 28 settembre alle 03:59 italiane; chi completa almeno tre incontri riceve Archaludon. La notizia riguarda la fase di lotta: non implica che le iscrizioni siano ancora aperte.",
       "sources": [
         "https://www.serebii.net/news/2026/25-September-2026.shtml"
-      ]
-    },
-    {
-      "event_id": "champions-frankfurt-2026-day-two",
-      "first_seen": "2026-09-27",
-      "last_seen": "2026-09-27",
-      "last_item_id": "2026-09-27-champions-frankfurt-2026-day-two",
-      "last_edition": "2026-09-27",
-      "section": "main",
-      "title": "Pokémon Champions: oggi la seconda giornata dei Regionali di Francoforte",
-      "last_summary": "La seconda giornata dei Regionali di Francoforte comprende Pokémon Champions, oltre ai tornei TCG e GO. La diretta del videogioco è programmata dalle 09:00 italiane: la cronaca del 27 settembre rimanda all’hub delle trasmissioni.",
-      "sources": [
-        "https://www.serebii.net/news/2026/27-September-2026.shtml"
       ]
     },
     {
