@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "item_id": "2026-09-28-champions-frankfurt-2026-day-two",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "fc99230d14121cb5eab9988d57daba37696b692c4677f320fb506f286844172b",
+  "written_at": "2026-09-28T07:33:50+02:00",
+  "verified_at": "2026-09-28T07:33:00+02:00",
+  "sources": [
+    {
+      "name": "Bulbagarden · Frankfurt Regional results and teams",
+      "type": "reputable",
+      "url": "https://bulbagarden.net/threads/vgc-2027-frankfurt-regional-championships-results-and-teams.311683/"
+    },
+    {
+      "name": "Top Cut Explorer · Frankfurt 2027",
+      "type": "community",
+      "url": "https://cut-explorer.stalruth.dev/2027/regional-frankfurt"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Il risultato di Francoforte",
+      "paragraphs": [
+        "Il Regional Championship di Francoforte, disputato il 26 e 27 settembre con Pokémon Champions e regolamento M-C, si è chiuso con la vittoria di Eric Rios. Bulbagarden riporta 1.129 partecipanti nella divisione VGC e una finale vinta 2–1 contro Sebastian Liu Li. Il risultato completa la notizia pubblicata ieri, quando il torneo era ancora in corso.",
+        "Rios ha utilizzato una squadra con Mega Garchomp Z, Mega Raichu Y, Gholdengo, Volcarona, Incineroar e Rillaboom. Il Top Cut Explorer indipendente conferma la composizione della squadra e il primo posto ottenuto a Francoforte."
+      ],
+      "source_urls": [
+        "https://bulbagarden.net/threads/vgc-2027-frankfurt-regional-championships-results-and-teams.311683/",
+        "https://cut-explorer.stalruth.dev/2027/regional-frankfurt"
+      ]
+    },
+    {
+      "heading": "Cosa emerge dal metagame",
+      "paragraphs": [
+        "Mega Garchomp Z è comparso anche nella squadra del finalista Liu Li, mentre Bulbagarden segnala Rillaboom come il Pokémon più utilizzato nel Day 2 e Mega Raichu Y come la Mega Evoluzione più presente. È un primo segnale interessante sul formato M-C, ma resta lo snapshot di un singolo Regional e non una classifica definitiva del metagame."
+      ],
+      "source_urls": [
+        "https://bulbagarden.net/threads/vgc-2027-frankfurt-regional-championships-results-and-teams.311683/",
+        "https://cut-explorer.stalruth.dev/2027/regional-frankfurt"
+      ]
+    }
+  ]
+}

@@ -178,6 +178,69 @@
       "word_count": 167,
       "written_at": "2026-09-27T17:52:39+00:00",
       "sha256": "7bc3e8c113eda67e24a8479f11f0a6b515c0ab2cd501f276dab3040690af7cf1"
+    },
+    {
+      "item_id": "2026-09-28-champions-frankfurt-2026-day-two",
+      "edition": "2026-09-28",
+      "status": "full",
+      "path": "data/articles/2026-09-28-champions-frankfurt-2026-day-two.json",
+      "word_count": 147,
+      "written_at": "2026-09-28T07:33:50+02:00",
+      "sha256": "6a4a1d18a45ebd2fd2ab0f95b5ddd8480d6d48355d83f2754cbe57bbbfdfcb00"
+    },
+    {
+      "item_id": "2026-09-28-dokkan-global-campaign-2026-part-3-broadcast",
+      "edition": "2026-09-28",
+      "status": "full",
+      "path": "data/articles/2026-09-28-dokkan-global-campaign-2026-part-3-broadcast.json",
+      "word_count": 138,
+      "written_at": "2026-09-28T07:33:50+02:00",
+      "sha256": "2642ade7a2be765c4900785a87d8f565002db021dc30a1dd2a04e081f2c07bc4"
+    },
+    {
+      "item_id": "2026-09-28-dragon-quest-monsters-withered-world-systems-2026-09-24",
+      "edition": "2026-09-28",
+      "status": "full",
+      "path": "data/articles/2026-09-28-dragon-quest-monsters-withered-world-systems-2026-09-24.json",
+      "word_count": 120,
+      "written_at": "2026-09-28T07:33:50+02:00",
+      "sha256": "4751d542b5880f07181cfc013b501112f1143f4b1c58c8e3ee8788714ac7b5c0"
+    },
+    {
+      "item_id": "2026-09-28-empire-in-decay-stardock-publishing-2026-09-22",
+      "edition": "2026-09-28",
+      "status": "full",
+      "path": "data/articles/2026-09-28-empire-in-decay-stardock-publishing-2026-09-22.json",
+      "word_count": 103,
+      "written_at": "2026-09-28T07:33:50+02:00",
+      "sha256": "c493d31ab5643253f3260be8bb0c6580a1cd921763e88cc1f2847a72a5fb3427"
+    },
+    {
+      "item_id": "2026-09-28-mercenaries-grace-announcement-2026-09-25",
+      "edition": "2026-09-28",
+      "status": "full",
+      "path": "data/articles/2026-09-28-mercenaries-grace-announcement-2026-09-25.json",
+      "word_count": 108,
+      "written_at": "2026-09-28T07:33:50+02:00",
+      "sha256": "ee0a0d8d399c233a1edb3c36164ad726f456c8d8f4fee13f30e0c498d7c289c4"
+    },
+    {
+      "item_id": "2026-09-28-nocturnal-ii-pc-release-date-2026-09-25",
+      "edition": "2026-09-28",
+      "status": "full",
+      "path": "data/articles/2026-09-28-nocturnal-ii-pc-release-date-2026-09-25.json",
+      "word_count": 97,
+      "written_at": "2026-09-28T07:33:50+02:00",
+      "sha256": "32a4a5455ab1b7478822383a447dcd5a0fcd07ecd355a6b44d487c6f059c1298"
+    },
+    {
+      "item_id": "2026-09-28-sugarstar-academy-demo-2026-09-24",
+      "edition": "2026-09-28",
+      "status": "full",
+      "path": "data/articles/2026-09-28-sugarstar-academy-demo-2026-09-24.json",
+      "word_count": 105,
+      "written_at": "2026-09-28T07:33:50+02:00",
+      "sha256": "b1b89df7d334ca1ea8bf97c366a5efad0e9b63fe2af4840fbce0d83e72304573"
     }
   ]
 }

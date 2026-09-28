@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-09-28-dragon-quest-monsters-withered-world-systems-2026-09-24",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "257b6048c200517c53c1fd388a2ae0055fa31f1d12b4aa79154162e6bd2d479a",
+  "written_at": "2026-09-28T07:33:50+02:00",
+  "verified_at": "2026-09-28T07:33:00+02:00",
+  "sources": [
+    {
+      "name": "Gematsu · nuovi sistemi di The Withered World",
+      "type": "reputable",
+      "url": "https://www.gematsu.com/2026/09/dragon-quest-monsters-the-withered-world-details-quick-scouting-scout-run-joint-battles-almira-and-new-monsters"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Reclutamento più rapido",
+      "paragraphs": [
+        "Square Enix e TOSE hanno mostrato nuovi sistemi di Dragon Quest Monsters: The Withered World. Tra questi c’è Quick Scouting, che permette di tentare il reclutamento di un mostro incontrato nell’esplorazione lanciandogli del cibo, senza dover avviare ogni volta una battaglia e usare il metodo tradizionale di scouting."
+      ],
+      "source_urls": [
+        "https://www.gematsu.com/2026/09/dragon-quest-monsters-the-withered-world-details-quick-scouting-scout-run-joint-battles-almira-and-new-monsters"
+      ]
+    },
+    {
+      "heading": "Due party contro i mostri giganti",
+      "paragraphs": [
+        "Le Joint Battles fanno invece combattere due party contro mostri di grandi dimensioni. Il party principale e le riserve dispongono di indicatori HP e MP condivisi all’interno della rispettiva squadra e si possono impartire ordini anche alle riserve. I boss hanno inoltre azioni che alimentano una Rage Gauge; dopo la fase di rabbia possono diventare temporaneamente incapaci di muoversi. Sono dettagli di gameplay verificati, non l’annuncio di una nuova data di uscita."
+      ],
+      "source_urls": [
+        "https://www.gematsu.com/2026/09/dragon-quest-monsters-the-withered-world-details-quick-scouting-scout-run-joint-battles-almira-and-new-monsters"
+      ]
+    }
+  ]
+}
