@@ -26,7 +26,10 @@ def main():
         root = Path(tmp)/'repo'
         shutil.copytree(news.ROOT, root, ignore=shutil.ignore_patterns('.git', 'artifacts', '__pycache__'))
         manifest = news.load(root/'docs/data/index.json')
-        old = news.load(root/'docs'/manifest['editions'][0]['path'])['items'][0]
+        legacy = news.load(root/'config/ARTICLE_LEGACY.json')
+        old_id, receipt = next(iter(legacy['items'].items()))
+        old_edition = next(e for e in manifest['editions'] if e['id'] == receipt['edition'])
+        old = next(i for i in news.load(root/'docs'/old_edition['path'])['items'] if i['id'] == old_id)
         # An exact pre-reader payload is the only permitted summary fallback.
         (root/f'docs/data/articles/{old["id"]}.json').unlink(missing_ok=True)
         d = edition(main=1, radar=1)
@@ -91,10 +94,10 @@ def main():
                 page.go_forward(); expect(dialog).to_have_attribute('data-content-status', 'full')
                 checks.append('deep link/reload/back/forward and full-body search in edition and archive')
 
-                page.goto(base+'?date='+manifest['latest']+'&article='+old['id'])
+                page.goto(base+'?date='+receipt['edition']+'&article='+old['id'])
                 expect(dialog).to_have_attribute('data-content-status', 'legacy-summary')
                 expect(page.locator('#reader-status')).to_contain_text('scheda storica')
-                page.goto(base+'?date='+manifest['latest']+'#'+old['id'])
+                page.goto(base+'?date='+receipt['edition']+'#'+old['id'])
                 expect(page.locator('[id="'+old['id']+'"]')).to_be_visible(); expect(dialog).to_be_hidden()
                 checks.append('historical summary explicitly labelled; old hash links preserved')
 
