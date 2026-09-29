@@ -21,7 +21,13 @@
       "included_at": "2026-09-29T06:37:20+02:00",
       "section": "main",
       "featured": true,
-      "tags": ["Claude Sonnet 5.5", "Anthropic", "GitHub Copilot", "coding agent", "AI"],
+      "tags": [
+        "Claude Sonnet 5.5",
+        "Anthropic",
+        "GitHub Copilot",
+        "coding agent",
+        "AI"
+      ],
       "sources": [
         {
           "name": "Anthropic · Claude Sonnet 5.5",
@@ -34,7 +40,8 @@
           "url": "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"
         }
       ],
-      "image": null
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: lancio ufficiale del 28 settembre e disponibilità generale in GitHub Copilot, direttamente rilevanti per i workflow di coding agentico."
     },
     {
       "id": "2026-09-29-nvidia-open-agent-safety-platform-2026-09-28",
@@ -50,7 +57,13 @@
       "included_at": "2026-09-29T06:37:20+02:00",
       "section": "main",
       "featured": true,
-      "tags": ["NVIDIA", "OpenShell", "agent safety", "sandbox", "coding agents"],
+      "tags": [
+        "NVIDIA",
+        "OpenShell",
+        "agent safety",
+        "sandbox",
+        "coding agents"
+      ],
       "sources": [
         {
           "name": "NVIDIA · Open Agent Safety Platform",
@@ -63,7 +76,8 @@
           "url": "https://www.nvidia.com/en-us/ai/openshell/"
         }
       ],
-      "image": null
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: annuncio ufficiale del 28 settembre su sandbox, policy e controllo hardware/software degli agenti, sviluppo sostanziale per la sicurezza agentica."
     },
     {
       "id": "2026-09-29-witcher-3-remastered-launch-2026-09-29",
@@ -79,7 +93,13 @@
       "included_at": "2026-09-29T06:37:20+02:00",
       "section": "main",
       "featured": true,
-      "tags": ["The Witcher 3", "Remastered", "Nintendo Switch 2", "RPG", "upgrade gratuito"],
+      "tags": [
+        "The Witcher 3",
+        "Remastered",
+        "Nintendo Switch 2",
+        "RPG",
+        "upgrade gratuito"
+      ],
       "sources": [
         {
           "name": "The Witcher · novità di Wild Hunt Remastered",
@@ -92,7 +112,8 @@
           "url": "https://www.nintendo.com/es-es/Juegos/Juegos-de-Nintendo-Switch-2/The-Witcher-3-Wild-Hunt-Remastered-3182096.html"
         }
       ],
-      "image": null
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: pagina ufficiale del 28 settembre pubblicata alla vigilia dell’uscita del 29 settembre; release odierna rilevante per RPG e Nintendo Switch 2."
     },
     {
       "id": "2026-09-29-minecraft-sift-dimension-2027-announcement",
@@ -108,7 +129,13 @@
       "included_at": "2026-09-29T06:37:20+02:00",
       "section": "radar",
       "featured": false,
-      "tags": ["Minecraft", "Sift", "Minecraft Dungeons II", "nuova dimensione", "2027"],
+      "tags": [
+        "Minecraft",
+        "Sift",
+        "Minecraft Dungeons II",
+        "nuova dimensione",
+        "2027"
+      ],
       "sources": [
         {
           "name": "Xbox Wire · Minecraft Sift",
@@ -137,7 +164,13 @@
       "included_at": "2026-09-29T06:37:20+02:00",
       "section": "radar",
       "featured": false,
-      "tags": ["Samsung", "One UI 9", "Galaxy S25 Ultra", "Android", "aggiornamento"],
+      "tags": [
+        "Samsung",
+        "One UI 9",
+        "Galaxy S25 Ultra",
+        "Android",
+        "aggiornamento"
+      ],
       "sources": [
         {
           "name": "The Economic Times · One UI 9 rollout Galaxy S25",
