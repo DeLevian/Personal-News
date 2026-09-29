@@ -5,7 +5,7 @@ on:
     branches: [chatgpt/personal-news-2026-09-29]
     paths: [.github/workflows/daily-validate-2026-09-29.yml]
 permissions:
-  contents: read
+  contents: write
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: true
       - name: Install dependencies
         run: |
           python -m pip install -r requirements-test.txt
@@ -45,3 +45,23 @@ jobs:
           name: daily-generated-2026-09-29
           path: generated/
           retention-days: 1
+      - name: Commit generated state to this branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = 'refs/heads/chatgpt/personal-news-2026-09-29'
+          cp generated/config/article.schema.json config/article.schema.json
+          cp generated/config/edition.schema.json config/edition.schema.json
+          cp generated/docs/data/article-index.json docs/data/article-index.json
+          cp generated/docs/data/index.json docs/data/index.json
+          cp generated/docs/data/search.json docs/data/search.json
+          cp generated/state/seen.json state/seen.json
+          cp generated/state/event-index.json state/event-index.json
+          cp generated/state/discovery-latest.json state/discovery-latest.json
+          rm -f .run/editorial-audit-2026-09-29.json
+          git add config/article.schema.json config/edition.schema.json docs/data/article-index.json docs/data/index.json docs/data/search.json state/seen.json state/event-index.json state/discovery-latest.json .run/editorial-audit-2026-09-29.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'DeLevian'
+          git config user.email '152444661+DeLevian@users.noreply.github.com'
+          git commit -m 'Publish generated state for September 29 edition'
+          git push origin HEAD:refs/heads/chatgpt/personal-news-2026-09-29
