@@ -2,6 +2,66 @@
   "version": 2,
   "items": [
     {
+      "id": "2026-09-29-claude-sonnet-5-5-launch-copilot",
+      "event_id": "claude-sonnet-5-5-launch-copilot",
+      "edition": "2026-09-29",
+      "category": "ai",
+      "section": "main",
+      "status": "NEW",
+      "title": "Claude Sonnet 5.5: più veloce, meno costoso e già disponibile in GitHub Copilot",
+      "published_date": "2026-09-28",
+      "published_at": null,
+      "search_text": "Claude Sonnet 5.5: più veloce, meno costoso e già disponibile in GitHub Copilot Anthropic ha presentato Claude Sonnet 5.5 come aggiornamento della linea Sonnet per coding e lavoro quotidiano, dichiarando oltre il 30% di velocità in più rispetto a Sonnet 5 e costi inferiori fino al 30% per molti carichi. GitHub lo ha reso disponibile in Copilot su diversi piani e superfici, con rollout graduale. Rilevante per i workflow di coding agentico: oltre alle capacità dichiarate da Anthropic, l’arrivo immediato in GitHub Copilot consente un confronto pratico senza una nuova integrazione API. Claude Sonnet 5.5 Anthropic GitHub Copilot coding agent AI Anthropic · Claude Sonnet 5.5 GitHub Changelog · Claude Sonnet 5.5 in GitHub Copilot Che cosa cambia con Sonnet 5.5 Anthropic presenta Claude Sonnet 5.5 come il nuovo modello della linea Sonnet per coding e lavoro quotidiano. Secondo i dati del produttore, il modello genera oltre il 30% più velocemente di Sonnet 5 e può ridurre fino al 30% il costo di molti carichi, pur mantenendo una fascia di utilizzo distinta da Opus 5.5. L’obiettivo dichiarato è migliorare soprattutto compiti ben definiti come correzione di bug, scrittura tecnica e produzione di documenti strutturati. La disponibilità pratica conta quanto il modello GitHub ha annunciato nello stesso giorno la disponibilità generale di Claude Sonnet 5.5 in Copilot per i piani Pro, Pro+, Max, Business ed Enterprise. Il modello viene distribuito gradualmente nelle principali superfici Copilot, fra cui VS Code, Visual Studio, CLI, coding agent, app Copilot, github.com, JetBrains, Xcode ed Eclipse. Per le organizzazioni gestite resta rilevante la policy che abilita o limita i modelli utilizzabili. Come interpretare prestazioni e convenienza Le percentuali di velocità, costo e qualità pubblicate da Anthropic sono risultati del fornitore e non garantiscono lo stesso vantaggio su ogni repository o attività. Per confrontare Sonnet 5.5 con Opus, GPT o altri modelli conviene usare gli stessi task, strumenti e criteri di verifica, misurando iterazioni, latenza e consumo reale. L’arrivo immediato in GitHub Copilot rende comunque il confronto più semplice perché il modello può essere provato senza costruire un’integrazione API separata."
+    },
+    {
+      "id": "2026-09-29-nvidia-open-agent-safety-platform-2026-09-28",
+      "event_id": "nvidia-open-agent-safety-platform-2026-09-28",
+      "edition": "2026-09-29",
+      "category": "agents",
+      "section": "main",
+      "status": "NEW",
+      "title": "NVIDIA lancia una piattaforma aperta per isolare e controllare gli agenti AI",
+      "published_date": "2026-09-28",
+      "published_at": null,
+      "search_text": "NVIDIA lancia una piattaforma aperta per isolare e controllare gli agenti AI NVIDIA ha annunciato Open Agent Safety Platform, che combina il runtime open source OpenShell con il sistema di riferimento Sentry. OpenShell isola gli agenti in sandbox con policy esplicite per file, rete e strumenti; Sentry sposta parte del controllo su DPU BlueField-4 e può intervenire fuori banda rispetto all’agente. È un’evoluzione concreta della sicurezza agentica: separa capacità dell’agente, permessi e monitoraggio, un modello utile per coding agent e automazioni che operano su file, rete e strumenti reali. NVIDIA OpenShell agent safety sandbox coding agents NVIDIA · Open Agent Safety Platform NVIDIA · OpenShell Una barriera separata dall’agente NVIDIA ha annunciato Open Agent Safety Platform per introdurre controlli di sicurezza che non dipendono dalle sole istruzioni date all’agente. Il componente centrale, OpenShell, è un runtime open source che esegue gli agenti in sandbox e applica policy esplicite a file, rete e strumenti. L’idea è ridurre il rischio che un agente con ampie capacità trasformi una richiesta imprevista o un contenuto malevolo in accesso non autorizzato alle risorse dell’host. OpenShell controlla il perimetro operativo La pagina tecnica di OpenShell descrive sandbox isolate, regole di rete e un gateway che media le comunicazioni esterne. Le policy possono definire quali percorsi, domini o strumenti sono consentiti invece di lasciare all’agente accesso diretto all’intero ambiente. NVIDIA presenta inoltre un meccanismo di verifica delle policy prima dell’esecuzione. Questi controlli non sostituiscono la revisione del codice o la gestione delle credenziali, ma aggiungono un confine tecnico separato dal comportamento del modello. Sentry porta il controllo fuori banda NVIDIA affianca a OpenShell il sistema di riferimento Sentry, basato su BlueField-4 DPU, per osservare e intervenire sull’attività degli agenti fuori dal percorso di esecuzione principale. Il produttore dichiara che Sentry può isolare o mettere in quarantena un agente in tempi molto rapidi quando rileva una violazione. Per chi costruisce coding agent e automazioni, il punto interessante è architetturale: capacità, autorizzazioni e monitoraggio vengono trattati come livelli distinti anziché affidati a un unico prompt o processo."
+    },
+    {
+      "id": "2026-09-29-witcher-3-remastered-launch-2026-09-29",
+      "event_id": "witcher-3-remastered-launch-2026-09-29",
+      "edition": "2026-09-29",
+      "category": "gaming",
+      "section": "main",
+      "status": "NEW",
+      "title": "The Witcher 3 Remastered esce oggi: upgrade gratuito anche su Switch 2",
+      "published_date": "2026-09-28",
+      "published_at": null,
+      "search_text": "The Witcher 3 Remastered esce oggi: upgrade gratuito anche su Switch 2 CD PROJEKT RED pubblica il 29 settembre The Witcher 3: Wild Hunt Remastered su PC, PS5, Xbox Series X|S e Nintendo Switch 2. I possessori della versione originale sulla stessa piattaforma possono ottenere l’upgrade gratuitamente; la versione Switch 2 include le due espansioni principali e varie migliorie tecniche e di controllo. È una release importante per chi segue RPG e Switch 2: porta un titolo di riferimento su hardware attuale e mantiene un percorso di upgrade gratuito per chi possiede già il gioco sulla stessa piattaforma. The Witcher 3 Remastered Nintendo Switch 2 RPG upgrade gratuito The Witcher · novità di Wild Hunt Remastered Nintendo · The Witcher 3 Wild Hunt Remastered Una nuova edizione per le piattaforme attuali CD PROJEKT RED pubblica il 29 settembre The Witcher 3: Wild Hunt Remastered su PC, PlayStation 5, Xbox Series X|S e Nintendo Switch 2. La versione aggiornata raccoglie il gioco e le espansioni principali e introduce modifiche tecniche e di qualità della vita pensate per l’hardware attuale. La pagina ufficiale del giorno precedente riepiloga le novità senza presentare il progetto come un nuovo capitolo: resta The Witcher 3, aggiornato e riconfezionato per le piattaforme moderne. L’upgrade è gratuito per chi possiede già il gioco Il punto più favorevole per chi ha già The Witcher 3 è la politica di aggiornamento: CD PROJEKT RED indica un upgrade gratuito sulla stessa piattaforma supportata. Nintendo conferma lo stesso principio per la versione Switch 2, destinata ai possessori dell’edizione originale Switch oltre che ai nuovi acquirenti. Questo evita di trattare Remastered come un acquisto obbligatorio separato, anche se disponibilità e modalità concrete dipendono dalla piattaforma e dalla versione posseduta. Per Switch 2 interessa soprattutto la versione nativa La scheda Nintendo descrive un’edizione nativa per Switch 2 con miglioramenti visivi, controlli e contenuti delle espansioni inclusi. Per chi usa più piattaforme, la notizia è rilevante soprattutto perché porta un RPG molto ampio sull’hardware Nintendo più recente senza perdere il percorso di upgrade. Le pagine ufficiali non sostituiscono però una prova indipendente di frame rate, autonomia o qualità dell’immagine: le prestazioni reali vanno valutate separatamente dalle specifiche promozionali."
+    },
+    {
+      "id": "2026-09-29-minecraft-sift-dimension-2027-announcement",
+      "event_id": "minecraft-sift-dimension-2027-announcement",
+      "edition": "2026-09-29",
+      "category": "gaming",
+      "section": "radar",
+      "status": "NEW",
+      "title": "Minecraft prepara Sift, la prima nuova dimensione da oltre 14 anni",
+      "published_date": "2026-09-26",
+      "published_at": null,
+      "search_text": "Minecraft prepara Sift, la prima nuova dimensione da oltre 14 anni Mojang ha mostrato Sift, una nuova dimensione che debutta prima in Minecraft Dungeons II e arriverà anche nel Minecraft principale nel 2027. L’area introduce regole proprie, biomi e creature inedite ed è collegata all’uscita di Dungeons II del 29 settembre. È un cambiamento raro per l’ecosistema Minecraft e un esempio interessante di contenuto che nasce in uno spin-off per poi essere portato nel gioco principale. Minecraft Sift Minecraft Dungeons II nuova dimensione 2027 Xbox Wire · Minecraft Sift Minecraft · Minecraft Live September 2026 recap Sift nasce in Dungeons II Mojang ha presentato Sift come una dimensione inedita collegata a Minecraft Dungeons II. L’area introduce biomi, creature e regole proprie e fa parte del nuovo mondo interconnesso dello spin-off, in uscita il 29 settembre. Non è quindi soltanto una mappa aggiuntiva del gioco principale: il primo utilizzo concreto di Sift avviene in Dungeons II, dove può essere esplorata nel contesto dell’action RPG. Poi arriverà anche nel Minecraft principale Il passaggio più insolito è la conferma che Sift verrà portata anche in Minecraft nel 2027. Xbox Wire la descrive come la prima nuova dimensione aggiunta al gioco principale da oltre quattordici anni. Il recap ufficiale di Minecraft Live ribadisce il ruolo della nuova area nell’ecosistema. Mancano ancora tutti i dettagli necessari per sapere forma finale, data precisa e differenze rispetto alla versione di Dungeons II, quindi è corretto trattarla come un annuncio da seguire e non come contenuto già disponibile."
+    },
+    {
+      "id": "2026-09-29-samsung-one-ui-9-galaxy-s25-rollout",
+      "event_id": "samsung-one-ui-9-galaxy-s25-rollout",
+      "edition": "2026-09-29",
+      "category": "devices",
+      "section": "radar",
+      "status": "NEW",
+      "title": "One UI 9 arriva sulla serie Galaxy S25, ma il rollout verificato è ancora regionale",
+      "published_date": "2026-09-29",
+      "published_at": null,
+      "search_text": "One UI 9 arriva sulla serie Galaxy S25, ma il rollout verificato è ancora regionale Il rollout stabile di One UI 9 si sta estendendo alla famiglia Galaxy S25; le segnalazioni più recenti verificano l’aggiornamento in Corea del Sud anche per S25 Edge e S25 FE, dopo S25, S25+ e S25 Ultra. Samsung ha già avviato la distribuzione globale di One UI 9, ma non c’è ancora una conferma equivalente dell’OTA italiano per S25 Ultra. Rilevante per chi usa Galaxy S25 Ultra: il rollout della famiglia è iniziato, ma la disponibilità in altri mercati non va confusa con quella effettiva in Italia. Samsung One UI 9 Galaxy S25 Ultra Android aggiornamento The Economic Times · One UI 9 rollout Galaxy S25 Samsung Italia · rilascio ufficiale One UI 9 La serie S25 entra nel rollout stabile Le segnalazioni più recenti indicano che il rilascio stabile di One UI 9 si sta estendendo alla famiglia Galaxy S25. In Corea del Sud risultano coinvolti anche Galaxy S25 Edge e S25 FE, dopo S25, S25+ e S25 Ultra. Samsung aveva già annunciato l’avvio della distribuzione ufficiale di One UI 9 su un numero crescente di dispositivi Galaxy, quindi il passaggio della serie S25 rientra in un rollout progressivo e non in un unico rilascio mondiale simultaneo. Per un S25 Ultra italiano conta la regione La disponibilità verificata in un mercato non garantisce che lo stesso pacchetto sia già offerto via OTA in Italia. Samsung specifica che tempi e funzioni possono variare in base a modello, paese e operatore. Per questo la notizia è utile come segnale che il rollout della famiglia S25 è iniziato, ma non come conferma che un Galaxy S25 Ultra italiano debba già mostrare l’aggiornamento. La verifica corretta resta quella sul dispositivo e sui canali Samsung della propria regione."
+    },
+    {
       "id": "2026-09-28-champions-frankfurt-2026-day-two",
       "event_id": "champions-frankfurt-2026-day-two",
       "edition": "2026-09-28",
