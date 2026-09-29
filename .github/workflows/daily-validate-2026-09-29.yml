@@ -1,4 +1,5 @@
 name: Validate daily Personal News 2026-09-29
+# rerun after recency fix
 on:
   push:
     branches: [chatgpt/personal-news-2026-09-29]
