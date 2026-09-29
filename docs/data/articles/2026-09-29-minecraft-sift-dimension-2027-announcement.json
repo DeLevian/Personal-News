@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "item_id": "2026-09-29-minecraft-sift-dimension-2027-announcement",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "0a4d9123c0821d53d394012a3621d177a10aab82a989fd30e5205d807fefbf1c",
+  "written_at": "2026-09-29T06:37:25+02:00",
+  "verified_at": "2026-09-29T06:37:00+02:00",
+  "sources": [
+    {"name":"Xbox Wire · Minecraft Sift","type":"official","url":"https://news.xbox.com/en-us/2026/09/26/minecraft-new-dimension-sift-dungeons-2/"},
+    {"name":"Minecraft · Minecraft Live September 2026 recap","type":"official","url":"https://www.minecraft.net/ja-jp/article/mclive_sept2026_recap-jp"}
+  ],
+  "sections": [
+    {
+      "heading": "Sift nasce in Dungeons II",
+      "paragraphs": [
+        "Mojang ha presentato Sift come una dimensione inedita collegata a Minecraft Dungeons II. L’area introduce biomi, creature e regole proprie e fa parte del nuovo mondo interconnesso dello spin-off, in uscita il 29 settembre. Non è quindi soltanto una mappa aggiuntiva del gioco principale: il primo utilizzo concreto di Sift avviene in Dungeons II, dove può essere esplorata nel contesto dell’action RPG."
+      ],
+      "source_urls": ["https://news.xbox.com/en-us/2026/09/26/minecraft-new-dimension-sift-dungeons-2/"]
+    },
+    {
+      "heading": "Poi arriverà anche nel Minecraft principale",
+      "paragraphs": [
+        "Il passaggio più insolito è la conferma che Sift verrà portata anche in Minecraft nel 2027. Xbox Wire la descrive come la prima nuova dimensione aggiunta al gioco principale da oltre quattordici anni. Il recap ufficiale di Minecraft Live ribadisce il ruolo della nuova area nell’ecosistema. Mancano ancora tutti i dettagli necessari per sapere forma finale, data precisa e differenze rispetto alla versione di Dungeons II, quindi è corretto trattarla come un annuncio da seguire e non come contenuto già disponibile."
+      ],
+      "source_urls": ["https://news.xbox.com/en-us/2026/09/26/minecraft-new-dimension-sift-dungeons-2/","https://www.minecraft.net/ja-jp/article/mclive_sept2026_recap-jp"]
+    }
+  ]
+}

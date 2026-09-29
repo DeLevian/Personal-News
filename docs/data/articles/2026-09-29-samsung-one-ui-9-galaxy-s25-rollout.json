@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "item_id": "2026-09-29-samsung-one-ui-9-galaxy-s25-rollout",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "8c8efdf25db7f9951e42b7f542eab326a7656aed1646104332b8e4d5ea6ac389",
+  "written_at": "2026-09-29T06:37:25+02:00",
+  "verified_at": "2026-09-29T06:37:00+02:00",
+  "sources": [
+    {"name":"The Economic Times · One UI 9 rollout Galaxy S25","type":"reputable","url":"https://m.economictimes.com/news/new-updates/one-ui-9-0-stable-update-rolls-out-to-galaxy-s25-edge-and-s25-fe-check-new-features-eligible-devices-and-how-to-update/articleshow/134543607.cms"},
+    {"name":"Samsung Italia · rilascio ufficiale One UI 9","type":"official","url":"https://news.samsung.com/it/samsung-avvia-il-rilascio-ufficiale-di-one-ui-9-portando-le-ultime-esperienze-galaxy-su-un-numero-ancora-maggiore-di-dispositivi"}
+  ],
+  "sections": [
+    {
+      "heading": "La serie S25 entra nel rollout stabile",
+      "paragraphs": [
+        "Le segnalazioni più recenti indicano che il rilascio stabile di One UI 9 si sta estendendo alla famiglia Galaxy S25. In Corea del Sud risultano coinvolti anche Galaxy S25 Edge e S25 FE, dopo S25, S25+ e S25 Ultra. Samsung aveva già annunciato l’avvio della distribuzione ufficiale di One UI 9 su un numero crescente di dispositivi Galaxy, quindi il passaggio della serie S25 rientra in un rollout progressivo e non in un unico rilascio mondiale simultaneo."
+      ],
+      "source_urls": ["https://m.economictimes.com/news/new-updates/one-ui-9-0-stable-update-rolls-out-to-galaxy-s25-edge-and-s25-fe-check-new-features-eligible-devices-and-how-to-update/articleshow/134543607.cms","https://news.samsung.com/it/samsung-avvia-il-rilascio-ufficiale-di-one-ui-9-portando-le-ultime-esperienze-galaxy-su-un-numero-ancora-maggiore-di-dispositivi"]
+    },
+    {
+      "heading": "Per un S25 Ultra italiano conta la regione",
+      "paragraphs": [
+        "La disponibilità verificata in un mercato non garantisce che lo stesso pacchetto sia già offerto via OTA in Italia. Samsung specifica che tempi e funzioni possono variare in base a modello, paese e operatore. Per questo la notizia è utile come segnale che il rollout della famiglia S25 è iniziato, ma non come conferma che un Galaxy S25 Ultra italiano debba già mostrare l’aggiornamento. La verifica corretta resta quella sul dispositivo e sui canali Samsung della propria regione."
+      ],
+      "source_urls": ["https://news.samsung.com/it/samsung-avvia-il-rilascio-ufficiale-di-one-ui-9-portando-le-ultime-esperienze-galaxy-su-un-numero-ancora-maggiore-di-dispositivi","https://m.economictimes.com/news/new-updates/one-ui-9-0-stable-update-rolls-out-to-galaxy-s25-edge-and-s25-fe-check-new-features-eligible-devices-and-how-to-update/articleshow/134543607.cms"]
+    }
+  ]
+}

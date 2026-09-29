@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-09-29-witcher-3-remastered-launch-2026-09-29",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "1238c1756d53aede3db67b96e9e8b8db41e25eb4d88e3fb8791ac20edb6d0858",
+  "written_at": "2026-09-29T06:37:25+02:00",
+  "verified_at": "2026-09-29T06:37:00+02:00",
+  "sources": [
+    {"name":"The Witcher · novità di Wild Hunt Remastered","type":"official","url":"https://www.thewitcher.com/es/es/news/52047/echa-un-vistazo-a-las-novedades-de-the-witcher-3-wild-hunt-remastered"},
+    {"name":"Nintendo · The Witcher 3 Wild Hunt Remastered","type":"official","url":"https://www.nintendo.com/es-es/Juegos/Juegos-de-Nintendo-Switch-2/The-Witcher-3-Wild-Hunt-Remastered-3182096.html"}
+  ],
+  "sections": [
+    {
+      "heading": "Una nuova edizione per le piattaforme attuali",
+      "paragraphs": [
+        "CD PROJEKT RED pubblica il 29 settembre The Witcher 3: Wild Hunt Remastered su PC, PlayStation 5, Xbox Series X|S e Nintendo Switch 2. La versione aggiornata raccoglie il gioco e le espansioni principali e introduce modifiche tecniche e di qualità della vita pensate per l’hardware attuale. La pagina ufficiale del giorno precedente riepiloga le novità senza presentare il progetto come un nuovo capitolo: resta The Witcher 3, aggiornato e riconfezionato per le piattaforme moderne."
+      ],
+      "source_urls": ["https://www.thewitcher.com/es/es/news/52047/echa-un-vistazo-a-las-novedades-de-the-witcher-3-wild-hunt-remastered"]
+    },
+    {
+      "heading": "L’upgrade è gratuito per chi possiede già il gioco",
+      "paragraphs": [
+        "Il punto più favorevole per chi ha già The Witcher 3 è la politica di aggiornamento: CD PROJEKT RED indica un upgrade gratuito sulla stessa piattaforma supportata. Nintendo conferma lo stesso principio per la versione Switch 2, destinata ai possessori dell’edizione originale Switch oltre che ai nuovi acquirenti. Questo evita di trattare Remastered come un acquisto obbligatorio separato, anche se disponibilità e modalità concrete dipendono dalla piattaforma e dalla versione posseduta."
+      ],
+      "source_urls": ["https://www.thewitcher.com/es/es/news/52047/echa-un-vistazo-a-las-novedades-de-the-witcher-3-wild-hunt-remastered","https://www.nintendo.com/es-es/Juegos/Juegos-de-Nintendo-Switch-2/The-Witcher-3-Wild-Hunt-Remastered-3182096.html"]
+    },
+    {
+      "heading": "Per Switch 2 interessa soprattutto la versione nativa",
+      "paragraphs": [
+        "La scheda Nintendo descrive un’edizione nativa per Switch 2 con miglioramenti visivi, controlli e contenuti delle espansioni inclusi. Per chi usa più piattaforme, la notizia è rilevante soprattutto perché porta un RPG molto ampio sull’hardware Nintendo più recente senza perdere il percorso di upgrade. Le pagine ufficiali non sostituiscono però una prova indipendente di frame rate, autonomia o qualità dell’immagine: le prestazioni reali vanno valutate separatamente dalle specifiche promozionali."
+      ],
+      "source_urls": ["https://www.nintendo.com/es-es/Juegos/Juegos-de-Nintendo-Switch-2/The-Witcher-3-Wild-Hunt-Remastered-3182096.html"]
+    }
+  ]
+}

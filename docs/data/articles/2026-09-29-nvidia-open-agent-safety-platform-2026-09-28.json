@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-09-29-nvidia-open-agent-safety-platform-2026-09-28",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "0cda85f7343f5dd6247dc896efacfcbc73fd076bfc5949c23903363182947457",
+  "written_at": "2026-09-29T06:37:25+02:00",
+  "verified_at": "2026-09-29T06:37:00+02:00",
+  "sources": [
+    {"name":"NVIDIA · Open Agent Safety Platform","type":"official","url":"https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx"},
+    {"name":"NVIDIA · OpenShell","type":"official","url":"https://www.nvidia.com/en-us/ai/openshell/"}
+  ],
+  "sections": [
+    {
+      "heading": "Una barriera separata dall’agente",
+      "paragraphs": [
+        "NVIDIA ha annunciato Open Agent Safety Platform per introdurre controlli di sicurezza che non dipendono dalle sole istruzioni date all’agente. Il componente centrale, OpenShell, è un runtime open source che esegue gli agenti in sandbox e applica policy esplicite a file, rete e strumenti. L’idea è ridurre il rischio che un agente con ampie capacità trasformi una richiesta imprevista o un contenuto malevolo in accesso non autorizzato alle risorse dell’host."
+      ],
+      "source_urls": ["https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx","https://www.nvidia.com/en-us/ai/openshell/"]
+    },
+    {
+      "heading": "OpenShell controlla il perimetro operativo",
+      "paragraphs": [
+        "La pagina tecnica di OpenShell descrive sandbox isolate, regole di rete e un gateway che media le comunicazioni esterne. Le policy possono definire quali percorsi, domini o strumenti sono consentiti invece di lasciare all’agente accesso diretto all’intero ambiente. NVIDIA presenta inoltre un meccanismo di verifica delle policy prima dell’esecuzione. Questi controlli non sostituiscono la revisione del codice o la gestione delle credenziali, ma aggiungono un confine tecnico separato dal comportamento del modello."
+      ],
+      "source_urls": ["https://www.nvidia.com/en-us/ai/openshell/"]
+    },
+    {
+      "heading": "Sentry porta il controllo fuori banda",
+      "paragraphs": [
+        "NVIDIA affianca a OpenShell il sistema di riferimento Sentry, basato su BlueField-4 DPU, per osservare e intervenire sull’attività degli agenti fuori dal percorso di esecuzione principale. Il produttore dichiara che Sentry può isolare o mettere in quarantena un agente in tempi molto rapidi quando rileva una violazione. Per chi costruisce coding agent e automazioni, il punto interessante è architetturale: capacità, autorizzazioni e monitoraggio vengono trattati come livelli distinti anziché affidati a un unico prompt o processo."
+      ],
+      "source_urls": ["https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx"]
+    }
+  ]
+}
