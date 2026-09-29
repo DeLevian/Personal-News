@@ -241,6 +241,51 @@
       "word_count": 105,
       "written_at": "2026-09-28T07:33:50+02:00",
       "sha256": "b1b89df7d334ca1ea8bf97c366a5efad0e9b63fe2af4840fbce0d83e72304573"
+    },
+    {
+      "item_id": "2026-09-29-claude-sonnet-5-5-launch-copilot",
+      "edition": "2026-09-29",
+      "status": "full",
+      "path": "data/articles/2026-09-29-claude-sonnet-5-5-launch-copilot.json",
+      "word_count": 210,
+      "written_at": "2026-09-29T06:37:25+02:00",
+      "sha256": "701bd69822b8b298dbff0618cdd469838a0e2b9fc05f90928a97e31e389528ae"
+    },
+    {
+      "item_id": "2026-09-29-minecraft-sift-dimension-2027-announcement",
+      "edition": "2026-09-29",
+      "status": "full",
+      "path": "data/articles/2026-09-29-minecraft-sift-dimension-2027-announcement.json",
+      "word_count": 143,
+      "written_at": "2026-09-29T06:37:25+02:00",
+      "sha256": "e7ae6f181c187e523badae3ae0fcb41b7a05248913434f8ddac86e149b5c73c2"
+    },
+    {
+      "item_id": "2026-09-29-nvidia-open-agent-safety-platform-2026-09-28",
+      "edition": "2026-09-29",
+      "status": "full",
+      "path": "data/articles/2026-09-29-nvidia-open-agent-safety-platform-2026-09-28.json",
+      "word_count": 218,
+      "written_at": "2026-09-29T06:37:25+02:00",
+      "sha256": "e515276a8c98a0253ac36a50b0d6fa2e35114be228999c801d41b64055d78c6d"
+    },
+    {
+      "item_id": "2026-09-29-samsung-one-ui-9-galaxy-s25-rollout",
+      "edition": "2026-09-29",
+      "status": "full",
+      "path": "data/articles/2026-09-29-samsung-one-ui-9-galaxy-s25-rollout.json",
+      "word_count": 155,
+      "written_at": "2026-09-29T06:37:25+02:00",
+      "sha256": "978aa5705cf806f81d58688adfee3b9b19c827cdf09f26dd128587b89929ef82"
+    },
+    {
+      "item_id": "2026-09-29-witcher-3-remastered-launch-2026-09-29",
+      "edition": "2026-09-29",
+      "status": "full",
+      "path": "data/articles/2026-09-29-witcher-3-remastered-launch-2026-09-29.json",
+      "word_count": 215,
+      "written_at": "2026-09-29T06:37:25+02:00",
+      "sha256": "257cee7dcb1f95fb93e121f4603f617f7c780b61d67f40cc53a67db37fc2bf95"
     }
   ]
 }

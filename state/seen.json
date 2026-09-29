@@ -1,9 +1,79 @@
 {
   "version": 2,
-  "as_of": "2026-09-28",
+  "as_of": "2026-09-29",
   "retention_days": 30,
   "max_events": 200,
   "events": [
+    {
+      "event_id": "witcher-3-remastered-launch-2026-09-29",
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-09-29",
+      "last_item_id": "2026-09-29-witcher-3-remastered-launch-2026-09-29",
+      "last_edition": "2026-09-29",
+      "section": "main",
+      "title": "The Witcher 3 Remastered esce oggi: upgrade gratuito anche su Switch 2",
+      "last_summary": "CD PROJEKT RED pubblica il 29 settembre The Witcher 3: Wild Hunt Remastered su PC, PS5, Xbox Series X|S e Nintendo Switch 2. I possessori della versione originale sulla stessa piattaforma possono ottenere l’upgrade gratuitamente; la versione Switch 2 include le due espansioni principali e varie migliorie tecniche e di controllo.",
+      "sources": [
+        "https://www.thewitcher.com/es/es/news/52047/echa-un-vistazo-a-las-novedades-de-the-witcher-3-wild-hunt-remastered",
+        "https://www.nintendo.com/es-es/Juegos/Juegos-de-Nintendo-Switch-2/The-Witcher-3-Wild-Hunt-Remastered-3182096.html"
+      ]
+    },
+    {
+      "event_id": "samsung-one-ui-9-galaxy-s25-rollout",
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-09-29",
+      "last_item_id": "2026-09-29-samsung-one-ui-9-galaxy-s25-rollout",
+      "last_edition": "2026-09-29",
+      "section": "radar",
+      "title": "One UI 9 arriva sulla serie Galaxy S25, ma il rollout verificato è ancora regionale",
+      "last_summary": "Il rollout stabile di One UI 9 si sta estendendo alla famiglia Galaxy S25; le segnalazioni più recenti verificano l’aggiornamento in Corea del Sud anche per S25 Edge e S25 FE, dopo S25, S25+ e S25 Ultra. Samsung ha già avviato la distribuzione globale di One UI 9, ma non c’è ancora una conferma equivalente dell’OTA italiano per S25 Ultra.",
+      "sources": [
+        "https://m.economictimes.com/news/new-updates/one-ui-9-0-stable-update-rolls-out-to-galaxy-s25-edge-and-s25-fe-check-new-features-eligible-devices-and-how-to-update/articleshow/134543607.cms",
+        "https://news.samsung.com/it/samsung-avvia-il-rilascio-ufficiale-di-one-ui-9-portando-le-ultime-esperienze-galaxy-su-un-numero-ancora-maggiore-di-dispositivi"
+      ]
+    },
+    {
+      "event_id": "nvidia-open-agent-safety-platform-2026-09-28",
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-09-29",
+      "last_item_id": "2026-09-29-nvidia-open-agent-safety-platform-2026-09-28",
+      "last_edition": "2026-09-29",
+      "section": "main",
+      "title": "NVIDIA lancia una piattaforma aperta per isolare e controllare gli agenti AI",
+      "last_summary": "NVIDIA ha annunciato Open Agent Safety Platform, che combina il runtime open source OpenShell con il sistema di riferimento Sentry. OpenShell isola gli agenti in sandbox con policy esplicite per file, rete e strumenti; Sentry sposta parte del controllo su DPU BlueField-4 e può intervenire fuori banda rispetto all’agente.",
+      "sources": [
+        "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx",
+        "https://www.nvidia.com/en-us/ai/openshell/"
+      ]
+    },
+    {
+      "event_id": "minecraft-sift-dimension-2027-announcement",
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-09-29",
+      "last_item_id": "2026-09-29-minecraft-sift-dimension-2027-announcement",
+      "last_edition": "2026-09-29",
+      "section": "radar",
+      "title": "Minecraft prepara Sift, la prima nuova dimensione da oltre 14 anni",
+      "last_summary": "Mojang ha mostrato Sift, una nuova dimensione che debutta prima in Minecraft Dungeons II e arriverà anche nel Minecraft principale nel 2027. L’area introduce regole proprie, biomi e creature inedite ed è collegata all’uscita di Dungeons II del 29 settembre.",
+      "sources": [
+        "https://news.xbox.com/en-us/2026/09/26/minecraft-new-dimension-sift-dungeons-2/",
+        "https://www.minecraft.net/ja-jp/article/mclive_sept2026_recap-jp"
+      ]
+    },
+    {
+      "event_id": "claude-sonnet-5-5-launch-copilot",
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-09-29",
+      "last_item_id": "2026-09-29-claude-sonnet-5-5-launch-copilot",
+      "last_edition": "2026-09-29",
+      "section": "main",
+      "title": "Claude Sonnet 5.5: più veloce, meno costoso e già disponibile in GitHub Copilot",
+      "last_summary": "Anthropic ha presentato Claude Sonnet 5.5 come aggiornamento della linea Sonnet per coding e lavoro quotidiano, dichiarando oltre il 30% di velocità in più rispetto a Sonnet 5 e costi inferiori fino al 30% per molti carichi. GitHub lo ha reso disponibile in Copilot su diversi piani e superfici, con rollout graduale.",
+      "sources": [
+        "https://www.anthropic.com/claude-sonnet-5-5",
+        "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"
+      ]
+    },
     {
       "event_id": "sugarstar-academy-demo-2026-09-24",
       "first_seen": "2026-09-28",

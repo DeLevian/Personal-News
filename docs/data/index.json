@@ -1,8 +1,30 @@
 {
   "version": 2,
-  "latest": "2026-09-28",
-  "updated_at": "2026-09-28T07:34:20+02:00",
+  "latest": "2026-09-29",
+  "updated_at": "2026-09-29T06:37:27+02:00",
   "editions": [
+    {
+      "id": "2026-09-29",
+      "date": "2026-09-29",
+      "generated_at": "2026-09-29T06:37:27+02:00",
+      "title": "29 settembre · Sonnet 5.5, sicurezza agentica e tre novità da seguire",
+      "kind": "daily",
+      "count": 5,
+      "counts": {
+        "main": 3,
+        "radar": 2,
+        "new": 5,
+        "update": 0,
+        "featured": 3
+      },
+      "categories": [
+        "agents",
+        "ai",
+        "devices",
+        "gaming"
+      ],
+      "path": "data/daily/2026-09-29.json"
+    },
     {
       "id": "2026-09-28",
       "date": "2026-09-28",
@@ -68,5 +90,5 @@
       "path": "data/initial/2026-09-27.json"
     }
   ],
-  "content_revision": "8202f70da7cf6816bf1cec64d560f3ef65bc7c7f80750004a99c170a016d3181"
+  "content_revision": "7b8084f8dc02248c3607009e9245cc3adf94a6f1f56a4f6392f6922e05cb1299"
 }

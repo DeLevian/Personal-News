@@ -1,0 +1,190 @@
+{
+  "version": 2,
+  "date": "2026-09-29",
+  "generated_at": "2026-09-29T06:37:27+02:00",
+  "kind": "daily",
+  "title": "29 settembre · Sonnet 5.5, sicurezza agentica e tre novità da seguire",
+  "summary": "Claude Sonnet 5.5 e la nuova piattaforma NVIDIA per la sicurezza degli agenti guidano l’edizione; completano la selezione The Witcher 3 Remastered, la dimensione Sift di Minecraft e il rollout di One UI 9 sulla serie Galaxy S25.",
+  "note": "Discovery completata su tutte le sei categorie. Work e GameDev non hanno prodotto nuove notizie abbastanza recenti e sostanziali dopo deduplicazione; diversi risultati AI/Gaming erano già presenti nello storico.",
+  "items": [
+    {
+      "id": "2026-09-29-claude-sonnet-5-5-launch-copilot",
+      "event_id": "claude-sonnet-5-5-launch-copilot",
+      "category": "ai",
+      "status": "NEW",
+      "title": "Claude Sonnet 5.5: più veloce, meno costoso e già disponibile in GitHub Copilot",
+      "summary": "Anthropic ha presentato Claude Sonnet 5.5 come aggiornamento della linea Sonnet per coding e lavoro quotidiano, dichiarando oltre il 30% di velocità in più rispetto a Sonnet 5 e costi inferiori fino al 30% per molti carichi. GitHub lo ha reso disponibile in Copilot su diversi piani e superfici, con rollout graduale.",
+      "why_you_care": "Rilevante per i workflow di coding agentico: oltre alle capacità dichiarate da Anthropic, l’arrivo immediato in GitHub Copilot consente un confronto pratico senza una nuova integrazione API.",
+      "published_date": "2026-09-28",
+      "event_date": "2026-09-28",
+      "verified_at": "2026-09-29T06:37:00+02:00",
+      "included_at": "2026-09-29T06:37:20+02:00",
+      "section": "main",
+      "featured": true,
+      "tags": [
+        "Claude Sonnet 5.5",
+        "Anthropic",
+        "GitHub Copilot",
+        "coding agent",
+        "AI"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic · Claude Sonnet 5.5",
+          "type": "official",
+          "url": "https://www.anthropic.com/claude-sonnet-5-5"
+        },
+        {
+          "name": "GitHub Changelog · Claude Sonnet 5.5 in GitHub Copilot",
+          "type": "official",
+          "url": "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: lancio ufficiale del 28 settembre e disponibilità generale in GitHub Copilot, direttamente rilevanti per i workflow di coding agentico."
+    },
+    {
+      "id": "2026-09-29-nvidia-open-agent-safety-platform-2026-09-28",
+      "event_id": "nvidia-open-agent-safety-platform-2026-09-28",
+      "category": "agents",
+      "status": "NEW",
+      "title": "NVIDIA lancia una piattaforma aperta per isolare e controllare gli agenti AI",
+      "summary": "NVIDIA ha annunciato Open Agent Safety Platform, che combina il runtime open source OpenShell con il sistema di riferimento Sentry. OpenShell isola gli agenti in sandbox con policy esplicite per file, rete e strumenti; Sentry sposta parte del controllo su DPU BlueField-4 e può intervenire fuori banda rispetto all’agente.",
+      "why_you_care": "È un’evoluzione concreta della sicurezza agentica: separa capacità dell’agente, permessi e monitoraggio, un modello utile per coding agent e automazioni che operano su file, rete e strumenti reali.",
+      "published_date": "2026-09-28",
+      "event_date": "2026-09-28",
+      "verified_at": "2026-09-29T06:37:00+02:00",
+      "included_at": "2026-09-29T06:37:20+02:00",
+      "section": "main",
+      "featured": true,
+      "tags": [
+        "NVIDIA",
+        "OpenShell",
+        "agent safety",
+        "sandbox",
+        "coding agents"
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA · Open Agent Safety Platform",
+          "type": "official",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx"
+        },
+        {
+          "name": "NVIDIA · OpenShell",
+          "type": "official",
+          "url": "https://www.nvidia.com/en-us/ai/openshell/"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: annuncio ufficiale del 28 settembre su sandbox, policy e controllo hardware/software degli agenti, sviluppo sostanziale per la sicurezza agentica."
+    },
+    {
+      "id": "2026-09-29-witcher-3-remastered-launch-2026-09-29",
+      "event_id": "witcher-3-remastered-launch-2026-09-29",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "The Witcher 3 Remastered esce oggi: upgrade gratuito anche su Switch 2",
+      "summary": "CD PROJEKT RED pubblica il 29 settembre The Witcher 3: Wild Hunt Remastered su PC, PS5, Xbox Series X|S e Nintendo Switch 2. I possessori della versione originale sulla stessa piattaforma possono ottenere l’upgrade gratuitamente; la versione Switch 2 include le due espansioni principali e varie migliorie tecniche e di controllo.",
+      "why_you_care": "È una release importante per chi segue RPG e Switch 2: porta un titolo di riferimento su hardware attuale e mantiene un percorso di upgrade gratuito per chi possiede già il gioco sulla stessa piattaforma.",
+      "published_date": "2026-09-28",
+      "event_date": "2026-09-29",
+      "verified_at": "2026-09-29T06:37:00+02:00",
+      "included_at": "2026-09-29T06:37:20+02:00",
+      "section": "main",
+      "featured": true,
+      "tags": [
+        "The Witcher 3",
+        "Remastered",
+        "Nintendo Switch 2",
+        "RPG",
+        "upgrade gratuito"
+      ],
+      "sources": [
+        {
+          "name": "The Witcher · novità di Wild Hunt Remastered",
+          "type": "official",
+          "url": "https://www.thewitcher.com/es/es/news/52047/echa-un-vistazo-a-las-novedades-de-the-witcher-3-wild-hunt-remastered"
+        },
+        {
+          "name": "Nintendo · The Witcher 3 Wild Hunt Remastered",
+          "type": "official",
+          "url": "https://www.nintendo.com/es-es/Juegos/Juegos-de-Nintendo-Switch-2/The-Witcher-3-Wild-Hunt-Remastered-3182096.html"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: pagina ufficiale del 28 settembre pubblicata alla vigilia dell’uscita del 29 settembre; release odierna rilevante per RPG e Nintendo Switch 2."
+    },
+    {
+      "id": "2026-09-29-minecraft-sift-dimension-2027-announcement",
+      "event_id": "minecraft-sift-dimension-2027-announcement",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Minecraft prepara Sift, la prima nuova dimensione da oltre 14 anni",
+      "summary": "Mojang ha mostrato Sift, una nuova dimensione che debutta prima in Minecraft Dungeons II e arriverà anche nel Minecraft principale nel 2027. L’area introduce regole proprie, biomi e creature inedite ed è collegata all’uscita di Dungeons II del 29 settembre.",
+      "why_you_care": "È un cambiamento raro per l’ecosistema Minecraft e un esempio interessante di contenuto che nasce in uno spin-off per poi essere portato nel gioco principale.",
+      "published_date": "2026-09-26",
+      "event_date": "2026-09-26",
+      "verified_at": "2026-09-29T06:37:00+02:00",
+      "included_at": "2026-09-29T06:37:20+02:00",
+      "section": "radar",
+      "featured": false,
+      "tags": [
+        "Minecraft",
+        "Sift",
+        "Minecraft Dungeons II",
+        "nuova dimensione",
+        "2027"
+      ],
+      "sources": [
+        {
+          "name": "Xbox Wire · Minecraft Sift",
+          "type": "official",
+          "url": "https://news.xbox.com/en-us/2026/09/26/minecraft-new-dimension-sift-dungeons-2/"
+        },
+        {
+          "name": "Minecraft · Minecraft Live September 2026 recap",
+          "type": "official",
+          "url": "https://www.minecraft.net/ja-jp/article/mclive_sept2026_recap-jp"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "2026-09-29-samsung-one-ui-9-galaxy-s25-rollout",
+      "event_id": "samsung-one-ui-9-galaxy-s25-rollout",
+      "category": "devices",
+      "status": "NEW",
+      "title": "One UI 9 arriva sulla serie Galaxy S25, ma il rollout verificato è ancora regionale",
+      "summary": "Il rollout stabile di One UI 9 si sta estendendo alla famiglia Galaxy S25; le segnalazioni più recenti verificano l’aggiornamento in Corea del Sud anche per S25 Edge e S25 FE, dopo S25, S25+ e S25 Ultra. Samsung ha già avviato la distribuzione globale di One UI 9, ma non c’è ancora una conferma equivalente dell’OTA italiano per S25 Ultra.",
+      "why_you_care": "Rilevante per chi usa Galaxy S25 Ultra: il rollout della famiglia è iniziato, ma la disponibilità in altri mercati non va confusa con quella effettiva in Italia.",
+      "published_date": "2026-09-29",
+      "event_date": "2026-09-29",
+      "verified_at": "2026-09-29T06:37:00+02:00",
+      "included_at": "2026-09-29T06:37:20+02:00",
+      "section": "radar",
+      "featured": false,
+      "tags": [
+        "Samsung",
+        "One UI 9",
+        "Galaxy S25 Ultra",
+        "Android",
+        "aggiornamento"
+      ],
+      "sources": [
+        {
+          "name": "The Economic Times · One UI 9 rollout Galaxy S25",
+          "type": "reputable",
+          "url": "https://m.economictimes.com/news/new-updates/one-ui-9-0-stable-update-rolls-out-to-galaxy-s25-edge-and-s25-fe-check-new-features-eligible-devices-and-how-to-update/articleshow/134543607.cms"
+        },
+        {
+          "name": "Samsung Italia · rilascio ufficiale One UI 9",
+          "type": "official",
+          "url": "https://news.samsung.com/it/samsung-avvia-il-rilascio-ufficiale-di-one-ui-9-portando-le-ultime-esperienze-galaxy-su-un-numero-ancora-maggiore-di-dispositivi"
+        }
+      ],
+      "image": null
+    }
+  ],
+  "attention_today": null
+}
