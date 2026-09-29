@@ -4,8 +4,8 @@
   "generated_at": "2026-09-29T06:37:27+02:00",
   "kind": "daily",
   "title": "29 settembre · Sonnet 5.5, sicurezza agentica e tre novità da seguire",
-  "summary": "Claude Sonnet 5.5 e la nuova piattaforma NVIDIA per la sicurezza degli agenti guidano l’edizione; completano la selezione The Witcher 3 Remastered, la dimensione Sift di Minecraft e il rollout di One UI 9 sulla serie Galaxy S25.",
-  "note": "Discovery completata su tutte le sei categorie. Work e GameDev non hanno prodotto nuove notizie abbastanza recenti e sostanziali dopo deduplicazione; diversi risultati AI/Gaming erano già presenti nello storico.",
+  "summary": "Claude Sonnet 5.5, la piattaforma NVIDIA per la sicurezza degli agenti, The Witcher 3 Remastered, la dimensione Sift di Minecraft e il rollout di One UI 9 compongono la selezione di oggi.",
+  "note": "Discovery completata su tutte le sei categorie. La selezione resta in Radar perché per le fonti del 28 settembre non è disponibile un orario di pubblicazione verificabile sufficiente a dimostrare la finestra Main di 24 ore; Work e GameDev non hanno prodotto nuove notizie idonee.",
   "items": [
     {
       "id": "2026-09-29-claude-sonnet-5-5-launch-copilot",
@@ -19,20 +19,12 @@
       "event_date": "2026-09-28",
       "verified_at": "2026-09-29T06:37:00+02:00",
       "included_at": "2026-09-29T06:37:20+02:00",
-      "section": "main",
-      "featured": true,
+      "section": "radar",
+      "featured": false,
       "tags": ["Claude Sonnet 5.5", "Anthropic", "GitHub Copilot", "coding agent", "AI"],
       "sources": [
-        {
-          "name": "Anthropic · Claude Sonnet 5.5",
-          "type": "official",
-          "url": "https://www.anthropic.com/claude-sonnet-5-5"
-        },
-        {
-          "name": "GitHub Changelog · Claude Sonnet 5.5 in GitHub Copilot",
-          "type": "official",
-          "url": "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"
-        }
+        {"name":"Anthropic · Claude Sonnet 5.5","type":"official","url":"https://www.anthropic.com/claude-sonnet-5-5"},
+        {"name":"GitHub Changelog · Claude Sonnet 5.5 in GitHub Copilot","type":"official","url":"https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"}
       ],
       "image": null
     },
@@ -48,20 +40,12 @@
       "event_date": "2026-09-28",
       "verified_at": "2026-09-29T06:37:00+02:00",
       "included_at": "2026-09-29T06:37:20+02:00",
-      "section": "main",
-      "featured": true,
+      "section": "radar",
+      "featured": false,
       "tags": ["NVIDIA", "OpenShell", "agent safety", "sandbox", "coding agents"],
       "sources": [
-        {
-          "name": "NVIDIA · Open Agent Safety Platform",
-          "type": "official",
-          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx"
-        },
-        {
-          "name": "NVIDIA · OpenShell",
-          "type": "official",
-          "url": "https://www.nvidia.com/en-us/ai/openshell/"
-        }
+        {"name":"NVIDIA · Open Agent Safety Platform","type":"official","url":"https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx"},
+        {"name":"NVIDIA · OpenShell","type":"official","url":"https://www.nvidia.com/en-us/ai/openshell/"}
       ],
       "image": null
     },
@@ -77,20 +61,12 @@
       "event_date": "2026-09-29",
       "verified_at": "2026-09-29T06:37:00+02:00",
       "included_at": "2026-09-29T06:37:20+02:00",
-      "section": "main",
-      "featured": true,
+      "section": "radar",
+      "featured": false,
       "tags": ["The Witcher 3", "Remastered", "Nintendo Switch 2", "RPG", "upgrade gratuito"],
       "sources": [
-        {
-          "name": "The Witcher · novità di Wild Hunt Remastered",
-          "type": "official",
-          "url": "https://www.thewitcher.com/es/es/news/52047/echa-un-vistazo-a-las-novedades-de-the-witcher-3-wild-hunt-remastered"
-        },
-        {
-          "name": "Nintendo · The Witcher 3 Wild Hunt Remastered",
-          "type": "official",
-          "url": "https://www.nintendo.com/es-es/Juegos/Juegos-de-Nintendo-Switch-2/The-Witcher-3-Wild-Hunt-Remastered-3182096.html"
-        }
+        {"name":"The Witcher · novità di Wild Hunt Remastered","type":"official","url":"https://www.thewitcher.com/es/es/news/52047/echa-un-vistazo-a-las-novedades-de-the-witcher-3-wild-hunt-remastered"},
+        {"name":"Nintendo · The Witcher 3 Wild Hunt Remastered","type":"official","url":"https://www.nintendo.com/es-es/Juegos/Juegos-de-Nintendo-Switch-2/The-Witcher-3-Wild-Hunt-Remastered-3182096.html"}
       ],
       "image": null
     },
@@ -110,16 +86,8 @@
       "featured": false,
       "tags": ["Minecraft", "Sift", "Minecraft Dungeons II", "nuova dimensione", "2027"],
       "sources": [
-        {
-          "name": "Xbox Wire · Minecraft Sift",
-          "type": "official",
-          "url": "https://news.xbox.com/en-us/2026/09/26/minecraft-new-dimension-sift-dungeons-2/"
-        },
-        {
-          "name": "Minecraft · Minecraft Live September 2026 recap",
-          "type": "official",
-          "url": "https://www.minecraft.net/ja-jp/article/mclive_sept2026_recap-jp"
-        }
+        {"name":"Xbox Wire · Minecraft Sift","type":"official","url":"https://news.xbox.com/en-us/2026/09/26/minecraft-new-dimension-sift-dungeons-2/"},
+        {"name":"Minecraft · Minecraft Live September 2026 recap","type":"official","url":"https://www.minecraft.net/ja-jp/article/mclive_sept2026_recap-jp"}
       ],
       "image": null
     },
@@ -139,16 +107,8 @@
       "featured": false,
       "tags": ["Samsung", "One UI 9", "Galaxy S25 Ultra", "Android", "aggiornamento"],
       "sources": [
-        {
-          "name": "The Economic Times · One UI 9 rollout Galaxy S25",
-          "type": "reputable",
-          "url": "https://m.economictimes.com/news/new-updates/one-ui-9-0-stable-update-rolls-out-to-galaxy-s25-edge-and-s25-fe-check-new-features-eligible-devices-and-how-to-update/articleshow/134543607.cms"
-        },
-        {
-          "name": "Samsung Italia · rilascio ufficiale One UI 9",
-          "type": "official",
-          "url": "https://news.samsung.com/it/samsung-avvia-il-rilascio-ufficiale-di-one-ui-9-portando-le-ultime-esperienze-galaxy-su-un-numero-ancora-maggiore-di-dispositivi"
-        }
+        {"name":"The Economic Times · One UI 9 rollout Galaxy S25","type":"reputable","url":"https://m.economictimes.com/news/new-updates/one-ui-9-0-stable-update-rolls-out-to-galaxy-s25-edge-and-s25-fe-check-new-features-eligible-devices-and-how-to-update/articleshow/134543607.cms"},
+        {"name":"Samsung Italia · rilascio ufficiale One UI 9","type":"official","url":"https://news.samsung.com/it/samsung-avvia-il-rilascio-ufficiale-di-one-ui-9-portando-le-ultime-esperienze-galaxy-su-un-numero-ancora-maggiore-di-dispositivi"}
       ],
       "image": null
     }
