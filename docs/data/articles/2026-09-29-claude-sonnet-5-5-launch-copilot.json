@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-09-29-claude-sonnet-5-5-launch-copilot",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "689ba52bb057a9f0eb912dcc606cb9f0d5c58ab270a313566e53ac639dd5a52b",
+  "written_at": "2026-09-29T06:37:25+02:00",
+  "verified_at": "2026-09-29T06:37:00+02:00",
+  "sources": [
+    {"name":"Anthropic · Claude Sonnet 5.5","type":"official","url":"https://www.anthropic.com/claude-sonnet-5-5"},
+    {"name":"GitHub Changelog · Claude Sonnet 5.5 in GitHub Copilot","type":"official","url":"https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"}
+  ],
+  "sections": [
+    {
+      "heading": "Che cosa cambia con Sonnet 5.5",
+      "paragraphs": [
+        "Anthropic presenta Claude Sonnet 5.5 come il nuovo modello della linea Sonnet per coding e lavoro quotidiano. Secondo i dati del produttore, il modello genera oltre il 30% più velocemente di Sonnet 5 e può ridurre fino al 30% il costo di molti carichi, pur mantenendo una fascia di utilizzo distinta da Opus 5.5. L’obiettivo dichiarato è migliorare soprattutto compiti ben definiti come correzione di bug, scrittura tecnica e produzione di documenti strutturati."
+      ],
+      "source_urls": ["https://www.anthropic.com/claude-sonnet-5-5"]
+    },
+    {
+      "heading": "La disponibilità pratica conta quanto il modello",
+      "paragraphs": [
+        "GitHub ha annunciato nello stesso giorno la disponibilità generale di Claude Sonnet 5.5 in Copilot per i piani Pro, Pro+, Max, Business ed Enterprise. Il modello viene distribuito gradualmente nelle principali superfici Copilot, fra cui VS Code, Visual Studio, CLI, coding agent, app Copilot, github.com, JetBrains, Xcode ed Eclipse. Per le organizzazioni gestite resta rilevante la policy che abilita o limita i modelli utilizzabili."
+      ],
+      "source_urls": ["https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"]
+    },
+    {
+      "heading": "Come interpretare prestazioni e convenienza",
+      "paragraphs": [
+        "Le percentuali di velocità, costo e qualità pubblicate da Anthropic sono risultati del fornitore e non garantiscono lo stesso vantaggio su ogni repository o attività. Per confrontare Sonnet 5.5 con Opus, GPT o altri modelli conviene usare gli stessi task, strumenti e criteri di verifica, misurando iterazioni, latenza e consumo reale. L’arrivo immediato in GitHub Copilot rende comunque il confronto più semplice perché il modello può essere provato senza costruire un’integrazione API separata."
+      ],
+      "source_urls": ["https://www.anthropic.com/claude-sonnet-5-5","https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"]
+    }
+  ]
+}
