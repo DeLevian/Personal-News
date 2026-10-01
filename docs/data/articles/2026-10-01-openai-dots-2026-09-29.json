@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-openai-dots-2026-09-29",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "2d1cc9154eb0bdc94f87b1b9c27731189f255dbb089ec6c022197ad5f650691a",
+  "written_at": "2026-10-01T06:54:00+02:00",
+  "verified_at": "2026-10-01T06:50:00+02:00",
+  "sources": [
+    {
+      "name": "OpenAI · dots",
+      "type": "official",
+      "url": "https://openai.com/index/introducing-dots/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Agenti che restano al lavoro",
+      "paragraphs": [
+        "Con dots OpenAI introduce una categoria diversa dal normale assistente conversazionale. Ogni dot è un agente persistente basato su GPT-6 Astra, dispone di un proprio computer cloud e può continuare a lavorare sugli obiettivi assegnati anche senza una conversazione aperta. L’integrazione con l’ecosistema dei plugin permette di collegare oltre 4.000 applicazioni, mentre l’accesso può avvenire da ChatGPT, Slack o Microsoft Teams."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-dots/"
+      ]
+    },
+    {
+      "heading": "La parte da osservare",
+      "paragraphs": [
+        "Il valore non è soltanto la potenza del modello, ma il fatto che memoria operativa, computer e strumenti siano riuniti in un agente sempre disponibile. Il rollout parte da Pro e Business Premium nei mercati idonei; Enterprise, Edu e Healthcare possono accedere alla beta quando l’amministratore del workspace la abilita. Per un uso aziendale sarà importante verificare approvazioni, permessi e confini di azione, perché un agente persistente collegato alle app richiede più governance di una chat tradizionale."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-dots/"
+      ]
+    }
+  ]
+}
