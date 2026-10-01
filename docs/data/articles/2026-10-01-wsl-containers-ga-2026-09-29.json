@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-wsl-containers-ga-2026-09-29",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "0698ff8a03b00572173cf2c69500577f0b04a33d5158d34b221208c9cbde4f7e",
+  "written_at": "2026-10-01T06:54:00+02:00",
+  "verified_at": "2026-10-01T06:50:00+02:00",
+  "sources": [
+    {
+      "name": "Microsoft · WSL containers GA",
+      "type": "official",
+      "url": "https://blogs.windows.com/windowsdeveloper/2026/09/29/wsl-containers-now-generally-available/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Container Linux direttamente in WSL",
+      "paragraphs": [
+        "WSL Containers è ora in disponibilità generale e porta una gestione più diretta dei container Linux nell’ambiente Windows Subsystem for Linux. Microsoft fornisce una nuova interfaccia a riga di comando e una API per integrare queste funzioni nelle applicazioni Windows, citando anche scenari di sviluppo e AI locale. Rispetto alla fase di anteprima, la release amplia le funzioni dedicate al ciclo di vita dei container, alla rete, alla verifica dello stato e alla gestione dello spazio di archiviazione."
+      ],
+      "source_urls": [
+        "https://blogs.windows.com/windowsdeveloper/2026/09/29/wsl-containers-now-generally-available/"
+      ]
+    },
+    {
+      "heading": "Più adatto anche alle organizzazioni",
+      "paragraphs": [
+        "La versione finale migliora anche la gestione in ambienti aziendali. Le integrazioni già presenti tra WSL e gli strumenti Microsoft vengono estese ai container, in modo che amministratori e team IT possano mantenere maggiore visibilità e applicare le normali politiche di gestione. Per chi sviluppa su Windows il vantaggio è poter usare workload Linux e containerizzati restando nello stesso ambiente; per l’azienda conta invece la possibilità di inserirli in un modello di amministrazione più coerente con il resto dei dispositivi."
+      ],
+      "source_urls": [
+        "https://blogs.windows.com/windowsdeveloper/2026/09/29/wsl-containers-now-generally-available/"
+      ]
+    }
+  ]
+}
