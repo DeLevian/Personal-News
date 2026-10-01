@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-copilot-sharepoint-ga-2026-09-30",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "3b25328656c20d40a206b953d59285802fb99574aa4e660ba10eb578225c143c",
+  "written_at": "2026-10-01T06:42:00+02:00",
+  "verified_at": "2026-10-01T06:41:30+02:00",
+  "sources": [
+    {
+      "name": "Microsoft",
+      "type": "official",
+      "url": "https://techcommunity.microsoft.com/blog/spblog/sharepoint-ai-innovations-hit-ga-powering-new-copilot-app-and-agents/4555724"
+    },
+    {
+      "name": "Microsoft roundup",
+      "type": "official",
+      "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "SharePoint porta Copilot in disponibilità generale",
+      "paragraphs": [
+        "Microsoft ha annunciato che Copilot in SharePoint entra in disponibilità generale con rollout ai tenant mondiali a partire dal 30 settembre. L’esperienza usa l’intelligenza artificiale direttamente dove vengono creati, organizzati e gestiti i contenuti, con funzioni che aiutano a lavorare su documenti, metadati e siti. Nello stesso momento Copilot in OneDrive diventa generalmente disponibile sulla stessa base tecnica, rendendo più coerente il lavoro sui file tra le due superfici Microsoft 365."
+      ],
+      "source_urls": [
+        "https://techcommunity.microsoft.com/blog/spblog/sharepoint-ai-innovations-hit-ga-powering-new-copilot-app-and-agents/4555724"
+      ]
+    },
+    {
+      "heading": "Più integrazione con Work IQ e con il resto di Copilot",
+      "paragraphs": [
+        "Microsoft sta inoltre portando strumenti di contenuto e azione di SharePoint dentro Work IQ e più in generale nella piattaforma Copilot. Tra le funzioni collegate compaiono Copilot Search, in rollout Frontier per SharePoint e OneDrive, componenti interattivi basati su SharePoint Framework e capacità avanzate come generazione di immagini, analisi dei siti e riempimento automatico dei metadati. Per le knowledge base aziendali il cambiamento è rilevante perché ricerca, struttura dei contenuti e azioni AI convergono nello stesso repository documentale."
+      ],
+      "source_urls": [
+        "https://techcommunity.microsoft.com/blog/spblog/sharepoint-ai-innovations-hit-ga-powering-new-copilot-app-and-agents/4555724",
+        "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107"
+      ]
+    }
+  ]
+}
