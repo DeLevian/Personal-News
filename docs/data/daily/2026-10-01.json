@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "date": "2026-10-01",
+  "generated_at": "2026-10-01T06:41:50+02:00",
+  "kind": "daily",
+  "title": "1 ottobre · Queen’s Domain",
+  "summary": "Nuova uscita RPG da seguire.",
+  "note": "Run giornaliera.",
+  "items": [
+    {
+      "id": "2026-10-01-queens-domain-release-date-2026-09-30",
+      "event_id": "queens-domain-release-date-2026-09-30",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Queen’s Domain esce il 30 ottobre anche su Switch 2",
+      "summary": "Queen’s Domain uscirà il 30 ottobre su PS5, Xbox Series, Nintendo Switch 2 e PC. È un action RPG fantasy in prima persona dallo stile retrò.",
+      "why_you_care": "Incrocia RPG, esplorazione alla King’s Field e Switch 2.",
+      "published_date": "2026-09-30",
+      "published_at": "2026-09-30T09:09:00-04:00",
+      "event_date": "2026-09-30",
+      "verified_at": "2026-10-01T06:41:30+02:00",
+      "included_at": "2026-10-01T06:41:40+02:00",
+      "section": "main",
+      "featured": false,
+      "tags": [
+        "Queen’s Domain",
+        "RPG",
+        "Nintendo Switch 2"
+      ],
+      "sources": [
+        {
+          "name": "Gematsu",
+          "type": "reputable",
+          "url": "https://www.gematsu.com/2026/09/queens-domain-launches-october-30-for-ps5-xbox-series-switch-2-and-pc"
+        }
+      ],
+      "image": null
+    }
+  ],
+  "attention_today": null
+}
