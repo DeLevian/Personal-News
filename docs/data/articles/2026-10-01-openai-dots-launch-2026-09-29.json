@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-openai-dots-launch-2026-09-29",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "328a5a251c7da8b4238997921e95ed1cb52ec38420d98dac494fc55ecbc57e4f",
+  "written_at": "2026-10-01T06:42:00+02:00",
+  "verified_at": "2026-10-01T06:41:30+02:00",
+  "sources": [
+    {
+      "name": "OpenAI",
+      "type": "official",
+      "url": "https://openai.com/index/introducing-dots/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Agenti che restano attivi nel tempo",
+      "paragraphs": [
+        "OpenAI descrive dots come agenti sempre attivi basati su GPT-6 Astra. Ogni dot dispone di un proprio computer nel cloud, può imparare dal feedback ricevuto e può lavorare verso obiettivi continuativi invece di limitarsi a una singola sessione. L’integrazione con l’ecosistema dei plugin permette di collegare oltre 4.000 applicazioni, mentre l’interazione può avvenire da ChatGPT, Slack e Teams oppure tramite conversazione vocale."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-dots/"
+      ]
+    },
+    {
+      "heading": "Dalla chat alla delega persistente",
+      "paragraphs": [
+        "Il punto distintivo è la persistenza: l’agente può continuare a seguire attività e contesto e riportare risultati nel tempo. OpenAI sta iniziando il rollout sui piani Pro, Business Premium ed Enterprise nei mercati idonei e anticipa anche dot specializzati per ruoli organizzativi. Per valutare questa categoria di prodotti sarà importante guardare non solo alla qualità del modello, ma anche a permessi, approvazioni, audit e controllo delle azioni quando l’agente opera su sistemi reali."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-dots/"
+      ]
+    }
+  ]
+}
