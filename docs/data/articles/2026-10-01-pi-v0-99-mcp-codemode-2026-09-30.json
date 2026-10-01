@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-pi-v0-99-mcp-codemode-2026-09-30",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "5fa0cfd33af03550f2d0e46cd1f955ee3a8c79e27504d577e30a284b1ce76b8e",
+  "written_at": "2026-10-01T06:54:00+02:00",
+  "verified_at": "2026-10-01T06:50:00+02:00",
+  "sources": [
+    {
+      "name": "Pi · release v0.99.0",
+      "type": "official",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v0.99.0"
+    },
+    {
+      "name": "Pi · release v0.99.2",
+      "type": "official",
+      "url": "https://github.com/earendil-works/pi/releases/tag/v0.99.2"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Una release ampia",
+      "paragraphs": [
+        "Pi 0.99 raccoglie molte novità che rendono l’agente più flessibile nella gestione delle integrazioni e delle estensioni. Le note ufficiali descrivono un nuovo assetto per Codemode, ricerca delle capacità disponibili e supporto MCP integrato, insieme a login con ChatGPT, modelli virtuali e classificatori. L’obiettivo generale è ridurre il peso iniziale delle integrazioni e lasciare che le funzioni necessarie emergano nel momento in cui servono, senza riempire sempre il contesto della sessione."
+      ],
+      "source_urls": [
+        "https://github.com/earendil-works/pi/releases/tag/v0.99.0"
+      ]
+    },
+    {
+      "heading": "La 0.99.2 consolida il cambiamento",
+      "paragraphs": [
+        "La versione 0.99.2 arriva subito dopo e concentra molte correzioni sul nuovo assetto. I server collegati possono essere gestiti in modo più leggero all’avvio, sono state ampliate alcune opzioni di autenticazione e sono presenti interventi su prestazioni, provider e stabilità. Per un utente che usa Pi come interfaccia principale, il punto da osservare non è una singola funzione ma il cambio di architettura: l’agente sta diventando una piattaforma più modulare, con integrazioni scoperte e utilizzate in modo più selettivo."
+      ],
+      "source_urls": [
+        "https://github.com/earendil-works/pi/releases/tag/v0.99.2"
+      ]
+    }
+  ]
+}
