@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-github-hydrafusion-vscode-app-2026-09-30",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "a602a492f0df55e959bd45c46cc2c59b811b92ddc270e7b909148c76ef1fd6fa",
+  "written_at": "2026-10-01T06:42:00+02:00",
+  "verified_at": "2026-10-01T06:41:30+02:00",
+  "sources": [
+    {
+      "name": "GitHub",
+      "type": "official",
+      "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "HydraFusion non è un altro modello",
+      "paragraphs": [
+        "GitHub sta ampliando la research preview di HydraFusion, già sperimentata in Copilot CLI, portandola in Visual Studio Code e nell’app GitHub Copilot. HydraFusion non corrisponde a un singolo modello selezionato dal menu: coordina più modelli e sceglie un flusso di esecuzione in base al compito. I tre schemi attuali sono Single, Cascade e Critique, con escalation o revisione quando serve maggiore qualità."
+      ],
+      "source_urls": [
+        "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app/"
+      ]
+    },
+    {
+      "heading": "Perché può cambiare il modo di scegliere i modelli",
+      "paragraphs": [
+        "In modalità Cascade un modello più efficiente prova per primo e una verifica decide se accettare il risultato o passare a un modello più forte. In Critique un secondo modello di una famiglia differente effettua una revisione in sola lettura prima della correzione finale. La preview è disponibile sui piani Copilot Pro, Pro+, Business ed Enterprise e in VS Code richiede la versione 1.140 o successiva. Per le organizzazioni gestite l’abilitazione delle preview può dipendere dall’amministratore."
+      ],
+      "source_urls": [
+        "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app/"
+      ]
+    }
+  ]
+}
