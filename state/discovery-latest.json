@@ -1,25 +1,25 @@
 {
   "version": 2,
-  "checked_at": "2026-09-29T06:37:00+02:00",
-  "candidate_count": 24,
+  "checked_at": "2026-10-01T07:25:00+02:00",
+  "candidate_count": 36,
   "coverage": {
-    "agents": 2,
-    "ai": 2,
-    "devices": 3,
-    "gamedev": 3,
-    "gaming": 12,
-    "work": 2
+    "agents": 7,
+    "ai": 6,
+    "devices": 5,
+    "gamedev": 6,
+    "gaming": 6,
+    "work": 6
   },
-  "checks_attempted": 13,
-  "checks_successful": 13,
+  "checks_attempted": 22,
+  "checks_successful": 21,
   "decisions": {
-    "main": 3,
-    "radar": 2,
-    "known": 19,
-    "outdated": 0,
-    "irrelevant": 0,
-    "unverified": 0
+    "main": 10,
+    "radar": 3,
+    "known": 6,
+    "outdated": 7,
+    "irrelevant": 6,
+    "unverified": 4
   },
-  "shortfall_reason": "Broad searches across all six categories produced fewer than 30 useful unique event clusters. Additional results repeated events already in the archive, were outside the configured time windows, were weak rumors or low-impact items, or lacked sufficient primary verification. No candidates were invented to reach the target.",
+  "shortfall_reason": null,
   "note": "Coverage records attempts, not universal absence of news. The full audit remains an artifact or scoped run log."
 }
