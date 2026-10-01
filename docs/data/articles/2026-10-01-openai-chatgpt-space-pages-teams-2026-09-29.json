@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-openai-chatgpt-space-pages-teams-2026-09-29",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "9c7c46c8b7972fb054cda04179a75ed4e183fbd2b6cb3ce9dfbcc5697e85b6b4",
+  "written_at": "2026-10-01T06:54:00+02:00",
+  "verified_at": "2026-10-01T06:50:00+02:00",
+  "sources": [
+    {
+      "name": "OpenAI · DevDay 2026 Recap",
+      "type": "official",
+      "url": "https://openai.com/index/devday-2026-recap/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Uno spazio condiviso per persone e agenti",
+      "paragraphs": [
+        "ChatGPT Space è pensato come area di lavoro comune in cui colleghi, ChatGPT e dots possono usare una base di conoscenza condivisa. Pages aggiunge documenti modificabili da persone e agenti, nei quali è possibile scrivere, fare ricerca, produrre grafici o immagini e raccogliere feedback. OpenAI prevede inoltre slide collaborative, con modifica simultanea e possibilità di esportare verso PowerPoint o Google Slides mantenendo la struttura del lavoro svolto."
+      ],
+      "source_urls": [
+        "https://openai.com/index/devday-2026-recap/"
+      ]
+    },
+    {
+      "heading": "Automazioni dentro il lavoro quotidiano",
+      "paragraphs": [
+        "Per Business ed Enterprise arrivano team tasks, cioè attività ricorrenti che possono partire a orario oppure in risposta a eventi come una nuova email o un messaggio Slack. @ChatGPT può essere richiamato direttamente in Slack e Microsoft Teams e usare gli strumenti collegati con i permessi disponibili. Per il Digital Workplace il punto interessante è la convergenza: collaborazione, documenti, chat e automazioni non sono più moduli separati, ma superfici diverse dello stesso ambiente agentico."
+      ],
+      "source_urls": [
+        "https://openai.com/index/devday-2026-recap/"
+      ]
+    }
+  ]
+}
