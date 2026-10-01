@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-openai-gpt-6-1-sol-2026-09-29",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "9c015dbb53a79a864e52f3692d116087be3f50db7a769f1ce1c7b31788183fce",
+  "written_at": "2026-10-01T07:25:25+02:00",
+  "verified_at": "2026-10-01T07:25:00+02:00",
+  "sources": [
+    {
+      "name": "OpenAI · GPT-6.1 Sol",
+      "type": "official",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
+    },
+    {
+      "name": "OpenAI · DevDay 2026 recap",
+      "type": "official",
+      "url": "https://openai.com/index/devday-2026-recap/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Un modello pensato per qualità e costo",
+      "paragraphs": [
+        "OpenAI presenta GPT-6.1 Sol come un nuovo punto di equilibrio fra capacità elevate e costo operativo. Nei propri test, il produttore afferma che Sol si avvicina alle prestazioni di Astra su numerosi compiti pur utilizzando prezzi standard molto inferiori. I risultati comprendono coding, lavoro professionale, attività scientifiche e uso del computer, ma restano misure dichiarate da OpenAI e non garantiscono lo stesso vantaggio in ogni progetto. Il dato utile è quindi soprattutto il posizionamento: un modello forte pensato per essere usato più spesso di Astra."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-6-1-sol/"
+      ]
+    },
+    {
+      "heading": "Dove è disponibile davvero",
+      "paragraphs": [
+        "Al lancio GPT-6.1 Sol è disponibile nell’API con il nome gpt-6.1-sol e nelle superfici ChatGPT Work e Codex per i piani supportati. OpenAI specifica invece che non è ancora selezionabile nella normale chat di ChatGPT. Il listino API indicato è di 2 dollari per milione di token in input, 0,10 dollari per input in cache e 10 dollari per l’output. Questa distinzione è importante per confrontare costi e accesso: provare Sol in Codex o Work non equivale automaticamente ad averlo nel selettore della chat."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "https://openai.com/index/devday-2026-recap/"
+      ]
+    }
+  ]
+}
