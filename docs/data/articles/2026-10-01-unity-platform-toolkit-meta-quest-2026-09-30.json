@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-unity-platform-toolkit-meta-quest-2026-09-30",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "ec1641eb80d50bb3e08ba85a9003566c7a88967c44bd2e4f8d829fc1e9849b4e",
+  "written_at": "2026-10-01T06:42:00+02:00",
+  "verified_at": "2026-10-01T06:41:30+02:00",
+  "sources": [
+    {
+      "name": "Unity",
+      "type": "official",
+      "url": "https://discussions.unity.com/t/meta-quest-3-meta-quest-3s-are-now-available-in-platform-toolkit/1738006"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Platform Toolkit arriva sui primi dispositivi XR",
+      "paragraphs": [
+        "Unity ha pubblicato Platform Toolkit 1.2.0 aggiungendo il supporto per Meta Quest 3 e Meta Quest 3S. Sono i primi dispositivi XR coperti dal toolkit, che nasce per ridurre la quantità di integrazioni specifiche da mantenere quando un progetto deve raggiungere ecosistemi differenti. La versione 1.2.0 include anche correzioni e una funzione di persistenza in Play Mode, utile per conservare alcuni dati durante le iterazioni in editor."
+      ],
+      "source_urls": [
+        "https://discussions.unity.com/t/meta-quest-3-meta-quest-3s-are-now-available-in-platform-toolkit/1738006"
+      ]
+    },
+    {
+      "heading": "Un livello comune per i servizi di piattaforma",
+      "paragraphs": [
+        "Il valore del toolkit non è legato soltanto alla realtà virtuale. Unity lo propone come astrazione per funzionalità tipiche delle piattaforme, come account, achievement e salvataggi, così il gioco può usare un’interfaccia più uniforme e delegare al pacchetto la parte specifica dell’ecosistema di destinazione. Per progetti modulari e multipiattaforma è un approccio interessante perché evita di distribuire codice proprietario in molti sistemi diversi e rende più semplice aggiungere nuove destinazioni in seguito."
+      ],
+      "source_urls": [
+        "https://discussions.unity.com/t/meta-quest-3-meta-quest-3s-are-now-available-in-platform-toolkit/1738006"
+      ]
+    }
+  ]
+}
