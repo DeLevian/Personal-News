@@ -1,0 +1,237 @@
+{
+  "version": 2,
+  "date": "2026-10-01",
+  "generated_at": "2026-10-01T06:54:30+02:00",
+  "kind": "daily",
+  "title": "1 ottobre · agenti, modelli e strumenti che cambiano il lavoro",
+  "summary": "Sette segnalazioni verificate tra AI, agenti, Digital Workplace, Windows, Blender e gaming: cinque News principali e due elementi Radar.",
+  "note": "Discovery su 36 cluster distinti nelle sei categorie. Due fetch diretti del catalogo non erano leggibili completamente nel parser e sono stati compensati con ricerca mirata; nessuna pubblicazione dipende da una fonte non verificata.",
+  "items": [
+    {
+      "id": "2026-10-01-gpt-6-1-sol-launch-2026-09-29",
+      "event_id": "gpt-6-1-sol-launch-2026-09-29",
+      "category": "ai",
+      "status": "NEW",
+      "title": "GPT-6.1 Sol alza il livello su coding e lavoro, mantenendo il prezzo sotto Astra",
+      "summary": "OpenAI ha rilasciato GPT-6.1 Sol per coding agentico, computer use e lavoro professionale. È disponibile in ChatGPT Work e Codex per i piani indicati e via API come gpt-6.1-sol; non è ancora nel normale Chat.",
+      "why_you_care": "È un nuovo punto di confronto per workflow di coding e knowledge work, con prezzi API molto inferiori alla fascia Astra.",
+      "published_date": "2026-09-29",
+      "event_date": "2026-09-29",
+      "verified_at": "2026-10-01T06:50:00+02:00",
+      "featured": true,
+      "tags": [
+        "OpenAI",
+        "GPT-6.1 Sol",
+        "Codex",
+        "coding agent",
+        "API"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI · GPT-6.1 Sol",
+          "type": "official",
+          "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: nuova release del 29 settembre direttamente pertinente a coding agentico e lavoro professionale.",
+      "section": "main",
+      "included_at": "2026-10-01T06:53:00+02:00"
+    },
+    {
+      "id": "2026-10-01-openai-dots-2026-09-29",
+      "event_id": "openai-dots-2026-09-29",
+      "category": "agents",
+      "status": "NEW",
+      "title": "OpenAI lancia dots, agenti sempre attivi con un proprio computer cloud",
+      "summary": "Dots sono agenti persistenti basati su GPT-6 Astra, con un proprio computer cloud e collegamenti a oltre 4.000 app tramite plugin. Sono raggiungibili da ChatGPT, Slack e Teams, con rollout iniziale sui piani indicati da OpenAI.",
+      "why_you_care": "È un passaggio concreto dai chatbot agli agenti persistenti, dove continuità, strumenti e permessi diventano centrali.",
+      "published_date": "2026-09-29",
+      "event_date": "2026-09-29",
+      "verified_at": "2026-10-01T06:50:00+02:00",
+      "featured": true,
+      "tags": [
+        "OpenAI",
+        "dots",
+        "agenti persistenti",
+        "cloud computer",
+        "plugin"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI · dots",
+          "type": "official",
+          "url": "https://openai.com/index/introducing-dots/"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: nuovo prodotto agentico annunciato il 29 settembre e rilevante per automazioni persistenti.",
+      "section": "main",
+      "included_at": "2026-10-01T06:53:00+02:00"
+    },
+    {
+      "id": "2026-10-01-pi-v0-99-mcp-codemode-2026-09-30",
+      "event_id": "pi-v0-99-mcp-codemode-2026-09-30",
+      "category": "agents",
+      "status": "NEW",
+      "title": "Pi 0.99 porta MCP e Codemode nel cuore dell’agente",
+      "summary": "Pi 0.99 introduce Codemode, tool search e supporto MCP come estensioni integrate. La 0.99.2 rifinisce il sistema facendo connettere in background i server MCP non diretti e riducendo il peso dei tool nel prompt.",
+      "why_you_care": "Per chi usa Pi con MCP è un salto strutturale: più orchestrazione dinamica e meno strumenti esposti sempre al modello.",
+      "published_date": "2026-09-30",
+      "published_at": "2026-09-30T19:30:47+00:00",
+      "event_date": "2026-09-30",
+      "verified_at": "2026-10-01T06:50:00+02:00",
+      "featured": true,
+      "tags": [
+        "Pi Agent",
+        "MCP",
+        "Codemode",
+        "tool search",
+        "QuickJS"
+      ],
+      "sources": [
+        {
+          "name": "Pi · release v0.99.0",
+          "type": "official",
+          "url": "https://github.com/earendil-works/pi/releases/tag/v0.99.0"
+        },
+        {
+          "name": "Pi · release v0.99.2",
+          "type": "official",
+          "url": "https://github.com/earendil-works/pi/releases/tag/v0.99.2"
+        }
+      ],
+      "image": null,
+      "section": "main",
+      "included_at": "2026-10-01T06:53:00+02:00"
+    },
+    {
+      "id": "2026-10-01-openai-chatgpt-space-pages-teams-2026-09-29",
+      "event_id": "openai-chatgpt-space-pages-teams-2026-09-29",
+      "category": "work",
+      "status": "NEW",
+      "title": "ChatGPT Space e Pages portano persone e agenti nello stesso spazio di lavoro",
+      "summary": "OpenAI ha presentato ChatGPT Space e Pages per conoscenza e documenti condivisi tra colleghi e agenti. Business ed Enterprise ricevono anche team tasks e @ChatGPT può operare direttamente in Slack e Microsoft Teams con gli strumenti autorizzati.",
+      "why_you_care": "Per Digital Workplace convergono collaborazione, documenti, chat aziendale e automazioni ricorrenti nello stesso ambiente agentico.",
+      "published_date": "2026-09-29",
+      "event_date": "2026-09-29",
+      "verified_at": "2026-10-01T06:50:00+02:00",
+      "featured": false,
+      "tags": [
+        "ChatGPT Space",
+        "Pages",
+        "team tasks",
+        "Microsoft Teams",
+        "Digital Workplace"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI · DevDay 2026 Recap",
+          "type": "official",
+          "url": "https://openai.com/index/devday-2026-recap/"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: novità collaborative del DevDay del 29 settembre con impatto diretto sul Digital Workplace.",
+      "section": "main",
+      "included_at": "2026-10-01T06:53:00+02:00"
+    },
+    {
+      "id": "2026-10-01-wsl-containers-ga-2026-09-29",
+      "event_id": "wsl-containers-ga-2026-09-29",
+      "category": "devices",
+      "status": "NEW",
+      "title": "WSL Containers arriva in GA con CLI, API e controlli enterprise",
+      "summary": "Microsoft ha portato WSL Containers in disponibilità generale. wslc.exe permette di gestire container Linux su Windows e l’API apre scenari come l’AI locale; arrivano anche integrazioni con Defender for Endpoint e Intune.",
+      "why_you_care": "È rilevante per sviluppo e AI locale su Windows, con un percorso nativo per container Linux e controlli adatti anche all’azienda.",
+      "published_date": "2026-09-29",
+      "event_date": "2026-09-29",
+      "verified_at": "2026-10-01T06:50:00+02:00",
+      "featured": false,
+      "tags": [
+        "WSL",
+        "containers",
+        "Windows",
+        "local AI",
+        "Intune"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft · WSL containers GA",
+          "type": "official",
+          "url": "https://blogs.windows.com/windowsdeveloper/2026/09/29/wsl-containers-now-generally-available/"
+        }
+      ],
+      "image": null,
+      "recency_reason": "Recupero entro 72 ore: passaggio a GA del 29 settembre con nuove capacità concrete per sviluppo Windows e AI locale.",
+      "section": "main",
+      "included_at": "2026-10-01T06:53:00+02:00"
+    },
+    {
+      "id": "2026-10-01-blender-today-290-september-2026",
+      "event_id": "blender-today-290-september-2026",
+      "category": "gamedev",
+      "status": "NEW",
+      "title": "Blender mostra Gaussian Splatting, DLSS e 539 commit nel riepilogo di settembre",
+      "summary": "Blender Today LIVE #290 riepiloga 539 commit tra l’8 e il 30 settembre, con import PLY e SPZ per Gaussian Splatting, supporto iniziale in Cycles, DLSS per il viewport e varie novità a Grease Pencil, nodi e Outliner.",
+      "why_you_care": "È un buon radar tecnico per asset e 3D, ma fotografa lavoro in sviluppo e non equivale a una release stabile.",
+      "published_date": "2026-09-30",
+      "event_date": "2026-09-30",
+      "verified_at": "2026-10-01T06:50:00+02:00",
+      "featured": false,
+      "tags": [
+        "Blender",
+        "Gaussian Splatting",
+        "DLSS",
+        "Cycles",
+        "3D"
+      ],
+      "sources": [
+        {
+          "name": "Blender Developer Forum · Blender Today LIVE #290",
+          "type": "official",
+          "url": "https://devtalk.blender.org/t/blender-today-live-290-gaussian-splatting-dlss-outliner-and-more/45863"
+        }
+      ],
+      "image": null,
+      "section": "radar",
+      "included_at": "2026-10-01T06:53:00+02:00"
+    },
+    {
+      "id": "2026-10-01-viractal-switch-2-release-2026-09-30",
+      "event_id": "viractal-switch-2-release-2026-09-30",
+      "category": "gaming",
+      "status": "NEW",
+      "title": "Viractal arriva su Switch 2 con deckbuilding, mappe procedurali e GameShare",
+      "summary": "Viractal: Will You Trust Your Party? mescola RPG da tavolo, dadi, deckbuilding, combattimenti e mappe procedurali. Nintendo Italia indica il 1 ottobre per la Switch 2 Edition, con 60 fps e GameShare.",
+      "why_you_care": "Incrocia RPG, strategia e deckbuilding, con una struttura rigiocabile e una modalità cooperativa interessante su Switch 2.",
+      "published_date": "2026-09-30",
+      "event_date": "2026-10-01",
+      "verified_at": "2026-10-01T06:50:00+02:00",
+      "featured": false,
+      "tags": [
+        "Viractal",
+        "Nintendo Switch 2",
+        "RPG",
+        "deckbuilding",
+        "GameShare"
+      ],
+      "sources": [
+        {
+          "name": "GameForceAsia · Viractal su Switch e Switch 2",
+          "type": "reputable",
+          "url": "https://www.gameforceasia.com/news/viractal-brings-its-procedural-board-game-rpg-to-switch-and-switch-2-today"
+        },
+        {
+          "name": "Nintendo Italia · Viractal Switch 2 Edition",
+          "type": "official",
+          "url": "https://www.nintendo.com/it-it/Giochi/Nintendo-Switch-2-Edition/Viractal-Will-You-Trust-Your-Party-Nintendo-Switch-2-Edition-3201421.html"
+        }
+      ],
+      "image": null,
+      "section": "radar",
+      "included_at": "2026-10-01T06:53:00+02:00"
+    }
+  ],
+  "attention_today": null
+}
