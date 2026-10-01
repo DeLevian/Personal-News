@@ -1,25 +1,25 @@
 {
   "version": 2,
-  "checked_at": "2026-09-29T06:37:00+02:00",
-  "candidate_count": 24,
+  "checked_at": "2026-10-01T08:17:20+02:00",
+  "candidate_count": 38,
   "coverage": {
-    "agents": 2,
-    "ai": 2,
-    "devices": 3,
-    "gamedev": 3,
-    "gaming": 12,
-    "work": 2
+    "agents": 8,
+    "ai": 7,
+    "devices": 5,
+    "gamedev": 4,
+    "gaming": 9,
+    "work": 5
   },
-  "checks_attempted": 13,
-  "checks_successful": 13,
+  "checks_attempted": 21,
+  "checks_successful": 18,
   "decisions": {
-    "main": 3,
+    "main": 10,
     "radar": 2,
-    "known": 19,
-    "outdated": 0,
-    "irrelevant": 0,
-    "unverified": 0
+    "known": 8,
+    "outdated": 8,
+    "irrelevant": 6,
+    "unverified": 4
   },
-  "shortfall_reason": "Broad searches across all six categories produced fewer than 30 useful unique event clusters. Additional results repeated events already in the archive, were outside the configured time windows, were weak rumors or low-impact items, or lacked sufficient primary verification. No candidates were invented to reach the target.",
-  "note": "Coverage records attempts, not universal absence of news. The full audit remains an artifact or scoped run log."
+  "shortfall_reason": null,
+  "note": "Discovery ampia completata su tutte le sei categorie con fonti primarie, specialistiche e ricerca web aperta. GameDev non ha prodotto novità fresche e sufficientemente verificate; rumor, duplicati e risultati oltre finestra sono stati esclusi. Coverage indica tentativi di verifica, non assenza universale di notizie."
 }
