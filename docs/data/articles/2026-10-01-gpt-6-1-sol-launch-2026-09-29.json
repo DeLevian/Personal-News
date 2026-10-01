@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-gpt-6-1-sol-launch-2026-09-29",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "6a72ec7aba0cb8a38171aafdae64f8057a32b4d9fec9a8534989acfe5b9d3617",
+  "written_at": "2026-10-01T06:42:00+02:00",
+  "verified_at": "2026-10-01T06:41:30+02:00",
+  "sources": [
+    {
+      "name": "OpenAI",
+      "type": "official",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
+    },
+    {
+      "name": "GitHub",
+      "type": "official",
+      "url": "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Che cosa cambia con GPT-6.1 Sol",
+      "paragraphs": [
+        "OpenAI presenta GPT-6.1 Sol come un aggiornamento della linea Sol pensato per avvicinarsi alle capacità di GPT-6 Astra su software engineering, uso di applicazioni e lavoro professionale, ma con un costo sensibilmente inferiore. Il listino API indicato è di 2 dollari per milione di token in input, 0,10 dollari per input in cache e 10 dollari per output. OpenAI segnala inoltre miglioramenti su factuality e task multi-step rispetto a GPT-6 Sol."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-6-1-sol/"
+      ]
+    },
+    {
+      "heading": "Disponibilità pratica per coding e agenti",
+      "paragraphs": [
+        "Il modello è disponibile come gpt-6.1-sol nell’API e viene offerto agli utenti idonei in ChatGPT Work e Codex, mentre non è ancora presente nella chat standard. GitHub lo sta distribuendo anche in Copilot per agentic coding e terminal workflows su più superfici, fra cui VS Code, Copilot CLI e coding agent. Questo rende possibile confrontarlo subito su repository reali, misurando qualità, numero di passaggi, latenza e costo invece di fermarsi ai benchmark del produttore."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot/"
+      ]
+    }
+  ]
+}
