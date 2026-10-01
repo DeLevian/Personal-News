@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-google-gemini-4-argon-2026-09-30",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "112cc231c4e22edea66a3ce2b3f7a82db780c66d08729424b7c7effd8ce80725",
+  "written_at": "2026-10-01T07:25:25+02:00",
+  "verified_at": "2026-10-01T07:25:00+02:00",
+  "sources": [
+    {
+      "name": "Google · Gemini 4 Argon",
+      "type": "official",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+    },
+    {
+      "name": "Reuters · lancio Gemini 4 Argon",
+      "type": "reputable",
+      "url": "https://www.reuters.com/legal/litigation/google-announces-gemini-4-flagship-ai-model-after-months-delays-2026-09-30/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Che cosa ha annunciato Google",
+      "paragraphs": [
+        "Gemini 4 Argon è il nuovo modello di fascia alta presentato da Google il 30 settembre. Il lancio iniziale è volutamente limitato: Google lo sta distribuendo a un gruppo di organizzazioni considerate affidabili nel programma Fairwind, con particolare attenzione alla sicurezza informatica. Il produttore indica anche una finestra di output fino a un milione di token e un prezzo introduttivo di 2 dollari per milione di token in input e 10 dollari in output, con uno sconto molto forte sugli input serviti dalla cache."
+      ],
+      "source_urls": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+      ]
+    },
+    {
+      "heading": "Disponibilità e confronto con gli altri modelli",
+      "paragraphs": [
+        "L’accesso ristretto è il dettaglio più importante per interpretare l’annuncio: Argon non è ancora un modello che tutti possono semplicemente selezionare. Google parla di distribuzione per fasi e di un ampliamento successivo. Reuters, riportando il lancio, sottolinea inoltre che al momento dell’annuncio non era stata comunicata una data precisa per la disponibilità pubblica e che i confronti prestazionali pubblicati dal fornitore non mostrano un vantaggio uniforme su ogni benchmark. Per questo le capacità dichiarate vanno separate dalla disponibilità reale e dai test indipendenti."
+      ],
+      "source_urls": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "https://www.reuters.com/legal/litigation/google-announces-gemini-4-flagship-ai-model-after-months-delays-2026-09-30/"
+      ]
+    }
+  ]
+}
