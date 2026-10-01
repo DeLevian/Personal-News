@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "item_id": "2026-10-01-gpt-6-1-sol-launch-2026-09-29",
+  "language": "it",
+  "editorial_mode": "original",
+  "source_item_hash": "f74206d4f1d27011678fc3da90363fdf888e0210c3dda7c2b5d8b39276acb505",
+  "written_at": "2026-10-01T06:54:00+02:00",
+  "verified_at": "2026-10-01T06:50:00+02:00",
+  "sources": [
+    {
+      "name": "OpenAI · GPT-6.1 Sol",
+      "type": "official",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Un nuovo punto di equilibrio",
+      "paragraphs": [
+        "GPT-6.1 Sol è l’aggiornamento con cui OpenAI prova a portare verso una fascia di costo più bassa una parte delle capacità finora associate ad Astra. L’azienda lo presenta come particolarmente forte nel coding agentico, nel computer use e nei flussi professionali complessi. Nei test pubblicati da OpenAI il nuovo Sol migliora rispetto al precedente GPT-6 Sol e, in diversi scenari, si avvicina ai risultati di Astra mantenendo costi API inferiori."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-6-1-sol/"
+      ]
+    },
+    {
+      "heading": "Disponibilità e impatto pratico",
+      "paragraphs": [
+        "Il modello è disponibile in ChatGPT Work e Codex per Plus, Pro, Business, Enterprise ed Edu, mentre non è ancora nel normale Chat. In API il nome è gpt-6.1-sol e il listino dichiarato è 2 dollari per milione di token in input, 0,10 per input in cache e 10 in output. Per un workflow basato su agenti conviene quindi misurare qualità per task completato e costo reale del contesto riutilizzato, non soltanto il punteggio del modello."
+      ],
+      "source_urls": [
+        "https://openai.com/index/introducing-gpt-6-1-sol/"
+      ]
+    }
+  ]
+}
